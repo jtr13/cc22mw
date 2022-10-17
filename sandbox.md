@@ -15,10 +15,24 @@ animate(anim)
 
 
 ```r
-anim<-ggplot(iris,aes(Petal.Width,Petal.Length,colour=Species)) +
+anim <- ggplot(iris, aes(Petal.Width, Petal.Length,colour=Species)) +
   geom_point() +
-  transition_filter(transition_length=2, filter_length = 1,Setosa=Species=='setosa',Long = Petal.Length>4,Wide = Petal.Width>2)
+  transition_filter(transition_length=2, filter_length = 1,
+    Setosa=Species=='setosa', Long = Petal.Length > 4, Wide = Petal.Width > 2)
 animate(anim)
 ```
 
 <img src="sandbox_files/figure-html/unnamed-chunk-2-1.gif" style="display: block; margin: auto;" />
+
+
+```r
+ggplot(mtcars, aes(mpg, disp)) +
+geom_point() +
+geom_smooth(colour = 'grey', se = FALSE) +
+geom_smooth(aes(colour = factor(gear))) +
+transition_layers(layer_length = 1, transition_length = 2,
+  from_blank = FALSE, layer_order = c(3, 1, 2)) +
+enter_grow()
+```
+
+<img src="sandbox_files/figure-html/unnamed-chunk-3-1.gif" style="display: block; margin: auto;" />
