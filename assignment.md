@@ -11,6 +11,7 @@ There are many ways in which you can contribute:
 * create a cheatsheet or other resource
 * write a tutorial for a tool that's not well documented
 * build a viz product (ex. htmlwidget or RStudio add-in) for class use
+* design home page (images, text and/or artwork) of this web site
 * [your own idea]
 * (Note: translations are not allowed)
 
@@ -40,4 +41,4 @@ You must submit your assignment twice: once on CourseWorks (so it can be graded)
 
 ### Grading
 
-You will be graded on the quality of your work, originality, and the effort invested. Any sources used must be cited.
+You will be graded on the quality of your work, originality, and effort invested. Any sources used must be cited. We are looking for value-added over existing resources. For example, an excellent cheatsheet already exists for ggplot2 so creating a new one would not be very useful unless it represents a significant improvement.
