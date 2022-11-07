@@ -16,6 +16,14 @@ what-if-i-catch-mistakes-before-my-pull-request-is-merged
 what-if-i-catch-mistakes-after-my-pull-request-is-merged
 other-questions
 sample-project
+map-plots-with-highcharts
+collect-data
+download-the-map-data-and-filter
+plot-the-map
+parameters
+add-labels
+plot-in
+add-title-theme-colors
 github-initial-setup
 create-new-repo
 pages-in-repo-settings
