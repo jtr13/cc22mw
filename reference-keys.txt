@@ -16,6 +16,9 @@ what-if-i-catch-mistakes-before-my-pull-request-is-merged
 what-if-i-catch-mistakes-after-my-pull-request-is-merged
 other-questions
 sample-project
+geographic-visualization-by-ggmap
+motivation-for-this-project
+my-own-evaluationroom-for-improvement
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter
