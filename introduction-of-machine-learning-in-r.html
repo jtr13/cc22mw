@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/proj4js-2.3.15/proj4.js"></script><link href="libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="libs/highcharts-9.3.1/highcharts.js"></script><script src="libs/highcharts-9.3.1/highcharts-3d.js"></script><script src="libs/highcharts-9.3.1/highcharts-more.js"></script><script src="libs/highcharts-9.3.1/modules/stock.js"></script><script src="libs/highcharts-9.3.1/modules/map.js"></script><script src="libs/highcharts-9.3.1/modules/data.js"></script><script src="libs/highcharts-9.3.1/modules/exporting.js"></script><script src="libs/highcharts-9.3.1/modules/offline-exporting.js"></script><script src="libs/highcharts-9.3.1/modules/drilldown.js"></script><script src="libs/highcharts-9.3.1/modules/item-series.js"></script><script src="libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script><script src="libs/highcharts-9.3.1/modules/annotations.js"></script><script src="libs/highcharts-9.3.1/modules/export-data.js"></script><script src="libs/highcharts-9.3.1/modules/funnel.js"></script><script src="libs/highcharts-9.3.1/modules/heatmap.js"></script><script src="libs/highcharts-9.3.1/modules/treemap.js"></script><script src="libs/highcharts-9.3.1/modules/sankey.js"></script><script src="libs/highcharts-9.3.1/modules/dependency-wheel.js"></script><script src="libs/highcharts-9.3.1/modules/organization.js"></script><script src="libs/highcharts-9.3.1/modules/solid-gauge.js"></script><script src="libs/highcharts-9.3.1/modules/streamgraph.js"></script><script src="libs/highcharts-9.3.1/modules/sunburst.js"></script><script src="libs/highcharts-9.3.1/modules/vector.js"></script><script src="libs/highcharts-9.3.1/modules/wordcloud.js"></script><script src="libs/highcharts-9.3.1/modules/xrange.js"></script><script src="libs/highcharts-9.3.1/modules/tilemap.js"></script><script src="libs/highcharts-9.3.1/modules/venn.js"></script><script src="libs/highcharts-9.3.1/modules/gantt.js"></script><script src="libs/highcharts-9.3.1/modules/timeline.js"></script><script src="libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script><script src="libs/highcharts-9.3.1/modules/bullet.js"></script><script src="libs/highcharts-9.3.1/modules/coloraxis.js"></script><script src="libs/highcharts-9.3.1/modules/dumbbell.js"></script><script src="libs/highcharts-9.3.1/modules/lollipop.js"></script><script src="libs/highcharts-9.3.1/modules/series-label.js"></script><script src="libs/highcharts-9.3.1/plugins/motion.js"></script><script src="libs/highcharts-9.3.1/custom/reset.js"></script><script src="libs/highcharts-9.3.1/modules/boost.js"></script><script src="libs/highchart-binding-0.9.4/highchart.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Community Contributions for EDAV Fall 2022 Mon/Wed</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">6</span> Map Plots with Highcharts</a></li>
+<li><a class="active" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">7</span> Introduction of machine learning in R</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">8</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">9</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc22mw">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-of-machine-learning-in-r" class="section level1">
+<h1>
+<span class="header-section-number">7</span> Introduction of machine learning in R<a class="anchor" aria-label="anchor" href="#introduction-of-machine-learning-in-r"><i class="fas fa-link"></i></a>
+</h1>
+<p>Feifan Li</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/topepo/caret/">caret</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">mlbench</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/majkamichal/naivebayes">naivebayes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bethatkinson/rpart">rpart</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.stat.berkeley.edu/~breiman/RandomForests/">randomForest</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://lattice.r-forge.r-project.org/">lattice</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidymodels/recipes">recipes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://appliedpredictivemodeling.com/">AppliedPredictiveModeling</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">caTools</span><span class="op">)</span></span></code></pre></div>
+<div id="introduction" class="section level2">
+<h2>
+<span class="header-section-number">7.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h2>
+<p>Nowadays, Machine learning is a very useful tool in a such data-driven world. Social applications like Facebook or WhatsApp made data very accessible, and the companies can use the data to do magic things like customer classification, fraud detection, decision making, or advertising strategy. The data helps companies to serve customers in a more effective way. And one of the most important tool to process and interpret the data is machine learning. It will help to reveal many hidden patterns behind those numbers. Hence, this tutorial will help you to get a basic understanding about how to use machine learning in R. Since R is very efficient in data processing and data visualization, machine learning can be incorporated in an easy way.</p>
+</div>
+<div id="required-packages" class="section level2">
+<h2>
+<span class="header-section-number">7.2</span> Required Packages:<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this tutorial, we will need to import some packages. Some of them depend on the others.</p>
+<p>Packages required:<br>
+1.caret<br>
+2.mlbench<br>
+3.naivebayes<br>
+4.rpart<br>
+5.randomForest<br>
+6.ggplot2<br>
+7.lattice<br>
+8.recipes<br>
+9.dplyr<br>
+10.AppliedPredictiveModeling<br>
+11.gridExtra<br>
+12.caTools</p>
+</div>
+<div id="data-preprocessing" class="section level2">
+<h2>
+<span class="header-section-number">7.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
+</h2>
+<div id="load-dataset" class="section level3">
+<h3>
+<span class="header-section-number">7.3.1</span> Load DataSet<a class="anchor" aria-label="anchor" href="#load-dataset"><i class="fas fa-link"></i></a>
+</h3>
+<p>For this tutorial, we will just import the built-in dataset in the R library, iris. There are several different ways to read dataset in R. First of all, if the file is a csv file, we can use the “read_csv” to read in. If the file is a R file, we can use the “load” command to import dataset. And if the file is a txt file, we can use “read.delim”: by specifying the separator, it can break the lines into chunks.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#load data and name it as iris</span></span>
+<span><span class="co">#iris &lt;- read.csv("iris.csv", header=FALSE)</span></span>
+<span></span>
+<span><span class="co">#set header</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sepal.Length"</span>,<span class="st">"Sepal.Width"</span>,<span class="st">"Petal.Length"</span>,<span class="st">"Petal.Width"</span>,<span class="st">"Species"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="split-the-dataset" class="section level3">
+<h3>
+<span class="header-section-number">7.3.2</span> Split the Dataset<a class="anchor" aria-label="anchor" href="#split-the-dataset"><i class="fas fa-link"></i></a>
+</h3>
+<p>Before we preprocess the data, we need to split the dataset into train set and test set. For the train set, we will train our model on this set and test model’s accuracy on the test set. This split ensures the independency between the train and test stes.</p>
+<p>For the ratio, we usually assume 80% versus 20%, which means 80% of the data are in training set, while the remaining 20% is in the test set. We can adjust this ratio based on actual dataset. However, if we set this ratio too large, this will assign most of the dataset into train set, which leaves little data for tests. On the other hand, if this ratio is too low, the model cannot receive sufficient training, influencing its accuracy.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">trainIndex</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/createDataPartition.html">createDataPartition</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Species</span>, p <span class="op">=</span> <span class="fl">0.8</span>, </span>
+<span>                                  list <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                                  times <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">train_set</span> <span class="op">&lt;-</span> <span class="va">iris</span><span class="op">[</span><span class="va">trainIndex</span>,<span class="op">]</span></span>
+<span><span class="va">test_set</span> <span class="op">&lt;-</span> <span class="va">iris</span><span class="op">[</span><span class="op">-</span><span class="va">trainIndex</span>,<span class="op">]</span></span>
+<span></span>
+<span><span class="co">#check size</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">train_set</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 120</code></pre>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">test_set</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+</div>
+<div id="scaling" class="section level3">
+<h3>
+<span class="header-section-number">7.3.3</span> Scaling<a class="anchor" aria-label="anchor" href="#scaling"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are two different ways to adjust the scale of data: Scaling and Centering. For scaling, it basically calculates the Z score of each datapoint, and the formula is <span class="math inline">\(X-u/\sigma\)</span>. Moreover, another way is centering, which just subtracts the data with mean.</p>
+<p>From the graph below, we can see that standardizing the datapoints shifts the mean to 0 but it did not change the overall distribution</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Scaled_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/preProcess.html">preProcess</a></span><span class="op">(</span><span class="va">iris</span>, method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"center"</span>, <span class="st">"scale"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">train_scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">Scaled_values</span>, <span class="va">train_set</span><span class="op">)</span></span>
+<span><span class="va">test_scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">Scaled_values</span>, <span class="va">test_set</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">train_set</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>, y<span class="op">=</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Distribution of datapoint before scailing"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">train_scaled</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>, y<span class="op">=</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Distribution of datapoint after scailing"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="missing-value" class="section level3">
+<h3>
+<span class="header-section-number">7.3.4</span> Missing Value<a class="anchor" aria-label="anchor" href="#missing-value"><i class="fas fa-link"></i></a>
+</h3>
+<p>In most of the datasets, there usually contains some missing values. In this case, we need to impute them with values, and there are several ways to achieve this goal, including mean, KNN, Random Forest, or special symbols. In this tutorial, I will briefly discuss the most common two methods: KNN and mean.</p>
+<p><strong>Mean</strong><br>
+One easy way to fill in the missing value is using mean. For example, if one column or feature contains several missing values, we can compute the average of non-missing values and fill this value to those missing positions. The advantage of this method is that it is efficient and easy to implement; however, filing with mean does not accurately predict that value, which influences the accuracy.</p>
+<p><strong>KNN</strong></p>
+<p>Another common way is to use K nearest neighbor. To be specific, for a datapoint, we can compute its K nearest neighbor. And using the average of neighbors’ values to fill in missing positions. One advantage of this method is that the accuracy is usually higher than filing with mean. However, KNN imputation will take much longer time to compute results, especially in the datasets with high dimensions, and this is called “the curse of dimensions”.</p>
+</div>
+<div id="dimension-reduction" class="section level3">
+<h3>
+<span class="header-section-number">7.3.5</span> Dimension Reduction<a class="anchor" aria-label="anchor" href="#dimension-reduction"><i class="fas fa-link"></i></a>
+</h3>
+<p>For some datasets, they include over 50 or 100 features, and directly training model on the original dataset will consume huge amount of time. Therefore, we need to reduce the dimensions of this dataset to make our training efficient. Common methods like PCA (Principle Component Analysis) or LDA (Linear Discriminant Analysis) will be useful in dimension reductions. In this tutorial, I will talk about PCA.</p>
+<p>PCA, Principle Component Analysis, is an effective method of reducing the dimensions. The main mechanism of PCA is that it keeps the data with the largest variance, which preserves most of the information.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/prcomp.html">prcomp</a></span><span class="op">(</span><span class="va">train_set</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span><span class="op">]</span>,</span>
+<span>             center <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>             scale. <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#print resutls after PCA</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">pc</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Standard deviations (1, .., p=4):
+## [1] 1.7032391 0.9615661 0.3931903 0.1406003
+## 
+## Rotation (n x k) = (4 x 4):
+##                     PC1         PC2        PC3        PC4
+## Sepal.Length  0.5168245 -0.39453643  0.7194018  0.2443245
+## Sepal.Width  -0.2695032 -0.91712841 -0.2706486 -0.1139862
+## Petal.Length  0.5820718 -0.02450714 -0.1610450 -0.7966532
+## Petal.Width   0.5669681 -0.05114583 -0.6190920  0.5409773</code></pre>
+</div>
+<div id="feature-selection" class="section level3">
+<h3>
+<span class="header-section-number">7.3.6</span> Feature Selection<a class="anchor" aria-label="anchor" href="#feature-selection"><i class="fas fa-link"></i></a>
+</h3>
+<p>Besides PCA, another way to reduce dimension is feature selection. Specifically, we can use some metrics to filter out unimportant features, keeping the important ones. And the most common metric that we use is Pearson Coefficient. By calculating pearson coefficient, we can measure how strong the dependent variable is related to the independent variable. Then, we can drop the features with low coefficient.</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">target</span> <span class="op">=</span> <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span>,<span class="va">target</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] -0.1175698</code></pre>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span>,<span class="va">target</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.8717538</code></pre>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Width</span>,<span class="va">target</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.8179411</code></pre>
+</div>
+<div id="categorical-features" class="section level3">
+<h3>
+<span class="header-section-number">7.3.7</span> Categorical Features<a class="anchor" aria-label="anchor" href="#categorical-features"><i class="fas fa-link"></i></a>
+</h3>
+<p>For categorical features, the machine learning models cannot directly process them like numerical features. In this case, we need to convert categorical features into numerical ones. One method is called One hot Encoding. For example, it we have strings “red”,“green”, and “yellow”. Then, “red” can be represented as 100, green is 010, and yellow is 001. Even though one hot encoding can convert categorical features, it has an obvious disadvantage: it will significantly increase the dimensions of the dataset, which will slow the efficiency of our model.</p>
+</div>
+</div>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>
+<span class="header-section-number">7.4</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we train and fit our model on the dataset, we can firstly do some exploratory analysis to visualize the dataset in a clear way.</p>
+<p>First of all, we can use box-plot to display the overall distribution of each feature and how it is related to the target (Species). From the graph, we can see that the species “Iris-Virginica” has the highest value in nearly all four features, while the “Iris-Setosa” has the lowest.</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,y<span class="op">=</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,y<span class="op">=</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,y<span class="op">=</span><span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"green"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,y<span class="op">=</span><span class="va">Petal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"gray"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span>,<span class="va">p3</span>,<span class="va">p4</span>,nrow<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>After showing the distribution, we can visualize the number of each kind in the dataset. From the pie chart below, we can see that three classes have equal proportions: each of them occupy 1/3 of the total data points.</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"count"</span>,width<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span><span class="st">"x"</span>,start<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Proportion of three classes"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>Lastly, we can explore the colinearity between features. From the scatter plot below, we can see that there exist a strong positive relationship between Petal length and Petal width.</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Length</span>,y<span class="op">=</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">g2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Length</span>,y<span class="op">=</span><span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">g3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Length</span>,y<span class="op">=</span><span class="va">Petal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">g4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Width</span>,y<span class="op">=</span><span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">g5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Width</span>,y<span class="op">=</span><span class="va">Petal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">g6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Petal.Length</span>,y<span class="op">=</span><span class="va">Petal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">g1</span>,<span class="va">g2</span>,<span class="va">g3</span>,<span class="va">g4</span>,<span class="va">g5</span>,<span class="va">g6</span>,nrow<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;"></div>
+</div>
+<div id="training-model" class="section level2">
+<h2>
+<span class="header-section-number">7.5</span> Training Model<a class="anchor" aria-label="anchor" href="#training-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the previous part, we can get a basic understanding about the overall patterns of the dataset. And in this section, we will start to train and fit some machine learning models on it. First of all, to train and evaluate our model in an efficient way, we can use K-fold cross validation. The general procedure is that we firstly shuffle the data in a random way and split the data into several groups. And for each iteration, we test our model on one group, and train on the remaining groups. The graph below will illustrate this process in a clear way.</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/Kfold.png" alt=""><p class="caption"><strong>K Fold Cross Validation Process</strong></p>
+</div>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">r_cv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/trainControl.html">trainControl</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"repeatedcv"</span>, </span>
+<span>                        number<span class="op">=</span><span class="fl">10</span>,</span>
+<span>                        repeats<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<div id="knn" class="section level3">
+<h3>
+<span class="header-section-number">7.5.1</span> KNN<a class="anchor" aria-label="anchor" href="#knn"><i class="fas fa-link"></i></a>
+</h3>
+<p>One of the most intuitive machine learning model is KNN, K nearest neighbor. The idea is that we firstly compute the closest K neighbors; then, we can use majority voting to derive our result. For example, if k=5, and three out of the five neighbors have the label of 1, while the other two have label of 0, our result is 1. One advantage of this algorithm is that it has no training process. For small datasets, we can complete the prediction in a short amount of time. However, when the dimension of dataset increases, this algorithm will suffer from the curse of dimension</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/KNN.png" alt=""><p class="caption"><strong>K Fold Cross Validation Process</strong></p>
+</div>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">KNN</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Species</span><span class="op">~</span><span class="va">.</span>, </span>
+<span>             data<span class="op">=</span><span class="va">train_set</span>, </span>
+<span>             method<span class="op">=</span><span class="st">"knn"</span>, </span>
+<span>             metric<span class="op">=</span><span class="st">"accuracy"</span>, </span>
+<span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">KNN</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;"></div>
+<p><strong>Advantage:</strong><br>
+1. very easy to implement, nearly no training process<br>
+2. can deal with non-linear problems<br>
+3. efficient and accurate for small dataset</p>
+<p><strong>Disadvantage:</strong></p>
+<p>1. Extremely slow for large dataset<br>
+2. Require feature scaling. Inappropriate scales will significantly influence its accuracy<br>
+3. Suffer from curse of dimensions. When the data has large number of features, the algorithm does not work well.</p>
+</div>
+<div id="random-forest" class="section level3">
+<h3>
+<span class="header-section-number">7.5.2</span> Random Forest<a class="anchor" aria-label="anchor" href="#random-forest"><i class="fas fa-link"></i></a>
+</h3>
+<p>Another common machine learning model is Random Forest. It utilizes the idea of bagging, which bootstraps samples from the dataset. And for each iteration, we train a decision tree based on the samples provided. For the last step, we can assemble all these different decision trees together. And the final results will be the average output of all trees. The accuracy of the random Forest is much better than a single decision tree.</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">RF</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Species</span><span class="op">~</span><span class="va">.</span>, </span>
+<span>             data<span class="op">=</span><span class="va">train_set</span>, </span>
+<span>             method<span class="op">=</span><span class="st">"rf"</span>, </span>
+<span>             metric<span class="op">=</span><span class="st">"accuracy"</span>, </span>
+<span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">RF</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;"></div>
+<p><strong>Advantage:</strong><br>
+1. higher accuracy than single decision tree<br>
+2. can deal with both classification problems and regression problems<br>
+3. low variance due to bagging</p>
+<p><strong>Disadvantage:</strong> 1. When the number of trees is large, it will take huge amount of time to train<br>
+2. Compared to normal decision tree, it has low interpretability. It looks like a black box, cannot visualize the process easily.<br>
+3. Still likely to overfit</p>
+</div>
+<div id="svm" class="section level3">
+<h3>
+<span class="header-section-number">7.5.3</span> SVM<a class="anchor" aria-label="anchor" href="#svm"><i class="fas fa-link"></i></a>
+</h3>
+<p>A powerful machine learning model is called SVM, Support Vector Machine. The idea behind this algorithm is that it tries to find a hyperplane that can separate two classes in a way that maximize the margin, which can be regarded as the optimal classification. Another key feature of SVM is called kernel trick. It will allows SVM to deal with the datasets that have high dimensions. The kernel function can compute the inner product in the original space, so we do not have to project them into high dimensions, which saves huge amounts of computation. This trick also helps us to deal with non-linear problems: for the data that are not linear-separable in low dimension is separable in higher dimension.</p>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">SVM</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Species</span><span class="op">~</span><span class="va">.</span>, </span>
+<span>             data<span class="op">=</span><span class="va">train_set</span>, </span>
+<span>             method<span class="op">=</span><span class="st">"svmRadial"</span>, </span>
+<span>             metric<span class="op">=</span><span class="st">"accuracy"</span>, </span>
+<span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">SVM</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;"></div>
+<p>At here, besides radial basis kernel function, there are actually many other kernel function. For example, linear kernel function can useful for linear-separable problems. And polynominal kernel function can project datapoints into higher dimensional space, making it easier to classify. In reality, we need to try different kernel functions to see which one works better.</p>
+<p><strong>Advantage:</strong><br>
+1. Very effective for data with high dimensions<br>
+2. can deal with both linear and non-linear separable problems<br>
+3. highly accurate and not influenced by outliers</p>
+<p><strong>Disadvantage:</strong><br>
+1. When the size of dataset is large, it will take very long time to train<br>
+2. low Interpretability, like a black box<br>
+3. There are many parameters that we need to tune, hard to choose the best kernel function.</p>
+</div>
+<div id="gradient-boosting" class="section level3">
+<h3>
+<span class="header-section-number">7.5.4</span> Gradient Boosting<a class="anchor" aria-label="anchor" href="#gradient-boosting"><i class="fas fa-link"></i></a>
+</h3>
+<p>Gradient boosting receives more and more attention in recent years, especially XGBoost. This machine learning model is widely used in many competitions and projects. The main idea of gradient boosting is to train a series of weak learning. Unlike bagging, the generation of this model can only be completed after the last model is fully trained. At each iteration, the weak learner will be trained to fit the residual. And after several iterations, we add all these weak learners together, constituting a strong learner. There are many variations of Gradient Boosting like AdaBoost, XGBoost, or LightGBM.</p>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">GBM</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Species</span><span class="op">~</span><span class="va">.</span>, </span>
+<span>             data<span class="op">=</span><span class="va">train_set</span>, </span>
+<span>             method<span class="op">=</span><span class="st">"gbm"</span>, </span>
+<span>             metric<span class="op">=</span><span class="st">"accuracy"</span>, </span>
+<span>             trControl<span class="op">=</span><span class="va">r_cv</span>,</span>
+<span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">GBM</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;"></div>
+<p><strong>Advantage:</strong><br>
+1. results are highly accurate<br>
+2. no need for data scailing and preprocessing. It can handle both numerical and categorical features<br>
+3. can deal with missing values</p>
+<p><strong>Disadvantage:</strong><br>
+1. When the dataset is too large, it will become very computationally expensive<br>
+2. low Interpretability, like a black box<br>
+3. Too many parameters that we need to tune, taking very long time to find the best set of parameter.</p>
+</div>
+<div id="naive-bayes" class="section level3">
+<h3>
+<span class="header-section-number">7.5.5</span> Naive Bayes<a class="anchor" aria-label="anchor" href="#naive-bayes"><i class="fas fa-link"></i></a>
+</h3>
+<p>Naive Bayes is one of the most famous algorithm in the family of supervised learning. This algorithm is founded based on Bayes’ theorem, the theorem is showed in picture attached below. And there are many types of Naive Bayes Classifier, such as Bernoulli Naive Bayes, Gaussian Naive Bayes, or Laplace Naive Bayes. We need take a closer look at the actual dataset in order to determine which type we should use.</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/NaiveBayes.png" alt=""><p class="caption"><strong>Bayes Theorem</strong></p>
+</div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">Naive_Bayes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/train.html">train</a></span><span class="op">(</span><span class="va">Species</span><span class="op">~</span><span class="va">.</span>, </span>
+<span>             data<span class="op">=</span><span class="va">train_set</span>, </span>
+<span>             method<span class="op">=</span><span class="st">"naive_bayes"</span>, </span>
+<span>             metric<span class="op">=</span><span class="st">"accuracy"</span>, </span>
+<span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Naive_Bayes</span></span></code></pre></div>
+<pre><code>## Naive Bayes 
+## 
+## 120 samples
+##   4 predictor
+##   3 classes: 'setosa', 'versicolor', 'virginica' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold, repeated 5 times) 
+## Summary of sample sizes: 108, 108, 108, 108, 108, 108, ... 
+## Resampling results across tuning parameters:
+## 
+##   usekernel  Accuracy  Kappa 
+##   FALSE      0.965     0.9475
+##    TRUE      0.970     0.9550
+## 
+## Tuning parameter 'laplace' was held constant at a value of 0
+## Tuning
+##  parameter 'adjust' was held constant at a value of 1
+## Accuracy was used to select the optimal model using the largest value.
+## The final values used for the model were laplace = 0, usekernel = TRUE
+##  and adjust = 1.</code></pre>
+<p><strong>Advantage:</strong><br>
+1. Algorithm is very straightforward, easy to implement<br>
+2. Training process is fast because the computations of the probabilities can be completely instantly<br>
+3. memory efficient</p>
+<p><strong>Disadvantage:</strong><br>
+1. This algorithm is founded on the basis that each variable is conditionally independent, and we cannot assume such independence in real life<br>
+2. not accurate in many cases<br>
+3. Hard to determine which type of Naive Bayes that we should use to maximize the accuracy.</p>
+</div>
+<div id="compare-models" class="section level3">
+<h3>
+<span class="header-section-number">7.5.6</span> Compare Models<a class="anchor" aria-label="anchor" href="#compare-models"><i class="fas fa-link"></i></a>
+</h3>
+<p>We can compare all these five models together</p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/resamples.html">resamples</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Naive_bayes<span class="op">=</span><span class="va">Naive_Bayes</span>, GBM<span class="op">=</span><span class="va">GBM</span>, KNN<span class="op">=</span><span class="va">KNN</span>, SVM<span class="op">=</span><span class="va">SVM</span>, RF<span class="op">=</span><span class="va">RF</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## summary.resamples(object = results)
+## 
+## Models: Naive_bayes, GBM, KNN, SVM, RF 
+## Number of resamples: 50 
+## 
+## Accuracy 
+##                  Min.   1st Qu. Median      Mean 3rd Qu. Max. NA's
+## Naive_bayes 0.8333333 0.9166667      1 0.9700000       1    1    0
+## GBM         0.8333333 1.0000000      1 0.9783333       1    1    0
+## KNN         0.9166667 1.0000000      1 0.9850000       1    1    0
+## SVM         0.8333333 0.9166667      1 0.9700000       1    1    0
+## RF          0.9166667 1.0000000      1 0.9833333       1    1    0
+## 
+## Kappa 
+##              Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
+## Naive_bayes 0.750   0.875      1 0.9550       1    1    0
+## GBM         0.750   1.000      1 0.9675       1    1    0
+## KNN         0.875   1.000      1 0.9775       1    1    0
+## SVM         0.750   0.875      1 0.9550       1    1    0
+## RF          0.875   1.000      1 0.9750       1    1    0</code></pre>
+<p>From the statistic above, we can see that KNN has the best performance for our dataset.</p>
+</div>
+</div>
+<div id="metric-evaluation" class="section level2">
+<h2>
+<span class="header-section-number">7.6</span> Metric &amp; Evaluation<a class="anchor" aria-label="anchor" href="#metric-evaluation"><i class="fas fa-link"></i></a>
+</h2>
+<p>In order to evaluate the performance of our machine learning models, we need to use several metrics. And for different kinds of problems, we should adopt different metrics. For example, for regression problems, we can use R-squared to measure the strength of regression. For classification problems, we can use confusion matrix or ROC curve. In this section, we will talk about these metrics in details</p>
+<div id="regression" class="section level3">
+<h3>
+<span class="header-section-number">7.6.1</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
+</h3>
+<p>For regression problems, the most common metric that we use is R-squared. <span class="math inline">\(R^2\)</span> measures the proportion of the dependent variable that is explained by the independent variable. The range of <span class="math inline">\(R^2\)</span> is between 0 and 1. If the value is 1.0, that means every datapoint is perfectly fitted; however, if the value 0.0, that means no datapoint is fitted correctly. One problem with this metric is that as the number of variables increases, the <span class="math inline">\(R^2\)</span> increases as well. Hence, in order to negate this effect, Adjusted R-Squared is introduced, which is divided by the degree of freedom.</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/R-squared.jpg" alt=""><p class="caption"><strong>R-Squared</strong></p>
+</div>
+</div>
+<div id="classifcation" class="section level3">
+<h3>
+<span class="header-section-number">7.6.2</span> Classifcation<a class="anchor" aria-label="anchor" href="#classifcation"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Confusion Matrix</strong><br>
+For classification problems, confusion matrix can be regarded as an intuitive way to visualize the performance. In confusion matrix, the correct results are True Positive (TP) and TN (True Negative), while the incorrect ones are False Negative (FN) and False Positive (FP). Based on these four values, we can compute precision and recall. Precision will measure how accurately that our model predict, and recall will indicate whether all relevant cases are retrieved. In reality, precision and recall are usually negative related. In this case, F1 score is introduced, which combines both precision and recall, a very representative metric of model’s performance.</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/ConfusionMatrix.png" alt=""><p class="caption"><strong>Confusion Matrix</strong></p>
+</div>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">KNN</span>, <span class="va">test_set</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op">(</span><span class="va">results</span>, <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">test_set</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##             Reference
+## Prediction   setosa versicolor virginica
+##   setosa         10          0         0
+##   versicolor      0          7         0
+##   virginica       0          3        10
+## 
+## Overall Statistics
+##                                           
+##                Accuracy : 0.9             
+##                  95% CI : (0.7347, 0.9789)
+##     No Information Rate : 0.3333          
+##     P-Value [Acc &gt; NIR] : 1.665e-10       
+##                                           
+##                   Kappa : 0.85            
+##                                           
+##  Mcnemar's Test P-Value : NA              
+## 
+## Statistics by Class:
+## 
+##                      Class: setosa Class: versicolor Class: virginica
+## Sensitivity                 1.0000            0.7000           1.0000
+## Specificity                 1.0000            1.0000           0.8500
+## Pos Pred Value              1.0000            1.0000           0.7692
+## Neg Pred Value              1.0000            0.8696           1.0000
+## Prevalence                  0.3333            0.3333           0.3333
+## Detection Rate              0.3333            0.2333           0.3333
+## Detection Prevalence        0.3333            0.2333           0.4333
+## Balanced Accuracy           1.0000            0.8500           0.9250</code></pre>
+<p><strong>ROC curve</strong><br>
+Another nice metric that we often use is ROC curve. This graph is drawn on the basis of True positive rate (TPR) and False positive rate (FPR). And the area under this curve is called Area Under Curve (AUC). If the area is equal to 1, that means the machine learning model predicts perfectly on every datapoint. If the area is 0.5, then the model behaves like a fair coin. And if it is 0, that means the model makes false predictions every time.</p>
+<div class="figure">
+<img src="resources/machine_learning_tutorial/Roccurves.png" alt=""><p class="caption"><strong>ROC Curve</strong></p>
+</div>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>
+<span class="header-section-number">7.7</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this tutorial, we can grasp a basic understanding about the general procedures of machine learning model training. First of all, before we start to train the model, we should preprocess the data, which will significantly improve the efficiency of model training. For numerical features, we can use standardization or centering to adjust the scale, which prevents the data distortions. For categorical features, we may use one-hot encoding to convert categorical features into numerical ones. Then, to reduce the dimension of the dataset, we can use PCA to transform the data in a more simplified form. Furthermore, the second step is EDA, which gives audiences an insight about the overall patterns of the data that we are going to train. This part can be easily done by using R because R language is very suitable for data visualization and data analysis. For the fourth step, we will start to train our machine learning model. There are various types of machine learning model that we choose: KNN, Random Forest, SVM, Gradient Boost, Naive Bayes, etc. As for which one we should choose, it depends on the actual dataset and user’s experience. For the last step, in order to assess the performance of model, we need to use several metrics. For regression, we can use R-squared or Adjusted R-squared; for classification, we can use confusion matrix or ROC curve. In general, this tutorial is only an introduction to machine learning, there are many other complicated algorithms or data processing procedures, leaving space for users to explore.</p>
+</div>
+<div id="sources" class="section level2">
+<h2>
+<span class="header-section-number">7.8</span> Sources<a class="anchor" aria-label="anchor" href="#sources"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.rdocumentation.org/packages/caret/versions/6.0-92" class="uri">https://www.rdocumentation.org/packages/caret/versions/6.0-92</a></li>
+<li><a href="https://scikit-learn.org/stable/" class="uri">https://scikit-learn.org/stable/</a></li>
+<li><a href="https://dhirajkumarblog.medium.com/top-4-advantages-and-disadvantages-of-support-vector-machine-or-svm-a3c06a2b107" class="uri">https://dhirajkumarblog.medium.com/top-4-advantages-and-disadvantages-of-support-vector-machine-or-svm-a3c06a2b107</a></li>
+</ol>
+</div>
+</div>
+
+
+
+<div class="chapter-nav">
+<div class="prev"><a href="map-plots-with-highcharts.html"><span class="header-section-number">6</span> Map Plots with Highcharts</a></div>
+<div class="next"><a href="github-initial-setup.html"><span class="header-section-number">8</span> Github initial setup</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction-of-machine-learning-in-r"><span class="header-section-number">7</span> Introduction of machine learning in R</a></li>
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#required-packages"><span class="header-section-number">7.2</span> Required Packages:</a></li>
+<li>
+<a class="nav-link" href="#data-preprocessing"><span class="header-section-number">7.3</span> Data Preprocessing</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-dataset"><span class="header-section-number">7.3.1</span> Load DataSet</a></li>
+<li><a class="nav-link" href="#split-the-dataset"><span class="header-section-number">7.3.2</span> Split the Dataset</a></li>
+<li><a class="nav-link" href="#scaling"><span class="header-section-number">7.3.3</span> Scaling</a></li>
+<li><a class="nav-link" href="#missing-value"><span class="header-section-number">7.3.4</span> Missing Value</a></li>
+<li><a class="nav-link" href="#dimension-reduction"><span class="header-section-number">7.3.5</span> Dimension Reduction</a></li>
+<li><a class="nav-link" href="#feature-selection"><span class="header-section-number">7.3.6</span> Feature Selection</a></li>
+<li><a class="nav-link" href="#categorical-features"><span class="header-section-number">7.3.7</span> Categorical Features</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#exploratory-data-analysis"><span class="header-section-number">7.4</span> Exploratory Data Analysis</a></li>
+<li>
+<a class="nav-link" href="#training-model"><span class="header-section-number">7.5</span> Training Model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#knn"><span class="header-section-number">7.5.1</span> KNN</a></li>
+<li><a class="nav-link" href="#random-forest"><span class="header-section-number">7.5.2</span> Random Forest</a></li>
+<li><a class="nav-link" href="#svm"><span class="header-section-number">7.5.3</span> SVM</a></li>
+<li><a class="nav-link" href="#gradient-boosting"><span class="header-section-number">7.5.4</span> Gradient Boosting</a></li>
+<li><a class="nav-link" href="#naive-bayes"><span class="header-section-number">7.5.5</span> Naive Bayes</a></li>
+<li><a class="nav-link" href="#compare-models"><span class="header-section-number">7.5.6</span> Compare Models</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#metric-evaluation"><span class="header-section-number">7.6</span> Metric &amp; Evaluation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#regression"><span class="header-section-number">7.6.1</span> Regression</a></li>
+<li><a class="nav-link" href="#classifcation"><span class="header-section-number">7.6.2</span> Classifcation</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#conclusion"><span class="header-section-number">7.7</span> Conclusion</a></li>
+<li><a class="nav-link" href="#sources"><span class="header-section-number">7.8</span> Sources</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/machine_learning_tutorial.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/machine_learning_tutorial.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div>
+  
+
+  
+
+</div>
+ <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-12.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
