@@ -79,6 +79,5 @@ update-the-branch
 add-the-filename-of-the-chapter-to-_bookdown.yml
 add-part-names-to-.rmd-for-every-first-article-in-part
 add-new-libraries-to-description.
-resolve-merge-conflicts-if-necessary
 merge-the-pull-request
 check-actions

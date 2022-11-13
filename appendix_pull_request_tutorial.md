@@ -114,8 +114,6 @@ For every first article of each part, add the chapter name on the top of the `.R
 
 - Check the `.Rmd` for libraries needed. If any are missing, add them to the `DESCRIPTION` file on the contributor's branch, in the same manner that we edited the `_bookdown.yml` file.
 
-### Resolve merge conflicts if necessary
-
 
 ### Merge the pull request
 
