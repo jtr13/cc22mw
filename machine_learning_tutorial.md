@@ -4,7 +4,6 @@ Feifan Li
 
 
 
-
 ```r
 library(caret)
 library(mlbench)
@@ -105,7 +104,7 @@ ggplot(train_set, aes(x=Species, y=Sepal.Length))+
   ggtitle("Distribution of datapoint before scailing")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -114,13 +113,13 @@ ggplot(train_scaled, aes(x=Species, y=Sepal.Length))+
   ggtitle("Distribution of datapoint after scailing")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;" />
 
 ### Missing Value
 
 In most of the datasets, there usually contains some missing values. In this case, we need to impute them with values, and there are several ways to achieve this goal, including mean, KNN, Random Forest, or special symbols. In this tutorial, I will briefly discuss the most common two methods: KNN and mean.
 
-**Mean**\
+**Mean**
 One easy way to fill in the missing value is using mean. For example, if one column or feature contains several missing values, we can compute the average of non-missing values and fill this value to those missing positions. The advantage of this method is that it is efficient and easy to implement; however, filing with mean does not accurately predict that value, which influences the accuracy.
 
 **KNN**
@@ -145,14 +144,14 @@ print(pc)
 
 ```
 ## Standard deviations (1, .., p=4):
-## [1] 1.7413326 0.8915127 0.3913045 0.1408789
+## [1] 1.7102692 0.9489550 0.3953923 0.1346422
 ## 
 ## Rotation (n x k) = (4 x 4):
-##                     PC1         PC2        PC3        PC4
-## Sepal.Length  0.5066781 -0.42272410  0.7160054  0.2278549
-## Sepal.Width  -0.3394094 -0.89794855 -0.2492541 -0.1279143
-## Petal.Length  0.5685924 -0.05142456 -0.1776408 -0.8015622
-## Petal.Width   0.5520700 -0.11112265 -0.6274172  0.5377900
+##                     PC1        PC2        PC3        PC4
+## Sepal.Length  0.5109847 0.41819189 -0.7042724  0.2607883
+## Sepal.Width  -0.2915540 0.90588239  0.2778236 -0.1311007
+## Petal.Length  0.5801762 0.02761653  0.1404367 -0.8018170
+## Petal.Width   0.5632818 0.06107341  0.6380376  0.5214323
 ```
 
 ### Feature Selection
@@ -213,7 +212,7 @@ p4 <- ggplot(data=train_set,aes(x=Species,y=Petal.Width))+
 grid.arrange(p1,p2,p3,p4,nrow=2)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto;" />
 
 After showing the distribution, we can visualize the number of each kind in the dataset. From the pie chart below, we can see that three classes have equal proportions: each of them occupy 1/3 of the total data points.
 
@@ -225,7 +224,7 @@ ggplot(data=train_set,aes(x=Species,fill=Species))+
   ggtitle("Proportion of three classes")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto;" />
 
 Lastly, we can explore the colinearity between features. From the scatter plot below, we can see that there exist a strong positive relationship between Petal length and Petal width.
 
@@ -258,7 +257,7 @@ g6 <- ggplot(data=train_set,aes(x=Petal.Length,y=Petal.Width))+
 grid.arrange(g1,g2,g3,g4,g5,g6,nrow=3)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;" />
 
 ## Training Model
 
@@ -277,7 +276,7 @@ r_cv <- trainControl(method="repeatedcv",
 
 One of the most intuitive machine learning model is KNN, K nearest neighbor. The idea is that we firstly compute the closest K neighbors; then, we can use majority voting to derive our result. For example, if k=5, and three out of the five neighbors have the label of 1, while the other two have label of 0, our result is 1. One advantage of this algorithm is that it has no training process. For small datasets, we can complete the prediction in a short amount of time. However, when the dimension of dataset increases, this algorithm will suffer from the curse of dimension
 
-![**K Fold Cross Validation Process**](resources/machine_learning_tutorial/KNN.png)
+![**K Fold Cross Validation Process**](resources/machine_learning_tutorial/KNN.png){width="700px"}
 
 
 ```r
@@ -291,7 +290,7 @@ KNN <- train(Species~.,
 ggplot(KNN)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-12-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. very easy to implement, nearly no training process\
@@ -320,7 +319,7 @@ RF <- train(Species~.,
 ggplot(RF)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. higher accuracy than single decision tree\
@@ -347,7 +346,7 @@ SVM <- train(Species~.,
 ggplot(SVM)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;" />
 
 At here, besides radial basis kernel function, there are actually many other kernel function. For example, linear kernel function can useful for linear-separable problems. And polynominal kernel function can project datapoints into higher dimensional space, making it easier to classify. In reality, we need to try different kernel functions to see which one works better.
 
@@ -378,7 +377,7 @@ GBM <- train(Species~.,
 ggplot(GBM)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. results are highly accurate\
@@ -421,8 +420,8 @@ Naive_Bayes
 ## Resampling results across tuning parameters:
 ## 
 ##   usekernel  Accuracy   Kappa 
-##   FALSE      0.9516667  0.9275
-##    TRUE      0.9666667  0.9500
+##   FALSE      0.9483333  0.9225
+##    TRUE      0.9500000  0.9250
 ## 
 ## Tuning parameter 'laplace' was held constant at a value of 0
 ## Tuning
@@ -462,19 +461,19 @@ summary(results)
 ## 
 ## Accuracy 
 ##                  Min.   1st Qu.    Median      Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.8333333 0.9166667 1.0000000 0.9666667       1    1    0
-## GBM         0.8333333 0.9166667 1.0000000 0.9550000       1    1    0
-## KNN         0.9166667 0.9166667 1.0000000 0.9750000       1    1    0
-## SVM         0.8333333 0.9166667 1.0000000 0.9583333       1    1    0
-## RF          0.9166667 0.9166667 0.9583333 0.9583333       1    1    0
+## Naive_bayes 0.8333333 0.9166667 0.9166667 0.9500000       1    1    0
+## GBM         0.7500000 0.9166667 0.9166667 0.9466667       1    1    0
+## KNN         0.9166667 0.9166667 1.0000000 0.9683333       1    1    0
+## SVM         0.8333333 0.9166667 0.9166667 0.9533333       1    1    0
+## RF          0.7500000 0.9166667 0.9583333 0.9516667       1    1    0
 ## 
 ## Kappa 
 ##              Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.750   0.875 1.0000 0.9500       1    1    0
-## GBM         0.750   0.875 1.0000 0.9325       1    1    0
-## KNN         0.875   0.875 1.0000 0.9625       1    1    0
-## SVM         0.750   0.875 1.0000 0.9375       1    1    0
-## RF          0.875   0.875 0.9375 0.9375       1    1    0
+## Naive_bayes 0.750   0.875 0.8750 0.9250       1    1    0
+## GBM         0.625   0.875 0.8750 0.9200       1    1    0
+## KNN         0.875   0.875 1.0000 0.9525       1    1    0
+## SVM         0.750   0.875 0.8750 0.9300       1    1    0
+## RF          0.625   0.875 0.9375 0.9275       1    1    0
 ```
 
 From the statistic above, we can see that KNN has the best performance for our dataset.
@@ -508,31 +507,31 @@ confusionMatrix(results, as.factor(test_set$Species))
 ##             Reference
 ## Prediction   setosa versicolor virginica
 ##   setosa         10          0         0
-##   versicolor      0          9         1
-##   virginica       0          1         9
+##   versicolor      0          9         0
+##   virginica       0          1        10
 ## 
 ## Overall Statistics
 ##                                           
-##                Accuracy : 0.9333          
-##                  95% CI : (0.7793, 0.9918)
+##                Accuracy : 0.9667          
+##                  95% CI : (0.8278, 0.9992)
 ##     No Information Rate : 0.3333          
-##     P-Value [Acc > NIR] : 8.747e-12       
+##     P-Value [Acc > NIR] : 2.963e-13       
 ##                                           
-##                   Kappa : 0.9             
+##                   Kappa : 0.95            
 ##                                           
 ##  Mcnemar's Test P-Value : NA              
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: setosa Class: versicolor Class: virginica
-## Sensitivity                 1.0000            0.9000           0.9000
-## Specificity                 1.0000            0.9500           0.9500
-## Pos Pred Value              1.0000            0.9000           0.9000
-## Neg Pred Value              1.0000            0.9500           0.9500
+## Sensitivity                 1.0000            0.9000           1.0000
+## Specificity                 1.0000            1.0000           0.9500
+## Pos Pred Value              1.0000            1.0000           0.9091
+## Neg Pred Value              1.0000            0.9524           1.0000
 ## Prevalence                  0.3333            0.3333           0.3333
-## Detection Rate              0.3333            0.3000           0.3000
-## Detection Prevalence        0.3333            0.3333           0.3333
-## Balanced Accuracy           1.0000            0.9250           0.9250
+## Detection Rate              0.3333            0.3000           0.3333
+## Detection Prevalence        0.3333            0.3000           0.3667
+## Balanced Accuracy           1.0000            0.9500           0.9750
 ```
 
 **ROC curve**\
