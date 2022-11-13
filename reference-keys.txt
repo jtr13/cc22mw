@@ -51,6 +51,12 @@ regression
 classifcation
 conclusion
 sources
+edav-survey-and-analysis
+project-proposal
+project-group-cc5
+visualization-preference-analysis
+overview
+goals
 github-initial-setup
 create-new-repo
 pages-in-repo-settings
