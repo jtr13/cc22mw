@@ -75,11 +75,13 @@ Your job for this pull request is done for now. Once contributors fix their requ
 
 ## Steps to Merge the PR
 
-Before we click "Merge" there are a few more things to do. We will make both of these changes on the contributor's branch.
+Before we click "Merge" there are a few more things to do. 
 
 ### Update the branch
 
 If an "Update Branch" is visible toward the end on the Conversation tab of the pull request, click on it. This will ensure that we are working with the most up-to-date versions of `_bookdown.yml` and `DESCRIPTION`.
+
+Next we will make changes to these files on the contributor's branch.
 
 ### Add the filename of the chapter to `_bookdown.yml`
 
@@ -122,6 +124,7 @@ For every first article of each part, add the chapter name on the top of the `.R
 - Return to the PR on the main page of the repo `www.github.com/jtr13/...`
 
 - If necessary resolve merge conflicts by clicking on the resolve merge conflicts button:
+
 <img src="resources/tutorial_pull_request_mergers/resolve_conflicts.png" width="700">
 
 Then delete the lines with `<<<<<<< xxxx`, `=======` and `>>>>>>>> main` and edit the file as desired. Click the "Marked as resolved" button and then the green "Commit merge" button. -->
