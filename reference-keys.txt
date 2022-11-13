@@ -25,6 +25,8 @@ my-own-evaluation-of-the-project
 text-data-visualization-by-tidytext
 motivation-for-the-project-and-need-it-addrressed
 own-evaluation-of-the-project
+cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs
+introductions-of-ggally
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter
