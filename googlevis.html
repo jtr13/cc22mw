@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Geographic visualization by ggmap | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Yuta Adachi As my community contribution for the EDAV class, I created a cheat sheet about the geographic visualization by using ggmap. The link for the cheat sheet is here.  5.1 Motivation for...">
+<title>Chapter 6 googleVis | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Wenqi Sun The googleVis package provides an interface between R and the Google’s charts tools. It allows users to create web pages with interactive charts based on R data frames. Charts are...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Geographic visualization by ggmap | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 6 googleVis | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Yuta Adachi As my community contribution for the EDAV class, I created a cheat sheet about the geographic visualization by using ggmap. The link for the cheat sheet is here.  5.1 Motivation for...">
+<meta property="og:description" content="Wenqi Sun The googleVis package provides an interface between R and the Google’s charts tools. It allows users to create web pages with interactive charts based on R data frames. Charts are...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Geographic visualization by ggmap | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Yuta Adachi As my community contribution for the EDAV class, I created a cheat sheet about the geographic visualization by using ggmap. The link for the cheat sheet is here.  5.1 Motivation for...">
+<meta name="twitter:title" content="Chapter 6 googleVis | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Wenqi Sun The googleVis package provides an interface between R and the Google’s charts tools. It allows users to create web pages with interactive charts based on R data frames. Charts are...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -46,8 +46,8 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li><a class="active" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="active" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">7</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">8</span> Introduction of machine learning in R</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">9</span> EDAV Survey and Analysis</a></li>
@@ -61,45 +61,62 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="geographic-visualization-by-ggmap" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="googlevis" class="section level1" number="6">
 <h1>
-<span class="header-section-number">5</span> Geographic visualization by ggmap<a class="anchor" aria-label="anchor" href="#geographic-visualization-by-ggmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> googleVis<a class="anchor" aria-label="anchor" href="#googlevis"><i class="fas fa-link"></i></a>
 </h1>
-<p>Yuta Adachi</p>
-<p>As my community contribution for the EDAV class, I created a cheat sheet about the geographic visualization by using ggmap.</p>
-<p>The link for the cheat sheet is <a href="https://github.com/Yuta555/ggmap_cheatsheet/blob/main/ggmap_cheatsheet.pdf">here</a>.</p>
-<div id="motivation-for-this-project" class="section level2" number="5.1">
+<p>Wenqi Sun</p>
+<p>The googleVis package provides an interface between R and the Google’s charts tools. It allows users to create web pages with interactive charts based on R data frames. Charts are displayed locally via the R HTTP help server. A modern browser with Internet connection is required. The data remains local and is not uploaded to Google.</p>
+<p>I created a cheat sheet for googleVis. It covers most charts and some options.</p>
+<p>Link: <a href="https://github.com/Nntraveler/googleVis_cheatsheet/blob/main/googleVis.pdf" class="uri">https://github.com/Nntraveler/googleVis_cheatsheet/blob/main/googleVis.pdf</a></p>
+<div id="motivation-for-this-project-1" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Motivation for this project<a class="anchor" aria-label="anchor" href="#motivation-for-this-project"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Motivation for this project<a class="anchor" aria-label="anchor" href="#motivation-for-this-project-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>We sometimes want to describe a fact using geographic visualization. For example, if I’m looking for the shortest path from Columbia University to Central Park, I would like to see a route with a background of road map in which I can understand which street I should walk. However, it seems to be difficult to create a route map or other geographic visualizations by only the original ggplot2 packages, as far as I know.</p>
-<p>An R package, “ggmap”, makes it easy to download and choose various kinds of map tiles such as the Google Maps and Stamen Maps. In addition, you might feel it is easy to plot data since you can deal with the ggplot2 framework you are familiar with.</p>
-<p>That’s why I’m eager to learn how to use the ggmap package and create the cheat sheet for everyone.</p>
+<p>Google Charts is a powerful tool for the visualization of HTML. It provides an easy and quick way to generate interactive charts.</p>
+<p>The advantages include the following:</p>
+<ul>
+<li><p>A variety of charts</p></li>
+<li><p>Extensive set of options for customization</p></li>
+<li><p>Cross-browser compatibility</p></li>
+<li><p>Dashboard and Controls for user interaction</p></li>
+<li><p>Support dynamic data</p></li>
+</ul>
+<p>The googleVis package provides a way to use Google charts with R conveniently. Although it has detailed documentation, users may need clarification about which chart and options work for their cases since there is no cheat sheet.</p>
+<p>Therefore, by creating the cheat sheet for googleVis, everyone can get it easier to use googleVis.</p>
 </div>
-<div id="my-own-evaluationroom-for-improvement" class="section level2" number="5.2">
+<div id="my-own-evaluation-of-the-project" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> My own evaluation/Room for improvement<a class="anchor" aria-label="anchor" href="#my-own-evaluationroom-for-improvement"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> My own evaluation of the project<a class="anchor" aria-label="anchor" href="#my-own-evaluation-of-the-project"><i class="fas fa-link"></i></a>
 </h2>
-<p>Through creating the cheat sheet, I learned not only how to utilize the ggmap package, but also what type of plots I can choose for the geographic visualization. Specifically, in order to introduce three examples so that readers can learn how to use the package in a practical way, I researched and implemented several types of plots related to the geographic visualization such as a route map and a scatter plot on a map.</p>
-<p>Though I learned many things from the project, I can improve this cheat sheet more by adding the examples of other types of data and visualization. For example, I may create another density plot using a continuous variable, and I will also add a flow map to describe transitions between several locations if I have an opportunity to create next time.</p>
-
+<p>After creating the cheatsheet, I</p>
+<ul>
+<li><p>have a better understanding of Google charts and googleVis package</p></li>
+<li><p>experienced happiness for contributing something to the open source projects</p></li>
+<li><p>explored a variety of cheatsheets and found an ideal layout for my project</p></li>
+</ul>
+<p>What’s more, I think there is some space for improvement:</p>
+<ul>
+<li><p>For the options part, it could be a better way to show how to use these options vividly. Due to limited space, I just put a table here.</p></li>
+<li><p>The compressed charts look bad for some charts like Anno, Cal, and Timeline charts. I could assign more space or adjust the data.</p></li>
+</ul>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></div>
-<div class="next"><a href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></div>
+<div class="prev"><a href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></div>
+<div class="next"><a href="map-plots-with-highcharts.html"><span class="header-section-number">7</span> Map Plots with Highcharts</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#geographic-visualization-by-ggmap"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="nav-link" href="#motivation-for-this-project"><span class="header-section-number">5.1</span> Motivation for this project</a></li>
-<li><a class="nav-link" href="#my-own-evaluationroom-for-improvement"><span class="header-section-number">5.2</span> My own evaluation/Room for improvement</a></li>
+<li><a class="nav-link" href="#googlevis"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="nav-link" href="#motivation-for-this-project-1"><span class="header-section-number">6.1</span> Motivation for this project</a></li>
+<li><a class="nav-link" href="#my-own-evaluation-of-the-project"><span class="header-section-number">6.2</span> My own evaluation of the project</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/ggmap_cheatsheet.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/ggmap_cheatsheet.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/googleVis.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/googleVis.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>
