@@ -22,6 +22,9 @@ my-own-evaluationroom-for-improvement
 googlevis
 motivation-for-this-project-1
 my-own-evaluation-of-the-project
+text-data-visualization-by-tidytext
+motivation-for-the-project-and-need-it-addrressed
+own-evaluation-of-the-project
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter
