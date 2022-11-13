@@ -13,6 +13,19 @@ Suggests:
     ggplot2,
     highcharter,
     withr,
-    xml2
+    xml2,
+    caret,
+    mlbench,
+    naivebayes,
+    rpart,
+    randomForest,	
+    lattice,
+    recipes,	
+    dplyr,	
+    AppliedPredictiveModeling,	
+    gridExtra,	
+    caTools,
+    kernlab,
+    gbm
 Remotes:
     hadley/emo
