@@ -105,7 +105,7 @@ ggplot(train_set, aes(x=Species, y=Sepal.Length))+
   ggtitle("Distribution of datapoint before scailing")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -114,7 +114,7 @@ ggplot(train_scaled, aes(x=Species, y=Sepal.Length))+
   ggtitle("Distribution of datapoint after scailing")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;" />
 
 ### Missing Value
 
@@ -145,14 +145,14 @@ print(pc)
 
 ```
 ## Standard deviations (1, .., p=4):
-## [1] 1.7032391 0.9615661 0.3931903 0.1406003
+## [1] 1.7413326 0.8915127 0.3913045 0.1408789
 ## 
 ## Rotation (n x k) = (4 x 4):
 ##                     PC1         PC2        PC3        PC4
-## Sepal.Length  0.5168245 -0.39453643  0.7194018  0.2443245
-## Sepal.Width  -0.2695032 -0.91712841 -0.2706486 -0.1139862
-## Petal.Length  0.5820718 -0.02450714 -0.1610450 -0.7966532
-## Petal.Width   0.5669681 -0.05114583 -0.6190920  0.5409773
+## Sepal.Length  0.5066781 -0.42272410  0.7160054  0.2278549
+## Sepal.Width  -0.3394094 -0.89794855 -0.2492541 -0.1279143
+## Petal.Length  0.5685924 -0.05142456 -0.1776408 -0.8015622
+## Petal.Width   0.5520700 -0.11112265 -0.6274172  0.5377900
 ```
 
 ### Feature Selection
@@ -213,7 +213,7 @@ p4 <- ggplot(data=train_set,aes(x=Species,y=Petal.Width))+
 grid.arrange(p1,p2,p3,p4,nrow=2)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto;" />
 
 After showing the distribution, we can visualize the number of each kind in the dataset. From the pie chart below, we can see that three classes have equal proportions: each of them occupy 1/3 of the total data points.
 
@@ -225,7 +225,7 @@ ggplot(data=train_set,aes(x=Species,fill=Species))+
   ggtitle("Proportion of three classes")
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;" />
 
 Lastly, we can explore the colinearity between features. From the scatter plot below, we can see that there exist a strong positive relationship between Petal length and Petal width.
 
@@ -258,7 +258,7 @@ g6 <- ggplot(data=train_set,aes(x=Petal.Length,y=Petal.Width))+
 grid.arrange(g1,g2,g3,g4,g5,g6,nrow=3)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="80%" style="display: block; margin: auto;" />
 
 ## Training Model
 
@@ -291,7 +291,7 @@ KNN <- train(Species~.,
 ggplot(KNN)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. very easy to implement, nearly no training process\
@@ -320,7 +320,7 @@ RF <- train(Species~.,
 ggplot(RF)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. higher accuracy than single decision tree\
@@ -347,7 +347,7 @@ SVM <- train(Species~.,
 ggplot(SVM)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" />
 
 At here, besides radial basis kernel function, there are actually many other kernel function. For example, linear kernel function can useful for linear-separable problems. And polynominal kernel function can project datapoints into higher dimensional space, making it easier to classify. In reality, we need to try different kernel functions to see which one works better.
 
@@ -378,7 +378,7 @@ GBM <- train(Species~.,
 ggplot(GBM)
 ```
 
-<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+<img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="80%" style="display: block; margin: auto;" />
 
 **Advantage:**\
 1. results are highly accurate\
@@ -420,9 +420,9 @@ Naive_Bayes
 ## Summary of sample sizes: 108, 108, 108, 108, 108, 108, ... 
 ## Resampling results across tuning parameters:
 ## 
-##   usekernel  Accuracy  Kappa 
-##   FALSE      0.965     0.9475
-##    TRUE      0.970     0.9550
+##   usekernel  Accuracy   Kappa 
+##   FALSE      0.9516667  0.9275
+##    TRUE      0.9666667  0.9500
 ## 
 ## Tuning parameter 'laplace' was held constant at a value of 0
 ## Tuning
@@ -461,20 +461,20 @@ summary(results)
 ## Number of resamples: 50 
 ## 
 ## Accuracy 
-##                  Min.   1st Qu. Median      Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.8333333 0.9166667      1 0.9700000       1    1    0
-## GBM         0.8333333 1.0000000      1 0.9783333       1    1    0
-## KNN         0.9166667 1.0000000      1 0.9850000       1    1    0
-## SVM         0.8333333 0.9166667      1 0.9700000       1    1    0
-## RF          0.9166667 1.0000000      1 0.9833333       1    1    0
+##                  Min.   1st Qu.    Median      Mean 3rd Qu. Max. NA's
+## Naive_bayes 0.8333333 0.9166667 1.0000000 0.9666667       1    1    0
+## GBM         0.8333333 0.9166667 1.0000000 0.9550000       1    1    0
+## KNN         0.9166667 0.9166667 1.0000000 0.9750000       1    1    0
+## SVM         0.8333333 0.9166667 1.0000000 0.9583333       1    1    0
+## RF          0.9166667 0.9166667 0.9583333 0.9583333       1    1    0
 ## 
 ## Kappa 
 ##              Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.750   0.875      1 0.9550       1    1    0
-## GBM         0.750   1.000      1 0.9675       1    1    0
-## KNN         0.875   1.000      1 0.9775       1    1    0
-## SVM         0.750   0.875      1 0.9550       1    1    0
-## RF          0.875   1.000      1 0.9750       1    1    0
+## Naive_bayes 0.750   0.875 1.0000 0.9500       1    1    0
+## GBM         0.750   0.875 1.0000 0.9325       1    1    0
+## KNN         0.875   0.875 1.0000 0.9625       1    1    0
+## SVM         0.750   0.875 1.0000 0.9375       1    1    0
+## RF          0.875   0.875 0.9375 0.9375       1    1    0
 ```
 
 From the statistic above, we can see that KNN has the best performance for our dataset.
@@ -508,31 +508,31 @@ confusionMatrix(results, as.factor(test_set$Species))
 ##             Reference
 ## Prediction   setosa versicolor virginica
 ##   setosa         10          0         0
-##   versicolor      0          7         0
-##   virginica       0          3        10
+##   versicolor      0          9         1
+##   virginica       0          1         9
 ## 
 ## Overall Statistics
 ##                                           
-##                Accuracy : 0.9             
-##                  95% CI : (0.7347, 0.9789)
+##                Accuracy : 0.9333          
+##                  95% CI : (0.7793, 0.9918)
 ##     No Information Rate : 0.3333          
-##     P-Value [Acc > NIR] : 1.665e-10       
+##     P-Value [Acc > NIR] : 8.747e-12       
 ##                                           
-##                   Kappa : 0.85            
+##                   Kappa : 0.9             
 ##                                           
 ##  Mcnemar's Test P-Value : NA              
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: setosa Class: versicolor Class: virginica
-## Sensitivity                 1.0000            0.7000           1.0000
-## Specificity                 1.0000            1.0000           0.8500
-## Pos Pred Value              1.0000            1.0000           0.7692
-## Neg Pred Value              1.0000            0.8696           1.0000
+## Sensitivity                 1.0000            0.9000           0.9000
+## Specificity                 1.0000            0.9500           0.9500
+## Pos Pred Value              1.0000            0.9000           0.9000
+## Neg Pred Value              1.0000            0.9500           0.9500
 ## Prevalence                  0.3333            0.3333           0.3333
-## Detection Rate              0.3333            0.2333           0.3333
-## Detection Prevalence        0.3333            0.2333           0.4333
-## Balanced Accuracy           1.0000            0.8500           0.9250
+## Detection Rate              0.3333            0.3000           0.3000
+## Detection Prevalence        0.3333            0.3333           0.3333
+## Balanced Accuracy           1.0000            0.9250           0.9250
 ```
 
 **ROC curve**\
