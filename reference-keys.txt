@@ -73,6 +73,9 @@ quantmod-vs.-tidyquant
 quantmod-1
 tidyquant-1
 sources-1
+learning-echarts4r-with-shiny
+motivations
+evaluation-and-improvement
 edav-survey-and-analysis
 project-proposal
 project-group-cc5

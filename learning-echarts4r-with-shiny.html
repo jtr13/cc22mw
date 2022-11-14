@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Text data visualization by tidytext | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Xiaolin Sima and Yanni Chen As our community contribution, we created a cheatsheet about text data visualization by tidytext. cheatsheet can be found here  7.1 Motivation for the project and need...">
+<title>Chapter 12 Learning echarts4r with shiny | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Ethan Evans For my Community Contribution project, I created a Shiny web-app tutorial of an interactive visualization package called echarts4r. The link for my tutorial site can be found here. ...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Text data visualization by tidytext | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 12 Learning echarts4r with shiny | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Xiaolin Sima and Yanni Chen As our community contribution, we created a cheatsheet about text data visualization by tidytext. cheatsheet can be found here  7.1 Motivation for the project and need...">
+<meta property="og:description" content="Ethan Evans For my Community Contribution project, I created a Shiny web-app tutorial of an interactive visualization package called echarts4r. The link for my tutorial site can be found here. ...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Text data visualization by tidytext | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Xiaolin Sima and Yanni Chen As our community contribution, we created a cheatsheet about text data visualization by tidytext. cheatsheet can be found here  7.1 Motivation for the project and need...">
+<meta name="twitter:title" content="Chapter 12 Learning echarts4r with shiny | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Ethan Evans For my Community Contribution project, I created a Shiny web-app tutorial of an interactive visualization package called echarts4r. The link for my tutorial site can be found here. ...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -48,12 +48,12 @@
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
 <li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
-<li><a class="active" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
 <li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">9</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">10</span> Introduction of machine learning in R</a></li>
 <li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">11</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">12</span> Learning echarts4r with shiny</a></li>
+<li><a class="active" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">12</span> Learning echarts4r with shiny</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">13</span> EDAV Survey and Analysis</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="github-initial-setup.html"><span class="header-section-number">14</span> Github initial setup</a></li>
@@ -65,43 +65,50 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="text-data-visualization-by-tidytext" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="learning-echarts4r-with-shiny" class="section level1" number="12">
 <h1>
-<span class="header-section-number">7</span> Text data visualization by tidytext<a class="anchor" aria-label="anchor" href="#text-data-visualization-by-tidytext"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12</span> Learning echarts4r with shiny<a class="anchor" aria-label="anchor" href="#learning-echarts4r-with-shiny"><i class="fas fa-link"></i></a>
 </h1>
-<p>Xiaolin Sima and Yanni Chen</p>
-<p>As our community contribution, we created a cheatsheet about text data visualization by tidytext.
-<a href="resources/tidytext_cheatsheet/tidytext_cheatsheet.pdf">cheatsheet can be found here</a></p>
-<div id="motivation-for-the-project-and-need-it-addrressed" class="section level2" number="7.1">
+<p>Ethan Evans</p>
+<p>For my Community Contribution project, I created a Shiny web-app tutorial of an interactive visualization package called echarts4r.</p>
+<p>The link for my tutorial site can be found <a href="https://etevans.shinyapps.io/CommunityContribution/">here</a>.</p>
+<div id="motivations" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">7.1</span> Motivation for the project and need it addrressed<a class="anchor" aria-label="anchor" href="#motivation-for-the-project-and-need-it-addrressed"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> Motivations<a class="anchor" aria-label="anchor" href="#motivations"><i class="fas fa-link"></i></a>
 </h2>
-<p>Text mining and natural language processing is an essential but complicated field with a lot of tools and ways to analyze. However, we found tidytext as a useful door helping us to open the world of text mining. When we meet text data, using tidytext package can make many text analysis tasks easier and more effective. Much of the infrastructure needed for text mining with tidy data frames already exists in other widely used packages like dplyr, tidyr and ggplot2. In that way we created this cheatsheet, providing functions with examples to allow the use of tidytext package combined with existing infrastructure to do some basic text analysis works.</p>
+<p>I have explored this package at a basic level in my past R experiences but not enough to appreciate its true value. In the times I have used other interactive visualization packages like plotly and htmlwidgets, I have encountered far more coding syntax issues and plot formatting issues than when I have used echarts4r. I also just think echarts4r is the most visually appealing set of graphics I have worked with across any language or software. Thus, I felt like sharing this package with a class that has some new R users would be a great opportunity for both myself and my classmates.</p>
+<p>My tutorial addresses a few needs. First, using a Shiny web-based platform shows
+new R developers one of the ways you can deploy and view interactive visualizations. Second, this tutorial gives a simpler, more manageable overview of the package than other resources. While the documentation and vignettes online are sufficiently comprehensive, they assume a baseline level of R and visualization knowledge that my audience in our class might not have. My tutorial walks through how to build a plot from start to finish, draws comparisons to the familiar ggplot2, and then details a breadth of plots that we have learned about in class. Online echarts4r tutorials might be a bit overwhelming as well, so if viewers are interested after my baseline tutorial, they might go ahead and check out the vast resources online.</p>
 </div>
-<div id="own-evaluation-of-the-project" class="section level2" number="7.2">
+<div id="evaluation-and-improvement" class="section level2" number="12.2">
 <h2>
-<span class="header-section-number">7.2</span> Own evaluation of the project<a class="anchor" aria-label="anchor" href="#own-evaluation-of-the-project"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2</span> Evaluation and Improvement<a class="anchor" aria-label="anchor" href="#evaluation-and-improvement"><i class="fas fa-link"></i></a>
 </h2>
-<p>By creating the cheatsheet, we have not only learned how to use the tidytext package to do the text frequency and sentiment analysis, but also got familiar with how to combine the tidytext package with other data visualization tools, for example ggplot and wordcloud. The cheatsheet is generally useful if someone wants to visualize the text data analysis, specifically word frequency and sentiment analysis using R.</p>
-<p>However, There are also places we need to improve. Adding more example not limited to the wine tasting review might be one place to make the cheatsheet more generalized. Also, the deeper sentiment analysis regarding each category can be listed for further analysis if more room allowed.</p>
+<p>Creating this tutorial taught me a lot more about this package and reiterated how
+easy and intuitive it is to learn. Also, through my deep dive of research on the
+package before starting the project, I realized just how powerful and unique this
+package is. I had thought that everything the package had to offer was detailed
+in the main package website; however, because it is built from Apache ECharts, all methods and functions from that library directly translate to one in echarts4r. Overall, I thought that my tutorial covers the package well and gives
+the viewer enough knowledge to start exploring on their own.</p>
+<p>If I were to design a tutorial for echarts4r again, I would focus on depth rather than breadth. Overall, I could have spent more time giving a better explanation of the fundamentals of a plot and how to perform certain options on the plot, rather than show a dozen different types of plots. While both have their own value, learning the fundamentals of a plot seems better for a beginner tutorial.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></div>
-<div class="next"><a href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></div>
+<div class="prev"><a href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">11</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></div>
+<div class="next"><a href="edav-survey-and-analysis.html"><span class="header-section-number">13</span> EDAV Survey and Analysis</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#text-data-visualization-by-tidytext"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="nav-link" href="#motivation-for-the-project-and-need-it-addrressed"><span class="header-section-number">7.1</span> Motivation for the project and need it addrressed</a></li>
-<li><a class="nav-link" href="#own-evaluation-of-the-project"><span class="header-section-number">7.2</span> Own evaluation of the project</a></li>
+<li><a class="nav-link" href="#learning-echarts4r-with-shiny"><span class="header-section-number">12</span> Learning echarts4r with shiny</a></li>
+<li><a class="nav-link" href="#motivations"><span class="header-section-number">12.1</span> Motivations</a></li>
+<li><a class="nav-link" href="#evaluation-and-improvement"><span class="header-section-number">12.2</span> Evaluation and Improvement</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/tidytext_cheatsheet.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/tidytext_cheatsheet.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/learning_echarts4r.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/learning_echarts4r.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>
