@@ -1,3 +1,4 @@
+fig:unnamed-chunk-9
 welcome
 community-contribution
 important-logistics
@@ -76,6 +77,21 @@ sources-1
 learning-echarts4r-with-shiny
 motivations
 evaluation-and-improvement
+tutorial-for-wordcloud2-package
+motivation-1
+wordcloud2-fuction
+function-application
+data-scource
+color-and-backgroundcolor
+rotation
+specific-shape-inside-the-package
+self-defined-shape
+lettercloud-function
+function-application-1
+some-tips-for-using-word-clouds
+common-problems
+evaluation
+citation
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
