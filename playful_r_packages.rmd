@@ -1,0 +1,22 @@
+# Playful R Packages for Kids 
+
+Hannah Yang
+
+For my Community Contribution project, I wrote a blog summarizing a few interesting R packages that could motivate kids' interest. 
+
+The blog can be found [here] (https://hannahyaang.notion.site/Playful-R-packages-for-kids-ed278dd2f5cf4414a9202d037ed1df68)
+
+## Motivations
+
+In the recent decade, there's a wave among pre-school kids to learn programming skills. When it comes to the primary students education, it's more important to motivate their curiosity while learning. R language is a good entry level programming language due to its more straight-forward syntax and powerful capabilities in performing works. While during my research, I didn't find too many R tutorial dedicated to these younger generations. Thus, I decide to contribute to this field.   
+
+My blog address a few needs.
+Firstly, providing a centralized resource for kids to explore interesting packages. 
+Secondly, this blog brings up the attention of educating pre-school kids in programming. Coding is hard. Learning to code as a kid is even harder. We should collectively translate the tough and complex documentations to something creative and encouraging contents for kids to experiment and have fun.
+
+## Evaluation and Improvement
+Finding these interesting packages suprised me at the beginning of my research as I observed many people who utilize their knowledge to do such innovative things. When we mention programming and R language, we tend to think of workplace or academia that are serious and rigorous. Thus, it's not that often to see these vibrant packages that could be used to promote learning interest. It's also surprising to see so scarce R programming resources for kids. 
+I think the things that kids learn when they are at a younger age is really crucial, which even will impact their career decision. Thus, I believe it's definitely important to pay more attention to this field. Based on what I learned, there's no package that are designed for kids so far, a pakage that is easy to understand, easy installations, simple funcionalities, well-documented explanations in plain words, and encouring interaction messages. I think 
+such a package is really worth a thought and we all can contribute a little with our knowledge. 
+
+As for my blog, if I were to improve it with more time, I would summarize more packages that are available in the market and including more examples for each function since examples are the most helpful and straight-forward illustraion of complicated concepts. 
