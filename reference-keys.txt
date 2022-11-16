@@ -37,6 +37,7 @@ motivation
 interactivity
 customization-and-flexibility
 evaluation-and-future-improvement
+data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter

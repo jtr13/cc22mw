@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
+<title>Chapter 11 Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Kylie Brothers Motivation Throughout undergraduate, graduate, and professional careers, the two most widely used statistical languages are Python and R. Both of these languages have many...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 11 Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
+<meta property="og:description" content="Kylie Brothers Motivation Throughout undergraduate, graduate, and professional careers, the two most widely used statistical languages are Python and R. Both of these languages have many...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
+<meta name="twitter:title" content="Chapter 11 Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Kylie Brothers Motivation Throughout undergraduate, graduate, and professional careers, the two most widely used statistical languages are Python and R. Both of these languages have many...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -58,8 +58,8 @@
 <li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
 <li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
 <li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="active" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">11</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="active" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">11</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">12</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">13</span> Introduction of machine learning in R</a></li>
@@ -91,60 +91,33 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-for-plotly" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet" class="section level1" number="11">
 <h1>
-<span class="header-section-number">10</span> Cheatsheet for Plotly<a class="anchor" aria-label="anchor" href="#cheatsheet-for-plotly"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet<a class="anchor" aria-label="anchor" href="#data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet"><i class="fas fa-link"></i></a>
 </h1>
-<p>Taichen Zhou, Yichen Huang</p>
-<p>For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In this cheat sheet, we will provide the example of how to create basic charts, statistical charts, scientific charts etc. with Plotly.
-The link of the cheat sheet is <a href="https://yichuang25.github.io/Plotly-Cheatsheet/">here</a>.</p>
-<div id="motivation" class="section level2" number="10.1">
-<h2>
-<span class="header-section-number">10.1</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation"><i class="fas fa-link"></i></a>
-</h2>
-<p>Data visualization is a crucial part for data scientist. As the tech industry matures, the demand for better visualizations increases. Each type of visualization has its specialty, just like a line chart describes trend better than a bar plot. To display data in an extraordinary fashion, Plotly is insanely powerful at explaining and exploring data. And here is the reason why.</p>
-<div id="interactivity" class="section level3" number="10.1.1">
-<h3>
-<span class="header-section-number">10.1.1</span> Interactivity<a class="anchor" aria-label="anchor" href="#interactivity"><i class="fas fa-link"></i></a>
-</h3>
-<p>Plotly provides a feature that no other visualization library has — interactivity. Plotly allows users to further improve the visualization experience by using customizable interactive tools. When we visualize data with Plotly, we can add interactive features like buttons, sliders, and dropdowns to display different perspectives of graphs.</p>
-</div>
-<div id="customization-and-flexibility" class="section level3" number="10.1.2">
-<h3>
-<span class="header-section-number">10.1.2</span> Customization and Flexibility<a class="anchor" aria-label="anchor" href="#customization-and-flexibility"><i class="fas fa-link"></i></a>
-</h3>
-<p>Plotly is like a piece of paper, you can draw whatever you want on it. Compared to traditional visualization tools like ggplot2, Plotly allows full control over what is being plotted.</p>
-</div>
-</div>
-<div id="evaluation-and-future-improvement" class="section level2" number="10.2">
-<h2>
-<span class="header-section-number">10.2</span> Evaluation and Future Improvement<a class="anchor" aria-label="anchor" href="#evaluation-and-future-improvement"><i class="fas fa-link"></i></a>
-</h2>
-<p>By making this Plotly cheat sheet, we learned how to not only graph in which we have talked about in ggplot, but also graph used in Machine Learning for example, ROC and PCA visualization. Also, we got more familiar with writing in R markdown file.
-There are still things we can furtherly improve, like we can add more types of graphs in our cheat sheet for example, alluvia plot. Moreover, the introduction of parameters of functions to plot the graph can be talked about a little bit more.</p>
+<p>Kylie Brothers</p>
+<p>Motivation</p>
+<p>Throughout undergraduate, graduate, and professional careers, the two most widely used statistical languages are Python and R. Both of these languages have many similarities, but can have very differing syntaxes and coding implementations.</p>
+<p>For this project, it was important to create a cheat sheet so an individual can easily navigate both languages and transfer knowledge learned in this course to Python. Therefore, I created a cheat sheet for GGPlot2 in R, which we learned extensively in class, and MatPlotLib in Python, which has been the primary visualization package used in my undergraduate and graduate careers. Both of these packages have their own cheat sheets, respectively, but they are formatted differently and it can be hard to parse through both of them to gain the exact line(s) of code you need when making comparisons or migrating code to another programming language.</p>
+<p>Link to cheat sheet: <a href="https://github.com/kylie-brothers/GGPlot2-and-MatPlotLib-Cheat-Sheet/blob/main/GGPlot2%20and%20MatPlotLib%20Cheatsheet.pdf" class="uri">https://github.com/kylie-brothers/GGPlot2-and-MatPlotLib-Cheat-Sheet/blob/main/GGPlot2%20and%20MatPlotLib%20Cheatsheet.pdf</a></p>
+<p>If I Had More Time…</p>
+<p>If I had more time, or the next time I create a cheat sheet to navigate these packages, I would include faceting, subplots, and tick markers. In addition, I think it would be useful to also have a comparison for GGPlot2 (R) and Seaborn (Python); or MatPlotLib (Python) and Seaborn (Python). All three of these packages are heavily used for visualization and having an easy to access cheat sheet for all of these languages and packages would make it a lot quicker and easier to transverse any coding that is trying to be implemented.</p>
 
 </div>
-</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></div>
-<div class="next"><a href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">11</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></div>
+<div class="prev"><a href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></div>
+<div class="next"><a href="map-plots-with-highcharts.html"><span class="header-section-number">12</span> Map Plots with Highcharts</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cheatsheet-for-plotly"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li>
-<a class="nav-link" href="#motivation"><span class="header-section-number">10.1</span> Motivation</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#interactivity"><span class="header-section-number">10.1.1</span> Interactivity</a></li>
-<li><a class="nav-link" href="#customization-and-flexibility"><span class="header-section-number">10.1.2</span> Customization and Flexibility</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#evaluation-and-future-improvement"><span class="header-section-number">10.2</span> Evaluation and Future Improvement</a></li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet"><span class="header-section-number">11</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/plotly_cheatsheet.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/plotly_cheatsheet.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/ggplot2_matplotlib_cheatsheet.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/ggplot2_matplotlib_cheatsheet.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>
