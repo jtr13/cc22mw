@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<title>Chapter 11 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 11 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:title" content="Chapter 11 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta name="twitter:description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -56,24 +56,26 @@
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
 <li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
 <li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">9</span> Map Plots with Highcharts</a></li>
-<li><a class="active" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">10</span> Introduction of machine learning in R</a></li>
-<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">11</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">12</span> Learning echarts4r with shiny</a></li>
-<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">13</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
-<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">14</span> Introcuction to Dygraph for Financial Analysis</a></li>
-<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">15</span> Two Interesting R packages</a></li>
-<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">16</span> Tutorial for wordcloud2 package</a></li>
-<li><a class="" href="effcient-r.html"><span class="header-section-number">17</span> Effcient R</a></li>
-<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">18</span> Color vision deficiency</a></li>
-<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">19</span> Tutorials for ggfortify and autoplotly</a></li>
-<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">20</span> Becoming a better business analyst</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">10</span> Map Plots with Highcharts</a></li>
+<li><a class="active" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">11</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">12</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">13</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">14</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">15</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">16</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">17</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">18</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">19</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">20</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">21</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">22</span> Cheatsheet of ggstatsplot in R</a></li>
 <li class="book-part">Workshops</li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">21</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">23</span> EDAV Survey and Analysis</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">22</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">23</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">24</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">25</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -81,9 +83,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-of-machine-learning-in-r" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-of-machine-learning-in-r" class="section level1" number="11">
 <h1>
-<span class="header-section-number">10</span> Introduction of machine learning in R<a class="anchor" aria-label="anchor" href="#introduction-of-machine-learning-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> Introduction of machine learning in R<a class="anchor" aria-label="anchor" href="#introduction-of-machine-learning-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Feifan Li</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
@@ -99,15 +101,15 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://appliedpredictivemodeling.com/">AppliedPredictiveModeling</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">caTools</span><span class="op">)</span></span></code></pre></div>
-<div id="introduction" class="section level2" number="10.1">
+<div id="introduction" class="section level2" number="11.1">
 <h2>
-<span class="header-section-number">10.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
 </h2>
 <p>Nowadays, Machine learning is a very useful tool in a such data-driven world. Social applications like Facebook or WhatsApp made data very accessible, and the companies can use the data to do magic things like customer classification, fraud detection, decision making, or advertising strategy. The data helps companies to serve customers in a more effective way. And one of the most important tool to process and interpret the data is machine learning. It will help to reveal many hidden patterns behind those numbers. Hence, this tutorial will help you to get a basic understanding about how to use machine learning in R. Since R is very efficient in data processing and data visualization, machine learning can be incorporated in an easy way.</p>
 </div>
-<div id="required-packages" class="section level2" number="10.2">
+<div id="required-packages" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">10.2</span> Required Packages:<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2</span> Required Packages:<a class="anchor" aria-label="anchor" href="#required-packages"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this tutorial, we will need to import some packages. Some of them depend on the others.</p>
 <p>Packages required:<br>
@@ -124,13 +126,13 @@
 11.gridExtra<br>
 12.caTools</p>
 </div>
-<div id="data-preprocessing" class="section level2" number="10.3">
+<div id="data-preprocessing" class="section level2" number="11.3">
 <h2>
-<span class="header-section-number">10.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3</span> Data Preprocessing<a class="anchor" aria-label="anchor" href="#data-preprocessing"><i class="fas fa-link"></i></a>
 </h2>
-<div id="load-dataset" class="section level3" number="10.3.1">
+<div id="load-dataset" class="section level3" number="11.3.1">
 <h3>
-<span class="header-section-number">10.3.1</span> Load DataSet<a class="anchor" aria-label="anchor" href="#load-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.1</span> Load DataSet<a class="anchor" aria-label="anchor" href="#load-dataset"><i class="fas fa-link"></i></a>
 </h3>
 <p>For this tutorial, we will just import the built-in dataset in the R library, iris. There are several different ways to read dataset in R. First of all, if the file is a csv file, we can use the “read_csv” to read in. If the file is a R file, we can use the “load” command to import dataset. And if the file is a txt file, we can use “read.delim”: by specifying the separator, it can break the lines into chunks.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
@@ -140,9 +142,9 @@
 <span><span class="co">#set header</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sepal.Length"</span>,<span class="st">"Sepal.Width"</span>,<span class="st">"Petal.Length"</span>,<span class="st">"Petal.Width"</span>,<span class="st">"Species"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="split-the-dataset" class="section level3" number="10.3.2">
+<div id="split-the-dataset" class="section level3" number="11.3.2">
 <h3>
-<span class="header-section-number">10.3.2</span> Split the Dataset<a class="anchor" aria-label="anchor" href="#split-the-dataset"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.2</span> Split the Dataset<a class="anchor" aria-label="anchor" href="#split-the-dataset"><i class="fas fa-link"></i></a>
 </h3>
 <p>Before we preprocess the data, we need to split the dataset into train set and test set. For the train set, we will train our model on this set and test model’s accuracy on the test set. This split ensures the independency between the train and test stes.</p>
 <p>For the ratio, we usually assume 80% versus 20%, which means 80% of the data are in training set, while the remaining 20% is in the test set. We can adjust this ratio based on actual dataset. However, if we set this ratio too large, this will assign most of the dataset into train set, which leaves little data for tests. On the other hand, if this ratio is too low, the model cannot receive sufficient training, influencing its accuracy.</p>
@@ -161,9 +163,9 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">test_set</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 30</code></pre>
 </div>
-<div id="scaling" class="section level3" number="10.3.3">
+<div id="scaling" class="section level3" number="11.3.3">
 <h3>
-<span class="header-section-number">10.3.3</span> Scaling<a class="anchor" aria-label="anchor" href="#scaling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3</span> Scaling<a class="anchor" aria-label="anchor" href="#scaling"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are two different ways to adjust the scale of data: Scaling and Centering. For scaling, it basically calculates the Z score of each datapoint, and the formula is <span class="math inline">\(X-u/\sigma\)</span>. Moreover, another way is centering, which just subtracts the data with mean.</p>
 <p>From the graph below, we can see that standardizing the datapoints shifts the mean to 0 but it did not change the overall distribution</p>
@@ -182,9 +184,9 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Distribution of datapoint after scailing"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
-<div id="missing-value" class="section level3" number="10.3.4">
+<div id="missing-value" class="section level3" number="11.3.4">
 <h3>
-<span class="header-section-number">10.3.4</span> Missing Value<a class="anchor" aria-label="anchor" href="#missing-value"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.4</span> Missing Value<a class="anchor" aria-label="anchor" href="#missing-value"><i class="fas fa-link"></i></a>
 </h3>
 <p>In most of the datasets, there usually contains some missing values. In this case, we need to impute them with values, and there are several ways to achieve this goal, including mean, KNN, Random Forest, or special symbols. In this tutorial, I will briefly discuss the most common two methods: KNN and mean.</p>
 <p><strong>Mean</strong>
@@ -192,9 +194,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <p><strong>KNN</strong></p>
 <p>Another common way is to use K nearest neighbor. To be specific, for a datapoint, we can compute its K nearest neighbor. And using the average of neighbors’ values to fill in missing positions. One advantage of this method is that the accuracy is usually higher than filing with mean. However, KNN imputation will take much longer time to compute results, especially in the datasets with high dimensions, and this is called “the curse of dimensions”.</p>
 </div>
-<div id="dimension-reduction" class="section level3" number="10.3.5">
+<div id="dimension-reduction" class="section level3" number="11.3.5">
 <h3>
-<span class="header-section-number">10.3.5</span> Dimension Reduction<a class="anchor" aria-label="anchor" href="#dimension-reduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5</span> Dimension Reduction<a class="anchor" aria-label="anchor" href="#dimension-reduction"><i class="fas fa-link"></i></a>
 </h3>
 <p>For some datasets, they include over 50 or 100 features, and directly training model on the original dataset will consume huge amount of time. Therefore, we need to reduce the dimensions of this dataset to make our training efficient. Common methods like PCA (Principle Component Analysis) or LDA (Linear Discriminant Analysis) will be useful in dimension reductions. In this tutorial, I will talk about PCA.</p>
 <p>PCA, Principle Component Analysis, is an effective method of reducing the dimensions. The main mechanism of PCA is that it keeps the data with the largest variance, which preserves most of the information.</p>
@@ -215,9 +217,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 ## Petal.Length  0.5801762 0.02761653  0.1404367 -0.8018170
 ## Petal.Width   0.5632818 0.06107341  0.6380376  0.5214323</code></pre>
 </div>
-<div id="feature-selection" class="section level3" number="10.3.6">
+<div id="feature-selection" class="section level3" number="11.3.6">
 <h3>
-<span class="header-section-number">10.3.6</span> Feature Selection<a class="anchor" aria-label="anchor" href="#feature-selection"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.6</span> Feature Selection<a class="anchor" aria-label="anchor" href="#feature-selection"><i class="fas fa-link"></i></a>
 </h3>
 <p>Besides PCA, another way to reduce dimension is feature selection. Specifically, we can use some metrics to filter out unimportant features, keeping the important ones. And the most common metric that we use is Pearson Coefficient. By calculating pearson coefficient, we can measure how strong the dependent variable is related to the independent variable. Then, we can drop the features with low coefficient.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
@@ -232,16 +234,16 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Width</span>,<span class="va">target</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.8179411</code></pre>
 </div>
-<div id="categorical-features" class="section level3" number="10.3.7">
+<div id="categorical-features" class="section level3" number="11.3.7">
 <h3>
-<span class="header-section-number">10.3.7</span> Categorical Features<a class="anchor" aria-label="anchor" href="#categorical-features"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.7</span> Categorical Features<a class="anchor" aria-label="anchor" href="#categorical-features"><i class="fas fa-link"></i></a>
 </h3>
 <p>For categorical features, the machine learning models cannot directly process them like numerical features. In this case, we need to convert categorical features into numerical ones. One method is called One hot Encoding. For example, it we have strings “red”,“green”, and “yellow”. Then, “red” can be represented as 100, green is 010, and yellow is 001. Even though one hot encoding can convert categorical features, it has an obvious disadvantage: it will significantly increase the dimensions of the dataset, which will slow the efficiency of our model.</p>
 </div>
 </div>
-<div id="exploratory-data-analysis" class="section level2" number="10.4">
+<div id="exploratory-data-analysis" class="section level2" number="11.4">
 <h2>
-<span class="header-section-number">10.4</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we train and fit our model on the dataset, we can firstly do some exploratory analysis to visualize the dataset in a clear way.</p>
 <p>First of all, we can use box-plot to display the overall distribution of each feature and how it is related to the target (Species). From the graph, we can see that the species “Iris-Virginica” has the highest value in nearly all four features, while the “Iris-Setosa” has the lowest.</p>
@@ -296,9 +298,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">g1</span>,<span class="va">g2</span>,<span class="va">g3</span>,<span class="va">g4</span>,<span class="va">g5</span>,<span class="va">g6</span>,nrow<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
-<div id="training-model" class="section level2" number="10.5">
+<div id="training-model" class="section level2" number="11.5">
 <h2>
-<span class="header-section-number">10.5</span> Training Model<a class="anchor" aria-label="anchor" href="#training-model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5</span> Training Model<a class="anchor" aria-label="anchor" href="#training-model"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the previous part, we can get a basic understanding about the overall patterns of the dataset. And in this section, we will start to train and fit some machine learning models on it. First of all, to train and evaluate our model in an efficient way, we can use K-fold cross validation. The general procedure is that we firstly shuffle the data in a random way and split the data into several groups. And for each iteration, we test our model on one group, and train on the remaining groups. The graph below will illustrate this process in a clear way.</p>
 <div class="figure">
@@ -308,9 +310,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <code class="sourceCode R"><span><span class="va">r_cv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/caret/man/trainControl.html">trainControl</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"repeatedcv"</span>, </span>
 <span>                        number<span class="op">=</span><span class="fl">10</span>,</span>
 <span>                        repeats<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<div id="knn" class="section level3" number="10.5.1">
+<div id="knn" class="section level3" number="11.5.1">
 <h3>
-<span class="header-section-number">10.5.1</span> KNN<a class="anchor" aria-label="anchor" href="#knn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.1</span> KNN<a class="anchor" aria-label="anchor" href="#knn"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the most intuitive machine learning model is KNN, K nearest neighbor. The idea is that we firstly compute the closest K neighbors; then, we can use majority voting to derive our result. For example, if k=5, and three out of the five neighbors have the label of 1, while the other two have label of 0, our result is 1. One advantage of this algorithm is that it has no training process. For small datasets, we can complete the prediction in a short amount of time. However, when the dimension of dataset increases, this algorithm will suffer from the curse of dimension</p>
 <div class="figure">
@@ -335,9 +337,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 2. Require feature scaling. Inappropriate scales will significantly influence its accuracy<br>
 3. Suffer from curse of dimensions. When the data has large number of features, the algorithm does not work well.</p>
 </div>
-<div id="random-forest" class="section level3" number="10.5.2">
+<div id="random-forest" class="section level3" number="11.5.2">
 <h3>
-<span class="header-section-number">10.5.2</span> Random Forest<a class="anchor" aria-label="anchor" href="#random-forest"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.2</span> Random Forest<a class="anchor" aria-label="anchor" href="#random-forest"><i class="fas fa-link"></i></a>
 </h3>
 <p>Another common machine learning model is Random Forest. It utilizes the idea of bagging, which bootstraps samples from the dataset. And for each iteration, we train a decision tree based on the samples provided. For the last step, we can assemble all these different decision trees together. And the final results will be the average output of all trees. The accuracy of the random Forest is much better than a single decision tree.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
@@ -358,9 +360,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 2. Compared to normal decision tree, it has low interpretability. It looks like a black box, cannot visualize the process easily.<br>
 3. Still likely to overfit</p>
 </div>
-<div id="svm" class="section level3" number="10.5.3">
+<div id="svm" class="section level3" number="11.5.3">
 <h3>
-<span class="header-section-number">10.5.3</span> SVM<a class="anchor" aria-label="anchor" href="#svm"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.3</span> SVM<a class="anchor" aria-label="anchor" href="#svm"><i class="fas fa-link"></i></a>
 </h3>
 <p>A powerful machine learning model is called SVM, Support Vector Machine. The idea behind this algorithm is that it tries to find a hyperplane that can separate two classes in a way that maximize the margin, which can be regarded as the optimal classification. Another key feature of SVM is called kernel trick. It will allows SVM to deal with the datasets that have high dimensions. The kernel function can compute the inner product in the original space, so we do not have to project them into high dimensions, which saves huge amounts of computation. This trick also helps us to deal with non-linear problems: for the data that are not linear-separable in low dimension is separable in higher dimension.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
@@ -383,9 +385,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 2. low Interpretability, like a black box<br>
 3. There are many parameters that we need to tune, hard to choose the best kernel function.</p>
 </div>
-<div id="gradient-boosting" class="section level3" number="10.5.4">
+<div id="gradient-boosting" class="section level3" number="11.5.4">
 <h3>
-<span class="header-section-number">10.5.4</span> Gradient Boosting<a class="anchor" aria-label="anchor" href="#gradient-boosting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.4</span> Gradient Boosting<a class="anchor" aria-label="anchor" href="#gradient-boosting"><i class="fas fa-link"></i></a>
 </h3>
 <p>Gradient boosting receives more and more attention in recent years, especially XGBoost. This machine learning model is widely used in many competitions and projects. The main idea of gradient boosting is to train a series of weak learning. Unlike bagging, the generation of this model can only be completed after the last model is fully trained. At each iteration, the weak learner will be trained to fit the residual. And after several iterations, we add all these weak learners together, constituting a strong learner. There are many variations of Gradient Boosting like AdaBoost, XGBoost, or LightGBM.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
@@ -408,9 +410,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 2. low Interpretability, like a black box<br>
 3. Too many parameters that we need to tune, taking very long time to find the best set of parameter.</p>
 </div>
-<div id="naive-bayes" class="section level3" number="10.5.5">
+<div id="naive-bayes" class="section level3" number="11.5.5">
 <h3>
-<span class="header-section-number">10.5.5</span> Naive Bayes<a class="anchor" aria-label="anchor" href="#naive-bayes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.5</span> Naive Bayes<a class="anchor" aria-label="anchor" href="#naive-bayes"><i class="fas fa-link"></i></a>
 </h3>
 <p>Naive Bayes is one of the most famous algorithm in the family of supervised learning. This algorithm is founded based on Bayes’ theorem, the theorem is showed in picture attached below. And there are many types of Naive Bayes Classifier, such as Bernoulli Naive Bayes, Gaussian Naive Bayes, or Laplace Naive Bayes. We need take a closer look at the actual dataset in order to determine which type we should use.</p>
 <div class="figure">
@@ -455,9 +457,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 2. not accurate in many cases<br>
 3. Hard to determine which type of Naive Bayes that we should use to maximize the accuracy.</p>
 </div>
-<div id="compare-models" class="section level3" number="10.5.6">
+<div id="compare-models" class="section level3" number="11.5.6">
 <h3>
-<span class="header-section-number">10.5.6</span> Compare Models<a class="anchor" aria-label="anchor" href="#compare-models"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.6</span> Compare Models<a class="anchor" aria-label="anchor" href="#compare-models"><i class="fas fa-link"></i></a>
 </h3>
 <p>We can compare all these five models together</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
@@ -488,23 +490,23 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <p>From the statistic above, we can see that KNN has the best performance for our dataset.</p>
 </div>
 </div>
-<div id="metric-evaluation" class="section level2" number="10.6">
+<div id="metric-evaluation" class="section level2" number="11.6">
 <h2>
-<span class="header-section-number">10.6</span> Metric &amp; Evaluation<a class="anchor" aria-label="anchor" href="#metric-evaluation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.6</span> Metric &amp; Evaluation<a class="anchor" aria-label="anchor" href="#metric-evaluation"><i class="fas fa-link"></i></a>
 </h2>
 <p>In order to evaluate the performance of our machine learning models, we need to use several metrics. And for different kinds of problems, we should adopt different metrics. For example, for regression problems, we can use R-squared to measure the strength of regression. For classification problems, we can use confusion matrix or ROC curve. In this section, we will talk about these metrics in details</p>
-<div id="regression" class="section level3" number="10.6.1">
+<div id="regression" class="section level3" number="11.6.1">
 <h3>
-<span class="header-section-number">10.6.1</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.6.1</span> Regression<a class="anchor" aria-label="anchor" href="#regression"><i class="fas fa-link"></i></a>
 </h3>
 <p>For regression problems, the most common metric that we use is R-squared. <span class="math inline">\(R^2\)</span> measures the proportion of the dependent variable that is explained by the independent variable. The range of <span class="math inline">\(R^2\)</span> is between 0 and 1. If the value is 1.0, that means every datapoint is perfectly fitted; however, if the value 0.0, that means no datapoint is fitted correctly. One problem with this metric is that as the number of variables increases, the <span class="math inline">\(R^2\)</span> increases as well. Hence, in order to negate this effect, Adjusted R-Squared is introduced, which is divided by the degree of freedom.</p>
 <div class="figure">
 <img src="resources/machine_learning_tutorial/R-squared.jpg" alt=""><p class="caption"><strong>R-Squared</strong></p>
 </div>
 </div>
-<div id="classifcation" class="section level3" number="10.6.2">
+<div id="classifcation" class="section level3" number="11.6.2">
 <h3>
-<span class="header-section-number">10.6.2</span> Classifcation<a class="anchor" aria-label="anchor" href="#classifcation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.6.2</span> Classifcation<a class="anchor" aria-label="anchor" href="#classifcation"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Confusion Matrix</strong><br>
 For classification problems, confusion matrix can be regarded as an intuitive way to visualize the performance. In confusion matrix, the correct results are True Positive (TP) and TN (True Negative), while the incorrect ones are False Negative (FN) and False Positive (FP). Based on these four values, we can compute precision and recall. Precision will measure how accurately that our model predict, and recall will indicate whether all relevant cases are retrieved. In reality, precision and recall are usually negative related. In this case, F1 score is introduced, which combines both precision and recall, a very representative metric of model’s performance.</p>
@@ -551,15 +553,15 @@ Another nice metric that we often use is ROC curve. This graph is drawn on the b
 </div>
 </div>
 </div>
-<div id="conclusion" class="section level2" number="10.7">
+<div id="conclusion" class="section level2" number="11.7">
 <h2>
-<span class="header-section-number">10.7</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.7</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
 </h2>
 <p>In this tutorial, we can grasp a basic understanding about the general procedures of machine learning model training. First of all, before we start to train the model, we should preprocess the data, which will significantly improve the efficiency of model training. For numerical features, we can use standardization or centering to adjust the scale, which prevents the data distortions. For categorical features, we may use one-hot encoding to convert categorical features into numerical ones. Then, to reduce the dimension of the dataset, we can use PCA to transform the data in a more simplified form. Furthermore, the second step is EDA, which gives audiences an insight about the overall patterns of the data that we are going to train. This part can be easily done by using R because R language is very suitable for data visualization and data analysis. For the fourth step, we will start to train our machine learning model. There are various types of machine learning model that we choose: KNN, Random Forest, SVM, Gradient Boost, Naive Bayes, etc. As for which one we should choose, it depends on the actual dataset and user’s experience. For the last step, in order to assess the performance of model, we need to use several metrics. For regression, we can use R-squared or Adjusted R-squared; for classification, we can use confusion matrix or ROC curve. In general, this tutorial is only an introduction to machine learning, there are many other complicated algorithms or data processing procedures, leaving space for users to explore.</p>
 </div>
-<div id="sources" class="section level2" number="10.8">
+<div id="sources" class="section level2" number="11.8">
 <h2>
-<span class="header-section-number">10.8</span> Sources<a class="anchor" aria-label="anchor" href="#sources"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.8</span> Sources<a class="anchor" aria-label="anchor" href="#sources"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><a href="https://www.rdocumentation.org/packages/caret/versions/6.0-92" class="uri">https://www.rdocumentation.org/packages/caret/versions/6.0-92</a></li>
@@ -569,44 +571,44 @@ Another nice metric that we often use is ROC curve. This graph is drawn on the b
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="map-plots-with-highcharts.html"><span class="header-section-number">9</span> Map Plots with Highcharts</a></div>
-<div class="next"><a href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">11</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></div>
+<div class="prev"><a href="map-plots-with-highcharts.html"><span class="header-section-number">10</span> Map Plots with Highcharts</a></div>
+<div class="next"><a href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">12</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#introduction-of-machine-learning-in-r"><span class="header-section-number">10</span> Introduction of machine learning in R</a></li>
-<li><a class="nav-link" href="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#required-packages"><span class="header-section-number">10.2</span> Required Packages:</a></li>
+<li><a class="nav-link" href="#introduction-of-machine-learning-in-r"><span class="header-section-number">11</span> Introduction of machine learning in R</a></li>
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#required-packages"><span class="header-section-number">11.2</span> Required Packages:</a></li>
 <li>
-<a class="nav-link" href="#data-preprocessing"><span class="header-section-number">10.3</span> Data Preprocessing</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-dataset"><span class="header-section-number">10.3.1</span> Load DataSet</a></li>
-<li><a class="nav-link" href="#split-the-dataset"><span class="header-section-number">10.3.2</span> Split the Dataset</a></li>
-<li><a class="nav-link" href="#scaling"><span class="header-section-number">10.3.3</span> Scaling</a></li>
-<li><a class="nav-link" href="#missing-value"><span class="header-section-number">10.3.4</span> Missing Value</a></li>
-<li><a class="nav-link" href="#dimension-reduction"><span class="header-section-number">10.3.5</span> Dimension Reduction</a></li>
-<li><a class="nav-link" href="#feature-selection"><span class="header-section-number">10.3.6</span> Feature Selection</a></li>
-<li><a class="nav-link" href="#categorical-features"><span class="header-section-number">10.3.7</span> Categorical Features</a></li>
+<a class="nav-link" href="#data-preprocessing"><span class="header-section-number">11.3</span> Data Preprocessing</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-dataset"><span class="header-section-number">11.3.1</span> Load DataSet</a></li>
+<li><a class="nav-link" href="#split-the-dataset"><span class="header-section-number">11.3.2</span> Split the Dataset</a></li>
+<li><a class="nav-link" href="#scaling"><span class="header-section-number">11.3.3</span> Scaling</a></li>
+<li><a class="nav-link" href="#missing-value"><span class="header-section-number">11.3.4</span> Missing Value</a></li>
+<li><a class="nav-link" href="#dimension-reduction"><span class="header-section-number">11.3.5</span> Dimension Reduction</a></li>
+<li><a class="nav-link" href="#feature-selection"><span class="header-section-number">11.3.6</span> Feature Selection</a></li>
+<li><a class="nav-link" href="#categorical-features"><span class="header-section-number">11.3.7</span> Categorical Features</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#exploratory-data-analysis"><span class="header-section-number">10.4</span> Exploratory Data Analysis</a></li>
+<li><a class="nav-link" href="#exploratory-data-analysis"><span class="header-section-number">11.4</span> Exploratory Data Analysis</a></li>
 <li>
-<a class="nav-link" href="#training-model"><span class="header-section-number">10.5</span> Training Model</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#knn"><span class="header-section-number">10.5.1</span> KNN</a></li>
-<li><a class="nav-link" href="#random-forest"><span class="header-section-number">10.5.2</span> Random Forest</a></li>
-<li><a class="nav-link" href="#svm"><span class="header-section-number">10.5.3</span> SVM</a></li>
-<li><a class="nav-link" href="#gradient-boosting"><span class="header-section-number">10.5.4</span> Gradient Boosting</a></li>
-<li><a class="nav-link" href="#naive-bayes"><span class="header-section-number">10.5.5</span> Naive Bayes</a></li>
-<li><a class="nav-link" href="#compare-models"><span class="header-section-number">10.5.6</span> Compare Models</a></li>
+<a class="nav-link" href="#training-model"><span class="header-section-number">11.5</span> Training Model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#knn"><span class="header-section-number">11.5.1</span> KNN</a></li>
+<li><a class="nav-link" href="#random-forest"><span class="header-section-number">11.5.2</span> Random Forest</a></li>
+<li><a class="nav-link" href="#svm"><span class="header-section-number">11.5.3</span> SVM</a></li>
+<li><a class="nav-link" href="#gradient-boosting"><span class="header-section-number">11.5.4</span> Gradient Boosting</a></li>
+<li><a class="nav-link" href="#naive-bayes"><span class="header-section-number">11.5.5</span> Naive Bayes</a></li>
+<li><a class="nav-link" href="#compare-models"><span class="header-section-number">11.5.6</span> Compare Models</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#metric-evaluation"><span class="header-section-number">10.6</span> Metric &amp; Evaluation</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#regression"><span class="header-section-number">10.6.1</span> Regression</a></li>
-<li><a class="nav-link" href="#classifcation"><span class="header-section-number">10.6.2</span> Classifcation</a></li>
+<a class="nav-link" href="#metric-evaluation"><span class="header-section-number">11.6</span> Metric &amp; Evaluation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#regression"><span class="header-section-number">11.6.1</span> Regression</a></li>
+<li><a class="nav-link" href="#classifcation"><span class="header-section-number">11.6.2</span> Classifcation</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#conclusion"><span class="header-section-number">10.7</span> Conclusion</a></li>
-<li><a class="nav-link" href="#sources"><span class="header-section-number">10.8</span> Sources</a></li>
+<li><a class="nav-link" href="#conclusion"><span class="header-section-number">11.7</span> Conclusion</a></li>
+<li><a class="nav-link" href="#sources"><span class="header-section-number">11.8</span> Sources</a></li>
 </ul>
 
       <div class="book-extra">

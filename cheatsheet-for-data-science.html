@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<title>Chapter 9 Cheatsheet for data science | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Liri Chen and Shuo Liu  9.1 What We Learned For community contribution project, we made a data science cheatsheet, which obtained an overall review of data science knowledge structure,...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 9 Cheatsheet for data science | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta property="og:description" content="Liri Chen and Shuo Liu  9.1 What We Learned For community contribution project, we made a data science cheatsheet, which obtained an overall review of data science knowledge structure,...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta name="twitter:title" content="Chapter 9 Cheatsheet for data science | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Liri Chen and Shuo Liu  9.1 What We Learned For community contribution project, we made a data science cheatsheet, which obtained an overall review of data science knowledge structure,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,8 +55,8 @@
 <li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
 <li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="active" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="active" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">10</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">11</span> Introduction of machine learning in R</a></li>
@@ -83,37 +83,52 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-for-data-science" class="section level1" number="9">
 <h1>
-<span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)<a class="anchor" aria-label="anchor" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Cheatsheet for data science<a class="anchor" aria-label="anchor" href="#cheatsheet-for-data-science"><i class="fas fa-link"></i></a>
 </h1>
-<p>Xinhao Dai</p>
-<div id="introductions-of-ggally" class="section level3" number="8.0.1">
-<h3>
-<span class="header-section-number">8.0.1</span> Introductions of GGally<a class="anchor" aria-label="anchor" href="#introductions-of-ggally"><i class="fas fa-link"></i></a>
-</h3>
-<p>ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the difficulties of combining different geoms. To enable novices to quickly start using the packet, I create a cheatsheet for GGally.</p>
-<p>This cheatsheet includes several essential and efficient plots for explorary data analysis and visualization. First, it’s the ggcoef_model function, it helps to visualize the coefficients of a fitted model. It’s more intuitive and clear. Moreover, it enables us to compare several models in a plot so we can choose the best model among them. Second, it’s the ggpairs() function, which shows the relationships between every two variables in a dataset. It helps us to indentify what’s the relevent variable to a response variable. Moreover, the cheatsheet display several high-level plots that can be used in ggpairs in order to help users have a more clear intuiation.</p>
-<p>In this project, I have learned how to do a quickly read through the documents of a packet and distinguish which functions are the most essential and helpful ones. Moreover, I have learned how to create a tidy and beautiful cheatsheet for the users. And if I have another chance, I will try to create my own templeate rather than use the rstudio templeate.</p>
-<p>You can find a pdf version of the cheetsheet on <a href="https://github.com/Russell-A/cheatsheet-for-ggally/blob/main/cheatsheet_for_ggally.pdf">https://github.com/Russell-A/cheatsheet-for-ggally</a>. Below is an enclosed image of the cheatsheet.</p>
-<div class="inline-figure"><img src="resources/cheatsheet_GGally_plots/cheatsheet_for_ggally-page-001.jpg" width="80%" style="display: block; margin: auto;"></div>
-<p>Reference: <a href="https://ggobi.github.io/ggally/index.html">https://ggobi.github.io/ggally/index.html</a>.</p>
+<p>Liri Chen and Shuo Liu</p>
+<div id="what-we-learned" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> What We Learned<a class="anchor" aria-label="anchor" href="#what-we-learned"><i class="fas fa-link"></i></a>
+</h2>
+<p>For community contribution project, we made a data science cheatsheet, which obtained an overall review of data science knowledge structure, applications, and opportunities. Our motivation for making this cheatsheet is that this cheatsheet will help us prepare for data science job interviews, as well as help us studying for finals of several courses. The cheatsheet includes knowledge in areas of probability and statistics, hypothesis testings and machine learning models. In statistics section, we included probability functions and distributions. In hypothesis testing section, we included knowledge of sample and population distribution, as well as ways of using sample statistics and confidence interval to check null hypothesis rejection. In the machine learning section, we incorporate models of linear regression, logistic regression, decision tree, random forest and KNN. We also covered knowledge of model evaluation, dimension reduction and neural networks.</p>
+<p>From this community contribution project, we organized and reviewed data science concepts and knowledge. Our future work includes expanding the existing knowledge points, adding more detailed descriptions, and creating front-end display pages, such as Github pages.</p>
+</div>
+<div id="link" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Link<a class="anchor" aria-label="anchor" href="#link"><i class="fas fa-link"></i></a>
+</h2>
+<p>Link to the cheatsheet:
+<span target="_blank"><a href="https://drive.google.com/file/d/1gfHUbs1YxJ-_hpP4-jVsmw772312Cor4/view?usp=share_link" class="uri">https://drive.google.com/file/d/1gfHUbs1YxJ-_hpP4-jVsmw772312Cor4/view?usp=share_link</a></span></p>
+</div>
+<div id="reference" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Reference<a class="anchor" aria-label="anchor" href="#reference"><i class="fas fa-link"></i></a>
+</h2>
+<p>This cheatsheet cites the template and some contents by Aaron Wang: <span target="_blank"><a href="https://github.com/aaronwangy/Data-Science-Cheatsheet" class="uri">https://github.com/aaronwangy/Data-Science-Cheatsheet</a></span></p>
 
 </div>
 </div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></div>
-<div class="next"><a href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></div>
+<div class="prev"><a href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></div>
+<div class="next"><a href="map-plots-with-highcharts.html"><span class="header-section-number">10</span> Map Plots with Highcharts</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#introductions-of-ggally"><span class="header-section-number">8.0.1</span> Introductions of GGally</a></li></ul>
-</li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cheatsheet-for-data-science"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="nav-link" href="#what-we-learned"><span class="header-section-number">9.1</span> What We Learned</a></li>
+<li><a class="nav-link" href="#link"><span class="header-section-number">9.2</span> Link</a></li>
+<li><a class="nav-link" href="#reference"><span class="header-section-number">9.3</span> Reference</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/cheatsheet_of_ggally_plots.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/cheatsheet_of_ggally_plots.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/cheatsheet_datascience.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/cheatsheet_datascience.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>

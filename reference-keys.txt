@@ -28,6 +28,10 @@ motivation-for-the-project-and-need-it-addrressed
 own-evaluation-of-the-project
 cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs
 introductions-of-ggally
+cheatsheet-for-data-science
+what-we-learned
+link
+reference
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter
@@ -153,6 +157,7 @@ splines
 extensibility-and-composability
 references-1
 becoming-a-better-business-analyst
+cheatsheet-of-ggstatsplot-in-r
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
