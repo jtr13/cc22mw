@@ -1,5 +1,3 @@
-# (PART) Workshops {-}
-
 # EDAV Survey and Analysis
 
 Varalika Mahajan and Vrinda Bhat
