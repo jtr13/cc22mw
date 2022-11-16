@@ -221,6 +221,7 @@ some-intersesting-examples
 animations-with-plotly
 self-evaluation
 reference-1
+machine-learning-interview-mindmap-and-commonly-asked-questions
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
