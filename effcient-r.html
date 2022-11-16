@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 17 Effcient R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Ruochen Zhang, Weipeng Li  17.1 Introduction R is one of the world’s most widely used statistics programming languages, which can be used for statistical analysis, graphics representation, and...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 17 Effcient R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Ruochen Zhang, Weipeng Li  17.1 Introduction R is one of the world’s most widely used statistics programming languages, which can be used for statistical analysis, graphics representation, and...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 17 Effcient R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Ruochen Zhang, Weipeng Li  17.1 Introduction R is one of the world’s most widely used statistics programming languages, which can be used for statistical analysis, graphics representation, and...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/proj4js-2.3.15/proj4.js"></script><link href="libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="libs/highcharts-9.3.1/highcharts.js"></script><script src="libs/highcharts-9.3.1/highcharts-3d.js"></script><script src="libs/highcharts-9.3.1/highcharts-more.js"></script><script src="libs/highcharts-9.3.1/modules/stock.js"></script><script src="libs/highcharts-9.3.1/modules/map.js"></script><script src="libs/highcharts-9.3.1/modules/data.js"></script><script src="libs/highcharts-9.3.1/modules/exporting.js"></script><script src="libs/highcharts-9.3.1/modules/offline-exporting.js"></script><script src="libs/highcharts-9.3.1/modules/drilldown.js"></script><script src="libs/highcharts-9.3.1/modules/item-series.js"></script><script src="libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script><script src="libs/highcharts-9.3.1/modules/annotations.js"></script><script src="libs/highcharts-9.3.1/modules/export-data.js"></script><script src="libs/highcharts-9.3.1/modules/funnel.js"></script><script src="libs/highcharts-9.3.1/modules/heatmap.js"></script><script src="libs/highcharts-9.3.1/modules/treemap.js"></script><script src="libs/highcharts-9.3.1/modules/sankey.js"></script><script src="libs/highcharts-9.3.1/modules/dependency-wheel.js"></script><script src="libs/highcharts-9.3.1/modules/organization.js"></script><script src="libs/highcharts-9.3.1/modules/solid-gauge.js"></script><script src="libs/highcharts-9.3.1/modules/streamgraph.js"></script><script src="libs/highcharts-9.3.1/modules/sunburst.js"></script><script src="libs/highcharts-9.3.1/modules/vector.js"></script><script src="libs/highcharts-9.3.1/modules/wordcloud.js"></script><script src="libs/highcharts-9.3.1/modules/xrange.js"></script><script src="libs/highcharts-9.3.1/modules/tilemap.js"></script><script src="libs/highcharts-9.3.1/modules/venn.js"></script><script src="libs/highcharts-9.3.1/modules/gantt.js"></script><script src="libs/highcharts-9.3.1/modules/timeline.js"></script><script src="libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script><script src="libs/highcharts-9.3.1/modules/bullet.js"></script><script src="libs/highcharts-9.3.1/modules/coloraxis.js"></script><script src="libs/highcharts-9.3.1/modules/dumbbell.js"></script><script src="libs/highcharts-9.3.1/modules/lollipop.js"></script><script src="libs/highcharts-9.3.1/modules/series-label.js"></script><script src="libs/highcharts-9.3.1/plugins/motion.js"></script><script src="libs/highcharts-9.3.1/custom/reset.js"></script><script src="libs/highcharts-9.3.1/modules/boost.js"></script><script src="libs/highchart-binding-0.9.4/highchart.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/Dygraph.Plotters.CandlestickPlotter-1.0/candlestick.js"></script><script src="libs/d3-3.5.6/d3.min.js"></script><link href="libs/profvis-0.3.6.9000/profvis.css" rel="stylesheet">
+<script src="libs/profvis-0.3.6.9000/profvis.js"></script><script src="libs/profvis-0.3.6.9000/scroll.js"></script><link href="libs/highlight-6.2.0/textmate.css" rel="stylesheet">
+<script src="libs/highlight-6.2.0/highlight.js"></script><script src="libs/profvis-binding-0.3.7/profvis.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Community Contributions for EDAV Fall 2022 Mon/Wed</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">9</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">10</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">11</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">12</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">13</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">14</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">15</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">16</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="active" href="effcient-r.html"><span class="header-section-number">17</span> Effcient R</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">18</span> EDAV Survey and Analysis</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">19</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">20</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc22mw">View book source <i class="fa-solid fa-chart-scatter"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="effcient-r" class="section level1" number="17">
+<h1>
+<span class="header-section-number">17</span> Effcient R<a class="anchor" aria-label="anchor" href="#effcient-r"><i class="fas fa-link"></i></a>
+</h1>
+<p>Ruochen Zhang, Weipeng Li</p>
+<div id="introduction-1" class="section level2" number="17.1">
+<h2>
+<span class="header-section-number">17.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>R is one of the world’s most widely used statistics programming languages, which can be used for statistical analysis, graphics representation, and reporting. With an understanding of its characteristics, we can make our R programming more efficient.</p>
+<p>R is an interpreted language, but it calls compiled C, Fortran and other languages behind the scenes. Ususally calling the complied languages will be more efficient compared with writing codes that take time to compile, Vectorized programming can improve efficiency with little modifications to the codes as vector and matrix as the basic operation units in R and their operations call the compiled codes.</p>
+<p>R is very flexible. For example, the variables are in dynamic types and the content and type can be modified. The flexible design brings extra burden to the operation and may make the programs slower. We can improve efficiency by paying attention to its flexibility and memory allocation.</p>
+<p>In this tutorial, we will introduce some methods to improve efficiency, including efficient programming and parallel computation. We will also introduce how to use profiling tools to analyze program efficiency.</p>
+</div>
+<div id="efficient-programming" class="section level2" number="17.2">
+<h2>
+<span class="header-section-number">17.2</span> Efficient programming<a class="anchor" aria-label="anchor" href="#efficient-programming"><i class="fas fa-link"></i></a>
+</h2>
+<div id="vectorized" class="section level3" number="17.2.1">
+<h3>
+<span class="header-section-number">17.2.1</span> Vectorized<a class="anchor" aria-label="anchor" href="#vectorized"><i class="fas fa-link"></i></a>
+</h3>
+<p>Accessing the underlying C/Fortran routines as quickly as possible can make the program efficient. The fewer functions calls required to achieve this, the better. Many R functions are vectorised, that is the function’s inputs and/or outputs naturally work with vectors, reducing the number of function calls required.</p>
+<p>We can use the example of calculating mean deviation from median of a sample to show how vectorized functions work.</p>
+<p>To caculate:
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^{n} abs(x_{i}-m)\)</span>,where m is the median of the sample.</p>
+<p>In method 1, we can calculate it with loops.</p>
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mad_f1</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="va">mhat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">0.0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">s</span> <span class="op">&lt;-</span> <span class="va">s</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">-</span> <span class="va">mhat</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="va">s</span> <span class="op">&lt;-</span> <span class="va">s</span><span class="op">/</span><span class="va">n</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">s</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>Using vectorized functions we can write it with <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> and <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>.</p>
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mad_f2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">)</span></span></code></pre></div>
+<p>The second method is not only more concise, it is also more efficient. We can compare the running time with <code><a href="http://bench.r-lib.org/reference/mark.html">bench::mark</a></code>, which will count the running time for multiple times.</p>
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10000</span><span class="op">)</span></span>
+<span><span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html">mark</a></span><span class="op">(</span></span>
+<span>  <span class="fu">mad_f1</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
+<span>  <span class="fu">mad_f2</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 6
+##   expression      min   median `itr/sec` mem_alloc `gc/sec`
+##   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+## 1 mad_f1(x)    1.58ms   1.61ms      610.     257KB     24.6
+## 2 mad_f2(x)   381.5µs  387.2µs     2438.     235KB     10.3</code></pre>
+<p>We can see the vectorised method are almost 4 times faster than the first one. Because the test run is interfered with by other tasks running at the same time in the operating system, so the median or the minimum time (the fastest possible) can better show the efficiency rather than the average time.</p>
+<p>It’s also important to make full use of R functions that use vectors. Sometimes it is not straightforward to use vectors but they can improve the efficiency by many times. Here consider estimating the integral <span class="math inline">\(\int_ {0}^ {1} x^2 dx\)</span> using a Monte-Carlo method. Essentially, we throw darts at the curve and count the number of darts that fall below the curve. A typical way of doing it is as follows:</p>
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">monte_carlo</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">N</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">hits</span> <span class="op">=</span> <span class="fl">0</span></span>
+<span>  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_len</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">u1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="va">u2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="va">u1</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">&gt;</span> <span class="va">u2</span><span class="op">)</span></span>
+<span>      <span class="va">hits</span> <span class="op">=</span> <span class="va">hits</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">hits</span> <span class="op">/</span> <span class="va">N</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>A version utilise vectors can be shown as follows:</p>
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">monte_carlo_vec</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">N</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="va">N</span></span></code></pre></div>
+<p>By comparing their running time, we can see that the ectorized method is much faster.</p>
+<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">N</span> <span class="op">=</span> <span class="fl">500000</span></span>
+<span><span class="va">t1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">monte_carlo</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
+<span><span class="va">t2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">monte_carlo_vec</span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'monte_carlo time consumption:%.3f'</span>,<span class="va">t1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "monte_carlo time consumption:1.931"</code></pre>
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'monte_carlo vectorised version time consumption:%.3f'</span>,<span class="va">t2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "monte_carlo vectorised version time consumption:0.015"</code></pre>
+<p>The monte_carlo_vec() function not uses the vectorised functions.In addition,the comparison(&gt;), runif(), power operations(^) are also vectorised by applying to the whole vector rather than repeatedly on single elements.</p>
+</div>
+<div id="the-apply-family" class="section level3" number="17.2.2">
+<h3>
+<span class="header-section-number">17.2.2</span> The Apply Family<a class="anchor" aria-label="anchor" href="#the-apply-family"><i class="fas fa-link"></i></a>
+</h3>
+<p>Explicit loops can be slow and verbose in R. While vectorized methods help avoiding many loops, another helpful tool is the apply family. These functions serve as nice substitutes for loops and execute efficiently. The apply functions take at least two arguments: an object and a valid R expression. The expression is applied iteratively on the objects in given orders. There are many apply functions in base R, showing in the table below. As some of them are rarely used, we will introduce some important ones in this section.</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>Functions in the Apply Family</caption>
+<thead><tr class="header">
+<th align="center">Function</th>
+<th align="center">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">apply()</td>
+<td align="center">Apply functions over array margins</td>
+</tr>
+<tr class="even">
+<td align="center">lapply()</td>
+<td align="center">Apply a function over a list and return a list</td>
+</tr>
+<tr class="odd">
+<td align="center">sapply()</td>
+<td align="center">Apply a function over a list or dataframe and return a list or a matrix</td>
+</tr>
+<tr class="even">
+<td align="center">vapply()</td>
+<td align="center">Apply a function over a list or dataframe and return in a given type</td>
+</tr>
+<tr class="odd">
+<td align="center">mapply()</td>
+<td align="center">Apply a function over multiple inputs of lists or dataframes</td>
+</tr>
+<tr class="even">
+<td align="center">tapply()</td>
+<td align="center">Apply a function over a ragged array</td>
+</tr>
+<tr class="odd">
+<td align="center">eapply()</td>
+<td align="center">Apply a fuction over values in an environment</td>
+</tr>
+</tbody>
+</table></div>
+<div id="apply" class="section level4" number="17.2.2.1">
+<h4>
+<span class="header-section-number">17.2.2.1</span> apply()<a class="anchor" aria-label="anchor" href="#apply"><i class="fas fa-link"></i></a>
+</h4>
+<p>The apply() function applies an expression to margins of an array or matrix. It takes three arguments: X, MARGIN, and FUN. X is the array to apply the function on. MARGIN indicates the directions over which to apply the expression, with 1 for rows, 2 for columns, and c(1,2) for both rows and columns. FUN is the expression to be applied. It also takes a ‘simplify’ arguments, with default value of ‘TRUE’, indicating whether the results should be simplified. An example of apply() as an alternative of for loop is the following.</p>
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">M1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">C</span><span class="op">&lt;-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span>,nrow<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">M1_colsum</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">M1</span>,<span class="fl">2</span>,<span class="va">sum</span><span class="op">)</span></span>
+<span><span class="va">M1_colsum</span></span></code></pre></div>
+<pre><code>## [1] 15 40 65</code></pre>
+</div>
+<div id="lapply-sapply" class="section level4" number="17.2.2.2">
+<h4>
+<span class="header-section-number">17.2.2.2</span> lapply(), sapply()<a class="anchor" aria-label="anchor" href="#lapply-sapply"><i class="fas fa-link"></i></a>
+</h4>
+<p>lapply() is designed for lists. It applies a function to every entry of the input list and returns a list of the same length. sapply() works similarly as lapply(), but permits a more flexible output. By default it returns a vector or a matrix, but also supports an array output which can be controled by the ‘simplify’ argument.</p>
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Names</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Manish"</span>,<span class="st">"Saurabh"</span>, <span class="st">"Rahul"</span>,<span class="st">"Krishna"</span>,<span class="st">"Venkat"</span><span class="op">)</span></span>
+<span><span class="va">Names_lower</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">Names</span>,<span class="va">tolower</span><span class="op">)</span></span>
+<span><span class="va">Names_lower</span></span></code></pre></div>
+<pre><code>## [[1]]
+## [1] "manish"
+## 
+## [[2]]
+## [1] "saurabh"
+## 
+## [[3]]
+## [1] "rahul"
+## 
+## [[4]]
+## [1] "krishna"
+## 
+## [[5]]
+## [1] "venkat"</code></pre>
+<div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Names_upper</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">Names</span>,<span class="va">toupper</span><span class="op">)</span></span>
+<span><span class="va">Names_upper</span></span></code></pre></div>
+<pre><code>##    Manish   Saurabh     Rahul   Krishna    Venkat 
+##  "MANISH" "SAURABH"   "RAHUL" "KRISHNA"  "VENKAT"</code></pre>
+</div>
+<div id="tapply" class="section level4" number="17.2.2.3">
+<h4>
+<span class="header-section-number">17.2.2.3</span> tapply()<a class="anchor" aria-label="anchor" href="#tapply"><i class="fas fa-link"></i></a>
+</h4>
+<p>tapply() applies an operation on a subset of vector broken down by a given factor variable. It works similar to the group_by() function plus an aggregated operation in dplyr. Let’s use the iris dataset as an example.</p>
+<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/tapply.html">tapply</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span>,<span class="va">iris</span><span class="op">$</span><span class="va">Species</span>,<span class="va">mean</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##     setosa versicolor  virginica 
+##      5.006      5.936      6.588</code></pre>
+</div>
+<div id="replicate" class="section level4" number="17.2.2.4">
+<h4>
+<span class="header-section-number">17.2.2.4</span> replicate()<a class="anchor" aria-label="anchor" href="#replicate"><i class="fas fa-link"></i></a>
+</h4>
+<p>replicate() is a nice alternative for writing a for loop in random simulation. It executes a given program for several times without introducing a count variable. The return is a multi-dimension array of the simulating results. It takes two arguments: n and expr. n indicates the number of repetition, and expr is the operation to be executed. For example, we would like to compute the mean and standard deviation of q sequence of standard normal random variables. We decide to repeat the simulation for 8 times, and each time generate 100 random sample.</p>
+<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">8</span>, <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>; </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">}</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##            [,1]       [,2]      [,3]        [,4]      [,5]        [,6]
+## [1,] 0.09040591 -0.1075468 0.1204651 -0.03622291 0.1058509 -0.04229996
+## [2,] 0.91281588  0.9669866 0.9498790  1.03878122 0.9893458  0.93872815
+##            [,7]      [,8]
+## [1,] -0.1496441 0.1058735
+## [2,]  1.0282366 1.0100100</code></pre>
+</div>
+</div>
+<div id="memory-allocation" class="section level3" number="17.2.3">
+<h3>
+<span class="header-section-number">17.2.3</span> Memory Allocation<a class="anchor" aria-label="anchor" href="#memory-allocation"><i class="fas fa-link"></i></a>
+</h3>
+<p>A good habit in R programming is to pre-allocate memory for variables before filling in values. Make sure that the size of your list or data frame does not grow after the for loop. Although R supports dynamic memory allocation when executing, it can be time-wasting in big data sets. To illustrate this, consider the different ways of creating a continuous sequence of numbers.</p>
+<p>The first method is to start with an empty list and gradually grow the list during the iteration.</p>
+<pre><code>method1 &lt;- function(n) {
+  vec &lt;- c()
+  for (i in seq_len(n))
+    vec &lt;- c(vec, i)
+  vec
+}</code></pre>
+<p>The second way is to start with a list with length <span class="math inline">\(n\)</span>, and fill in the values during the iteration.</p>
+<pre><code>method2 &lt;- function(n) {
+  vec &lt;- numeric(n)
+  for (i in seq_len(n))
+    vec[i] &lt;- i
+  vec
+}</code></pre>
+<p>Compare the running time of the two methods.</p>
+<pre><code>n &lt;- 1e5
+tmemory_1 &lt;- system.time(method1(n))[3]
+tmemory_2 &lt;- system.time(method2(n))[3]
+
+n &lt;- 1e6
+tmemory_3 &lt;- system.time(method1(n))[3]
+tmemory_4 &lt;- system.time(method2(n))[3]</code></pre>
+<p>The following table shows the average running time on my local comupter of the two methods with different values of n. We can see from the drastic difference that as <span class="math inline">\(n\)</span> grows, the time for memory allocation can no longer be ignored. When <span class="math inline">\(n=10^6\)</span>, method1 takes 36 minutes, while method2 only takes less than 1 second.</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>Running Time (Seconds) for Different Methods of Memory Allocation</caption>
+<thead><tr class="header">
+<th align="center">n</th>
+<th align="center">Method1</th>
+<th align="center">Method2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(10^5\)</span></td>
+<td align="center">31.84</td>
+<td align="center">0.007</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(10^6\)</span></td>
+<td align="center">2155</td>
+<td align="center">0.063</td>
+</tr>
+</tbody>
+</table></div>
+<p>What should we do if we are not sure about the vector size before finishing the loop? In these cases it’s often a good practice to allocate a large enough size for the vector, and delete the empty part after the loop. Comparing to reallocate memory for the object every time in an iteration, we only need to allocate twice. For example, we would like to find the number subarrays of <span class="math inline">\(k\)</span> number of continuous ’1’s in a random array. There are two ways for this.</p>
+<div class="sourceCode" id="cb188"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">findones1</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">k</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="va">runs</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">n</span><span class="op">-</span><span class="va">k</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="va">i</span><span class="op">:</span><span class="op">(</span><span class="va">i</span><span class="op">+</span><span class="va">k</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">]</span><span class="op">==</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="va">runs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">runs</span>,<span class="va">i</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>  </span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">runs</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">findones2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">k</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="va">runs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>length<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
+<span>  <span class="va">count</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">n</span><span class="op">-</span><span class="va">k</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="va">i</span><span class="op">:</span><span class="op">(</span><span class="va">i</span><span class="op">+</span><span class="va">k</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">]</span><span class="op">==</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>      <span class="va">count</span> <span class="op">&lt;-</span> <span class="va">count</span><span class="op">+</span><span class="fl">1</span></span>
+<span>      <span class="va">runs</span><span class="op">[</span><span class="va">count</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">i</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">count</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="va">runs</span> <span class="op">&lt;-</span> <span class="va">runs</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">count</span><span class="op">]</span>, <span class="va">runs</span> <span class="op">&lt;-</span> <span class="cn">NULL</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">runs</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>Test the running time of the two functions on a random sequence of length <span class="math inline">\(10^6\)</span>, and set <span class="math inline">\(k=4\)</span>. We can find that the first function takes a lot more time the the second function.</p>
+<div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">1e6</span>,min<span class="op">=</span><span class="fl">0</span>,max<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time of findones1: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">findones1</span><span class="op">(</span><span class="va">n</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time of findones1: 5.752"</code></pre>
+<div class="sourceCode" id="cb192"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time of findones2: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">findones2</span><span class="op">(</span><span class="va">n</span>,<span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time of findones2: 0.689"</code></pre>
+</div>
+<div id="avoid-making-copies" class="section level3" number="17.2.4">
+<h3>
+<span class="header-section-number">17.2.4</span> Avoid making copies<a class="anchor" aria-label="anchor" href="#avoid-making-copies"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cumulative codes like <code>x &lt;- c(x, y)</code> may make a copy each time running, It slows down the program when the amount of storage is large or the number of repeated modifications is large. We need to avoid making unnecessary copies to make our program more efficient. To avoid modifying the size of the variables can avoid making copies. In addition, we need to pay attention to how we modify the values of the variables.</p>
+<p>When we modify the values in a data frame, it generates a copy every time. But modifying values in a list will not generate copies and thus is more efficient. We will compare the running time of modifying values in this two kinds of data type in the following example.</p>
+<div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span></span>
+<span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">2E4</span>; <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">m</span><span class="op">)</span>, nrow<span class="op">=</span><span class="va">n</span>, ncol<span class="op">=</span><span class="va">m</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">time1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">x</span><span class="op">[[</span><span class="va">j</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[[</span><span class="va">j</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span></span>
+<span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fl">2E4</span>; <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="va">m</span>, </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,</span>
+<span>  simplify<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">time2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">m</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">x</span><span class="op">[[</span><span class="va">j</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[[</span><span class="va">j</span><span class="op">]</span><span class="op">]</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">time1</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span></code></pre></div>
+<pre><code>## elapsed 
+##  11.234</code></pre>
+<div class="sourceCode" id="cb198"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">time2</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span></code></pre></div>
+<pre><code>## elapsed 
+##   0.013</code></pre>
+<p>replicate() returns a list when <code>simplify=FALSE</code>. Saving data in a list is more efficient to access than saving it in a data frame. But data frames offer more functions. We need to choose base on our needs.</p>
+</div>
+</div>
+<div id="parallel-computing" class="section level2" number="17.3">
+<h2>
+<span class="header-section-number">17.3</span> Parallel Computing<a class="anchor" aria-label="anchor" href="#parallel-computing"><i class="fas fa-link"></i></a>
+</h2>
+<p>Parallel computing is a widely used technique for dealing with big datasets, which uses multiple cores and threads to complete a task at the same time. While most of our computers have multiple cores, R only runs on one of the virtual cores by default.</p>
+<p>If a large task can be divided into independent subtasks, it is easy to conduct parallel computing on different cores. The bottleneck lies in the need to communicate between cores. For example, one of the most time-consuming task in R is random simulation, where we would like to avoid using same sequences in different cores and threads.</p>
+<p>Luckily, there are some packages for simple parallel computing in R, and we will have a quick glimpse of these functions in this section.</p>
+<div id="general-r-functions-for-parallel-computing" class="section level3" number="17.3.1">
+<h3>
+<span class="header-section-number">17.3.1</span> General R Functions for Parallel Computing<a class="anchor" aria-label="anchor" href="#general-r-functions-for-parallel-computing"><i class="fas fa-link"></i></a>
+</h3>
+<p>The parallel package in R provides a simple way of parallel computing. It gives the parallel version of the apply family, namely parApply(), parLapply(), parSapply(), etc. These functions require a temporary cluster as the main object.</p>
+<p>To better explain the use of parallel package, let us consider a simple task. We want to compute <span class="math display">\[S_{n,k}=\Sigma_{i=1}^{n}\frac{1}{i^k}\]</span> for <span class="math inline">\(n=10^6\)</span>, with <span class="math inline">\(k\)</span> ranging from 2 to 21. As the computation is independent for different <span class="math inline">\(k\)</span>s, it’s safe to assign the task to different cores.</p>
+<p>Let’s first compute the task with a single core.</p>
+<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">f10</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>,<span class="va">k</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">0.0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="va">s</span> <span class="op">&lt;-</span> <span class="va">s</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="va">i</span><span class="op">^</span><span class="va">k</span></span>
+<span>  <span class="va">s</span></span>
+<span><span class="op">}</span></span>
+<span><span class="va">f11</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>,<span class="va">nk</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="op">(</span><span class="va">nk</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">k</span><span class="op">)</span> <span class="fu">f10</span><span class="op">(</span><span class="va">n</span>,<span class="va">k</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">v</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time with a single core: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">f11</span><span class="op">(</span>n<span class="op">=</span><span class="fl">1e6</span>, nk<span class="op">=</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time with a single core: 1.516"</code></pre>
+<p>Now let’s do the computation with multiple cores step by step. Firstly, use <code>detectCores()</code> to check the virtual cores of your computer.</p>
+<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nNodes</span> <span class="op">&lt;-</span> <span class="fu">detectCores</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">nNodes</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Next, create a temporary cluster with multiple cores which will be the main objects of our parallel computation.</p>
+<div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cpucl</span> <span class="op">&lt;-</span> <span class="fu">makeCluster</span><span class="op">(</span><span class="va">nNodes</span><span class="op">)</span></span></code></pre></div>
+<p>Conduct parallel computation with <code>parLapply()</code> or <code>parSapply()</code>. The computing time is now 0.818 seconds, reduced by 48% compared to the single core computation. Notice that in the parallel version, f10 has to be defined inside f12, because the function runs on different threads independently, and we have to make sure that the initialization and definition is done properly on every thread.</p>
+<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">f12</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>,<span class="va">nk</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">f10</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>,<span class="va">k</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">s</span> <span class="op">&lt;-</span> <span class="fl">0.0</span></span>
+<span>    <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="va">s</span> <span class="op">&lt;-</span> <span class="va">s</span> <span class="op">+</span> <span class="fl">1</span><span class="op">/</span><span class="va">i</span><span class="op">^</span><span class="va">k</span></span>
+<span>    <span class="va">s</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span>  <span class="va">v</span> <span class="op">&lt;-</span> <span class="fu">parSapply</span><span class="op">(</span><span class="va">cpucl</span>, <span class="fl">2</span><span class="op">:</span><span class="op">(</span><span class="va">nk</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">k</span><span class="op">)</span> <span class="fu">f10</span><span class="op">(</span><span class="va">n</span>,<span class="va">k</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">v</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time with multiple cores: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">f12</span><span class="op">(</span>n<span class="op">=</span><span class="fl">1e6</span>, nk<span class="op">=</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time with multiple cores: 0.825"</code></pre>
+<p>Another way for the initialization is to pass the dependent objects to every cluster by <code>clusterExport()</code>. For example, instead of defining f10 inside f12, we can also do the following.</p>
+<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">clusterExport</span><span class="op">(</span><span class="va">cpucl</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"f10"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">f13</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>,<span class="va">nk</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">v</span> <span class="op">&lt;-</span> <span class="fu">parSapply</span><span class="op">(</span><span class="va">cpucl</span>, <span class="fl">2</span><span class="op">:</span><span class="op">(</span><span class="va">nk</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">k</span><span class="op">)</span> <span class="fu">f10</span><span class="op">(</span><span class="va">n</span>,<span class="va">nk</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">v</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time with multiple cores: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="fu">f13</span><span class="op">(</span>n<span class="op">=</span><span class="fl">1e6</span>, nk<span class="op">=</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time with multiple cores: 0.831"</code></pre>
+<p>If you need to execute some operations on every cluster node before doing the computation, <code>clusterEvalQ()</code> can be helpful. For example, you can import some certain libraries for further execution.</p>
+<pre><code>clusterEvalQ(cpucl, library(dplyr))</code></pre>
+<p>After the computation, always remember to stop the cluster. This ensures efficient CPU allocation for future tasks.</p>
+<div class="sourceCode" id="cb210"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">stopCluster</span><span class="op">(</span><span class="va">cpucl</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="parallel-computing-for-random-simulations" class="section level3" number="17.3.2">
+<h3>
+<span class="header-section-number">17.3.2</span> Parallel Computing for Random Simulations<a class="anchor" aria-label="anchor" href="#parallel-computing-for-random-simulations"><i class="fas fa-link"></i></a>
+</h3>
+<p>As we mentioned at the beginning of this section, a more challenging task for parallel computation is random simulation. For example, we want to conduct a simulation of <span class="math inline">\(10^7\)</span> times. The task can be divided into ten simulation tasks of <span class="math inline">\(10^6\)</span> times, but the random sequences should be different for the ten tasks.</p>
+<p><code>L'Ecuyer</code> is a popular random number generator for parallel computation in R. It has a very long period of around <span class="math inline">\(2^191\)</span>. This enables us to use a separate stream for each cluster node so that the random sequences never get into sync. <code>nextRNGStream()</code> function in the parallel package sets a specific random seed for the generator, thus assigning different streams for every node.</p>
+<p>For example, we want to estimate the probability of a Wilson confidence interval containing the true value <span class="math inline">\(p\)</span>. Recall that the Wilson confidence interval is defined as <span class="math display">\[\frac{\hat{p}+\frac{\lambda^2}{2n}}{1+\frac{\lambda^2}{n}} \pm \frac{\lambda}{\sqrt{n}}\frac{\sqrt{\hat{p}(1-\hat{p})+\frac{\lambda^2}{4n}}}{1+\frac{\lambda^2}{n}},\]</span></p>
+<p>where <span class="math inline">\(\lambda = \phi^{-1}(1-\alpha)\)</span>. We want to simulate this probability with different <span class="math inline">\(alpha\)</span>, <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</p>
+<p>First, let’s do the computation on a single core.</p>
+<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wilson</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">x</span>, <span class="va">conf</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">hatp</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">/</span><span class="va">n</span></span>
+<span>  <span class="va">lam</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="op">(</span><span class="va">conf</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
+<span>  <span class="va">lam2</span> <span class="op">&lt;-</span> <span class="va">lam</span><span class="op">^</span><span class="fl">2</span> <span class="op">/</span> <span class="va">n</span></span>
+<span>  <span class="va">p1</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">hatp</span> <span class="op">+</span> <span class="va">lam2</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">lam2</span><span class="op">)</span></span>
+<span>  <span class="va">delta</span> <span class="op">&lt;-</span> <span class="va">lam</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">hatp</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">hatp</span><span class="op">)</span> <span class="op">+</span> <span class="va">lam2</span><span class="op">/</span><span class="fl">4</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="va">lam2</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">p1</span><span class="op">-</span><span class="va">delta</span>, <span class="va">p1</span><span class="op">+</span><span class="va">delta</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">f20</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">nsim</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span>  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">30</span>; <span class="va">p0</span> <span class="op">&lt;-</span> <span class="fl">0.01</span>; <span class="va">conf</span> <span class="op">&lt;-</span> <span class="fl">0.95</span></span>
+<span>  <span class="va">cover</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">nsim</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span>, <span class="va">p0</span><span class="op">)</span></span>
+<span>    <span class="va">cf</span> <span class="op">&lt;-</span> <span class="fu">wilson</span><span class="op">(</span><span class="va">n</span>, <span class="va">x</span>, <span class="va">conf</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="va">p0</span> <span class="op">&gt;=</span> <span class="va">cf</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">&amp;&amp;</span> <span class="va">p0</span> <span class="op">&lt;=</span> <span class="va">cf</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="va">cover</span> <span class="op">&lt;-</span> <span class="va">cover</span><span class="op">+</span><span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="va">cover</span><span class="op">/</span><span class="va">nsim</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time with a single core: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="va">cvg1</span> <span class="op">&lt;-</span> <span class="fu">f20</span><span class="op">(</span>nsim<span class="op">=</span><span class="fl">1e7</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time with a single core: 55.641"</code></pre>
+<p>Now let’s move on to the multi-core version of this task. With parallel computation, the task only takes 29.95s, reduced by 43% comparing to the single-core version.</p>
+<div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nNodes</span> <span class="op">&lt;-</span> <span class="fu">detectCores</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">cpucl</span> <span class="op">&lt;-</span> <span class="fu">makeCluster</span><span class="op">(</span><span class="va">nNodes</span><span class="op">)</span></span>
+<span><span class="va">each.seed</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">s</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/assign.html">assign</a></span><span class="op">(</span><span class="st">".Random.seed"</span>, <span class="va">s</span>, envir <span class="op">=</span> <span class="va">.GlobalEnv</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">RNGkind</a></span><span class="op">(</span><span class="st">"L'Ecuyer-CMRG"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">seed0</span> <span class="op">&lt;-</span> <span class="va">.Random.seed</span></span>
+<span><span class="va">seeds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">nNodes</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create different seeds for the cluster nodes</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">nNodes</span><span class="op">)</span><span class="op">{</span> </span>
+<span>  <span class="va">seed0</span> <span class="op">&lt;-</span> <span class="fu">nextRNGStream</span><span class="op">(</span><span class="va">seed0</span><span class="op">)</span></span>
+<span>  <span class="va">seeds</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">seed0</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co"># Assign different seed for every node</span></span>
+<span><span class="va">junk</span> <span class="op">&lt;-</span> <span class="fu">clusterApply</span><span class="op">(</span><span class="va">cpucl</span>, <span class="va">seeds</span>, <span class="va">each.seed</span><span class="op">)</span></span>
+<span><span class="va">f21</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">isim</span>, <span class="va">nsimsub</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">30</span>; <span class="va">p0</span> <span class="op">&lt;-</span> <span class="fl">0.01</span>; <span class="va">conf</span> <span class="op">&lt;-</span> <span class="fl">0.95</span></span>
+<span>  <span class="va">cover</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">nsimsub</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n</span>, <span class="va">p0</span><span class="op">)</span></span>
+<span>    <span class="va">cf</span> <span class="op">&lt;-</span> <span class="fu">wilson</span><span class="op">(</span><span class="va">n</span>, <span class="va">x</span>, <span class="va">conf</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="va">p0</span> <span class="op">&gt;=</span> <span class="va">cf</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">&amp;&amp;</span> <span class="va">p0</span> <span class="op">&lt;=</span> <span class="va">cf</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="va">cover</span> <span class="op">&lt;-</span> <span class="va">cover</span><span class="op">+</span><span class="fl">1</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="va">cover</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">clusterExport</span><span class="op">(</span><span class="va">cpucl</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"f21"</span>, <span class="st">"wilson"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">f22</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">nsim</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">nbatch</span> <span class="op">&lt;-</span> <span class="fl">40</span></span>
+<span>  <span class="va">nsimsub</span> <span class="op">&lt;-</span> <span class="va">nsim</span> <span class="op">/</span> <span class="va">nbatch</span></span>
+<span>  <span class="va">cvs</span> <span class="op">&lt;-</span> <span class="fu">parSapply</span><span class="op">(</span><span class="va">cpucl</span>, <span class="fl">1</span><span class="op">:</span><span class="va">nbatch</span>, <span class="va">f21</span>, nsimsub<span class="op">=</span><span class="va">nsimsub</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">cvs</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="va">nsim</span><span class="op">*</span><span class="va">nbatch</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html">sprintf</a></span><span class="op">(</span><span class="st">'Running time with multiple cores: %.3f'</span>,<span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span><span class="op">(</span><span class="va">cvg2</span> <span class="op">&lt;-</span> <span class="fu">f22</span><span class="op">(</span><span class="fl">1e7</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Running time with multiple cores: 22.137"</code></pre>
+<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">stopCluster</span><span class="op">(</span><span class="va">cpucl</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="profiling-tools-in-r" class="section level2" number="17.4">
+<h2>
+<span class="header-section-number">17.4</span> Profiling tools in R<a class="anchor" aria-label="anchor" href="#profiling-tools-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>When we try to optimize our R programs. first we need to decide whether it is necessary to do so and where the bottleneck lies. In some simple problems, we can get the results within reasonable time and space consumption.It is also unnecessary when the optimization only results in minor improvements. If we find the bottleneck and it is necessary to optimize it, we still need to consider whether we modify the R codes or we can rewrite this part using other languages like C++ to achieve simple improvements.</p>
+<p>To analyze the efficiency of codes, we use the profiling tools in R.</p>
+<p>Base R <code>utils::rprof()</code>can collect profiling data for program runs, and <code><a href="https://rdrr.io/r/utils/summaryRprof.html">utils::summaryRprof()</a></code> can provide profiling summaries in text format. We also can use <code>profvis</code> package which provides an interactive graphical interface for visualising code profiling data.</p>
+<p>Here we use an example to show how <code>profvis</code> package works.</p>
+<div class="sourceCode" id="cb216"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">profvis</span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="va">make_adder</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu">pause</span><span class="op">(</span><span class="fl">0.25</span><span class="op">)</span></span>
+<span>      <span class="va">x</span> <span class="op">+</span> <span class="va">n</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span>  <span class="fu">make_adder</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="va">adder2</span> <span class="op">&lt;-</span> <span class="fu">make_adder</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
+<span>  <span class="fu">adder2</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
+<div id="htmlwidget-97cc8bad87a5e57f237d" style="width:100%;height:600px;" class="profvis html-widget"></div>
+<script type="application/json" data-for="htmlwidget-97cc8bad87a5e57f237d">{"x":{"message":{"prof":{"time":[1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,8,9,9,9,9,9,9,10,10,10,10,10,10,11,11,11,11,11,11,12,12,12,12,12,12,13,13,13,13,13,13,14,14,14,14,14,14,15,15,15,15,15,15,16,16,16,16,16,16,17,17,17,17,17,17,18,18,18,18,18,18,19,19,19,19,19,19,20,20,20,20,20,20,21,21,21,21,21,21,22,22,22,22,22,22,23,23,23,23,23,23,24,24,24,24,24,24,25,25,25,25,25,25,26,26,26,26,26,26,27,27,27,27,27,27,28,28,28,28,28,28,29,29,29,29,29,29,30,30,30,30,30,30,31,31,31,31,31,31,32,32,32,32,32,32,33,33,33,33,33,33,34,34,34,34,34,34,35,35,35,35,35,35,36,36,36,36,36,36,37,37,37,37,37,37,38,38,38,38,38,38,39,39,39,39,39,39,40,40,40,40,40,40,41,41,41,41,41,41,42,42,42,42,42,42,43,43,43,43,43,43,44,44,44,44,44,44,45,45,45,45,45,45,46,46,46,46,46,46,47,47,47,47,47,47,48,48,48,48,48,48,49,49,49,49,49,49],"depth":[6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1,6,5,4,3,2,1],"label":["pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","<Anonymous>","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local","pause","adder2","eval","eval","eval.parent","local"],"filenum":[1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null,1,1,null,null,null,null],"linenum":[4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,9,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null,4,11,null,null,null,null],"memalloc":[30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5089645385742,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031,30.5491027832031],"meminc":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0401382446289062,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"filename":["<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null,"<expr>","<expr>",null,null,null,null]},"interval":10,"files":[{"filename":"<expr>","content":"profvis({\n  make_adder <- function(n) {\n    function(x) {\n      pause(0.25)\n      x + n\n    }\n  }\n\n  make_adder(1)(10)\n  adder2 <- make_adder(2)\n  adder2(10)\n})\n","normpath":"<expr>"}],"prof_output":"/tmp/RtmpPkK9Zv/file41ad2d64207.prof","highlight":{"output":["^output\\$"],"gc":["^<GC>$"],"stacktrace":["^\\.\\.stacktraceo(n|ff)\\.\\.$"]},"split":"h"}},"evals":[],"jsHooks":[]}</script><p>We can see that in flame graph, the upper panel gives the amount of time spent on each line of code. The lower panel shows the process of the whole program. Some of R’s built-in functions don’t show in the profvis flame graph,although these functions can occupy a lot of time. We need to pay attention to this kind of problem. More discussion into it can be found in the <a href="https://rstudio.github.io/profvis/faq.html">guide</a>.</p>
+<p>For more complex programs,we should save the program as an R source file. Then we use source() method to load the function to be run, and use profvis() to call the function and display the performance analysis results after running.</p>
+<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="va">bad_copy</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">M</span> <span class="op">&lt;-</span> <span class="fl">1E5</span></span>
+<span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">x</span>, <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>we can store the function in bad_copy.R. Then run <code>profvis(bad_copy())</code></p>
+</div>
+<div id="references" class="section level2" number="17.5">
+<h2>
+<span class="header-section-number">17.5</span> References<a class="anchor" aria-label="anchor" href="#references"><i class="fas fa-link"></i></a>
+</h2>
+<p>[1] <a href="https://csgillespie.github.io/efficientR/programming.html" class="uri">https://csgillespie.github.io/efficientR/programming.html</a></p>
+<p>[2] <a href="https://bookdown.org/manishpatwal/bookdown-demo/" class="uri">https://bookdown.org/manishpatwal/bookdown-demo/</a></p>
+<p>[3] <a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/prog-prof.html" class="uri">https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/prog-prof.html</a></p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">16</span> Tutorial for wordcloud2 package</a></div>
+<div class="next"><a href="edav-survey-and-analysis.html"><span class="header-section-number">18</span> EDAV Survey and Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#effcient-r"><span class="header-section-number">17</span> Effcient R</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">17.1</span> Introduction</a></li>
+<li>
+<a class="nav-link" href="#efficient-programming"><span class="header-section-number">17.2</span> Efficient programming</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#vectorized"><span class="header-section-number">17.2.1</span> Vectorized</a></li>
+<li><a class="nav-link" href="#the-apply-family"><span class="header-section-number">17.2.2</span> The Apply Family</a></li>
+<li><a class="nav-link" href="#memory-allocation"><span class="header-section-number">17.2.3</span> Memory Allocation</a></li>
+<li><a class="nav-link" href="#avoid-making-copies"><span class="header-section-number">17.2.4</span> Avoid making copies</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#parallel-computing"><span class="header-section-number">17.3</span> Parallel Computing</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#general-r-functions-for-parallel-computing"><span class="header-section-number">17.3.1</span> General R Functions for Parallel Computing</a></li>
+<li><a class="nav-link" href="#parallel-computing-for-random-simulations"><span class="header-section-number">17.3.2</span> Parallel Computing for Random Simulations</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#profiling-tools-in-r"><span class="header-section-number">17.4</span> Profiling tools in R</a></li>
+<li><a class="nav-link" href="#references"><span class="header-section-number">17.5</span> References</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/efficient_r.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/efficient_r.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
