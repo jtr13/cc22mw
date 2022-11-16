@@ -184,6 +184,10 @@ kolmogorov-smirnov-test
 kruskal-wallis-test
 references-2
 python-tutorial-gather-data-through-api-and-web-scraping
+an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly
+motivation-for-the-project
+evaluation-of-the-project
+references-3
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
