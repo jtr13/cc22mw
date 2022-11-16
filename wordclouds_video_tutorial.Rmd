@@ -97,7 +97,7 @@ wordcloud2(data = code,
 ```
 Here is an example with figPath set. The figure will define the shape of the generated wordcloud:
 
-**Important note**: There is an inherent bug in wordcloud2 library. When figPath is set or we use lettercloud function, the generated wordcloud would not render. Possible fixes are to run this code in a R script and open the wordcloud in a browser. Alternatively you can hit the refresh button in the R viewer until the image appears.
+**Important note**: There is an inherent bug in wordcloud2 library. When figPath is set or we use lettercloud function, the generated wordcloud would not render. Possible fixes are to run this code in a R script and open the wordcloud in a browser. Alternatively you can hit the refresh button in the R viewer until the image appears. The logo is from [Wikipedia](https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg)
 
 
 ```{r}
