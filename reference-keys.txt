@@ -157,7 +157,6 @@ splines
 extensibility-and-composability
 references-1
 becoming-a-better-business-analyst
-cheatsheet-of-ggstatsplot-in-r
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
