@@ -32,6 +32,11 @@ cheatsheet-for-data-science
 what-we-learned
 link
 reference
+cheatsheet-for-plotly
+motivation
+interactivity
+customization-and-flexibility
+evaluation-and-future-improvement
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter
@@ -65,7 +70,7 @@ classifcation
 conclusion
 sources
 quantmod-tidyquant-tutorials-and-comparison
-motivation
+motivation-1
 quantmod
 getting-data
 data-visualization
@@ -105,10 +110,10 @@ selection-highlighting
 range-selection
 project-summary-and-evaluation
 two-interesting-r-packages
-motivation-1
+motivation-2
 evaluation
 tutorial-for-wordcloud2-package
-motivation-2
+motivation-3
 wordcloud2-fuction
 function-application
 data-scource
@@ -147,7 +152,7 @@ test-your-plots
 original
 other-considerations
 tutorials-for-ggfortify-and-autoplotly
-motivation-3
+motivation-4
 examples
 linear-models
 principal-component-analysis
@@ -157,6 +162,14 @@ splines
 extensibility-and-composability
 references-1
 becoming-a-better-business-analyst
+cheatsheet-of-ggstatsplot-in-r
+best-parallel-coordinates-r-package
+introduction-2
+example
+installation
+data
+default
+bestparcoords
 edav-survey-and-analysis
 project-proposal
 project-group-cc5

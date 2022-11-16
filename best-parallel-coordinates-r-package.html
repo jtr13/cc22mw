@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<title>Chapter 24 Best Parallel Coordinates R Package | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Shubham Kaushal and Daniel Young  24.1 Introduction GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 24 Best Parallel Coordinates R Package | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta property="og:description" content="Shubham Kaushal and Daniel Young  24.1 Introduction GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta name="twitter:title" content="Chapter 24 Best Parallel Coordinates R Package | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Shubham Kaushal and Daniel Young  24.1 Introduction GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,7 +55,7 @@
 <li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
 <li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="active" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
 <li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
 <li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
 <li class="book-part">Tutorials</li>
@@ -72,7 +72,7 @@
 <li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">21</span> Tutorials for ggfortify and autoplotly</a></li>
 <li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">22</span> Becoming a better business analyst</a></li>
 <li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">23</span> Cheatsheet of ggstatsplot in R</a></li>
-<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">24</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="active" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">24</span> Best Parallel Coordinates R Package</a></li>
 <li class="book-part">Workshops</li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">25</span> EDAV Survey and Analysis</a></li>
 <li class="book-part">Appendices</li>
@@ -85,37 +85,104 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="best-parallel-coordinates-r-package" class="section level1" number="24">
 <h1>
-<span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)<a class="anchor" aria-label="anchor" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24</span> Best Parallel Coordinates R Package<a class="anchor" aria-label="anchor" href="#best-parallel-coordinates-r-package"><i class="fas fa-link"></i></a>
 </h1>
-<p>Xinhao Dai</p>
-<div id="introductions-of-ggally" class="section level3" number="8.0.1">
+<p>Shubham Kaushal and Daniel Young</p>
+<div id="introduction-2" class="section level2" number="24.1">
+<h2>
+<span class="header-section-number">24.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions to arrange them automatically but we propose our own method. We find the two highest correlated features, then greedily continue appending the next highest correlated feature until we have an ordering.</p>
+</div>
+<div id="example" class="section level2" number="24.2">
+<h2>
+<span class="header-section-number">24.2</span> Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h2>
+<div id="installation" class="section level3" number="24.2.1">
 <h3>
-<span class="header-section-number">8.0.1</span> Introductions of GGally<a class="anchor" aria-label="anchor" href="#introductions-of-ggally"><i class="fas fa-link"></i></a>
+<span class="header-section-number">24.2.1</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
 </h3>
-<p>ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the difficulties of combining different geoms. To enable novices to quickly start using the packet, I create a cheatsheet for GGally.</p>
-<p>This cheatsheet includes several essential and efficient plots for explorary data analysis and visualization. First, it’s the ggcoef_model function, it helps to visualize the coefficients of a fitted model. It’s more intuitive and clear. Moreover, it enables us to compare several models in a plot so we can choose the best model among them. Second, it’s the ggpairs() function, which shows the relationships between every two variables in a dataset. It helps us to indentify what’s the relevent variable to a response variable. Moreover, the cheatsheet display several high-level plots that can be used in ggpairs in order to help users have a more clear intuiation.</p>
-<p>In this project, I have learned how to do a quickly read through the documents of a packet and distinguish which functions are the most essential and helpful ones. Moreover, I have learned how to create a tidy and beautiful cheatsheet for the users. And if I have another chance, I will try to create my own templeate rather than use the rstudio templeate.</p>
-<p>You can find a pdf version of the cheetsheet on <a href="https://github.com/Russell-A/cheatsheet-for-ggally/blob/main/cheatsheet_for_ggally.pdf">https://github.com/Russell-A/cheatsheet-for-ggally</a>. Below is an enclosed image of the cheatsheet.</p>
-<div class="inline-figure"><img src="resources/cheatsheet_GGally_plots/cheatsheet_for_ggally-page-001.jpg" width="80%" style="display: block; margin: auto;"></div>
-<p>Reference: <a href="https://ggobi.github.io/ggally/index.html">https://ggobi.github.io/ggally/index.html</a>.</p>
+<p>We install from a github repository</p>
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#devtools::install_github("ShubhamKaushal15/bestparcoords")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"bestparcoords"</span><span class="op">)</span> <span class="co"># Must be installed from source</span></span></code></pre></div>
+</div>
+<div id="data" class="section level3" number="24.2.2">
+<h3>
+<span class="header-section-number">24.2.2</span> Data<a class="anchor" aria-label="anchor" href="#data"><i class="fas fa-link"></i></a>
+</h3>
+<p>We demo our package with the mtcars dataset. Any preprocessing must be done before we use the package so for example we will remove the last column.</p>
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="va">mtcars</span> <span class="op">&lt;-</span> <span class="va">mtcars</span><span class="op">[</span>,<span class="op">-</span><span class="fl">11</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3</code></pre>
+</div>
+<div id="default" class="section level3" number="24.2.3">
+<h3>
+<span class="header-section-number">24.2.3</span> Default<a class="anchor" aria-label="anchor" href="#default"><i class="fas fa-link"></i></a>
+</h3>
+<p>The default ordering shown here isn’t the best, it just leaves the columns in order regardless of their correlation.</p>
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, splineFactor<span class="op">=</span><span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+</div>
+<div id="bestparcoords" class="section level3" number="24.2.4">
+<h3>
+<span class="header-section-number">24.2.4</span> bestparcoords<a class="anchor" aria-label="anchor" href="#bestparcoords"><i class="fas fa-link"></i></a>
+</h3>
+<p>Here we show the bestparcoords graph which is a better than the default version because it accentuates the alternating trends between pairs of features which shows the underlying pattern in the data much better.</p>
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu">bestparcoords</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bestparcoords/man/bestparcoord.html">bestparcoord</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<p>Best parcoords also outputs the features in the order it found, which we can use for other purposes. For example, if we want to display the plot with a different spline factor.</p>
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1] "cyl"  "disp" "wt"   "mpg"  "hp"   "vs"   "qsec" "am"   "gear" "drat"</code></pre>
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">indices</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.html">match</a></span><span class="op">(</span><span class="va">cols</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">indices</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1]  2  3  6  1  4  8  7  9 10  5</code></pre>
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns<span class="op">=</span><span class="va">indices</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;"></div>
 
 </div>
 </div>
+</div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></div>
-<div class="next"><a href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></div>
+<div class="prev"><a href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">23</span> Cheatsheet of ggstatsplot in R</a></div>
+<div class="next"><a href="edav-survey-and-analysis.html"><span class="header-section-number">25</span> EDAV Survey and Analysis</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#introductions-of-ggally"><span class="header-section-number">8.0.1</span> Introductions of GGally</a></li></ul>
-</li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#best-parallel-coordinates-r-package"><span class="header-section-number">24</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="nav-link" href="#introduction-2"><span class="header-section-number">24.1</span> Introduction</a></li>
+<li>
+<a class="nav-link" href="#example"><span class="header-section-number">24.2</span> Example</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#installation"><span class="header-section-number">24.2.1</span> Installation</a></li>
+<li><a class="nav-link" href="#data"><span class="header-section-number">24.2.2</span> Data</a></li>
+<li><a class="nav-link" href="#default"><span class="header-section-number">24.2.3</span> Default</a></li>
+<li><a class="nav-link" href="#bestparcoords"><span class="header-section-number">24.2.4</span> bestparcoords</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/cheatsheet_of_ggally_plots.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/cheatsheet_of_ggally_plots.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/bestparcoords.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/bestparcoords.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>

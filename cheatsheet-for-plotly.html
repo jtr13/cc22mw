@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<title>Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta property="og:description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Cheatsheet of GGally (including ggcoef_model and ggpairs) | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Xinhao Dai  8.0.1 Introductions of GGally ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the...">
+<meta name="twitter:title" content="Chapter 10 Cheatsheet for Plotly | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Taichen Zhou, Yichen Huang For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -55,9 +55,9 @@
 <li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
 <li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="active" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
 <li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="active" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">11</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">12</span> Introduction of machine learning in R</a></li>
@@ -85,37 +85,63 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-for-plotly" class="section level1" number="10">
 <h1>
-<span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)<a class="anchor" aria-label="anchor" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Cheatsheet for Plotly<a class="anchor" aria-label="anchor" href="#cheatsheet-for-plotly"><i class="fas fa-link"></i></a>
 </h1>
-<p>Xinhao Dai</p>
-<div id="introductions-of-ggally" class="section level3" number="8.0.1">
+<p>Taichen Zhou, Yichen Huang</p>
+<p>For the community contribution for the EDAV class, we researched and created an R graphing library - plotly which can create integrative, publication-quality graphs. In this cheat sheet, we will provide the example of how to create basic charts, statistical charts, scientific charts etc. with Plotly.
+The link of the cheat sheet is <a href="https://yichuang25.github.io/Plotly-Cheatsheet/">here</a>.</p>
+<div id="motivation" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Data visualization is a crucial part for data scientist. As the tech industry matures, the demand for better visualizations increases. Each type of visualization has its specialty, just like a line chart describes trend better than a bar plot. To display data in an extraordinary fashion, Plotly is insanely powerful at explaining and exploring data. And here is the reason why.</p>
+<div id="interactivity" class="section level3" number="10.1.1">
 <h3>
-<span class="header-section-number">8.0.1</span> Introductions of GGally<a class="anchor" aria-label="anchor" href="#introductions-of-ggally"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.1</span> Interactivity<a class="anchor" aria-label="anchor" href="#interactivity"><i class="fas fa-link"></i></a>
 </h3>
-<p>ggplot2 is a R package for plotting based on grammar of graphics. GGally is a extension of ggplot2. It adds several helpful functions to reduce the difficulties of combining different geoms. To enable novices to quickly start using the packet, I create a cheatsheet for GGally.</p>
-<p>This cheatsheet includes several essential and efficient plots for explorary data analysis and visualization. First, it’s the ggcoef_model function, it helps to visualize the coefficients of a fitted model. It’s more intuitive and clear. Moreover, it enables us to compare several models in a plot so we can choose the best model among them. Second, it’s the ggpairs() function, which shows the relationships between every two variables in a dataset. It helps us to indentify what’s the relevent variable to a response variable. Moreover, the cheatsheet display several high-level plots that can be used in ggpairs in order to help users have a more clear intuiation.</p>
-<p>In this project, I have learned how to do a quickly read through the documents of a packet and distinguish which functions are the most essential and helpful ones. Moreover, I have learned how to create a tidy and beautiful cheatsheet for the users. And if I have another chance, I will try to create my own templeate rather than use the rstudio templeate.</p>
-<p>You can find a pdf version of the cheetsheet on <a href="https://github.com/Russell-A/cheatsheet-for-ggally/blob/main/cheatsheet_for_ggally.pdf">https://github.com/Russell-A/cheatsheet-for-ggally</a>. Below is an enclosed image of the cheatsheet.</p>
-<div class="inline-figure"><img src="resources/cheatsheet_GGally_plots/cheatsheet_for_ggally-page-001.jpg" width="80%" style="display: block; margin: auto;"></div>
-<p>Reference: <a href="https://ggobi.github.io/ggally/index.html">https://ggobi.github.io/ggally/index.html</a>.</p>
+<p>Plotly provides a feature that no other visualization library has — interactivity. Plotly allows users to further improve the visualization experience by using customizable interactive tools. When we visualize data with Plotly, we can add interactive features like buttons, sliders, and dropdowns to display different perspectives of graphs.</p>
+</div>
+<div id="customization-and-flexibility" class="section level3" number="10.1.2">
+<h3>
+<span class="header-section-number">10.1.2</span> Customization and Flexibility<a class="anchor" aria-label="anchor" href="#customization-and-flexibility"><i class="fas fa-link"></i></a>
+</h3>
+<p>Plotly is like a piece of paper, you can draw whatever you want on it. Compared to traditional visualization tools like ggplot2, Plotly allows full control over what is being plotted.</p>
+</div>
+</div>
+<div id="evaluation-and-future-improvement" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Evaluation and Future Improvement<a class="anchor" aria-label="anchor" href="#evaluation-and-future-improvement"><i class="fas fa-link"></i></a>
+</h2>
+<p>By making this Plotly cheat sheet, we learned how to not only graph in which we have talked about in ggplot, but also graph used in Machine Learning for example, ROC and PCA visualization. Also, we got more familiar with writing in R markdown file.
+There are still things we can furtherly improve, like we can add more types of graphs in our cheat sheet for example, alluvia plot. Moreover, the introduction of parameters of functions to plot the graph can be talked about a little bit more.</p>
 
 </div>
 </div>
+
+
+
   <div class="chapter-nav">
-<div class="prev"><a href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></div>
-<div class="next"><a href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></div>
+<div class="prev"><a href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></div>
+<div class="next"><a href="map-plots-with-highcharts.html"><span class="header-section-number">11</span> Map Plots with Highcharts</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#introductions-of-ggally"><span class="header-section-number">8.0.1</span> Introductions of GGally</a></li></ul>
-</li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cheatsheet-for-plotly"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li>
+<a class="nav-link" href="#motivation"><span class="header-section-number">10.1</span> Motivation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#interactivity"><span class="header-section-number">10.1.1</span> Interactivity</a></li>
+<li><a class="nav-link" href="#customization-and-flexibility"><span class="header-section-number">10.1.2</span> Customization and Flexibility</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#evaluation-and-future-improvement"><span class="header-section-number">10.2</span> Evaluation and Future Improvement</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/cheatsheet_of_ggally_plots.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/cheatsheet_of_ggally_plots.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/plotly_cheatsheet.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/plotly_cheatsheet.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>
