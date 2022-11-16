@@ -1,3 +1,5 @@
+# (PART) Cheatsheets {-}
+
 # Geographic visualization by ggmap
 
 Yuta Adachi
