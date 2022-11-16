@@ -1,0 +1,7 @@
+# Python tutorial: gather data through API and web scraping
+
+Yaohong Liang
+
+I wrote a medium blog to talk about how to get data through API requests and web scraping using python. Since getting data is always the first thing we do before any data analysis, I think this could be helpful for anyone who wants to know how to get data themselves. This blog introduce 2 methods to extract data from the Internet. The first one through API requests, and The other one is through web scraping. I provided step-by-step examples for each method, and I also discuss the pros and cons for each of them at the end of the article. My blog can be found at the following link:
+
+[Python tutorial: gather data through API and web scraping](https://medium.com/@yaohong010/python-tutorial-gather-data-through-api-and-web-scraping-f55de6000cac)
