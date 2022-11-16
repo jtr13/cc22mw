@@ -37,6 +37,10 @@ motivation
 interactivity
 customization-and-flexibility
 evaluation-and-future-improvement
+dataexplorer-cheatsheet-eda-made-easier
+motivation-for-the-contribution
+evaluation-of-dataexplorer-and-learnings
+sources
 data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet
 map-plots-with-highcharts
 collect-data
@@ -69,7 +73,7 @@ metric-evaluation
 regression
 classifcation
 conclusion
-sources
+sources-1
 quantmod-tidyquant-tutorials-and-comparison
 motivation-1
 quantmod
@@ -83,7 +87,7 @@ charting-with-tidyquant
 quantmod-vs.-tidyquant
 quantmod-1
 tidyquant-1
-sources-1
+sources-2
 learning-echarts4r-with-shiny
 motivations
 evaluation-and-improvement
