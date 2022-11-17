@@ -252,6 +252,10 @@ complex-chord-diagrams-canada-migration
 simplifying-data
 summary
 sources-3
+video-guide-to-reigniting-your-creavite-spark-for-visualizations
+video
+motivation-explanation
+resources
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
