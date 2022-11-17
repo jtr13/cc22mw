@@ -222,6 +222,7 @@ animations-with-plotly
 self-evaluation
 reference-1
 machine-learning-interview-mindmap-and-commonly-asked-questions
+data-visualization-with-seaborn
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
