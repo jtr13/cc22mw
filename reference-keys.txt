@@ -270,6 +270,14 @@ S3
 autocorrelation-plot
 S4
 S5
+bubble-chart-gpas-of-course-at-columbia-university
+motivation-for-the-project-1
+two-methods-to-create-bubble-chart-example-of-mtcars
+use-the-package-ggplot2
+the-package-plotly
+application-of-bubble-chart-gpas-of-courses-at-columbia-university
+differently-next-time
+sourses
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
