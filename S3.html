@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Sample project | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Joe Biden and Donald Trump This chapter gives a sample layout of your Rmd file. Test Photo">
+<title>Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Sample project | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Joe Biden and Donald Trump This chapter gives a sample layout of your Rmd file. Test Photo">
+<meta property="og:description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Sample project | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Joe Biden and Donald Trump This chapter gives a sample layout of your Rmd file. Test Photo">
+<meta name="twitter:title" content="Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -53,7 +53,7 @@
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
-<li><a class="active" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
 <li class="book-part">Cheatsheets</li>
 <li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
 <li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
@@ -93,7 +93,7 @@
 <li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
 <li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
 <li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
-<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="active" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
 <li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
 <li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
 <li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
@@ -109,31 +109,62 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="sample-project" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="S3" class="section level1" number="42">
 <h1>
-<span class="header-section-number">4</span> Sample project<a class="anchor" aria-label="anchor" href="#sample-project"><i class="fas fa-link"></i></a>
+<span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2<a class="anchor" aria-label="anchor" href="#S3"><i class="fas fa-link"></i></a>
 </h1>
-<p>Joe Biden and Donald Trump</p>
-<p>This chapter gives a sample layout of your <code>Rmd</code> file.</p>
-<div class="figure">
-<img src="resources/sample_project/election.jpg" alt=""><p class="caption">Test Photo</p>
+<p>The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw data and log_transfomred data for GOOG stock price.<br></p>
+<p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
+Use ggplot2 to create visualization for both raw data and log_transfomred data for GOOG stock price with the line graph.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
+<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#line plot for stock price raw data</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">s_price</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">s_price</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">s_price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'GOOG stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#line plot for log Transformed GOOGstock price </span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_goog</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">ts_goog</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Log_transformed GOOG stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-3-2.png" width="80%" style="display: block; margin: auto;"></div>
+<p>From two plots, we observe that the log_transformed stock price better represents the change in perentage for stock prices. We will use the log_transformed stock data in further visualizations.</p>
+<p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
+Why don’t we visualized the Google stock price and Amazon stock price on the same graph for comparison?
+Code below create line plots for GOOG and AMZN log_transformed stock prices at same plot by adding two geom_line.</p>
+<p><br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ts_bind</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="va">ts_amzn</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_bind</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">GOOG.Adjusted</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">AMZN.Adjusted</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">'red'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'GOOG and AMZN log_transformed stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<p>Another way to create ts visualization is to use autoplot function in ggplot2. The function autoplot() in ggplot2 provides a simple and direct plot for a particular object.<br></p>
+<p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
+Use function autoplot() to visualized the Google and Amazon log_transformed stock price.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span>  <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">' GOOG and AMZN log_transformed stock price in autoplot'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
-
-</div>
-
-
-
   <div class="chapter-nav">
-<div class="prev"><a href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></div>
-<div class="next"><a href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></div>
+<div class="prev"><a href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></div>
+<div class="next"><a href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#sample-project"><span class="header-section-number">4</span> Sample project</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#S3"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/sample_project.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/sample_project.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/time_series_visualization_r_tutorial.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/time_series_visualization_r_tutorial.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
         </ul>
 </div>
     </nav>

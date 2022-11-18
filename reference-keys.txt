@@ -262,6 +262,14 @@ motivation-6
 data-importance-visualization
 description
 motivation-7
+time-series-visualization---r-tutorial
+introduction-6
+S1
+S2
+S3
+autocorrelation-plot
+S4
+S5
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
