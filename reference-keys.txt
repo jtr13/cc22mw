@@ -259,6 +259,9 @@ resources
 tutorial-on-machine-learning-in-r
 introduction-5
 motivation-6
+data-importance-visualization
+description
+motivation-7
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
