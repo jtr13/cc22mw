@@ -278,6 +278,9 @@ overview-2
 goals
 visualizing-graphs-and-networks
 motivations-1
+is-the-data-visualization-misleading-or-not---survey
+overview-and-motivation
+goal
 github-initial-setup
 create-new-repo
 pages-in-repo-settings
