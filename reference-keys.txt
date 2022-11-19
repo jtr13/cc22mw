@@ -296,6 +296,7 @@ playful-r-packages-for-kids
 motivations-2
 evaluation-and-improvement-1
 ggvis-cheat-sheet
+cheatsheet-for-patchwork
 edav-survey-and-analysis
 project-proposal
 project-group-cc5
