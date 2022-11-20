@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 50 Lightning Talk on GeoComputation with R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Shrujan Varma Penmetsa  50.0.1 Project Proposal 5 minute lightning talk on various libraries in R for Geocomputation. The following are the resources for the presentation: PDF file with code...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 50 Lightning Talk on GeoComputation with R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Shrujan Varma Penmetsa  50.0.1 Project Proposal 5 minute lightning talk on various libraries in R for Geocomputation. The following are the resources for the presentation: PDF file with code...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 50 Lightning Talk on GeoComputation with R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Shrujan Varma Penmetsa  50.0.1 Project Proposal 5 minute lightning talk on various libraries in R for Geocomputation. The following are the resources for the presentation: PDF file with code...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/proj4js-2.3.15/proj4.js"></script><link href="libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="libs/highcharts-9.3.1/highcharts.js"></script><script src="libs/highcharts-9.3.1/highcharts-3d.js"></script><script src="libs/highcharts-9.3.1/highcharts-more.js"></script><script src="libs/highcharts-9.3.1/modules/stock.js"></script><script src="libs/highcharts-9.3.1/modules/map.js"></script><script src="libs/highcharts-9.3.1/modules/data.js"></script><script src="libs/highcharts-9.3.1/modules/exporting.js"></script><script src="libs/highcharts-9.3.1/modules/offline-exporting.js"></script><script src="libs/highcharts-9.3.1/modules/drilldown.js"></script><script src="libs/highcharts-9.3.1/modules/item-series.js"></script><script src="libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script><script src="libs/highcharts-9.3.1/modules/annotations.js"></script><script src="libs/highcharts-9.3.1/modules/export-data.js"></script><script src="libs/highcharts-9.3.1/modules/funnel.js"></script><script src="libs/highcharts-9.3.1/modules/heatmap.js"></script><script src="libs/highcharts-9.3.1/modules/treemap.js"></script><script src="libs/highcharts-9.3.1/modules/sankey.js"></script><script src="libs/highcharts-9.3.1/modules/dependency-wheel.js"></script><script src="libs/highcharts-9.3.1/modules/organization.js"></script><script src="libs/highcharts-9.3.1/modules/solid-gauge.js"></script><script src="libs/highcharts-9.3.1/modules/streamgraph.js"></script><script src="libs/highcharts-9.3.1/modules/sunburst.js"></script><script src="libs/highcharts-9.3.1/modules/vector.js"></script><script src="libs/highcharts-9.3.1/modules/wordcloud.js"></script><script src="libs/highcharts-9.3.1/modules/xrange.js"></script><script src="libs/highcharts-9.3.1/modules/tilemap.js"></script><script src="libs/highcharts-9.3.1/modules/venn.js"></script><script src="libs/highcharts-9.3.1/modules/gantt.js"></script><script src="libs/highcharts-9.3.1/modules/timeline.js"></script><script src="libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script><script src="libs/highcharts-9.3.1/modules/bullet.js"></script><script src="libs/highcharts-9.3.1/modules/coloraxis.js"></script><script src="libs/highcharts-9.3.1/modules/dumbbell.js"></script><script src="libs/highcharts-9.3.1/modules/lollipop.js"></script><script src="libs/highcharts-9.3.1/modules/series-label.js"></script><script src="libs/highcharts-9.3.1/plugins/motion.js"></script><script src="libs/highcharts-9.3.1/custom/reset.js"></script><script src="libs/highcharts-9.3.1/modules/boost.js"></script><script src="libs/highchart-binding-0.9.4/highchart.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/Dygraph.Plotters.CandlestickPlotter-1.0/candlestick.js"></script><script src="libs/d3-4.13.0/d3.min.js"></script><link href="libs/profvis-0.3.6.9000/profvis.css" rel="stylesheet">
+<script src="libs/profvis-0.3.6.9000/profvis.js"></script><script src="libs/profvis-0.3.6.9000/scroll.js"></script><link href="libs/highlight-6.2.0/textmate.css" rel="stylesheet">
+<script src="libs/highlight-6.2.0/highlight.js"></script><script src="libs/profvis-binding-0.3.7/profvis.js"></script><link href="libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet">
+<script src="libs/collapsibleTree-binding-0.1.7/collapsibleTree.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/d3v3-3.5.3/./d3v3.min.js"></script><link href="libs/d3heatmapcore-0.0.0/heatmapcore.css" rel="stylesheet">
+<script src="libs/d3heatmapcore-0.0.0/heatmapcore.js"></script><script src="libs/d3v3-tip-0.6.6/index.js"></script><script src="libs/d3heatmap-binding-0.9.0/d3heatmap.js"></script><script src="libs/d3-tip-0.8.1/index.js"></script><link href="libs/chorddiag-0.1.2.9000/chorddiag.css" rel="stylesheet">
+<script src="libs/chorddiag-0.1.2.9000/chorddiag.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Community Contributions for EDAV Fall 2022 Mon/Wed</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
+<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">48</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">49</span> Playful R Packages for Kids</a></li>
+<li><a class="active" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">50</span> Lightning Talk on GeoComputation with R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">52</span> Cheatsheet for ‘patchwork’</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">53</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">54</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">55</span> Is the data visualization misleading or not - Survey</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">56</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">57</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc22mw">View book source <i class="fa-solid fa-chart-scatter"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="lightning-talk-on-geocomputation-with-r" class="section level1" number="50">
+<h1>
+<span class="header-section-number">50</span> Lightning Talk on GeoComputation with R<a class="anchor" aria-label="anchor" href="#lightning-talk-on-geocomputation-with-r"><i class="fas fa-link"></i></a>
+</h1>
+<p>Shrujan Varma Penmetsa</p>
+<div id="project-proposal" class="section level3" number="50.0.1">
+<h3>
+<span class="header-section-number">50.0.1</span> Project Proposal<a class="anchor" aria-label="anchor" href="#project-proposal"><i class="fas fa-link"></i></a>
+</h3>
+<p>5 minute lightning talk on various libraries in R for Geocomputation.</p>
+<p>The following are the resources for the presentation:</p>
+<p>PDF file with code examples and explanation:</p>
+<p><span target="_blank"><a href="https://drive.google.com/file/d/1ozNDyHdTjSTOv8Z0OWdNGWLHvHnhagU8/view?usp=sharing" class="uri">https://drive.google.com/file/d/1ozNDyHdTjSTOv8Z0OWdNGWLHvHnhagU8/view?usp=sharing</a></span></p>
+<p>Powerpoint presentation slides :</p>
+<p><span target="_blank"><a href="https://docs.google.com/presentation/d/1lA05TuvMitmquZCoyMnhCng3RQ-Sgl2g/edit?usp=sharing&amp;ouid=108784931668378752252&amp;rtpof=true&amp;sd=true" class="uri">https://docs.google.com/presentation/d/1lA05TuvMitmquZCoyMnhCng3RQ-Sgl2g/edit?usp=sharing&amp;ouid=108784931668378752252&amp;rtpof=true&amp;sd=true</a></span></p>
+<p>UNI - sp4155</p>
+<p>Loading the libraries:</p>
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/">leaflet</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jakubnowosad.com/spData/">spData</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Nowosad/spData">spDataLarge</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-tmap/tmap">tmap</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="topic-geocomputation-with-r" class="section level3" number="50.0.2">
+<h3>
+<span class="header-section-number">50.0.2</span> Topic : GeoComputation with R<a class="anchor" aria-label="anchor" href="#topic-geocomputation-with-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>What is GeoComputation ?</p>
+<p>Computers can do a lot more than we can imagine or perceive. One such domain where the power of computation has recently been deployed is in dealing with geographic data. Geographic data is present everywhere and almost every industry leverages this data for their effective growth and functioning. Geographic representation is not just limited to static maps. With new software technology, it is not all difficult to create interactive and detailed maps that showcase your data and idea effectively.</p>
+<p>The formal definition of Geocomputation is given as:</p>
+<p>GeoComputation is about using the various different types of geodata and about developing relevant geo-tools within the overall context of a ‘scientific’ approach (Openshaw and Abrahart,2000)</p>
+<p>In the past decade, several interactive softwares (like QGIS) have been developed that provide easy and effective representation of geodata. However, it is very difficult to make additional changes to these softwares. For example, it might be the case that u may need to add a new feature or functionality to your map and if the software does not have that feature that allows you to do so, you are left with very limited choices. This is where R language steps in. There are several libraries in r like “leaflet”, “sf”, and “tmap” that provide various functionalities and techniques to manipulate geodata.</p>
+<p>In this presentation, we will briefly look at come of these libraries and the various functionalities that they provide.</p>
+<p>Let us consider a very simple example. Suppose we need to give a small intro on where we are from, where we are residing currently, and what is our dream location, instead of giving a normal written or verbal explanation of the same, we can do it interactively by using the “leaflet” package in R.</p>
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/leaflet.html">leaflet</a></span><span class="op">(</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/addProviderTiles.html">addProviderTiles</a></span><span class="op">(</span><span class="st">"NASAGIBS.ViirsEarthAtNight2012"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-layers.html">addMarkers</a></span><span class="op">(</span></span>
+<span>    lng <span class="op">=</span> <span class="fl">73</span>, lat <span class="op">=</span> <span class="fl">18</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Home Sweet Home"</span>,</span>
+<span>    labelOptions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-options.html">labelOptions</a></span><span class="op">(</span>noHide <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-layers.html">addMarkers</a></span><span class="op">(</span></span>
+<span>    lng <span class="op">=</span> <span class="op">-</span><span class="fl">85</span>, lat <span class="op">=</span> <span class="fl">31</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Columbia University"</span>,</span>
+<span>    labelOptions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-options.html">labelOptions</a></span><span class="op">(</span>noHide <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-layers.html">addMarkers</a></span><span class="op">(</span></span>
+<span>    lng <span class="op">=</span> <span class="op">-</span><span class="fl">19</span>, lat <span class="op">=</span> <span class="fl">64</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Iceland - Dream Destination"</span>,</span>
+<span>    labelOptions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-options.html">labelOptions</a></span><span class="op">(</span>noHide <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Leaflet allows for interactive panning and zooming in maps.</p>
+<p>Leaflet allows us to create maps using any combination of Map Tiles, Marker’s, Polygons, Lines, Popups, etc. In the above graph, we used Map tiles and popups to clearly showcase the coordinates of interest.</p>
+<p>In addition to this, Leaflet makes it very easy to render spatial objects from other libraries like “sf”.
+The different data models that these packages use:</p>
+<ol style="list-style-type: decimal">
+<li><p>Vector</p></li>
+<li><p>Raster</p></li>
+</ol>
+<p>• The vector data model leverages points, lines, and polygons to represent the world data. There are discrete and well-defined borders, meaning that vector datasets usually have very high precision.</p>
+<p>• The raster data model on the other hand divides the surface into cells of constant size. Raster datasets are the basis of several background images that are used in web mapping and have been a vital source of geographic data since the origins of aerial photography and satellite-based remote sensing devices.</p>
+<p>Other very libraries for data computation in R are:</p>
+<ol style="list-style-type: decimal">
+<li><p>sf</p></li>
+<li><p>sp</p></li>
+<li><p>tmap</p></li>
+</ol>
+<p>A simple example of how the vector data model leverages points in a coordinate reference system is given below:</p>
+<p>In this system London, for example, can be represented by the coordinates c(-0.1, 51.5). This means that its location is -0.1 degrees east and 51.5 degrees north of the origin. The origin in this case is at 0 degrees longitude (the Prime Meridian) and 0 degree latitude (the Equator)</p>
+<p>There are several spatial data objects in the sp library. One such object is “world”. The world object displays several attributes of the all the continents like population , life expectancy , area (size) , gdp , etc. We will be using this object to show some of the library features.</p>
+<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">world</span><span class="op">)</span></span></code></pre></div>
+<p>As you can see here, using the “names()” method we were able to extract the various attributes of the “world” object</p>
+<p>Now we can plot any of these attributes. This can be done very simply using the “plot” method.</p>
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="va">world</span><span class="op">[</span><span class="st">"lifeExp"</span><span class="op">]</span>, reset <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<p>From the above plot , we can infer that a graph of all the continents was plotted and the average life expectancy of all the countries is clearly represented with colour coding.</p>
+<p>In addition to this, the sf package allows flexibility to overlay other shapes on the existing maps. For example, we can overlay circles that are proportional to the population of the countries on top of the existing map.</p>
+<p>The “st_centroid” function can be used to convert one geometry to another geometry type. The aesthetic of the circle can be varied using the “cex” argument. Here we are passing the country’s population divided by 10000 as the argument.</p>
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="va">world</span><span class="op">[</span><span class="st">"continent"</span><span class="op">]</span>, reset <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">cex</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">world</span><span class="op">$</span><span class="va">pop</span><span class="op">)</span> <span class="op">/</span> <span class="fl">10000</span></span>
+<span><span class="va">world_cents</span> <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_centroid</a></span><span class="op">(</span><span class="va">world</span>, of_largest <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_geometry.html">st_geometry</a></span><span class="op">(</span><span class="va">world_cents</span><span class="op">)</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, cex <span class="op">=</span> <span class="va">cex</span><span class="op">)</span></span></code></pre></div>
+<p>sf’s plot method has additional arguments specific to geographic data. One such example is expanBB, that can be used to plot an sf object in context: it takes a numeric vector of length four that expands the bounding box of the plot relative to zero in the following order: bottom, left, top, right. This is used to plot India.</p>
+<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">india</span> <span class="op">=</span> <span class="va">world</span><span class="op">[</span><span class="va">world</span><span class="op">$</span><span class="va">name_long</span> <span class="op">==</span> <span class="st">"India"</span>, <span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_geometry.html">st_geometry</a></span><span class="op">(</span><span class="va">india</span><span class="op">)</span>, expandBB <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">1</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"gray"</span>, lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p>In addition to the vector , we have also passed the ‘col’ and ‘lwd’ arguments that specify the colour and the line width for the map.</p>
+<p>Another important library: “tmap”</p>
+<p>• tmap is another powerful and flexible map-making package with simple defaults.</p>
+<p>• It has a syntax that is somewhat similar to the ggplot2 package.</p>
+<p>• It has the unique capability to generate static and interactive maps using the same code via tmap_mode().</p>
+<p>• The basic building block is tm_shape() (which defines input data, raster and vector objects).</p>
+<p>The object that we will be using to demonstrate the various features and attributes of tmap is nz. nz is a spatial object that will be passed to tm_shape. We will demonstrate how additional layers can be added just like we do in ggplot2.</p>
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<p>As u can see here , the basic outline map of New Zealand has been plotted and we have added the default colour grey using the function tm_fill.</p>
+<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<p>As u can see here , the basic outline map of New Zealand has been plotted and we have added the territory lines using the function tm_borders.</p>
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_fill</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">m1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_fill</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
+<span><span class="va">m2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_fill</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"blue"</span>, alpha <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></span>
+<span><span class="va">m3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span><span class="va">m4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="va">m5</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span>lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">m6</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_fill</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"green"</span>, alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, lwd <span class="op">=</span> <span class="fl">3</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tmap_arrange.html">tmap_arrange</a></span><span class="op">(</span><span class="va">m1</span>, <span class="va">m2</span>, <span class="va">m3</span>, <span class="va">m4</span>, <span class="va">m5</span>, <span class="va">m6</span><span class="op">)</span></span></code></pre></div>
+<p>The above maps are a combination of tm_fill and tm_border. In addition we can also use functions like “lwd” and “lty” which denote line width and line type (In case you wish to print a dotted line).</p>
+<p>When it comes to filling colour in the graph , there are a variety of options available in tmap. We can use the “breaks” method which divides the colour schema into groups of categories as provided by the user. In the following example we have used “breaks” to split the income into groups on the basis of median from o to 30,000 , 30,000 to 40,000 and 40,000 to 50,000.</p>
+<p>Another attribute that can be passed to the tm_polygon method is “n”. “n” denotes the number of splits in the colour schema. If “n” equals 10 , the colour schema will be split into 10 different categories.</p>
+<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mb1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"Median_income"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">breaks</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">*</span> <span class="fl">10000</span></span>
+<span><span class="va">mb2</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"Median_income"</span>, breaks <span class="op">=</span> <span class="va">breaks</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mb3</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"Median_income"</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mb4</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span>col <span class="op">=</span> <span class="st">"Median_income"</span>, palette <span class="op">=</span> <span class="st">"BuGn"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tmap_arrange.html">tmap_arrange</a></span><span class="op">(</span><span class="va">mb1</span>, <span class="va">mb2</span>, <span class="va">mb3</span>, <span class="va">mb4</span><span class="op">)</span></span></code></pre></div>
+<p>To plot the above graphs we have used tm_polygon function which encompasses tm_fill and tm_border function.</p>
+<p>On adding additional layers or objects to a tmap object the original object will retain all its layers.</p>
+<div class="sourceCode" id="cb372"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">map_nz</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">map_nz1</span> <span class="op">=</span> <span class="va">map_nz</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_elev</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_raster.html">tm_raster</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
+<span><span class="va">nz_water</span> <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_combine.html">st_union</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="fl">22200</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_cast.html">st_cast</a></span><span class="op">(</span>to <span class="op">=</span> <span class="st">"LINESTRING"</span><span class="op">)</span></span>
+<span><span class="va">map_nz2</span> <span class="op">=</span> <span class="va">map_nz1</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_water</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_lines.html">tm_lines</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">map_nz3</span> <span class="op">=</span> <span class="va">map_nz2</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_height</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_symbols.html">tm_dots</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tmap_arrange.html">tmap_arrange</a></span><span class="op">(</span><span class="va">map_nz1</span>, <span class="va">map_nz2</span>, <span class="va">map_nz3</span><span class="op">)</span></span></code></pre></div>
+<p>Here, for map 1 we have added a raster layer which is directly proportional to the elevation of that area. We have adjusted the gradient of that layer using alpha.</p>
+<p>For map2, we have leveraged map1 and and have added the nz_water object which show the territorial waters of New Zealand. We used the tm_lines function to create a boundary around the nz map</p>
+<p>For map3, we have leveraged map2 and have added nz_height object which is used tm_dots function which in turn plot the highest points in New Zealand in the form of points.</p>
+</div>
+<div id="inset-maps" class="section level3" number="50.0.3">
+<h3>
+<span class="header-section-number">50.0.3</span> Inset Maps:<a class="anchor" aria-label="anchor" href="#inset-maps"><i class="fas fa-link"></i></a>
+</h3>
+<p>An inset map is a smaller map rendered within or next to the main map.</p>
+<p>It could serve many different purposes, including providing a context or bringing some non-contiguous regions closer to ease their comparison.</p>
+<p>They could be also used to focus on a smaller area in more detail or to cover the same area as the map, but representing a different topic.</p>
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nz_region</span> <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_bbox.html">st_bbox</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="fl">1340000</span>, xmax <span class="op">=</span> <span class="fl">1450000</span>,</span>
+<span>                      ymin <span class="op">=</span> <span class="fl">5130000</span>, ymax <span class="op">=</span> <span class="fl">5210000</span><span class="op">)</span>,</span>
+<span>                    crs <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_crs.html">st_crs</a></span><span class="op">(</span><span class="va">nz_height</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sfc.html">st_as_sfc</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">nz_height_map</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_elev</span>, bbox <span class="op">=</span> <span class="va">nz_region</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_raster.html">tm_raster</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"cont"</span>, palette <span class="op">=</span> <span class="st">"YlGn"</span>, legend.show <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_height</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_symbols.html">tm_symbols</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">2</span>, col <span class="op">=</span> <span class="st">"red"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_scale_bar.html">tm_scale_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"left"</span>, <span class="st">"bottom"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">nz_map</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_polygons</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_height</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_symbols.html">tm_symbols</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">2</span>, col <span class="op">=</span> <span class="st">"red"</span>, size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_shape.html">tm_shape</a></span><span class="op">(</span><span class="va">nz_region</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tm_polygons.html">tm_borders</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">grid</span><span class="op">)</span></span>
+<span><span class="va">nz_height_map</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/d3heatmap/man/print-methods.html">print</a></span><span class="op">(</span><span class="va">nz_map</span>, vp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/viewport.html">viewport</a></span><span class="op">(</span><span class="fl">0.8</span>, <span class="fl">0.27</span>, width <span class="op">=</span> <span class="fl">0.5</span>, height <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Steps:</p>
+<p>The first step is to define the area of interest.We create a new spatial object nz_region</p>
+<p>In the second step, we create a base map showing the New Zealand’s Southern Alps area which is the main area of interest.</p>
+<p>The third step consists of the inset map creation. It gives a context and helps to locate the area of interest.We clearly indicate the position of the main map by using borders.</p>
+<p>Finally, we combine the two maps using the function viewport() from the grid package</p>
+</div>
+<div id="interactive-maps" class="section level3" number="50.0.4">
+<h3>
+<span class="header-section-number">50.0.4</span> Interactive Maps:<a class="anchor" aria-label="anchor" href="#interactive-maps"><i class="fas fa-link"></i></a>
+</h3>
+<p>Interactive maps are one opf the most commonly used form of maps today. Almost every company , industry and individual relies on interactive mapss for their daily functioning.</p>
+<p>Interactivity can take many forms, the most common and useful of which is the ability to pan around and zoom into any part of a geographic dataset overlaid on a ‘web map’ to show context.</p>
+<p>Less advanced interactivity levels include popups that appear when you click on different features, a kind of interactive label. More advanced levels of interactivity include the ability to tilt and rotate maps.</p>
+<p>Interactive maps using tmap package:</p>
+<p>A unique feature of tmap as mentioned previously is its ability to create static and interactive maps using the same code.</p>
+<p>Maps can be viewed interactively at any point by switching to view mode, using the command tmap_mode(“view”).</p>
+<p>As shown below , simply by using tmap_mode and passing the map_nz class that we had created previously( this stores the nz spatial object), we an create an interactive map of New Zealand</p>
+<div class="sourceCode" id="cb374"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/tmap/man/tmap_mode.html">tmap_mode</a></span><span class="op">(</span><span class="st">"view"</span><span class="op">)</span></span>
+<span><span class="va">map_nz</span></span></code></pre></div>
+</div>
+<div id="conclusion-1" class="section level3" number="50.0.5">
+<h3>
+<span class="header-section-number">50.0.5</span> Conclusion :<a class="anchor" aria-label="anchor" href="#conclusion-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>I would like to conclude this document by saying that there are a variety of packages available in R that allow us to play with geodata in a way that many high end softwares do not allow us to. There are several map tiles available on the internet that can be used to plot interactive maps of various regions and show key insights. In addition to interactive maps, the various R packages can also be used to create inset maps for detailed analysis as well as faceted maps.</p>
+</div>
+<div id="personal-takeaway" class="section level3" number="50.0.6">
+<h3>
+<span class="header-section-number">50.0.6</span> Personal Takeaway :<a class="anchor" aria-label="anchor" href="#personal-takeaway"><i class="fas fa-link"></i></a>
+</h3>
+<p>I was always intrigued by geodata and was looking for alternatives in Power BI and Tableu to plot maps. However, Professor suggested me to explore Geocomputation in R and I was introduced to these various packages that are capable of a such high level functionality with minimal code.</p>
+</div>
+<div id="references-4" class="section level3" number="50.0.7">
+<h3>
+<span class="header-section-number">50.0.7</span> References :<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Majority of the examples , packages and definitions have been picked up from:</p>
+<p>Geocomputation with R by Robin Lovelace, Jakub Nowosad, Jannes Muenchow</p>
+<p><a href="https://bookdown.org/robinlovelace/geocompr/" class="uri">https://bookdown.org/robinlovelace/geocompr/</a></p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="playful-r-packages-for-kids.html"><span class="header-section-number">49</span> Playful R Packages for Kids</a></div>
+<div class="next"><a href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#lightning-talk-on-geocomputation-with-r"><span class="header-section-number">50</span> Lightning Talk on GeoComputation with R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#project-proposal"><span class="header-section-number">50.0.1</span> Project Proposal</a></li>
+<li><a class="nav-link" href="#topic-geocomputation-with-r"><span class="header-section-number">50.0.2</span> Topic : GeoComputation with R</a></li>
+<li><a class="nav-link" href="#inset-maps"><span class="header-section-number">50.0.3</span> Inset Maps:</a></li>
+<li><a class="nav-link" href="#interactive-maps"><span class="header-section-number">50.0.4</span> Interactive Maps:</a></li>
+<li><a class="nav-link" href="#conclusion-1"><span class="header-section-number">50.0.5</span> Conclusion :</a></li>
+<li><a class="nav-link" href="#personal-takeaway"><span class="header-section-number">50.0.6</span> Personal Takeaway :</a></li>
+<li><a class="nav-link" href="#references-4"><span class="header-section-number">50.0.7</span> References :</a></li>
+</ul>
+</li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/geocomputationwithr.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/geocomputationwithr.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
