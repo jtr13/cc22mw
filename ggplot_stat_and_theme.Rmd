@@ -16,14 +16,14 @@ library(readr)
 ```
 
 
-## 1. Explanation and Motivation
+## Explanation and Motivation
 
 When generating plots using ggplot2 in our assignments, my partner and I find the plots are always in default aesthetics with uniform style of text and background elements, which may not reach expectations for various topics or specific requirements for artistic taste. For instance, when reporting data analysis of some pleasing holidays like sales of roses on Valentine’s Day, the monotonous black, white and gray will not match the topic being explored. Also, if the reporter prefers to present a more visually stimulating analysis plot, then a dark background with light text will better attract the audience's attention, compared to the default setting of light gray background and black text. This finding motivates us to design our customized theme for the plots in this project and thus replace the default design offered by ggplot2 with styles better fit the topics. We also build new stats that generate a creative view for analysts to develop a deeper understanding of the dataset.
 
 This project enables us to have a further exploration of ggproto and ggplot, enhance our professional skills in generating aesthetic reports with customized design, and prepare us for our future study for data visualization techniques. Next time we plan to continue to explore how to personalize the establishment of geom in ggplot with various functions.
 
 
-## 2. Customize ggplot2 Stat
+## Customize ggplot2 Stat
 
 plot pointsets and draw the boundary of the point sets by figuring out the min and max of x axis and y axis respectively. The boundary can either be represented aesthetically by groups in rectangle, or be draw in one color thus generating one box boundary. Boundaries can also be represented merely by points without lines connecting each other. This stats and geom help the analysts to better understand the distribution of the points, and ggplot2 preserves aesthetics that are constant within each group.
 ```{r}
@@ -59,11 +59,11 @@ ggplot(mpg, aes(displ, hwy)) +
   geom_point()
 ```
 
-## 3. Customize ggplot2 Theme
+## Customize ggplot2 Theme
 
 In addition to Stat, we can also customize our own ggplot theme.The following are a couple of things we need to know to create a new theme.
 
-### 3.1 Create a Framework for a New Theme
+### Create a Framework for a New Theme
 
 To build a new theme, we often start from a built-in default theme, which is encapsulated by the theme_gray() function in ggplot2. Themes can be “added” using the + operator or %+replace% to plot commands in order to change the look and feel of a plot. Adding a theme will override elements of any default theme. Therefore, we can override the elements in default theme that we want to change by using the a theme() funtion.
 
@@ -72,7 +72,7 @@ Here's our simple framework to create a new theme:
 `new_theme <- function(){theme_gray() %+replace% theme()}`
 
 
-### 3.2 Modify the attributes
+### Modify the attributes
 
 We can do many different kind of modifications to different components in the default theme. For instance, we can change the font of all the text elements "montserrat" by doing the following:
 
@@ -194,9 +194,9 @@ You may look up their usage and the attributes using help ?element_blank().
   *`element_text()`: text.
 
 
-### 3.3 Demonstration: Create Darkmode Theme
+### Demonstration: Create Darkmode Theme
 
-#### 3.3.1 Data Manipulation and Plot with Default Theme
+#### Data Manipulation and Plot with Default Theme
 
 ```{r cars, include=FALSE}
 loadfonts(device = "win", quiet = TRUE) 
@@ -255,7 +255,7 @@ p
 The plot with default theme is not bad, but some people may prefer a dark background to see the trend of the lines better. Also, there are some minor aesthetic problems like the small size of the labels and distracting grid lines. In the following setion, we are going to create a more darkmode theme that is more concise.
 
 
-#### 3.3.2 Create Darkmode Theme 
+#### Create Darkmode Theme 
 
 First we define a new theme function starting from our default built-in theme, which is theme_gray(). A special operator %+replace% is used here. It allows us to replace the specific theme elements we want.
 
@@ -356,12 +356,12 @@ p +
 ```
 
 
-### 3.4 Demonstration2: Create Valentine Theme
+### Demonstration2: Create Valentine Theme
 
 Sometimes we want themes in cute style that adds aesthetic to our visualization. Here we create a valentine theme and use it to make a plot for a data set on value of valentine gifts. 
 
 
-#### 3.4.1 Data Manipulation and Plot with Default Theme
+#### Data Manipulation and Plot with Default Theme
 
 ```{r, warning=FALSE, message=FALSE}
 valentine_data <- read_csv("historical_gift_trends_per_person_spending.csv")%>% rename(year = `...1` )
@@ -390,7 +390,7 @@ p2
 ```
 
 
-#### 3.4.2 Create Valentine Theme
+#### Create Valentine Theme
 
 ```{r pressure, echo=FALSE, warning=FALSE}
 theme_valentine <- function() {
