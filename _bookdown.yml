@@ -46,10 +46,29 @@ rmd_files: [
   'interactive_plots_in_r.Rmd',
   'introduction_to_plotly.Rmd',
   'ml_interview_concept_mindmap.Rmd',
+  'python_seaborn.Rmd',
+  'tutorial_of_making_different_types_of_interactive_graphs.Rmd',
+  'ggplotscheatsheet.Rmd',
+  'chord_diagrams.Rmd',
+  'resparking_creativity_for_visualizations.Rmd',
+  'machine_learning_r.Rmd',
+  'edav_data_importance.Rmd',
+  'time_series_visualization_r_tutorial.Rmd',
+  'bubble_chart_application.Rmd',
+  'edav_history_of_charts.Rmd',
+  #'r_neural_network.Rmd',
+  'bioconductor.Rmd',
+  'playful_r_packages.rmd',
   'geocomputationwithr.Rmd',
+  'ggvis_cheatsheet.Rmd',
+  'cheatsheet_patchwork.Rmd',
+  #'plotly_python_surface.Rmd',
+  #'rstudio_editor_theme_setup_tutorial.Rmd',
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
+  'network_visualization.Rmd',
+  'misleading_visualizations.Rmd',
   
   # Part: Appendices
   'appendix_initial_setup.Rmd', # contains PART header

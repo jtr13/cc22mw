@@ -1,0 +1,7 @@
+# Data Visualization with Seaborn
+
+Yingjie Qu (yq2350) & Liwen Zhu (lz2512)
+
+We created an introduction to data visualization with Seaborn, a package in python. The introduction includes importing the package and visualizing typical graphs, such as histograms and scatterplots. We also show how to draw more complex diagrams, biplots, and ridge plots, with the help of other packages.
+
+Please look at the files in 'https://github.com/A1anZhu/python_seaborn'.
