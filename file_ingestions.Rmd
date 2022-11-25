@@ -1,0 +1,93 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(rjson)
+library(XML)
+
+```
+
+# Fantastic Data Files and How to Ingest Them
+
+Siyu Yang
+
+## Why This Tutorial?
+Whether in research, school projects or real life work, the first step of data analysis is always data ingestion. Before whipping out the `XGBoost` and `plotly` and diving into the fun part, the three or four letter suffix at the end of the data files we ingest is already giving us information about the data itself, where the data came from, how the data was compiled, and the type of analysis or transformations it may require. 
+
+In this tutorial, I would like to introduce a few commonly used data file formats, why they look the way they look, and how to ingest them in `R` respectively. Although the tutorial may not be highly technical, I hope my experience as a former consulting data scientist and being on the receiving end of many types of data (including a zip file of hundreds of `.pdf`s) can provide a perspective of some value.
+
+### Comma Seperated Value
+A Comma Seperated Value file, also known as a `.csv` file, is a type of file where each line is a data record or a "row" in a tabular format, and each field or a "column" is seperated by commas. The history of the `.csv` format dates back even before the popularization of personal computers, and is originally supported by [IBM Fortran](https://blog.sqlizer.io/posts/csv-history/) in 1972, which has largely to do with the fact that Fortran was coded on punched cards, and `.csv` are easier to create and less error prone. It was quickly adopted by relational database systems to transfer data between systems and formats.
+
+#### Why are we happy when we receive CSVs?
+- Compact file size. CSVs only store the string themselves, and relies on the ingesting system to parse the delimitors and read the file into tabular format.
+- Structured in tabular form, which makes it easy to query and transform.
+- Converts easily between file and most database systems. Almost all popular database systems can directly translate CSV files to SQL
+
+#### Ingesting csv into R
+Base R's `read.csv()` function provide the ability to directly ingest CSV files.
+```{r}
+df <- read.csv('resources/iris.csv')
+glimpse(df)
+```
+You can also use `read_csv()` from `tydyverse`, which provide faster ingestion when the file size is large.
+
+```{r}
+df <- read_csv('resources/iris.csv')
+glimpse(df)
+```
+
+### Excel
+More often than not, especially in the business world, we receive an Excel file in either `.xlsx` (default Excel 2007 format), `.xls` (old Excel format), or `.xlsm` (Excel workbook with macro enabled). I like to think of Excel as a "visual developing tool" -- users can visually inspect data organized in tabular form, and interactively defining and creating the value and format of every cell. It contains a lot more information than CSV files, and as a result often take more space to store the same amount of data. In reality, an `xlsx` file is a [ZIP compressed archive](https://en.wikipedia.org/wiki/Microsoft_Excel) with a directory structure of XML text documents, the latter of which we will introduce in a later section.
+
+![After adding formatting into the Iris file shown above, the Excel takes up much more space than the csv file](resources/fig1.png)
+
+#### What do we do when we receive .XLSX files?
+I would always recommend opening the file and inspecting it first. More often than not, an Excel worksheet is built to be worked on by human, and as a result have a lot of visual or design elements that works well visually, but does not play well with R dataframes. Large spreadsheets often include multiple worksheets; real data often does not start at the first page, which is likely used as a title / index page. We also cannot assume column headers would start from the first row of the spreadsheet -- analysts can leave out header space in their spreadsheets, and the spreadsheet can have more than one column headers.
+
+I often find myself manually cleaning the Excel spreadsheet, and using Excel's export option to output a `.csv` file for R ingestion.
+
+![Excel worksheets can be very cumbersome and easy to break; hug your business school friends](resources/fig2.png)
+#### Ingesting Excel files into R
+You can call the `read_excel()` function from `readxl` library to import the file into R.
+
+```{r}
+df <- read_csv('resources/iris.xlsx')
+glimpse(df)
+```
+### JSON and XML
+If receiving a `.csv` file makes me assume the file is exported from a relational database, and receiving an `.xlsx` file leads me to assume "some poor analyst has worked on this", receiving `.json` or `.xml` almost always suggest that I am receiving raw data from some application, most likely web-native.
+
+`XML` is introduced [in the late 1990s](https://www.toptal.com/web/json-vs-xml-part-1) as a solution "to solve the problem of universal data interchange between dissimilar systems". [In April 2001](https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html), Douglas Crockford and Chip Morningstar sent the first JSON message from a computer at Morningstar’s Bay Area garage. Both efforts are attempts for the industry to specify, with strict semantics, custom markup languages for any application, and allows systems to talk to each other. The story of why JSON prevailed over XML is a fascinating piece of internet history -- where big enterprises tend to favor building overly complicated tools on top of XML, the simpler format of JSON is favored by more developer due to its simplicity and speed.
+
+![More questions are asked about JSON than any other data exchange format. I do believe that the low percengage of .csv related questions speak less to its lack of popularity, more to its simplicity](sample_files/fig2.png)
+
+#### Ingesting JSON and XML files into R
+You can call the `fromJSON()` function from `rjson` library to import the file into R.
+
+```{r}
+data <- fromJSON(file = 'resources/sample.json')
+print(data)
+```
+```{r}
+data_xml <- xmlParse(file = "resources/sample.xml")
+print(data_xml)
+
+```
+#### Reading JSON and XML files in R
+
+Unlike CSV, JSON and XML file are not organized in tabular format. They are organized in a tree format, and the tree structure can go beyond what can be represented in a two-dimensional format. I can climb a tree top-down to explore each node:
+
+```{r}
+print(data$quiz$maths)
+```
+
+When you reach a level where the data can be reasonably represented in a tabular format, you can use `xmlToDataFrame` to transform the xml file into a dataframe.
+
+```{r}
+dataframe <- xmlToDataFrame("resources/sample.xml")
+print(dataframe)
+```
+
+
+
