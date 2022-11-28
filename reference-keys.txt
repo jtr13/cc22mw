@@ -310,6 +310,14 @@ personal-takeaway
 references-4
 ggvis-cheat-sheet
 cheatsheet-for-patchwork
+gradient-descent-algorithm-in-r
+motivation-9
+gradient-descent-algorithm
+three-common-step-size-rules
+a-simple-problem
+fixed-step-size
+exact-line-search
+backtracking-line-search
 edav-survey-and-analysis
 project-proposal-1
 project-group-cc5

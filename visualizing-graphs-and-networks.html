@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 55 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  55.1 Motivations For the community...">
+<title>Chapter 56 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  56.1 Motivations For the community...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 55 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 56 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  55.1 Motivations For the community...">
+<meta property="og:description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  56.1 Motivations For the community...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 55 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  55.1 Motivations For the community...">
+<meta name="twitter:title" content="Chapter 56 Visualizing graphs and networks | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Vritansh Kamal Link to presentation and resources :- https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p  56.1 Motivations For the community...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -25,7 +25,10 @@
 <script src="libs/highlight-6.2.0/highlight.js"></script><script src="libs/profvis-binding-0.3.7/profvis.js"></script><link href="libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet">
 <script src="libs/collapsibleTree-binding-0.1.7/collapsibleTree.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/d3v3-3.5.3/./d3v3.min.js"></script><link href="libs/d3heatmapcore-0.0.0/heatmapcore.css" rel="stylesheet">
 <script src="libs/d3heatmapcore-0.0.0/heatmapcore.js"></script><script src="libs/d3v3-tip-0.6.6/index.js"></script><script src="libs/d3heatmap-binding-0.9.0/d3heatmap.js"></script><script src="libs/d3-tip-0.8.1/index.js"></script><link href="libs/chorddiag-0.1.2.9000/chorddiag.css" rel="stylesheet">
-<script src="libs/chorddiag-0.1.2.9000/chorddiag.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/chorddiag-0.1.2.9000/chorddiag.js"></script><link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="libs/leaflet-1.3.1/leaflet.js"></script><link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="libs/proj4-2.6.2/proj4.min.js"></script><script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="libs/leaflet-binding-2.1.1/leaflet.js"></script><script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script><script src="libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -105,12 +108,13 @@
 <li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
 <li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
 <li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">54</span> EDAV Survey and Analysis</a></li>
-<li><a class="active" href="visualizing-graphs-and-networks.html"><span class="header-section-number">55</span> Visualizing graphs and networks</a></li>
-<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">56</span> Is the data visualization misleading or not - Survey</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">55</span> EDAV Survey and Analysis</a></li>
+<li><a class="active" href="visualizing-graphs-and-networks.html"><span class="header-section-number">56</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">57</span> Is the data visualization misleading or not - Survey</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">57</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">58</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">58</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">59</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -118,15 +122,15 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="visualizing-graphs-and-networks" class="section level1" number="55">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="visualizing-graphs-and-networks" class="section level1" number="56">
 <h1>
-<span class="header-section-number">55</span> Visualizing graphs and networks<a class="anchor" aria-label="anchor" href="#visualizing-graphs-and-networks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">56</span> Visualizing graphs and networks<a class="anchor" aria-label="anchor" href="#visualizing-graphs-and-networks"><i class="fas fa-link"></i></a>
 </h1>
 <p>Vritansh Kamal</p>
 <p>Link to presentation and resources :- <a href="https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p" class="uri">https://docs.google.com/presentation/d/1LOT2tx0TrxtLs3Dks0rEN04_WKYvzp9wCJ0amissUo0/edit#slide=id.p</a></p>
-<div id="motivations-3" class="section level2" number="55.1">
+<div id="motivations-3" class="section level2" number="56.1">
 <h2>
-<span class="header-section-number">55.1</span> Motivations<a class="anchor" aria-label="anchor" href="#motivations-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">56.1</span> Motivations<a class="anchor" aria-label="anchor" href="#motivations-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>For the community contribution, I have decided to give a presentation on visualizing networks for EDAV. I’ve explored some of these open-source tools, as a part of my research in industry.</p>
 <p>Graphs can reveal highly complex relationships when explored using the right kind of tools. This involves visualizing the graphs(networks) which are different than our traditional visualization methods. From visualizations, we should be able to understand the clusters that these graphs form, and the shortest path, and extract relevant information about how our data is structured. I discovered it has many more use cases in the evergrowing industry of Industrial IoT, bank transactions, and blockchain. There are server-side tools that can perform really well. But the challenge is to create visualizations on the browsers using javascript to create scalable and tangible products in a saas environment.</p>
@@ -138,13 +142,13 @@ This is an efficient library, Which forms abstraction on top of d3js components 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="edav-survey-and-analysis.html"><span class="header-section-number">54</span> EDAV Survey and Analysis</a></div>
-<div class="next"><a href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">56</span> Is the data visualization misleading or not - Survey</a></div>
+<div class="prev"><a href="edav-survey-and-analysis.html"><span class="header-section-number">55</span> EDAV Survey and Analysis</a></div>
+<div class="next"><a href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">57</span> Is the data visualization misleading or not - Survey</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#visualizing-graphs-and-networks"><span class="header-section-number">55</span> Visualizing graphs and networks</a></li>
-<li><a class="nav-link" href="#motivations-3"><span class="header-section-number">55.1</span> Motivations</a></li>
+<li><a class="nav-link" href="#visualizing-graphs-and-networks"><span class="header-section-number">56</span> Visualizing graphs and networks</a></li>
+<li><a class="nav-link" href="#motivations-3"><span class="header-section-number">56.1</span> Motivations</a></li>
 </ul>
 
       <div class="book-extra">
