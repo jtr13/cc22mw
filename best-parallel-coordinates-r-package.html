@@ -165,7 +165,7 @@
 <p>The default ordering shown here isn’t the best, it just leaves the columns in order regardless of their correlation.</p>
 <div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, splineFactor<span class="op">=</span><span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-189-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
 <div id="bestparcoords" class="section level3" number="26.2.4">
 <h3>
@@ -174,7 +174,7 @@
 <p>Here we show the bestparcoords graph which is a better than the default version because it accentuates the alternating trends between pairs of features which shows the underlying pattern in the data much better.</p>
 <div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu">bestparcoords</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bestparcoords/man/bestparcoord.html">bestparcoord</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-190-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Best parcoords also outputs the features in the order it found, which we can use for other purposes. For example, if we want to display the plot with a different spline factor.</p>
 <div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span></span></code></pre></div>
@@ -185,7 +185,7 @@
 <pre><code>##  [1]  2  3  6  1  4  8  7  9 10  5</code></pre>
 <div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns<span class="op">=</span><span class="va">indices</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-192-1.png" width="80%" style="display: block; margin: auto;"></div>
 
 </div>
 </div>
@@ -223,7 +223,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-20.</p>
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

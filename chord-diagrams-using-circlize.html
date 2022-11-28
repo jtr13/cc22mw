@@ -187,7 +187,7 @@
 <span><span class="va">relations</span><span class="op">[</span><span class="st">"Total"</span><span class="op">]</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">total</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">chordDiagram</span><span class="op">(</span><span class="va">relations</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="chord_diagrams_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-260-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div id="customizing-color" class="section level3" number="36.4.1">
 <h3>
 <span class="header-section-number">36.4.1</span> Customizing color<a class="anchor" aria-label="anchor" href="#customizing-color"><i class="fas fa-link"></i></a>
@@ -199,7 +199,7 @@
 <span>             transparency <span class="op">=</span> <span class="fl">0.1</span>,</span>
 <span>             link.lwd <span class="op">=</span> <span class="fl">1</span>,    <span class="co"># Set arc line width</span></span>
 <span>             link.border <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># Set arc border color to black</span></span></code></pre></div>
-<div class="inline-figure"><img src="chord_diagrams_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-261-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">circos.clear</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -221,8 +221,8 @@
 <span>                    to <span class="op">=</span> <span class="va">friends</span><span class="op">)</span></span>
 <span><span class="va">groupColors</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#cc99c9"</span>, <span class="st">"#9ec1cf"</span>, <span class="st">"#9ee09e"</span>, <span class="st">"#fdfd97"</span>, <span class="st">"#feb144"</span>, <span class="st">"#ff6663"</span><span class="op">)</span></span>
 <span><span class="fu">chorddiag</span><span class="op">(</span><span class="va">relations2</span>, groupColors<span class="op">=</span><span class="va">groupColors</span>, showTicks <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div id="htmlwidget-4f7116046dc3e5351b43" style="width:80%;height:480px;" class="chorddiag html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4f7116046dc3e5351b43">{"x":{"matrix":[[0,36,63,6,7,12],[36,0,7,20,26,14],[63,7,0,18,12,4],[6,20,18,0,17,14],[7,26,12,17,0,70],[12,14,4,14,70,0]],"options":{"type":"directional","width":null,"height":null,"margin":100,"showGroupnames":true,"groupNames":["Chandler","Joey","Monica","Phoebe","Rachel","Ross"],"groupColors":["#cc99c9","#9ec1cf","#9ee09e","#fdfd97","#feb144","#ff6663"],"groupThickness":0.1,"groupPadding":0.0349065850398866,"groupnamePadding":[30,30,30,30,30,30],"groupnameFontsize":18,"groupedgeColor":null,"chordedgeColor":"#808080","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":0,"tickInterval":1,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["Chandler","Joey","Monica","Phoebe","Rachel","Ross"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":" &#x25B6; ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script><p>Now, mousing over a chord highlights that particular relationship. We also simplified the visual by removing the tick marks on the outer edge of the circle. This data is instead displayed in the tag that pops up tag when you mouse over the chord.</p>
+<div id="htmlwidget-68d23a33098614892895" style="width:80%;height:480px;" class="chorddiag html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68d23a33098614892895">{"x":{"matrix":[[0,36,63,6,7,12],[36,0,7,20,26,14],[63,7,0,18,12,4],[6,20,18,0,17,14],[7,26,12,17,0,70],[12,14,4,14,70,0]],"options":{"type":"directional","width":null,"height":null,"margin":100,"showGroupnames":true,"groupNames":["Chandler","Joey","Monica","Phoebe","Rachel","Ross"],"groupColors":["#cc99c9","#9ec1cf","#9ee09e","#fdfd97","#feb144","#ff6663"],"groupThickness":0.1,"groupPadding":0.0349065850398866,"groupnamePadding":[30,30,30,30,30,30],"groupnameFontsize":18,"groupedgeColor":null,"chordedgeColor":"#808080","categoryNames":null,"categorynamePadding":100,"categorynameFontsize":28,"showTicks":0,"tickInterval":1,"ticklabelFontsize":10,"fadeLevel":0.1,"showTooltips":true,"showZeroTooltips":true,"tooltipNames":["Chandler","Joey","Monica","Phoebe","Rachel","Ross"],"tooltipFontsize":12,"tooltipUnit":"","tooltipGroupConnector":" &#x25B6; ","precision":"null","clickAction":null,"clickGroupAction":null}},"evals":[],"jsHooks":[]}</script><p>Now, mousing over a chord highlights that particular relationship. We also simplified the visual by removing the tick marks on the outer edge of the circle. This data is instead displayed in the tag that pops up tag when you mouse over the chord.</p>
 <p>Further improvements: Since we know that this dataset is non-directional, the color patterns above are not necessary. Mousing over a chord shows equal number of relations between Friends in a pair (i.e. Ross–&gt;Rachel and Rachel–&gt;Ross are both 70 storylines). With directional data, the color of a chord matches that of the parent track. Here, it would make more sense to use a gradient of color that changes from one Friend to the other. This is described in more detail in this <a href="https://www.visualcinnamon.com/2016/06/orientation-gradient-d3-chord-diagram/">blog post</a> by Nadieh Bremer.</p>
 </div>
 </div>
@@ -238,7 +238,7 @@
 <span>             transparency <span class="op">=</span> <span class="fl">0.1</span>,</span>
 <span>             link.lwd <span class="op">=</span> <span class="fl">.2</span>,    <span class="co"># Set arc line width</span></span>
 <span>             link.border <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># Set arc border color to black)</span></span></code></pre></div>
-<div class="inline-figure"><img src="chord_diagrams_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-263-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div id="simplifying-data" class="section level3" number="36.5.1">
 <h3>
 <span class="header-section-number">36.5.1</span> Simplifying data<a class="anchor" aria-label="anchor" href="#simplifying-data"><i class="fas fa-link"></i></a>
@@ -252,7 +252,7 @@
 <span>             transparency <span class="op">=</span> <span class="fl">0.1</span>,</span>
 <span>             link.lwd <span class="op">=</span> <span class="fl">.2</span>,    <span class="co"># Set arc line width</span></span>
 <span>             link.border <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="co"># Set arc border color to black)</span></span></code></pre></div>
-<div class="inline-figure"><img src="chord_diagrams_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-264-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Doing this greatly simplifies our chord diagram and makes the individual chords a bit easier to distinguish. However, we do lose some data. For example, our thresholding cut out all migration data to and fron Prince Edward Island.</p>
 </div>
 </div>
@@ -322,7 +322,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-20.</p>
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-11-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
