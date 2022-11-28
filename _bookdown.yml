@@ -65,6 +65,7 @@ rmd_files: [
   'cheatsheet_patchwork.Rmd',
   #'plotly_python_surface.Rmd',
   #'rstudio_editor_theme_setup_tutorial.Rmd',
+  'gradient_descent.Rmd',
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
