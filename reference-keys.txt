@@ -289,6 +289,11 @@ boxplot-john-tukey
 cleveland-dot-plot-william-s-cleveland
 slope-graph-edward-tufte
 word-cloud-jonathon-feinberg
+python-geospatial-data-visualization-project-guide
+introduction-7
+motivation-for-the-tutorial
+the-need-to-be-addressed
+own-evaluation-of-the-project-1
 cheetsheet-of-rna-seq-workflow-in-bioconductor
 motivation-8
 what-i-have-learned-evaluation
