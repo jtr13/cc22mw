@@ -81,7 +81,13 @@ Suggests:
     keras,
     timelineS,
     patchwork,
-    rsthemes
+    rsthemes,
+    showtext,
+    ggtext,
+    ggrepel,
+    tibble,
+    extrafont,
+    readr
 Remotes:
     hadley/emo,
     ShubhamKaushal15/bestparcoords,
