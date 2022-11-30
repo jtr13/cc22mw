@@ -87,7 +87,8 @@ Suggests:
     ggrepel,
     tibble,
     extrafont,
-    readr
+    readr,
+    showtextdb
 Remotes:
     hadley/emo,
     ShubhamKaushal15/bestparcoords,
