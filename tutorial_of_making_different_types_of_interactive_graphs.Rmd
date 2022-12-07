@@ -1,0 +1,168 @@
+
+# Tutorial of making different types of charts interactive
+
+Shumin Song
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{r}
+library(ggplot2)
+library(plotly)
+library("httr")
+library("readxl")
+library(dplyr)
+library(collapsibleTree)
+# devtools::install_github("rstudio/d3heatmap")
+library(d3heatmap) # need to be installed from source
+library(gapminder)
+library(ggridges)
+library(networkD3)
+library(igraph)
+library(quantmod)
+library(dygraphs)
+```
+
+## Motivation
+We have already learned how to create different types of charts and graphs using `ggplot2` package through the class. However, most charts and graphs we made are static, which means readers could only read them passively and focus on general information and distribution of entire data set.
+
+In order to deal with such problems, we can make interactive charts and graphs. Interactive data visualization provides tools for readers to engage, explore and adjust data information in a more efficient way. For example, readers can observe specific values of different aspects of a data point on the graph, which allows them to identify trends or relationships within a data set. In addition, when analyzing complex data, interactive controls like zooming and filtering will introduce simplified and ordered information for readers that help them generate insights to solve a problem. In this tutorial, I will show how to create interactive charts and graphs in R for several graph categories.
+
+## Interactive Scatter Plot
+We can create an interactive scatter directly using `plotly` package. I will use dataset "mtcars" in `ggplot2` package in the following example. We plot data points regarding wt(weight) as x-axis and mpg(miles per gallon) as y-axis. You can find more detailed introduction of plot_ly() function from this URL: https://www.rdocumentation.org/packages/plotly/versions/4.10.0/topics/plot_ly
+
+```{r}
+plot_ly(mtcars, type = "scatter", x = ~wt, y = ~mpg, mode = "markers",
+        hovertemplate = paste(
+          "%{xaxis.title.text}: %{x:.2f}<br>",
+          "%{yaxis.title.text}: %{y:.2f}<br><extra></extra>"
+        )
+      )
+```
+
+In this graph, you can: \
+1. zoom in or zoom out of graph to focus on data points within a specific area \
+2. hover on to data points to check exact wt and mpg values of each point \
+3. double click the graph to return to default view of graph
+
+## Interactive Bubble Plot
+Similarly, we can create an interactive bubble plot of dataset "mtcars" using `plotly`. We plot data points regarding wt(weight) as x-axis and mpg(miles per gallon) as y-axis. In addition, we include cyl(cylinder of engine) as color categories for data points and qsec(1/4 mile time) as data point bubble size. 
+
+```{r}
+plot_ly(mtcars, x = ~wt, y = ~mpg, text = ~cyl, size = ~qsec,
+        color = ~cyl, sizes = c(10, 50),
+        marker = list(opacity = 0.6, sizemode = "diameter"),
+        hovertemplate = paste(
+          "%{xaxis.title.text}: %{x:.2f}<br>",
+          "%{yaxis.title.text}: %{y:.2f}<br>",
+          "cyl:%{text}<br><extra></extra>"
+        ))
+```
+
+In this bubble graph, you can do the same things as that in previous scatter plot. Moreover, you can hover on the bubbles to see specific cyl values of different data points and distinguish data points' differences in qsec values from bubble size.
+
+## Interactive Heatmap
+We can use `d3heatmap` package to create an interactive heatmap graph. I will still use `mtcars` dataset in the following example. You can find a detailed d2heatmap() function usage description from https://rdrr.io/github/rstudio/d3heatmap/man/d3heatmap.html.
+
+```{r}
+d3heatmap(mtcars, scale = "column", col = "BuPu",
+          xlab = "Variable", ylab = "Car Name")
+
+```
+
+In the graph above, every row represents an observation of car so the x-axis represents each car's name. Every column of graph represents values of a particular variable such as "cyl", "wt", "mpg" of all cars in data set so the y-axis represents each variable in data set. I use "BuPu" as color palette which cause cells with low values be filled with blue while cells with high values be filled with purple. This can help readers observe and interpret difference of a variable value between cars.
+
+There are several interact ways for you in interactive heapmap graphs: \
+1. You can hover on to a cell to see specific information of car name, variable in that column and exact value of that variable for car. \
+2. Zoom in or zoom out of graph to focus on a specific area and double click to return to default view.
+3. Click on a specific car name or variable to select a particular row or column of graph.
+
+## Interactive Tree Diagrams
+To create an interactive tree diagrams, we need to use `collapsibleTree` package. You can find a detailed usage description of collapsibleTree() function on https://www.rdocumentation.org/packages/collapsibleTree/versions/0.1.7/topics/collapsibleTree.
+
+I will use dataset "geography" in the following example. You can download this dataset from https://data.world/glx/geography-table.
+
+```{r}
+# Import geography dataset
+GET("https://query.data.world/s/mmol5szlwinfp4mfzkxa73qlrp2yli", write_disk(tf <- tempfile(fileext = ".xlsx")))
+geography <- read_excel(tf)
+
+# view general info of geography dataset
+head(geography)
+
+geography %>%
+  group_by(continent, type) %>%
+  summarize(`Number of Countries` = n()) %>%
+  collapsibleTreeSummary(
+    hierarchy = c("continent", "type"),
+    root = "geography",
+    width = 600,
+    attribute = "Number of Countries"
+  )
+
+```
+
+In this graph, you can click on a node to show or hide all its child nodes. In addition, you can hover onto a node to see total number of countries, which are decendant nodes of this node in the tree.
+
+## Interactive Ridgeline Plot
+We can use `plotly` package to create interactive ridgeline plot graphs. I will use "gapminder" dataset in `gapminder` package in the following example. I will plot density ridgeline of life expectancy for different countries in different years.
+
+```{r}
+ridgeline <- ggplot(data = gapminder, aes(x = lifeExp, fill = year)) +
+  geom_density() + 
+  facet_grid(year~.) +
+  xlab("Life Expectancy in Birth") +
+  ylab("Year")
+(interactive_ridgeline <- ggplotly(ridgeline))
+```
+
+In this graph, you can hover on ridgeline area horizontally to see the density change in different life expectancy values. You can also hover vertically to see overall density alteration according to change in year.
+
+## Interactive Network Graph
+We Will use `networkD3` package to make interactive network graphs. I will create nodes and edges manually. You can find detailed usage description of simpleNetwork() function from https://www.rdocumentation.org/packages/networkD3/versions/0.4/topics/simpleNetwork 
+
+```{r}
+# create nodes and edges of graph
+df <- data.frame(
+  from = c("A", "A", "B", "D", "C", "D", "E", "B", "C", "B"),
+  to = c("B", "E", "F", "A", "C", "A", "B", "D", "A", "C")
+)
+
+simpleNetwork(df, height="300px", width="300px", 
+              linkColour = "red", nodeColour = "blue", zoom = T)
+```
+
+In this graph, you can zoom in using scroll wheel and hover on a node to check which nodes are directly connected with the current node. You can also drag a node to see its neighbors and edges via this node more clearly.
+
+## Interactive Time Series Graph
+We Will use `dygraphs` package to make interactive time series graphs. In the following example, I will show the price of Apple stock(AAPL) alteration based on time change. You can find detailed description of dygraph() function from https://www.rdocumentation.org/packages/dygraphs/versions/1.1.1.6/topics/dygraph
+
+```{r}
+# get AAPL price data
+getSymbols("AAPL")
+dygraph(OHLC(AAPL))
+
+# focus on AAPL price change from 2020 to current date
+graph <- dygraph(OHLC(AAPL))
+dyShading(graph, from="2020-01-01", 
+          to="2022-11-11", color="#FFE6E6")
+
+```
+
+In these graphs, you can hover along the price line to see AAPL stock price variation within a day or closing price variation in a time period.
+
+## My Evaluation of Tutorial
+Through this tutorial, I learned several crucial packages in creating interactive graphs such as `plotly`, `d3heatmap` and 'dygraphs' as well as showed the advantages of interactive graphs. Nevertheless, there are some shortcomings that can be further improved. For instance, I didn't explain parameters in details for interactive graph making functions like d3heatmap(), which might cause confusions for readers when they make graphs by themselves. In addition, I only show the basic application in creating interactive graphs. If there are more time and space, I will introduce some advanced application of interactive charts.
+
+## Citation Sources
+R Graph Gallery: https://r-graph-gallery.com/interactive-charts.html 
+
+Plotly R Open Source Graphing Libraries: https://plotly.com/r/
+
+networkD3 R package: http://christophergandrud.github.io/networkD3/
+
+dygraphs for R: https://rstudio.github.io/dygraphs/
+
+collapsible tree diagrams in R: https://github.com/AdeelK93/collapsibleTree
+

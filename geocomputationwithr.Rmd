@@ -1,0 +1,332 @@
+# Lightning Talk on GeoComputation with R
+
+Shrujan Varma Penmetsa
+
+### Project Proposal
+
+5 minute lightning talk on various libraries in R for Geocomputation.
+
+The following are the resources for the presentation:
+
+PDF file with code examples and explanation: 
+
+
+[https://drive.google.com/file/d/1ozNDyHdTjSTOv8Z0OWdNGWLHvHnhagU8/view?usp=sharing]{target="_blank"}
+
+
+Powerpoint presentation slides :
+
+[https://docs.google.com/presentation/d/1lA05TuvMitmquZCoyMnhCng3RQ-Sgl2g/edit?usp=sharing&ouid=108784931668378752252&rtpof=true&sd=true]{target="_blank"}
+
+UNI - sp4155
+
+```{r, include=FALSE}
+# this prevents package loading message from appearing in the rendered version of your problem set
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = FALSE)
+```
+
+
+
+Loading the libraries: 
+
+```{r}
+library(leaflet)
+library(sf) 
+library(raster)
+library(spData)
+library(spDataLarge)
+library(dplyr)
+library(tmap)
+library(ggplot2)
+```
+
+
+### Topic : GeoComputation with R
+
+
+
+
+What is GeoComputation ?
+
+Computers can do a lot more than we can imagine or perceive. One such domain where the power of computation has recently been deployed is in dealing with geographic data. Geographic data is present everywhere and almost every industry leverages this data for their effective growth and functioning. Geographic representation is not just limited to static maps. With new software technology, it is not all difficult to create interactive and detailed maps that showcase your data and idea effectively.
+
+
+The formal definition of Geocomputation is given as:
+
+
+GeoComputation is about using the various different types of geodata and about developing relevant geo-tools within the overall context of a 'scientific' approach (Openshaw and Abrahart,2000)
+
+
+ In the past decade, several interactive softwares (like QGIS) have been developed that provide easy and effective representation of geodata. However, it is very difficult to make additional changes to these softwares. For example, it might be the case that u may need to add a new feature or functionality to your map and if the software does not have that feature that allows you to do so, you are left with very limited choices. This is where R language steps in. There are several libraries in r like “leaflet”, “sf”, and “tmap” that provide various functionalities and techniques to manipulate geodata.
+ 
+ 
+In this presentation, we will briefly look at come of these libraries and the various functionalities that they provide.
+
+
+Let us consider a very simple example. Suppose we need to give a small intro on where we are from, where we are residing currently, and what is our dream location, instead of giving a normal written or verbal explanation of the same, we can do it interactively by using the “leaflet” package in R.
+
+```{r} 
+
+leaflet()%>%
+  addProviderTiles("NASAGIBS.ViirsEarthAtNight2012") %>%
+  addMarkers(
+    lng = 73, lat = 18,
+    label = "Home Sweet Home",
+    labelOptions = labelOptions(noHide = T))%>%
+  addMarkers(
+    lng = -85, lat = 31,
+    label = "Columbia University",
+    labelOptions = labelOptions(noHide = T))%>%
+  addMarkers(
+    lng = -19, lat = 64,
+    label = "Iceland - Dream Destination",
+    labelOptions = labelOptions(noHide = T))
+```
+
+
+
+Leaflet allows for interactive panning and zooming in maps. 
+
+Leaflet allows us to create maps using any combination of Map Tiles, Marker’s, Polygons, Lines, Popups, etc. In the above graph, we used Map tiles and popups to clearly showcase the coordinates of interest. 
+
+
+In addition to this, Leaflet makes it very easy to render spatial objects from other libraries like “sf”.
+The different data models that these packages use:
+
+
+1)	Vector 
+
+2)	Raster
+
+•	The vector data model leverages points, lines, and polygons to represent the world data. There are discrete and well-defined borders, meaning that vector datasets usually have very high precision.
+
+
+•	The raster data model on the other hand divides the surface into cells of constant size. Raster datasets are the basis of several background images that are used in web mapping and have been a vital source of geographic data since the origins of aerial photography and satellite-based remote sensing devices.
+
+Other very libraries for data computation in R are:
+
+
+1)	sf
+
+
+2)	sp
+
+
+3)	tmap
+
+A simple example of how the vector data model leverages points in a coordinate reference system is given below:
+
+
+In this system London, for example, can be represented by the coordinates c(-0.1, 51.5). This means that its location is -0.1 degrees east and 51.5 degrees north of the origin. The origin in this case is at 0 degrees longitude (the Prime Meridian) and 0 degree latitude (the Equator) 
+
+
+
+There are several spatial data objects in the sp library. One such object is "world". The world object displays several attributes of the all the continents like population , life expectancy , area (size) , gdp , etc. We will be using this object to show some of the library features.
+
+```{r}
+names(world)
+```
+
+As you can see here,  using the "names()"  method we were able to extract the various attributes of the "world" object
+
+Now we can plot any of these attributes. This can be done very simply using the "plot" method.
+
+```{r}
+plot(world["lifeExp"], reset = FALSE)
+```
+
+From the above plot , we can infer that a graph of all the continents was plotted and the average life expectancy of all the countries is clearly represented with colour coding.
+
+
+
+
+In addition to this, the sf package allows flexibility to overlay other shapes on the existing maps. For example, we can overlay circles that are proportional to the population of the countries on top of the existing map. 
+
+
+The “st_centroid” function can be used to convert one geometry to another geometry type. The aesthetic of the circle can be varied using the “cex” argument. Here we are passing the country’s population divided by 10000 as the argument.
+
+```{r}
+plot(world["continent"], reset = FALSE)
+cex = sqrt(world$pop) / 10000
+world_cents = st_centroid(world, of_largest = TRUE)
+plot(st_geometry(world_cents), add = TRUE, cex = cex)
+```
+
+
+
+sf’s plot method has additional arguments specific to geographic data. One such example is expanBB, that can be used to plot an sf object in context: it takes a numeric vector of length four that expands the bounding box of the plot relative to zero in the following order: bottom, left, top, right. This is used to plot India.
+
+```{r}
+india = world[world$name_long == "India", ]
+plot(st_geometry(india), expandBB = c(0, 0.2, 0.1, 1), col = "gray", lwd = 3)
+```
+
+
+In addition to the vector , we have also passed the 'col' and 'lwd' arguments that specify the colour and the line width for the map.
+
+
+Another important library: “tmap”
+
+
+•	tmap is another powerful and flexible map-making package with simple defaults.
+
+•	It has a syntax that is somewhat similar to the ggplot2 package.
+
+•	It has the unique capability to generate static and interactive maps using the same code via tmap_mode().
+
+•	The basic building block is tm_shape() (which defines input data, raster and vector objects).
+
+The object that we will be using to demonstrate the various features and attributes of tmap is nz. nz is a spatial object that will be passed to tm_shape. We will demonstrate how additional layers can be added just like we do in ggplot2.
+
+```{r}
+
+tm_shape(nz) + tm_fill() 
+```
+
+
+As u can see here , the basic outline map of New Zealand has been plotted and we have added the default colour grey using the function tm_fill.
+
+```{r}
+tm_shape(nz) + tm_borders() 
+```
+
+As u can see here , the basic outline map of New Zealand has been plotted and we have added the territory lines using the function tm_borders.
+
+```{r}
+tm_shape(nz) + tm_fill() + tm_borders() 
+```
+```{r}
+m1 = tm_shape(nz) + tm_fill(col = "blue")
+m2 = tm_shape(nz) + tm_fill(col = "blue", alpha = 0.2)
+m3 = tm_shape(nz) + tm_borders(col = "red")
+m4 = tm_shape(nz) + tm_borders(lwd = 3)
+m5 = tm_shape(nz) + tm_borders(lty = 2)
+m6 = tm_shape(nz) + tm_fill(col = "green", alpha = 0.3) +
+  tm_borders(col = "black", lwd = 3, lty = 2)
+tmap_arrange(m1, m2, m3, m4, m5, m6)
+```
+
+The above maps are a combination of tm_fill and tm_border. In addition we can also use functions like "lwd" and "lty" which denote line width and line type (In case you wish to print a dotted line).
+
+
+
+When it comes to filling colour in the graph , there are a variety of options available in tmap. We can use the "breaks" method which divides the colour schema into groups of categories as provided by the user. In the following example we have used "breaks" to split the income into groups on the basis of median from o to 30,000 , 30,000 to 40,000 and 40,000 to 50,000.
+
+Another attribute that can be passed to the tm_polygon method is "n". "n" denotes the number of splits in the colour schema. If "n" equals 10 , the colour schema will be split into 10 different categories.
+
+```{r}
+mb1=tm_shape(nz) + tm_polygons(col = "Median_income")
+
+breaks = c(0, 3, 4, 5) * 10000
+mb2=tm_shape(nz) + tm_polygons(col = "Median_income", breaks = breaks)
+
+mb3=tm_shape(nz) + tm_polygons(col = "Median_income", n = 10)
+
+mb4=tm_shape(nz) + tm_polygons(col = "Median_income", palette = "BuGn")
+tmap_arrange(mb1, mb2, mb3, mb4)
+```
+
+To plot the above graphs we have used tm_polygon function which encompasses tm_fill and tm_border function.
+
+
+
+On adding additional layers or objects to a tmap object the original object will retain all its layers.
+
+
+```{r}
+map_nz = tm_shape(nz) + tm_polygons()
+map_nz1 = map_nz + tm_shape(nz_elev) + tm_raster(alpha = 0.7)
+nz_water = st_union(nz) %>% st_buffer(22200) %>% 
+  st_cast(to = "LINESTRING")
+map_nz2 = map_nz1 +
+  tm_shape(nz_water) + tm_lines()
+map_nz3 = map_nz2 +
+  tm_shape(nz_height) + tm_dots()
+tmap_arrange(map_nz1, map_nz2, map_nz3)
+```
+
+Here, for map 1 we have added a raster layer which is directly proportional to the elevation of that area. We have adjusted the gradient of that layer using alpha.
+
+For map2, we have leveraged map1 and and have added the nz_water object which show the territorial waters of New Zealand. We used the tm_lines function to create a boundary around the nz map
+
+For map3, we have leveraged map2 and have added nz_height object which is used tm_dots function which in turn plot the highest points in New Zealand in the form of points.
+
+
+
+### Inset Maps:
+
+
+An inset map is a smaller map rendered within or next to the main map.
+
+It could serve many different purposes, including providing a context or bringing some non-contiguous regions closer to ease their comparison.
+
+They could be also used to focus on a smaller area in more detail or to cover the same area as the map, but representing a different topic.
+
+```{r}
+nz_region = st_bbox(c(xmin = 1340000, xmax = 1450000,
+                      ymin = 5130000, ymax = 5210000),
+                    crs = st_crs(nz_height)) %>% 
+  st_as_sfc()
+nz_height_map = tm_shape(nz_elev, bbox = nz_region) +
+  tm_raster(style = "cont", palette = "YlGn", legend.show = TRUE) +
+  tm_shape(nz_height) + tm_symbols(shape = 2, col = "red", size = 1) +
+  tm_scale_bar(position = c("left", "bottom"))
+nz_map = tm_shape(nz) + tm_polygons() +
+  tm_shape(nz_height) + tm_symbols(shape = 2, col = "red", size = 0.1) + 
+  tm_shape(nz_region) + tm_borders(lwd = 3) 
+library(grid)
+nz_height_map
+print(nz_map, vp = viewport(0.8, 0.27, width = 0.5, height = 0.5))
+```
+
+
+Steps:
+
+The first step is to define the area of interest.We create a new spatial object nz_region
+
+In the second step, we create a base map showing the New Zealand’s Southern Alps area which is the main area of interest. 
+
+The third step consists of the inset map creation. It gives a context and helps to locate the area of interest.We clearly indicate the position of the main map by using borders.
+
+Finally, we combine the two maps using the function viewport() from the grid package
+
+
+### Interactive Maps: 
+
+Interactive maps are one opf the most commonly used form of maps today. Almost every company , industry and individual relies on interactive mapss for their daily functioning.
+
+Interactivity can take many forms, the most common and useful of which is the ability to pan around and zoom into any part of a geographic dataset overlaid on a ‘web map’ to show context. 
+
+Less advanced interactivity levels include popups that appear when you click on different features, a kind of interactive label. More advanced levels of interactivity include the ability to tilt and rotate maps.
+
+Interactive maps using tmap package:
+
+A unique feature of tmap as mentioned previously is its ability to create static and interactive maps using the same code.
+
+Maps can be viewed interactively at any point by switching to view mode, using the command tmap_mode("view").
+
+As shown below , simply by using tmap_mode and passing the map_nz class that we had created previously( this stores the nz spatial object), we an create an interactive map of New Zealand
+
+```{r}
+tmap_mode("view")
+map_nz
+```
+
+### Conclusion :
+
+I would like to conclude this document by saying that there are a variety of packages available in R that allow us to play with geodata in a way that many high end softwares do not allow us to. There are several map tiles available on the internet that can be used to plot interactive maps of various regions and show key insights. In addition  to interactive maps, the various R packages can also be used to create inset maps for detailed analysis as well as faceted maps.
+
+### Personal Takeaway :
+
+I was always intrigued by geodata and was looking for alternatives in Power BI and Tableu to plot maps. However, Professor suggested me to explore Geocomputation in R and I was introduced to these various packages that are capable of a such high level functionality with minimal code.
+
+### References :
+
+Majority of the examples , packages and definitions have been picked up from:
+
+
+Geocomputation with R by Robin Lovelace, Jakub Nowosad, Jannes Muenchow
+
+https://bookdown.org/robinlovelace/geocompr/
+
+

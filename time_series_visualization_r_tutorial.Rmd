@@ -1,0 +1,244 @@
+# Time Series Visualization - R tutorial
+
+Shuyu He, Zhongyuan Ye
+
+# Introduction
+R studio contains lots of powerful packages to solve real-world data visualization problems. In this tutorial, we will be focusing on how to combine the data visualization library we learned in class(like "ggplot2", "tidyverse", "ploty", et al) with some new packages (like "quantmod", "TSstudio", and fpp2) to solve the Time series visualization problem.\
+
+Before going into how to do a time series analysis with R, let's think about a basic question: What is time series analysis? Why should anyone learn it?\
+
+A time series is a set of numerical measurements of the same entity taken at equally spaced intervals over time. For example, Amazon stock is the entity, the stock price of Amazon is the numerical measurement, and the set of the everyday stock price of Amazon of 2022 August is a time series.\
+Time Series analysis is usually used to find the pattern of the non-stationary data and use the pattern for future prediction. By visualizing time series with R, we can observe the data more intuitively, which can help us find the pattern of non-stationary data more efficiently. \
+Time Series Analysis is widely used in many industries like Finance, Economics, and Retailing. This tutorial will focus on how to use R to visualize the Time Series of stock prices.
+install.packages("package-name")
+
+\
+The tutorial will contains 5 Sections: \
+[1. Environment Setup](#S1) \
+[2. Raw Data Process](#S2) \
+[3. Time series visualization: ggplot and ggplot2](#S3) \
+[4. Time series visualization: TSstudio](#S4) \
+[5. Time series visualization: Plotly](#S5) \
+
+
+
+Each section contains a description of the function used in that section and a practical example. The practical example we use in our tutorial is the Time series visualization of Google and Amazon Stock from 2021-07-01 to 2021-08-31.
+
+## Section 1: Environment Setup {#S1}
+
+First and foremost, we need to set up our R environment before doing anything else.
+The package we will use in this tutorial are: "quantmod", "TSstudio", "xts", "ggplot2", "gridExtra", "fpp2", "tidyverse", "plotly" \
+
+If there is any package is not yet been installed/updated, please type the following code in your R terminal:
+install.packages("package-name")
+
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r setup, include=TRUE,warning = FALSE, message = FALSE} 
+library(quantmod)
+library(TSstudio)
+library(xts)
+library(ggplot2)
+library(gridExtra)
+library(fpp2)
+library(tidyverse)
+library(plotly)
+```
+
+
+
+## Section 2: Raw Data Processing {#S2}
+Before any visualization, it's always important to extract and process the raw data.
+This part will have 2 subopic: \
+2.1:Stock Data Extraction with quantmod \
+2.2:Basic Stock Data transformation: Log transformation
+
+\
+<font size="5"><span style="color: Black;">2.1:Stock Data Extraction with quantmod </span></font>
+For data analysts, there is always a tough problem that needs to solve: where does the raw data come from? This tutorial will show you how to easily extract the high credibility stock data with "quantmod" package.\
+Based on the [author](http://www.quantmod.com/) of the "quantmod", this package is designed to 'assist the quantitative trader in the development, testing, and deployment of statistically based trading models.' \
+The function getSymbols() from quantmod package is the method we used in this tutorial to extract the time series of a specific stock.
+The getSymbols() function provides an interface that imports data as an xts object. By default, it imports data from Yahoo! Finance. Use the ''  to specify the stock code, and 'from=' & 't=' to specify the date interval. 
+
+\
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+
+We will extract Google stock price from 2021-07-01 to 2022-08-31 using quantmod package in R. The quantmod package contains functions to extract, chart, and analyze quantitative trading data. In this case, we extract the adjusted price on the 6th row to create visualization. 
+We also extract Amazon stock price from 2021-07-01 to 2022-08-31 for further visualization. Extract all stock data from Yahoo! Finance.
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+sdate = as.Date('2021-07-01')
+edate = as.Date('2022-08-31')
+sdata = getSymbols('GOOG',from = sdate,t = edate,auto.assign = F)
+no.na <- which(is.na(sdata[,6]))      # no for NA
+sdata[no.na,6] <- sdata[no.na-1,6]
+head(sdata)
+#extract only the adjusted price in 6th row
+s_price <- sdata[,6]
+
+#extract stock price data in Amazon
+sdata_amzn = getSymbols('AMZN',from = sdate,t = edate,auto.assign = F)
+no.na_amzn <- which(is.na(sdata_amzn[,6]))
+sdata_amzn[no.na,6] <- sdata_amzn[no.na_amzn-1,6]
+s_price_amzn <- sdata_amzn[,6]
+head(sdata_amzn)
+```
+\
+<font size="5"><span style="color: Black;">2.2:Basic Stock Data transformation: Log transformation </span></font>\
+
+Log-transformation scaling is typically used before analyzing stock price data. After log transformation, equivalent price changes can be represented by the same vertical distance. Log returns are more symmetric, and works better than linear price scales to observe the relative change of price, instead of absolute change. It helps to visualize how far the price moves to reach a sell or buy target.
+
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Use log-transformation to transfer the Google and Amazon stock price we got in 2.1
+
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+# log return using adjusted stock price
+ts_goog <- diff(log(s_price),1)
+head(ts_goog)
+ts_amzn <- diff(log(s_price_amzn),1)
+head(ts_amzn)
+```
+
+# Section 3.Time series visualization with ggplot and ggplot2 {#S3}
+
+The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw data and log_transfomred data for GOOG stock price. 
+\
+
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Use ggplot2 to create visualization for both raw data and log_transfomred data for GOOG stock price with the line graph.
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+#line plot for stock price raw data
+ggplot(s_price, aes(x = index(s_price), y = s_price)) +
+    geom_line(color = '#4E84C4', size=0.2) + 
+    ggtitle('GOOG stock price, 2021-2022') + xlab('Date') + ylab('Price') + 
+    theme(plot.title = element_text(hjust = 0.5)) + 
+    scale_x_date(date_labels = '%y-%m', date_breaks = '3 months')
+
+#line plot for log Transformed GOOGstock price 
+ggplot(ts_goog, aes(x = index(ts_goog), y = ts_goog)) +
+    geom_line(color = '#4E84C4', size=0.2) + 
+    ggtitle('Log_transformed GOOG stock price, 2021-2022') + xlab('Date') + ylab('Price') + 
+    theme(plot.title = element_text(hjust = 0.5)) + 
+    scale_x_date(date_labels = '%y-%m', date_breaks = '3 months')
+```
+
+From two plots, we observe that the log_transformed stock price better represents the change in perentage for stock prices. We will use the log_transformed stock data in further visualizations. 
+
+
+
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Why don't we visualized the Google stock price and Amazon stock price on the same graph for comparison?
+Code below create line plots for GOOG and AMZN log_transformed stock prices at same plot by adding two geom_line. 
+
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+ts_bind <- cbind(ts_goog, ts_amzn)
+ggplot(ts_bind, aes(x = index(ts_bind))) +
+    geom_line(aes(y = GOOG.Adjusted), color = '#4E84C4', size=0.2) + 
+    geom_line(aes(y = AMZN.Adjusted), color = 'red', size=0.2) + 
+    ggtitle('GOOG and AMZN log_transformed stock price, 2021-2022') + xlab('Date') + ylab('Price') + 
+    theme(plot.title = element_text(hjust = 0.5)) + 
+    scale_x_date(date_labels = '%y-%m', date_breaks = '3 months')
+```
+
+Another way to create ts visualization is to use autoplot function in ggplot2. The function autoplot() in ggplot2 provides a simple and direct plot for a particular object. \
+
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Use function autoplot() to visualized the Google and Amazon log_transformed stock price.
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+autoplot(ts_bind)  + 
+    ggtitle(' GOOG and AMZN log_transformed stock price in autoplot') + xlab('Date') + ylab('Price')
+```
+
+# AutoCorrelation plot
+The auto-correlation plot  is used to determine whether a time series is dependent on its past. In ggplot, ggAcf function plots the auto-correlation function for a univariate time series. It is used to analyze the raw data to determine if the data can fit into a time-series model.
+
+
+\
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Use auto-correlation plot to visualized the Google and Amazon log_transformed stock price.
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+ggAcf(ts_goog, lag.max = 20) + 
+    ggtitle('Auto-correlation plot for log_transformed GOOG stock price')
+ggAcf(ts_amzn, lag.max = 20) + 
+    ggtitle('Auto-correlation plot for log_transformed AMZN stock price')
+```
+
+# Section 4. Time series visualization with TSstudio: ts_plot {#S4}
+There are several big problems when visualization with the ggplot2 library: what if the viewer wants the precise stock value of a certain day? What if the viewer wants to see the exact date of one peak value? That is why we introduced the "ts_plot" library and "ploty" library to you.\
+
+TSstudio package provides a set of tools to describe, visualize, and predict time series data. ts_plot function is used to produce interactive visualization for time series objects. \
+By visualization time series with ts_plot, we solved the problem "the viewer might be interested in a precise data point." By creating a graph with line.mode= "lines+markers", the viewer can get the precise value of any data point by putting the mouse pointer to that point.
+\
+\
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+Use ts_plot to visualized the Google and Amazon real stock price.
+\
+
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+#Google
+ts_plot(s_price,
+        title = "ts_plot: GOOG stock price",
+        Xtitle = "Time",
+        Ytitle = "Amazon Stock Price",
+        line.mode =  "lines+markers")
+
+#Amazon
+ts_plot(s_price_amzn,
+        title = "ts_plot: AMZN stock price",
+        Xtitle = "Time",
+        Ytitle = "AMZN Stock Price",
+        line.mode =  "lines+markers")
+```
+
+# Section 5. Time series visualization with Plotly {#S5}
+Plotly creates high-quality, interactive, web-based data visualization in R. Plotly uses the pipe operator %>% instead of plus sign. 
+\
+<font size="5"><span style="color: Orange;">Practical Example: </span></font> \
+This time, Use ploty to visualized the Google Adjusted stock price, and Google & Amazon Adjusted stock price.
+\
+<font size="5"><span style="color: blue;">Coding Time: </span></font>
+```{r}
+# convert time series to data frame object
+df <- data.frame(ts_bind)
+df$date <- as.Date(rownames(df))
+```
+
+```{r}
+plot_ly(df, type = 'scatter', mode = 'lines')%>%
+  add_trace(x = ~date, y = ~GOOG.Adjusted, name = 'GOOG')%>%
+  layout(showlegend = F, title = 'GOOG Adjusted stock price')
+
+plot_ly(df, type = 'scatter', mode = 'lines')%>%
+  add_trace(x = ~date, y = ~GOOG.Adjusted, name = 'GOOG')%>%
+  add_trace(x = ~date, y = ~AMZN.Adjusted, name = 'AMZN')%>%
+  layout(showlegend = F, title = 'GOOG and AMZN Adjusted stock price')
+```
+
+
+
+references: 
+
+http://www.quantmod.com
+
+https://www.openriskmanagement.com/21_ways_to_visualize_a_timeseries/
+
+https://r-graph-gallery.com/time-series.html
+
+https://plotly.com/r/time-series/
+
+https://rstudio-pubs-static.s3.amazonaws.com/464590_529f604d55674bd3a046d7e76f862a1f.html
+
+
+

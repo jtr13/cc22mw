@@ -1,0 +1,56 @@
+# Best Parallel Coordinates R Package
+
+Shubham Kaushal and Daniel Young
+
+## Introduction
+
+GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions to arrange them automatically but we propose our own method. We find the two highest correlated features, then greedily continue appending the next highest correlated feature until we have an ordering.
+
+## Example
+
+### Installation
+
+We install from a github repository
+
+```{r}
+#devtools::install_github("ShubhamKaushal15/bestparcoords")
+library("bestparcoords") # Must be installed from source
+```
+
+### Data
+
+We demo our package with the mtcars dataset. Any preprocessing must be done before we use the package so for example we will remove the last column.
+
+```{r}
+data(mtcars)
+mtcars <- mtcars[,-11]
+head(mtcars)
+```
+
+### Default
+
+The default ordering shown here isn't the best, it just leaves the columns in order regardless of their correlation.
+
+```{r}
+GGally::ggparcoord(mtcars, splineFactor=10, alphaLines=0.5)
+```
+
+### bestparcoords
+
+Here we show the bestparcoords graph which is a better than the default version because it accentuates the alternating trends between pairs of features which shows the underlying pattern in the data much better.
+
+```{r}
+cols <- bestparcoords::bestparcoord(mtcars)
+```
+
+Best parcoords also outputs the features in the order it found, which we can use for other purposes. For example, if we want to display the plot with a different spline factor.
+
+```{r}
+print(cols)
+indices <- match(cols, colnames(mtcars))
+print(indices)
+```
+
+```{r}
+GGally::ggparcoord(mtcars, columns=indices)
+```

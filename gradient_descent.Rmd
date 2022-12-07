@@ -1,0 +1,228 @@
+# Gradient Descent Algorithm in R
+
+Cong Chen
+
+```{r , include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Motivation
+
+The Gradient Descent Algorithm is a popular algorithm in optimization. However, I seldom see people apply the algorithm by R, so I try to apply the Gradient Descent Algorithm to a simple optimization problem by R. And I also use three different step size rules when applying Gradient Descent Algorithm and drawing the contour map to give a more comprehensive understanding about the difference between these methods.
+
+Through the project, I understood the principle of the algorithm more clearly and was skilled in applying the algorithm. And I also realized how important choosing initial values are. Maybe the next time, I will try other different step size rules.
+
+## Gradient Descent Algorithm
+
+Gradient Descent Algorithm is an algorithm used widely in optimization. For a simple optimization problem:
+
+$$
+\min_{x\in X}f(x)
+$$
+where $X$ is the domain of variable $x$, the algorithm's specific steps are shown below:
+
+1. Choose the initial value of $x$ called $x^{(0)}$.
+
+2. Choose the stopping condition value of the algorithm $\varepsilon$.
+
+3. Select a specific step size rule to determine $\alpha^{(t)}$ for $t=0,1,...$.
+
+4. For $t=0,1,...$, update:
+$$
+x^{(t+1)}=x^{(t)}-\alpha^{(t)}\nabla f(x^{(t)})
+$$
+5. If $\lVert x^{(t+1)}-x^{(t)} \rVert\leq \varepsilon$, stop the algorithm. 
+
+## Three common step size rules
+
+There are three common step size rules:
+
+1. Fixed: $\alpha^{(t)}$ is a constant.
+
+2. Exact line search
+
+3. Backtracking line search
+
+Exact line search method tries to find the best $\alpha^{(t)}$ in each step $t$, that is:
+$$
+\alpha^{(t)}=\arg\min_{\alpha} (x^{(t)}-\alpha\nabla f(x^{(t)}))
+$$
+
+
+Backtracking line search method tries to reduce the step size as the iteration $t$ increases.
+
+## A simple problem
+
+Apply these three methods to a simple optimization problem to find its optimal solution. And also, compare the difference between these three methods based on the results.
+
+A simple optimization problem:
+$$
+\min_{x=(x_1,x_2)} f(x)\\
+f(x)=\frac{10x_1^2+x_2^2}{2}
+$$
+```{r function}
+# function f(x)
+f<-function(x){
+  return((10*x[1]^2+x[2]^2)/2)
+}
+
+# gradient of f(x)
+grad<-function(x){
+  return(c(10*x[1],x[2]))
+}
+```
+
+In all three methods, the search begins at the point $x^{(0)}=(1.5,-1.5)$.
+
+### Fixed step size
+
+```{r fixed}
+fixstep<-function(x0, grad, tol = 1e-6, alpha = 0.01, max_iteration = 1000){
+  k = 1
+  xf = x0
+  xl = xf - alpha * grad(xf)
+  x = c(x0,xl)
+  while (sqrt(sum((xl - xf)^2)) > tol && k < max_iteration){
+    xf = xl
+    xl = xf - alpha * grad(xf)
+    k = k + 1
+    x = c(x, xl)
+  }
+  return(list(iteration = k - 1, 
+              x1 = x[seq(1, 2 * k - 1, 2)],
+              x2 = x[seq(2, 2 * k, 2)]))
+}
+```
+try three different fixed step size to observe their different processes:
+
+1. Small: $\alpha = 0.01$.
+
+2. Medium: $\alpha = 0.1$.
+
+3. Large: $\alpha = 0.7$.
+```{r plot contour for fixed step}
+# implement the method
+step1 = fixstep(c(1.5, -1.5), grad, alpha = 0.01)
+step2 = fixstep(c(1.5, -1.5), grad, alpha = 0.1)
+step3 = fixstep(c(1.5, -1.5), grad, alpha = 0.7, max_iteration = 50)
+
+z = matrix(0, 100, 100)
+x1 = seq(-1.5, 1.5, length = 100)
+x2 = seq(-1.5, 1.5, length = 100)
+
+# store function value for every grid point
+for(i in 1:100){
+  for(j in 1:100){
+    z[i,j] = f(c(x1[i],x2[j]))
+  }
+}
+
+# plot contour map
+contour(x1, x2, z, nlevels=20)
+for(i in 1:step1$iteration){
+  segments(step1$x1[i],step1$x2[i],step1$x1[i+1],step1$x2[i+1],lty=2,col='red')
+}
+for(i in 1:step2$iteration){
+  segments(step2$x1[i],step2$x2[i],step2$x1[i+1],step2$x2[i+1],lty=2,col='blue')
+}
+for(i in 1:step3$iteration){
+  segments(step3$x1[i],step3$x2[i],step3$x1[i+1],step3$x2[i+1],lty=2,col='green')
+}
+```
+
+The small $\alpha$ (red line in the graph) takes more iteration to find the optimal solution, while the large $\alpha$ (green line in the graph) leads huge fluctuations in search, which makes it difficult to find the optimal solution.
+
+### Exact line search
+
+```{r exact line search}
+exactline<-function(x0, grad, tol = 1e-6, max_iteration = 1000){
+  A = matrix(c(10, 0, 0, 1), ncol = 2)
+  k = 1
+  xf = x0
+  r = matrix(-grad(xf), ncol = 1)
+  alpha = as.numeric((t(r)%*%r)/(t(r)%*%A%*%r))
+  xl = xf - alpha * grad(xf)
+  x = c(x0,xl)
+  while (sqrt(sum((xl - xf)^2)) > tol && k < max_iteration){
+    xf = xl
+    r = matrix(-grad(xf), ncol = 1)
+    alpha = as.numeric((t(r)%*%r)/(t(r)%*%A%*%r))
+    xl = xf - alpha * grad(xf)
+    k = k + 1
+    x = c(x, xl)
+  }
+  return(list(iteration = k - 1,
+              x1 = x[seq(1, 2 * k - 1, 2)],
+              x2 = x[seq(2, 2 * k, 2)]))
+}
+```
+
+
+```{r plot contour for exact line search}
+# implement the method
+step1 = exactline(c(1.5, -1.5),grad)
+
+z = matrix(0, 100, 100)
+x1 = seq(-1.5, 1.5, length = 100)
+x2 = seq(-1.5, 1.5, length = 100)
+
+# store function value for every grid point
+for(i in 1:100){
+  for(j in 1:100){
+    z[i,j] = f(c(x1[i],x2[j]))
+  }
+}
+
+# plot contour map
+contour(x1, x2, z, nlevels=20)
+for(i in 1:step1$iteration){
+  segments(step1$x1[i],step1$x2[i],step1$x1[i+1],step1$x2[i+1],lty=2,col='red')
+}
+```
+
+Although every step of exact line search is exact, exact line search takes more time compared with others.
+
+### Backtracking Line Search
+
+```{r backtracking line search}
+backtracking<-function(x0, grad, tol = 1e-6, alpha = 0.01, beta = 0.8,max_iteration = 1000){
+  k = 1
+  xf = x0
+  xl = xf - alpha * grad(xf)
+  x = c(x0, xl)
+  while (sqrt(sum((xl - xf)^2)) > tol && k < max_iteration){
+    xf = xl
+    alpha = beta * alpha
+    xl = xf - alpha * grad(xf)
+    k = k + 1
+    x = c(x, xl)
+  }
+  return(list(iteration = k - 1,
+              x1 = x[seq(1, 2 * k - 1, 2)],
+              x2 = x[seq(2, 2 * k, 2)]))
+}
+```
+Choose initial $\alpha = 0.2$, and factor $\beta = 0.8$
+```{r plot}
+# implement the method
+step1 = backtracking(c(1.5, -1.5), grad, alpha = 0.2, beta = 0.8)
+
+z = matrix(0,100,100)
+x1 = seq(-1.5, 1.5, length = 100)
+x2 = seq(-1.5, 1.5, length = 100)
+
+# store function value for every grid point
+for(i in 1:100){
+  for(j in 1:100){
+    z[i,j] = f(c(x1[i], x2[j]))
+  }
+}
+
+# plot contour map
+contour(x1, x2, z, nlevels=20)
+for(i in 1:step1$iteration){
+  segments(step1$x1[i],step1$x2[i],step1$x1[i+1],step1$x2[i+1],lty=2,col='red')
+}
+```
+
+The large initial $\alpha$ can be used in backtracking line search, since after several steps $\alpha$ becomes really small.

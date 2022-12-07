@@ -1,0 +1,12 @@
+# Machine Learning Interview mindmap and commonly asked questions
+
+Haolong Liu
+
+As the community contribution, [mindmap can be found here](resources/ml_interview_concept_mindmap/ml_mindmap.pdf)
+
+Description: I created a mind map for machine learning interviews and included many commonly asked questions, so that it gives people a broad understanding of many machine learning concepts and how to articulate these knowledge during an interview.
+
+Motivation: I am preparing a  2023 summer machine learning engineer intern technical interview. Therefore, it is very beneficial to organize important machine learning knowledge and commonly asked interview questions so that I can perform better. 
+
+The need it addresses: Machine learning is a really broad subject and can go very deep. This mind map is certainly not comprehensive. For example, it does not include RNN or CNN. However, machine learning intern jobs mostly likely will not ask very deep questions. My mind map gives people directions on what subject they need to know. Plus some specific questions to help people better understand and prepare.
+What I might do differently: Include more industrial application related questions if I have more experience.

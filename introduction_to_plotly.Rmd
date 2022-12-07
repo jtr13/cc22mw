@@ -1,0 +1,179 @@
+# Introduction to Plotly in R
+
+Jingqi Huang, Yi Lu
+
+## Overview
+
+As we learned exploratory data analysis throughout this semester, we have discovered various R packages and techniques that could help us perform analysis and conduct research upon large dataset. For example, histogram and boxplot for unidimensional continuous variables, scatterplot and heatmap for two continuous variables. However, in addition to static graphs, interactive ones also play an important part in modern standard of data analysis and research purposes. To help the Columbia Data Science community holistically equipped, our team decided to bring it to the table. One of the package that implements interactive plots is plotly. It is an R package for creating interactive publication-quality graphs. https://plotly.com/r/ provides very rich examples of the package in R under various tags. We want to extract the most basic logic to use plotly and combine most relevant examples on the same page.
+
+## Install and Packages
+```{r, results='hide', warning=FALSE, message=FALSE}
+# install.packages("ggplot2")
+# install.packages("plotly")
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(gapminder)
+```
+
+## Basic Grammar
+Basic grammar for plotly is simple. If type or more are not specified, by default things will set to what makes most sense. 
+```{reval=FALSE}
+p <- plot_ly(dataframe, x=~column, y=~column2, type="graph type such as scatter, bar, box, heatmap, etc.", mode="mode type such as markers, lines, and etc.")
+p <-p %>% add_trace()
+p <-p %>% add_notations()
+p <-p %>% layout()
+p
+```
+Plotly's graph are described in two categories: traces and layout. Multiple parts on the same graph can be added with add_trace() and add changed configurations. Multiple texts can be set by add_notations() by specifying locations with xref and yref. Axis and title can be set by layout(). Plotly can convert ggplot graph to interactive mode by wrap ggplot p with ggplotly(p).
+
+With these in mind, let's go through the package together.
+
+## Basic examples
+### Histogram
+```{r}
+df <- data.frame(type=rep(c("A", "B"), each=500), subtype=rep(c("1", "2"), each=250), value=rnorm(1000))
+hist <- ggplot(df, aes(x=value, fill=subtype))+
+  geom_histogram(position="identity", alpha=0.5, binwidth=0.2)+
+  facet_grid(~type)
+ggplotly(hist)
+```
+
+### 2D Histogram
+```{r}
+p <- plot_ly(x = filter(df, type=="A")$value, y = filter(df, type=="B")$value)
+hist_2d <- subplot(add_markers(p, alpha=0.4), add_trace(p, type='histogram2dcontour'), add_histogram2d(p))
+hist_2d
+```
+
+### Boxplot
+```{r, message=FALSE}
+boxplt <- plot_ly(diamonds, x = ~price/carat, y = ~clarity, color = ~clarity, type = "box") %>%
+  layout(title="Interactive BoxPlot with Plotly")
+
+# Second method
+p <- ggplot(diamonds, aes(x=clarity, y=price/carat, color=clarity)) +
+  geom_boxplot() + 
+  coord_flip() +
+  ggtitle("BoxPlot with ggplot2")
+# the following line generates the same interactive graph
+# ggplotly(p)
+
+boxplt
+```
+
+
+### 2D Scatter Plot
+```{r, message=FALSE}
+scatter2d <- plot_ly(filter(diamonds, color=='D'), x=~carat, y=~price, color=~clarity, marker=list(size=4, opacity=0.5), 
+        # hover text
+        text = ~paste("Price: ", price, "$<br>Cut: ", cut, "<br>Clarity: ", clarity)) %>%
+  # set title and axis
+  layout(title="Interactive Scatter Plot with Plotly")
+
+scatter2d
+```
+
+### 3D Scatter Plot
+```{r, message=FALSE}
+scatter3d <- plot_ly(diamonds[sample(nrow(diamonds), 1000), ], x=~price/carat, y=~table, z=~depth, color=~cut, 
+        marker = list(size=4, opacity=0.5))%>%
+  layout(title="Interactive 3D Scatter Plot with Plotly")
+
+scatter3d
+```
+
+```{r, warning=FALSE, message=FALSE}
+mtcars <- mutate(mtcars, type = case_when(mtcars$am == 0 ~ "Auto", mtcars$am == 1 ~ "Manual"))
+plot_ly(mtcars, x=~mpg, y=~wt, z=~hp, color=~type) %>%
+  layout(title="Interactive 3D Scatter Plot with Plotly", 
+         scene = list(xaxis = list(title = "mpg"), yaxis = list(title = "weight"), zaxis = list(title = "horsepower")))
+```
+
+
+### Line Plot
+```{r, message=FALSE}
+a <- rnorm(100, 5, 1)
+b <- rnorm(100, 0, 1)
+c <- rnorm(100, -5, 1)
+df <- data.frame(x=c(1:100), a, b, c)
+
+lineplt <- plot_ly(df, x = ~x) %>%
+  add_trace(y = ~a, name="line", type="scatter", mode = "lines", line=list(color='rgb(23, 54, 211)', width=2)) %>% 
+  add_trace(y=~b, name="dot line with markers", mode = "lines+markers", line=list(dash='dot')) %>% 
+  add_trace(y=~c, name="scatter markers only", mode = "markers") %>%   #same as scatter plot
+  layout(title="Interactive Line Plot with Plotly", yaxis=list(title="value"))
+
+lineplt
+```
+
+### Bar Plot
+```{r}
+barplt <- plot_ly(count(diamonds, cut, clarity), x=~cut, y=~n, color=~clarity, type="bar", text=~n, marker=list(opacity=0.4, line=list(color='rgba(8,48,148, 1)', width=1.5))) %>% 
+  layout(barmode = 'group')
+
+barplt
+```
+
+### Some intersesting examples
+```{r}
+# Initialization
+question <- c('The course was effectively<br>organized',
+       'The course developed my<br>abilities and skills for<br>the subject',
+       'I would recommend this<br>course to a friend',
+       'Any other questions')
+df <- data.frame(question, sa=c(21, 24, 27, 29), a=c(30, 31, 26, 24), ne=c(21, 19, 23, 15), ds=c(16, 15, 11, 18), sds=c(12, 11, 13, 14))
+answer_label <- c('Strongly<br>agree', 'Agree', 'Neutral', 'Disagree', 'Strongly<br>disagree')
+
+# Interactive plot
+p <- plot_ly(df, x=~sa, y=~question, type="bar", orientation="h", marker = list(color = 'rgba(38, 24, 74, 0.8)',
+                      line = list(color = 'rgb(248, 248, 249)', width = 1))) %>% 
+  add_trace(x=~a, marker = list(color = 'rgba(71, 58, 131, 0.8)')) %>% 
+  add_trace(x=~ne, marker = list(color = 'rgba(122, 120, 168, 0.8)')) %>%
+  add_trace(x=~ds, marker = list(color = 'rgba(164, 163, 204, 0.85)')) %>% 
+  add_trace(x=~sds, marker = list(color = 'rgba(190, 192, 213, 1)')) %>% 
+  layout(barmode='stack', 
+                  xaxis = list(title = "", showgrid = FALSE,showticklabels = FALSE, zeroline = FALSE), 
+                  yaxis = list(title=""), 
+                  paper_bgcolor = 'rgb(248, 248, 255)',
+                  plot_bgcolor = 'rgb(248, 248, 255)',
+                  margin = list(l = 120, r = 10, t = 40, b = 10),
+                  showlegend = FALSE) %>% 
+  add_annotations(xref='x', yref='y', x=~sa/2, y=~question, text=paste(df[,"sa"], '%'), font=list(size=12, color="white"), showarrow=FALSE) %>% 
+  add_annotations(x=~sa+a/2, text=paste(df[,"a"], '%'), font=list(size=12, color="white"), showarrow=FALSE) %>% 
+  add_annotations(x=~sa+a+ne/2, text=paste(df[,"ne"], '%'), font=list(size=12, color="white"), showarrow=FALSE) %>% 
+  add_annotations(x=~sa+a+ne+ds/2, text=paste(df[,"ds"], '%'), font=list(size=12, color="white"), showarrow=FALSE) %>%
+  add_annotations(x=~sa+a+ne+ds+sds/2, text=paste(df[,"sds"], '%'), font=list(size=12, color="white"), showarrow=FALSE) %>%
+  add_annotations(xref = 'x', yref = 'paper',
+                  x = c(21 / 2, 21 + 30 / 2, 21 + 30 + 21 / 2, 21 + 30 + 21 + 16 / 2,
+                        21 + 30 + 21 + 16 + 12 / 2), y = 1.05,
+                  text = answer_label,
+                  font = list(size = 12, color = 'rgb(67, 67, 67)'), showarrow = FALSE)
+
+p
+```
+
+
+## Animations with Plotly
+```{r}
+df <- data.frame(x = c(1:10), y = rnorm(10), time = c(1:10))
+plot_ly(df, x = ~x, y = ~y, frame = ~time, type = 'scatter', mode = 'markers', showlegend = F)
+```
+
+```{r, warning=FALSE, message=FALSE}
+df <- gapminder 
+plot_ly(df, x=~gdpPercap, y=~lifeExp, color=~continent, size=~pop, frame=~year, type="scatter", mode="markers", text=~country, hoverinfo = "text") %>%
+  layout(xaxis = list(type = "log"))
+```
+
+
+## Self-evaluation
+Our project generally meets the expectation derived from the motivation described at the beginning of the project. We have explained the basic language format and provided code example of each graph. We learned how to use the plotly package to build various types of graphs. We combined the rich but separate examples on plotly website into a more concentrated form. 
+
+However, we are missing with detailed explanation of them but rely on the codes and graphs to explain themselves correspondingly. We are also using simple datasets built-in R, which create similar examples as the website. We will make it more detailed and well-explained, and use newer data next time.
+
+## Reference:
+https://plotly.com/r/
+
+
+
