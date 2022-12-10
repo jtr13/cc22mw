@@ -1,3 +1,7 @@
+# Fantastic Data Files and How to Ingest Them
+
+Siyu Yang
+
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -7,17 +11,13 @@ library(XML)
 
 ```
 
-# Fantastic Data Files and How to Ingest Them
-
-Siyu Yang
-
 ## Why This Tutorial?
 Whether in research, school projects or real life work, the first step of data analysis is always data ingestion. Before whipping out the `XGBoost` and `plotly` and diving into the fun part, the three or four letter suffix at the end of the data files we ingest is already giving us information about the data itself, where the data came from, how the data was compiled, and the type of analysis or transformations it may require. 
 
 In this tutorial, I would like to introduce a few commonly used data file formats, why they look the way they look, and how to ingest them in `R` respectively. Although the tutorial may not be highly technical, I hope my experience as a former consulting data scientist and being on the receiving end of many types of data (including a zip file of hundreds of `.pdf`s) can provide a perspective of some value.
 
 ### Comma Seperated Value
-A Comma Seperated Value file, also known as a `.csv` file, is a type of file where each line is a data record or a "row" in a tabular format, and each field or a "column" is seperated by commas. The history of the `.csv` format dates back even before the popularization of personal computers, and is originally supported by [IBM Fortran](https://blog.sqlizer.io/posts/csv-history/) in 1972, which has largely to do with the fact that Fortran was coded on punched cards, and `.csv` are easier to create and less error prone. It was quickly adopted by relational database systems to transfer data between systems and formats.
+A Comma Separated Value file, also known as a `.csv` file, is a type of file where each line is a data record or a "row" in a tabular format, and each field or a "column" is seperated by commas. The history of the `.csv` format dates back even before the popularization of personal computers, and is originally supported by [IBM Fortran](https://blog.sqlizer.io/posts/csv-history/) in 1972, which has largely to do with the fact that Fortran was coded on punched cards, and `.csv` are easier to create and less error prone. It was quickly adopted by relational database systems to transfer data between systems and formats.
 
 #### Why are we happy when we receive CSVs?
 - Compact file size. CSVs only store the string themselves, and relies on the ingesting system to parse the delimitors and read the file into tabular format.
