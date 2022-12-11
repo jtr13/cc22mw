@@ -22,7 +22,7 @@ UNI - sp4155
 
 ```{r, include=FALSE}
 # this prevents package loading message from appearing in the rendered version of your problem set
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = FALSE)
 ```
 
 
@@ -65,7 +65,7 @@ In this presentation, we will briefly look at come of these libraries and the va
 
 Let us consider a very simple example. Suppose we need to give a small intro on where we are from, where we are residing currently, and what is our dream location, instead of giving a normal written or verbal explanation of the same, we can do it interactively by using the “leaflet” package in R.
 
-```{r}
+```{r} 
 
 leaflet()%>%
   addProviderTiles("NASAGIBS.ViirsEarthAtNight2012") %>%

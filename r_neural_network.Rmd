@@ -3,10 +3,10 @@
 Zhihang Xia
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
-```{r}
+```{r, eval=FALSE}
 library(tensorflow)
 library(keras)
 ```
@@ -26,11 +26,11 @@ The basic idea of Neural Network is to simulate the neural network of human brai
 
 We are going to use the mnist dataset in keras, which contains images of written digits of 0-9 and corresponding labels.
 
-```{r}
+```{r, eval = FALSE}
 c(c(X_train, y_train), c(X_test, y_test)) %<-% keras::dataset_mnist()
 ```
 
-```{r}
+```{r, eval = FALSE}
 dim(X_train)
 dim(y_train)
 dim(X_test)
@@ -38,7 +38,7 @@ dim(y_test)
 ```
 By printing out the dimensions, we can see that there are 60000 training data and 10000 test data in total. Also, each image is represented by 28x28 pixel values, and each label is the corresponding digit.
 
-```{r}
+```{r, eval=FALSE}
 test_img <- image(X_train[50,1:28,1:28])
 y_train[50]
 ```
@@ -46,7 +46,7 @@ we are trying to check if we load the data correctly. Here, we can see that the 
 
 Then we need to rescale the image, making the pixel value is from 0 to 1.
 
-```{r}
+```{r, eval=FALSE}
 X_train <- X_train / 255
 X_test <-  X_test / 255
 y_train <- to_categorical(y_train, num_classes = 10)
@@ -64,7 +64,7 @@ Here, we are trying to sequentially build up the neural network layers in this w
 
 3. a output layer with unit size 10
 
-```{r}
+```{r, eval=FALSE}
 model <- keras_model_sequential() %>%
   layer_flatten(input_shape = c(28,28)) %>%
   layer_dense(128, activation = "relu") %>%
@@ -75,12 +75,12 @@ Then we compile our model with sgd optimizer and cattegorical cross entropy loss
 
 Optimizer specifies a way to apply gradient descent update of model parameters, and loss function is the objective function to minimize over.
 
-```{r}
+```{r, eval=FALSE}
 opt <- optimizer_sgd()
 loss_fn <- loss_categorical_crossentropy(from_logits = TRUE)
 ```
 
-```{r}
+```{r, eval=FALSE}
 model %>% compile(
   optimizer = opt,
   loss = loss_fn,
@@ -88,7 +88,7 @@ model %>% compile(
 )
 ```
 
-```{r}
+```{r, eval=FALSE}
 summary(model)
 ```
 
@@ -97,7 +97,7 @@ summary(model)
 
 Now We train our compiled model with 10 ephocs and 32 batch size. Also, we use 20% of the training set as our validation set.
 
-```{r}
+```{r, eval=FALSE}
 history <- model %>% fit(X_train, y_train, ephocs=10, batch_size=32, validation_split=0.2)
 history
 ```
@@ -106,7 +106,7 @@ Here is the training/validation loss and accuracy during the training process. R
 
 Finally we use the test set to evaluate our model.
 
-```{r}
+```{r, eval=FALSE}
 model %>% evaluate(X_test, y_test)
 ```
 
@@ -114,18 +114,18 @@ model %>% evaluate(X_test, y_test)
 
 Now we try to use adam optimizer instead of sgd.
 
-```{r}
+```{r, eval=FALSE}
 model1 <- keras_model_sequential() %>%
   layer_flatten(input_shape = c(28,28)) %>%
   layer_dense(128, activation = "relu") %>%
   layer_dense(10)
 ```
 
-```{r}
+```{r, eval=FALSE}
 opt1 <- optimizer_adam()
 ```
 
-```{r}
+```{r, eval=FALSE}
 model1 %>% compile(
   optimizer = opt1,
   loss = loss_fn,
@@ -133,12 +133,12 @@ model1 %>% compile(
 )
 ```
 
-```{r}
+```{r, eval=FALSE}
 history1 <- model1 %>% fit(X_train, y_train, ephocs=10, batch_size=32, validation_split=0.2)
 history1
 ```
 
-```{r}
+```{r, eval=FALSE}
 model1 %>% evaluate(X_test, y_test)
 ```
 

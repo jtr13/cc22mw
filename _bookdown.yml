@@ -1,5 +1,5 @@
 book_filename: "cc22mw"
-new_session: true
+new_session: false
 before_chapter_script: _common.R
 delete_merged_file: true
 language:
@@ -56,7 +56,17 @@ rmd_files: [
   'time_series_visualization_r_tutorial.Rmd',
   'bubble_chart_application.Rmd',
   'edav_history_of_charts.Rmd',
-  'r_neural_network.Rmd',
+  'python_geospatial_visualization.Rmd',
+  #'r_neural_network.Rmd',
+  'bioconductor.Rmd',
+  'playful_r_packages.rmd',
+  'geocomputationwithr.Rmd',
+  'ggvis_cheatsheet.Rmd',
+  'cheatsheet_patchwork.Rmd',
+  #'plotly_python_surface.Rmd',
+  #'rstudio_editor_theme_setup_tutorial.Rmd',
+  'gradient_descent.Rmd',
+  #ggplot_stat_and_theme.Rmd,
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
