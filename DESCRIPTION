@@ -88,7 +88,8 @@ Suggests:
     tibble,
     extrafont,
     readr,
-    showtextdb
+    showtextdb,
+    rjson
 Remotes:
     hadley/emo,
     ShubhamKaushal15/bestparcoords,
