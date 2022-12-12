@@ -66,7 +66,7 @@ rmd_files: [
   #'plotly_python_surface.Rmd',
   #'rstudio_editor_theme_setup_tutorial.Rmd',
   'gradient_descent.Rmd',
-  #ggplot_stat_and_theme.Rmd,
+  'ggplot_stat_and_theme.Rmd',
   'file_ingestions.Rmd',
   
   # Part: Workshops
