@@ -3,7 +3,7 @@
 Keli Wang and Xinyu He
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, options(warn=-1))
+knitr::opts_chunk$set(echo = FALSE, options(warn=-1))
 
 library(ggplot2)
 library(tidyverse)
