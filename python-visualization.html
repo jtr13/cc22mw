@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 57 Python Visualization | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="We mainly use seaborn to draw plots on Python. Note: due to the way the book is rendered, the Python code is not executed. However you can run the code locally. import matplotlib.pyplot as plt...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 57 Python Visualization | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:type" content="book">
+<meta property="og:description" content="We mainly use seaborn to draw plots on Python. Note: due to the way the book is rendered, the Python code is not executed. However you can run the code locally. import matplotlib.pyplot as plt...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 57 Python Visualization | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="We mainly use seaborn to draw plots on Python. Note: due to the way the book is rendered, the Python code is not executed. However you can run the code locally. import matplotlib.pyplot as plt...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/proj4js-2.3.15/proj4.js"></script><link href="libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="libs/highcharts-9.3.1/highcharts.js"></script><script src="libs/highcharts-9.3.1/highcharts-3d.js"></script><script src="libs/highcharts-9.3.1/highcharts-more.js"></script><script src="libs/highcharts-9.3.1/modules/stock.js"></script><script src="libs/highcharts-9.3.1/modules/map.js"></script><script src="libs/highcharts-9.3.1/modules/data.js"></script><script src="libs/highcharts-9.3.1/modules/exporting.js"></script><script src="libs/highcharts-9.3.1/modules/offline-exporting.js"></script><script src="libs/highcharts-9.3.1/modules/drilldown.js"></script><script src="libs/highcharts-9.3.1/modules/item-series.js"></script><script src="libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script><script src="libs/highcharts-9.3.1/modules/annotations.js"></script><script src="libs/highcharts-9.3.1/modules/export-data.js"></script><script src="libs/highcharts-9.3.1/modules/funnel.js"></script><script src="libs/highcharts-9.3.1/modules/heatmap.js"></script><script src="libs/highcharts-9.3.1/modules/treemap.js"></script><script src="libs/highcharts-9.3.1/modules/sankey.js"></script><script src="libs/highcharts-9.3.1/modules/dependency-wheel.js"></script><script src="libs/highcharts-9.3.1/modules/organization.js"></script><script src="libs/highcharts-9.3.1/modules/solid-gauge.js"></script><script src="libs/highcharts-9.3.1/modules/streamgraph.js"></script><script src="libs/highcharts-9.3.1/modules/sunburst.js"></script><script src="libs/highcharts-9.3.1/modules/vector.js"></script><script src="libs/highcharts-9.3.1/modules/wordcloud.js"></script><script src="libs/highcharts-9.3.1/modules/xrange.js"></script><script src="libs/highcharts-9.3.1/modules/tilemap.js"></script><script src="libs/highcharts-9.3.1/modules/venn.js"></script><script src="libs/highcharts-9.3.1/modules/gantt.js"></script><script src="libs/highcharts-9.3.1/modules/timeline.js"></script><script src="libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script><script src="libs/highcharts-9.3.1/modules/bullet.js"></script><script src="libs/highcharts-9.3.1/modules/coloraxis.js"></script><script src="libs/highcharts-9.3.1/modules/dumbbell.js"></script><script src="libs/highcharts-9.3.1/modules/lollipop.js"></script><script src="libs/highcharts-9.3.1/modules/series-label.js"></script><script src="libs/highcharts-9.3.1/plugins/motion.js"></script><script src="libs/highcharts-9.3.1/custom/reset.js"></script><script src="libs/highcharts-9.3.1/modules/boost.js"></script><script src="libs/highchart-binding-0.9.4/highchart.js"></script><script src="libs/plotly-binding-4.10.1/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script><script src="libs/dygraphs-1.1.1/shapes.js"></script><script src="libs/moment-2.8.4/moment.js"></script><script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script><script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script><script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script><script src="libs/Dygraph.Plotters.CandlestickPlotter-1.0/candlestick.js"></script><script src="libs/d3-4.13.0/d3.min.js"></script><link href="libs/profvis-0.3.6.9000/profvis.css" rel="stylesheet">
+<script src="libs/profvis-0.3.6.9000/profvis.js"></script><script src="libs/profvis-0.3.6.9000/scroll.js"></script><link href="libs/highlight-6.2.0/textmate.css" rel="stylesheet">
+<script src="libs/highlight-6.2.0/highlight.js"></script><script src="libs/profvis-binding-0.3.7/profvis.js"></script><link href="libs/collapsibleTree-0.1.6/collapsibleTree.css" rel="stylesheet">
+<script src="libs/collapsibleTree-binding-0.1.7/collapsibleTree.js"></script><script src="libs/forceNetwork-binding-0.4/forceNetwork.js"></script><script src="libs/d3v3-3.5.3/./d3v3.min.js"></script><link href="libs/d3heatmapcore-0.0.0/heatmapcore.css" rel="stylesheet">
+<script src="libs/d3heatmapcore-0.0.0/heatmapcore.js"></script><script src="libs/d3v3-tip-0.6.6/index.js"></script><script src="libs/d3heatmap-binding-0.9.0/d3heatmap.js"></script><script src="libs/d3-tip-0.8.1/index.js"></script><link href="libs/chorddiag-0.1.2.9000/chorddiag.css" rel="stylesheet">
+<script src="libs/chorddiag-0.1.2.9000/chorddiag.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Community Contributions for EDAV Fall 2022 Mon/Wed</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Welcome!</a></li>
+<li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
+<li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
+<li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li class="book-part">Cheatsheets</li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li class="book-part">Tutorials</li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
+<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
+<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
+<li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="coding-utf-8---.html"><span class="header-section-number">56</span> -- coding: utf-8 --</a></li>
+<li><a class="active" href="python-visualization.html"><span class="header-section-number">57</span> Python Visualization</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">58</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">59</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">60</span> Is the data visualization misleading or not - Survey</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">61</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">62</span> Tutorial for pull request mergers</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/jtr13/cc22mw">View book source <i class="fa-solid fa-chart-scatter"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="python-visualization" class="section level1" number="57">
+<h1>
+<span class="header-section-number">57</span> Python Visualization<a class="anchor" aria-label="anchor" href="#python-visualization"><i class="fas fa-link"></i></a>
+</h1>
+<p>We mainly use seaborn to draw plots on Python.</p>
+<p><em>Note: due to the way the book is rendered, the Python code is not executed. However you can run the code locally.</em></p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb405-1"><a href="python-visualization.html#cb405-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb405-2"><a href="python-visualization.html#cb405-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb405-3"><a href="python-visualization.html#cb405-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb405-4"><a href="python-visualization.html#cb405-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<p>We load iris data from packge sklearn. The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. Both Python and R has the access to this dataset.</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb406-1"><a href="python-visualization.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb406-2"><a href="python-visualization.html#cb406-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb406-3"><a href="python-visualization.html#cb406-3" aria-hidden="true" tabindex="-1"></a>iris</span>
+<span id="cb406-4"><a href="python-visualization.html#cb406-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(iris[<span class="st">'data'</span>], columns<span class="op">=</span>[<span class="st">'SepalLength'</span>, <span class="st">'SepalWidth'</span>, <span class="st">'PetalLength'</span>, <span class="st">'PetalWidth'</span>])</span>
+<span id="cb406-5"><a href="python-visualization.html#cb406-5" aria-hidden="true" tabindex="-1"></a>cg <span class="op">=</span> pd.DataFrame(iris[<span class="st">'target'</span>],columns<span class="op">=</span>[<span class="st">'Category'</span>])</span></code></pre></div>
+<p>It is not as convenient to build the normal distribution of histplot in Python as in R. We need to build a function to construct the probability distribution function and use the function “lineplot” form seaborn to draw the line.</p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb407-1"><a href="python-visualization.html#cb407-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normfun(x):</span>
+<span id="cb407-2"><a href="python-visualization.html#cb407-2" aria-hidden="true" tabindex="-1"></a>    mu <span class="op">=</span> np.mean(x)</span>
+<span id="cb407-3"><a href="python-visualization.html#cb407-3" aria-hidden="true" tabindex="-1"></a>    sigma <span class="op">=</span> np.std(x)</span>
+<span id="cb407-4"><a href="python-visualization.html#cb407-4" aria-hidden="true" tabindex="-1"></a>    pdf <span class="op">=</span> np.exp(<span class="op">-</span>((x <span class="op">-</span> mu) <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> sigma <span class="op">**</span> <span class="dv">2</span>)) <span class="op">/</span> (sigma <span class="op">*</span> np.sqrt(<span class="dv">2</span> <span class="op">*</span> np.pi))</span>
+<span id="cb407-5"><a href="python-visualization.html#cb407-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pdf</span></code></pre></div>
+<p>The distribution of one or more variables is represented by a histogram, a traditional visualization tool, by counting the number of data that fall within discrete bins. The distribution of observations in a dataset can be seen visually using a kernel density estimate (KDE) plot, which represents the data as a continuous probability density curve in one or more dimensions.</p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb408-1"><a href="python-visualization.html#cb408-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>,ncols<span class="op">=</span><span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">6</span>))</span>
+<span id="cb408-2"><a href="python-visualization.html#cb408-2" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> ax.flatten()</span>
+<span id="cb408-3"><a href="python-visualization.html#cb408-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalLength'</span>,stat<span class="op">=</span><span class="st">'density'</span>,ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb408-4"><a href="python-visualization.html#cb408-4" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalLength'</span>,ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb408-5"><a href="python-visualization.html#cb408-5" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalLength'</span>,y<span class="op">=</span>normfun(df.SepalLength),ax<span class="op">=</span>axes[<span class="dv">0</span>],color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb408-6"><a href="python-visualization.html#cb408-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalWidth'</span>,stat<span class="op">=</span><span class="st">'density'</span>,color<span class="op">=</span><span class="st">'orange'</span>,ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb408-7"><a href="python-visualization.html#cb408-7" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalWidth'</span>,ax<span class="op">=</span>axes[<span class="dv">1</span>])</span>
+<span id="cb408-8"><a href="python-visualization.html#cb408-8" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalWidth'</span>,y<span class="op">=</span>normfun(df.SepalWidth),ax<span class="op">=</span>axes[<span class="dv">1</span>],color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb408-9"><a href="python-visualization.html#cb408-9" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalLength'</span>,stat<span class="op">=</span><span class="st">'density'</span>,color<span class="op">=</span><span class="st">'green'</span>,ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb408-10"><a href="python-visualization.html#cb408-10" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalLength'</span>,ax<span class="op">=</span>axes[<span class="dv">2</span>])</span>
+<span id="cb408-11"><a href="python-visualization.html#cb408-11" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalLength'</span>,y<span class="op">=</span>normfun(df.PetalLength),ax<span class="op">=</span>axes[<span class="dv">2</span>],color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb408-12"><a href="python-visualization.html#cb408-12" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalWidth'</span>,stat<span class="op">=</span><span class="st">'density'</span>,color<span class="op">=</span><span class="st">'red'</span>,ax<span class="op">=</span>axes[<span class="dv">3</span>])</span>
+<span id="cb408-13"><a href="python-visualization.html#cb408-13" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalWidth'</span>,ax<span class="op">=</span>axes[<span class="dv">3</span>])</span>
+<span id="cb408-14"><a href="python-visualization.html#cb408-14" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'PetalWidth'</span>,y<span class="op">=</span>normfun(df.PetalWidth),ax<span class="op">=</span>axes[<span class="dv">3</span>],color<span class="op">=</span><span class="st">'red'</span>)</span></code></pre></div>
+<p>In order to compare variables or levels of a categorical variable, a box plot illustrates the distribution of quantitative data. Except for points that are identified as “outliers”, the box plot displays the dataset’s quartiles, and the whiskers expand to display the remainder of the distribution.</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb409-1"><a href="python-visualization.html#cb409-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">6</span>))</span>
+<span id="cb409-2"><a href="python-visualization.html#cb409-2" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df)</span></code></pre></div>
+<p>similar with boxplot, violin plot is another method to compare variables or levels of a categorical variable.</p>
+<div class="sourceCode" id="cb410"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb410-1"><a href="python-visualization.html#cb410-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="op">=</span> sns.violinplot(data <span class="op">=</span> iris.data) </span>
+<span id="cb410-2"><a href="python-visualization.html#cb410-2" aria-hidden="true" tabindex="-1"></a>g1.set_xticklabels(iris.feature_names)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb411-1"><a href="python-visualization.html#cb411-1" aria-hidden="true" tabindex="-1"></a>vioplot using matplotlib</span>
+<span id="cb411-2"><a href="python-visualization.html#cb411-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb411-3"><a href="python-visualization.html#cb411-3" aria-hidden="true" tabindex="-1"></a>ax.violinplot(dataset <span class="op">=</span> iris.data)</span>
+<span id="cb411-4"><a href="python-visualization.html#cb411-4" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
+<span id="cb411-5"><a href="python-visualization.html#cb411-5" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(iris.feature_names)</span></code></pre></div>
+<p>Scatter plot is most used for generally find a relationship between two numerical variables. The relationship between x and y can be shown for different subsets of the data using the hue, size, and style parameters.”“”</p>
+<div class="sourceCode" id="cb412"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb412-1"><a href="python-visualization.html#cb412-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb412-2"><a href="python-visualization.html#cb412-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df,x<span class="op">=</span><span class="st">'SepalLength'</span>,y<span class="op">=</span><span class="st">'SepalWidth'</span>,hue<span class="op">=</span>cg.Category)</span></code></pre></div>
+<p>Heatmap can be used to analyze the relationship within the features. We can compute the correlation first and draw the plot. This is an Axes-level function</p>
+<div class="sourceCode" id="cb413"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb413-1"><a href="python-visualization.html#cb413-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> df.corr()</span>
+<span id="cb413-2"><a href="python-visualization.html#cb413-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr)</span></code></pre></div>
+<p>A bar plot represents an estimate of central tendency for a numeric variable with the height of each rectangle and provides some indication of the uncertainty around that estimate using error bars. Bar graph can also be used to show multiple variables, the function uses the average value as default.</p>
+<div class="sourceCode" id="cb414"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb414-1"><a href="python-visualization.html#cb414-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="op">=</span> pd.concat([df,cg],axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb414-2"><a href="python-visualization.html#cb414-2" aria-hidden="true" tabindex="-1"></a>mean<span class="op">=</span>iris_df.groupby(<span class="st">'Category'</span>)[<span class="st">'SepalLength'</span>].mean().reset_index()</span>
+<span id="cb414-3"><a href="python-visualization.html#cb414-3" aria-hidden="true" tabindex="-1"></a>fig,(ax1,ax2,ax3) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>,ncols<span class="op">=</span><span class="dv">3</span>,figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">5</span>))</span>
+<span id="cb414-4"><a href="python-visualization.html#cb414-4" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>iris_df,x<span class="op">=</span><span class="st">'Category'</span>,y<span class="op">=</span><span class="st">'SepalLength'</span>,ax<span class="op">=</span>ax1)</span>
+<span id="cb414-5"><a href="python-visualization.html#cb414-5" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>mean, x<span class="op">=</span><span class="st">"Category"</span>, y<span class="op">=</span><span class="st">"SepalLength"</span>,ax<span class="op">=</span>ax2)</span>
+<span id="cb414-6"><a href="python-visualization.html#cb414-6" aria-hidden="true" tabindex="-1"></a>sns.stripplot(data<span class="op">=</span>iris_df,x<span class="op">=</span><span class="st">'Category'</span>,y<span class="op">=</span><span class="st">'SepalLength'</span>,ax<span class="op">=</span>ax3)</span></code></pre></div>
+<p>When we have more than one categorical variables, we can use stacked or grouped bar plot. To make the tutorial easy to understand, we binned the features of iris and look at the result. The use of stacked bar plot on Python is not very convenient so we didn’t mention it here.</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb415-1"><a href="python-visualization.html#cb415-1" aria-hidden="true" tabindex="-1"></a>bins<span class="op">=</span>[<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>]</span>
+<span id="cb415-2"><a href="python-visualization.html#cb415-2" aria-hidden="true" tabindex="-1"></a>labels<span class="op">=</span>np.arange(<span class="dv">0</span>,<span class="bu">len</span>(bins)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb415-3"><a href="python-visualization.html#cb415-3" aria-hidden="true" tabindex="-1"></a>iris_df[<span class="st">'binned_SepalLength'</span>]<span class="op">=</span>pd.cut(df[<span class="st">'SepalLength'</span>],bins,labels<span class="op">=</span>labels)</span>
+<span id="cb415-4"><a href="python-visualization.html#cb415-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb415-5"><a href="python-visualization.html#cb415-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))</span>
+<span id="cb415-6"><a href="python-visualization.html#cb415-6" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>iris_df,x<span class="op">=</span><span class="st">'Category'</span>,y<span class="op">=</span><span class="st">'PetalLength'</span>,hue<span class="op">=</span><span class="st">'binned_SepalLength'</span>)</span></code></pre></div>
+<p>Actually, we can use ‘sns.catplot’ function to implement any plot with catrgorical variable as x-axis by changing the parameter ‘kind’. This function provides access to several axes-level functions that show the relationship between a numerical and one or more categorical variables using one of several visual representations and the kind parameter selects the underlying axes-level function to use. Take bar plot as an example, it has the same plot as ‘sns.barplot’.</p>
+<p>Pay attention to the use of subplots here. Catplot is a figure-level function and does not accept target axes.</p>
+<div class="sourceCode" id="cb416"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb416-1"><a href="python-visualization.html#cb416-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>iris_df,x<span class="op">=</span><span class="st">'Category'</span>,y<span class="op">=</span><span class="st">'SepalLength'</span>,kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb416-2"><a href="python-visualization.html#cb416-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb416-3"><a href="python-visualization.html#cb416-3" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>iris_df,x<span class="op">=</span><span class="st">'Category'</span>,y<span class="op">=</span><span class="st">'SepalLength'</span>,kind<span class="op">=</span><span class="st">'strip'</span>)</span></code></pre></div>
+<p>Mosaic plot is a special type of stacked bar chart for categorical variables. We use the statmodels package in python to implement it.(There are not convenient API in matplotlib/seaborn, but using FacetGrid() in matplotlib can also draw a mosaic plot.) The data are created randomly.</p>
+<div class="sourceCode" id="cb417"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb417-1"><a href="python-visualization.html#cb417-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">70</span>, <span class="dv">86</span>, <span class="dv">18</span>, <span class="dv">60</span>, <span class="dv">30</span>, <span class="dv">12</span>, <span class="dv">90</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">60</span>, <span class="dv">96</span>, <span class="dv">88</span>, <span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">32</span>]</span>
+<span id="cb417-2"><a href="python-visualization.html#cb417-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.mosaicplot <span class="im">import</span> mosaic</span>
+<span id="cb417-3"><a href="python-visualization.html#cb417-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> product</span>
+<span id="cb417-4"><a href="python-visualization.html#cb417-4" aria-hidden="true" tabindex="-1"></a>tuples <span class="op">=</span> <span class="bu">list</span>(product([<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>,<span class="st">"F"</span>], [<span class="st">'col1'</span>, <span class="st">'col2'</span>,<span class="st">'col3'</span>]))</span>
+<span id="cb417-5"><a href="python-visualization.html#cb417-5" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> pd.MultiIndex.from_tuples(tuples)</span>
+<span id="cb417-6"><a href="python-visualization.html#cb417-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.Series(data, index<span class="op">=</span>index)</span>
+<span id="cb417-7"><a href="python-visualization.html#cb417-7" aria-hidden="true" tabindex="-1"></a>mosaic(data, title<span class="op">=</span><span class="st">'mosaic plot in python'</span>)</span>
+<span id="cb417-8"><a href="python-visualization.html#cb417-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p>The following is Cleveland dot plot in python. we use part of the tophit dataset in r.gcookbook package.</p>
+<div class="sourceCode" id="cb418"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb418-1"><a href="python-visualization.html#cb418-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"tophit.csv"</span>)</span>
+<span id="cb418-2"><a href="python-visualization.html#cb418-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data[:<span class="dv">25</span>]</span>
+<span id="cb418-3"><a href="python-visualization.html#cb418-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> sns.scatterplot(y<span class="op">=</span><span class="st">"name"</span>, x<span class="op">=</span><span class="st">"avg"</span>, data <span class="op">=</span> data)</span></code></pre></div>
+<p>Parallel coordinates plot are used to show the relationship between different variables. The following plot clearly shows the relationship in iris dataset. We use the API in pandas to implement it.</p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb419-1"><a href="python-visualization.html#cb419-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas.plotting <span class="im">import</span> parallel_coordinates</span>
+<span id="cb419-2"><a href="python-visualization.html#cb419-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> sns.load_dataset(<span class="st">'iris'</span>)</span>
+<span id="cb419-3"><a href="python-visualization.html#cb419-3" aria-hidden="true" tabindex="-1"></a>parallel_coordinates(iris, <span class="st">'species'</span>, colormap<span class="op">=</span>plt.get_cmap(<span class="st">"Set2"</span>))</span></code></pre></div>
+<p>The following is contour plot in python. We still use the iris dataset. Contour plot is a graphical method to visualize the 3-D surface by plotting constant Z slices called contours in a 2-D format.</p>
+<div class="sourceCode" id="cb420"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb420-1"><a href="python-visualization.html#cb420-1" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(x<span class="op">=</span>iris.sepal_width, y<span class="op">=</span>iris.sepal_length)</span>
+<span id="cb420-2"><a href="python-visualization.html#cb420-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p>Alluvial plot is another plot method to reveal the relationship between categorical variables. We use the vaccinations dataset in r.ggalluvial package to illustrate it.</p>
+<div class="sourceCode" id="cb421"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb421-1"><a href="python-visualization.html#cb421-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> holoviews <span class="im">as</span> hv</span>
+<span id="cb421-2"><a href="python-visualization.html#cb421-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> holoviews <span class="im">import</span> opts, dim</span>
+<span id="cb421-3"><a href="python-visualization.html#cb421-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"vaccinations.csv"</span>)</span>
+<span id="cb421-4"><a href="python-visualization.html#cb421-4" aria-hidden="true" tabindex="-1"></a>hv.extension(<span class="st">'bokeh'</span>)</span>
+<span id="cb421-5"><a href="python-visualization.html#cb421-5" aria-hidden="true" tabindex="-1"></a>sankey <span class="op">=</span> hv.Sankey(data,kdims<span class="op">=</span>[<span class="st">"survey"</span>, <span class="st">"response"</span>])</span>
+<span id="cb421-6"><a href="python-visualization.html#cb421-6" aria-hidden="true" tabindex="-1"></a>sankey.opts(width<span class="op">=</span><span class="dv">600</span>, height<span class="op">=</span><span class="dv">400</span>)</span></code></pre></div>
+<p>Reference
+<a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" class="uri">https://en.wikipedia.org/wiki/Iris_flower_data_set</a></p>
+<p><a href="http://seaborn.pydata.org/generated/seaborn.catplot.html" class="uri">http://seaborn.pydata.org/generated/seaborn.catplot.html</a></p>
+<p><a href="https://r-charts.com/distribution/cleveland-dot-plot/" class="uri">https://r-charts.com/distribution/cleveland-dot-plot/</a></p>
+<p><a href="https://holoviews.org/reference_manual/holoviews.element.html?highlight=sankey#holoviews.element.sankey.Sankey" class="uri">https://holoviews.org/reference_manual/holoviews.element.html?highlight=sankey#holoviews.element.sankey.Sankey</a>
+““”</p>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="coding-utf-8---.html"><span class="header-section-number">56</span> -- coding: utf-8 --</a></div>
+<div class="next"><a href="edav-survey-and-analysis.html"><span class="header-section-number">58</span> EDAV Survey and Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#python-visualization"><span class="header-section-number">57</span> Python Visualization</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/jtr13/cc22mw/blob/main/vis_in_python_vs_r.Rmd">View source <i class="fa-solid fa-chart-scatter"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/jtr13/cc22mw/edit/main/vis_in_python_vs_r.Rmd">Edit this page <i class="fa-solid fa-chart-scatter"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Community Contributions for EDAV Fall 2022 Mon/Wed</strong>" was written by . It was last built on 2022-12-13.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

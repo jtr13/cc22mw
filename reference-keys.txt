@@ -318,6 +318,10 @@ a-simple-problem
 fixed-step-size
 exact-line-search
 backtracking-line-search
+visualization-in-python-vs-r
+r-markdown
+coding-utf-8---
+python-visualization
 edav-survey-and-analysis
 project-proposal-1
 project-group-cc5
