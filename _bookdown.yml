@@ -68,6 +68,7 @@ rmd_files: [
   'gradient_descent.Rmd',
   #'ggplot_stat_and_theme.Rmd',
   #'file_ingestions.Rmd',
+  'vis_in_python_vs_r.Rmd',
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
