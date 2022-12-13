@@ -2,8 +2,7 @@
 
 Shukai Wang and Nancy Wang
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
 library(MASS)
 library(ggplot2)
 library(gridExtra)
