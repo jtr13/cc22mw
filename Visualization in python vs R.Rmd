@@ -9,7 +9,7 @@ library(ggplot2)
 library(gridExtra)
 library(reshape2)
 library(dplyr)
-library('vcd')
+library(vcd)
 library(gcookbook)
 library(ggalluvial)
 library(reticulate)
@@ -185,9 +185,10 @@ Original file is located at
 # Python Visualization
 
 We mainly use seaborn to draw plots on Python.
-"""
 
-```{python}
+*Note: due to the way the book is rendered, the Python code is not executed. However you can run the code locally.*
+
+```{python, eval=FALSE}
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -196,7 +197,7 @@ import numpy as np
 
 We load iris data from packge sklearn. The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimeters. Both Python and R has the access to this dataset.
 
-```{python}
+```{python, eval=FALSE}
 from sklearn.datasets import load_iris
 iris = load_iris()
 iris
@@ -206,7 +207,7 @@ cg = pd.DataFrame(iris['target'],columns=['Category'])
 
 It is not as convenient to build the normal distribution of histplot in Python as in R. We need to build a function to construct the probability distribution function and use the function "lineplot" form seaborn to draw the line.
 
-```{python}
+```{python, eval=FALSE}
 def normfun(x):
     mu = np.mean(x)
     sigma = np.std(x)
@@ -216,7 +217,7 @@ def normfun(x):
 
 The distribution of one or more variables is represented by a histogram, a traditional visualization tool, by counting the number of data that fall within discrete bins. The distribution of observations in a dataset can be seen visually using a kernel density estimate (KDE) plot, which represents the data as a continuous probability density curve in one or more dimensions.
 
-```{python}
+```{python, eval=FALSE}
 fig,ax = plt.subplots(nrows=2,ncols=2,figsize=(14,6))
 axes = ax.flatten()
 sns.histplot(data=df,x='SepalLength',stat='density',ax=axes[0])
@@ -235,19 +236,19 @@ sns.lineplot(data=df,x='PetalWidth',y=normfun(df.PetalWidth),ax=axes[3],color='r
 
 In order to compare variables or levels of a categorical variable, a box plot illustrates the distribution of quantitative data. Except for points that are identified as "outliers", the box plot displays the dataset's quartiles, and the whiskers expand to display the remainder of the distribution.
 
-```{python}
+```{python, eval=FALSE}
 plt.figure(figsize=(14,6))
 sns.boxplot(data=df)
 ```
 
 similar with boxplot, violin plot is another method to compare variables or levels of a categorical variable.
 
-```{python}
+```{python, eval=FALSE}
 g1 = sns.violinplot(data = iris.data) 
 g1.set_xticklabels(iris.feature_names)
 ```
 
-```{python}
+```{python, eval=FALSE}
 vioplot using matplotlib
 fig, ax = plt.subplots()
 ax.violinplot(dataset = iris.data)
@@ -258,7 +259,7 @@ ax.set_xticklabels(iris.feature_names)
 
 Scatter plot is most used for generally find a relationship between two numerical variables. The relationship between x and y can be shown for different subsets of the data using the hue, size, and style parameters."""
 
-```{python}
+```{python, eval=FALSE}
 plt.figure(figsize=(10,4))
 sns.scatterplot(data=df,x='SepalLength',y='SepalWidth',hue=cg.Category)
 ```
@@ -266,14 +267,14 @@ sns.scatterplot(data=df,x='SepalLength',y='SepalWidth',hue=cg.Category)
 
 Heatmap can be used to analyze the relationship within the features. We can compute the correlation first and draw the plot. This is an Axes-level function
 
-```{python}
+```{python, eval=FALSE}
 corr = df.corr()
 sns.heatmap(corr)
 ```
 
 A bar plot represents an estimate of central tendency for a numeric variable with the height of each rectangle and provides some indication of the uncertainty around that estimate using error bars. Bar graph can also be used to show multiple variables, the function uses the average value as default.
 
-```{python}
+```{python, eval=FALSE}
 iris_df = pd.concat([df,cg],axis=1)
 mean=iris_df.groupby('Category')['SepalLength'].mean().reset_index()
 fig,(ax1,ax2,ax3) = plt.subplots(nrows=1,ncols=3,figsize=(16,5))
@@ -284,7 +285,7 @@ sns.stripplot(data=iris_df,x='Category',y='SepalLength',ax=ax3)
 
 When we have more than one categorical variables, we can use stacked or grouped bar plot. To make the tutorial easy to understand, we binned the features of iris and look at the result. The use of stacked bar plot on Python is not very convenient so we didn't mention it here.
 
-```{python}
+```{python, eval=FALSE}
 bins=[4,6,8]
 labels=np.arange(0,len(bins)-1)
 iris_df['binned_SepalLength']=pd.cut(df['SepalLength'],bins,labels=labels)
@@ -298,7 +299,7 @@ Actually, we can use 'sns.catplot' function to implement any plot with catrgoric
 Pay attention to the use of subplots here. Catplot is a figure-level function and does not accept target axes. 
 
 
-```{python}
+```{python, eval=FALSE}
 sns.catplot(data=iris_df,x='Category',y='SepalLength',kind='bar')
 
 sns.catplot(data=iris_df,x='Category',y='SepalLength',kind='strip')
@@ -306,7 +307,7 @@ sns.catplot(data=iris_df,x='Category',y='SepalLength',kind='strip')
 
 Mosaic plot is a special type of stacked bar chart for categorical variables. We use the statmodels package in python to implement it.(There are not convenient API in matplotlib/seaborn, but using FacetGrid() in matplotlib can also draw a mosaic plot.) The data are created randomly.
 
-```{python}
+```{python, eval=FALSE}
 data = [80, 10, 15, 70, 86, 18, 60, 30, 12, 90, 20, 25, 60, 96, 88, 50, 20, 32]
 from statsmodels.graphics.mosaicplot import mosaic
 from itertools import product
@@ -319,7 +320,7 @@ plt.show()
 
 The following is Cleveland dot plot in python. we use part of the tophit dataset in r.gcookbook package.
 
-```{python}
+```{python, eval=FALSE}
 data = pd.read_csv("tophit.csv")
 data = data[:25]
 fig = sns.scatterplot(y="name", x="avg", data = data)
@@ -327,7 +328,7 @@ fig = sns.scatterplot(y="name", x="avg", data = data)
 
 Parallel coordinates plot are used to show the relationship between different variables. The following plot clearly shows the relationship in iris dataset. We use the API in pandas to implement it.
 
-```{python}
+```{python, eval=FALSE}
 from pandas.plotting import parallel_coordinates
 iris = sns.load_dataset('iris')
 parallel_coordinates(iris, 'species', colormap=plt.get_cmap("Set2"))
@@ -335,14 +336,14 @@ parallel_coordinates(iris, 'species', colormap=plt.get_cmap("Set2"))
 
 The following is contour plot in python. We still use the iris dataset. Contour plot is a graphical method to visualize the 3-D surface by plotting constant Z slices called contours in a 2-D format.
 
-```{python}
+```{python, eval=FALSE}
 sns.kdeplot(x=iris.sepal_width, y=iris.sepal_length)
 plt.show()
 ```
 
 Alluvial plot is another plot method to reveal the relationship between categorical variables. We use the vaccinations dataset in r.ggalluvial package to illustrate it. 
 
-```{python}
+```{python, eval=FALSE}
 import holoviews as hv
 from holoviews import opts, dim
 data = pd.read_csv("vaccinations.csv")
