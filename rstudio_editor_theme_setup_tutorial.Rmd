@@ -85,6 +85,10 @@ rsthemes::install_rsthemes(include_base16 = TRUE) # Can only be used after packa
 
 ```{r}
 rsthemes::list_rsthemes() # List the names of all themes
+```
+
+```{r, eval=FALSE}
+# eval set to FALSE since there is no active RStudio session
 rsthemes::try_rsthemes("dark") # try dark themes; can also be "light" or "base16"
 ```
 
