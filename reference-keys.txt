@@ -1,4 +1,4 @@
-fig:unnamed-chunk-130
+fig:unnamed-chunk-142
 welcome
 community-contribution
 important-logistics
@@ -17,6 +17,7 @@ what-if-i-catch-mistakes-before-my-pull-request-is-merged
 what-if-i-catch-mistakes-after-my-pull-request-is-merged
 other-questions
 sample-project
+cheatsheet-for-patchwork
 geographic-visualization-by-ggmap
 motivation-for-this-project
 my-own-evaluationroom-for-improvement
@@ -338,7 +339,16 @@ backtracking-line-search
 visualization-in-python-vs-r
 r-markdown
 python-visualization
-cheatsheet-for-patchwork
+wordclouds-a-video-tutorial-on-how-to-make-wordclouds-from-raw-text
+introduction-8
+link-to-youtube-video
+slides
+code-examples
+first-step-from-raw-text-to-word-count-dataframe
+step-2-from-word-counts-to-wordclouds-using-wordcloud2
+wordcloud2-function
+lettercloud-function-1
+reflections
 edav-survey-and-analysis
 project-proposal
 project-group-cc5

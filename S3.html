@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<title>Chapter 43 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 43 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 42 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:title" content="Chapter 43 Section 3.Time series visualization with ggplot and ggplot2 | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta name="twitter:description" content="The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -54,65 +54,66 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
-<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
-<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
-<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
-<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
-<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
-<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
-<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
-<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
-<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
-<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
-<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
-<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
-<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
-<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
-<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
-<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
-<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
-<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
-<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
-<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
-<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
-<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
-<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
-<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
-<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
-<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
-<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
-<li><a class="active" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
-<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
-<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
-<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
-<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
-<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
-<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
-<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
-<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
-<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
-<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
-<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">16</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">17</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">18</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">19</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">20</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">21</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">22</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">23</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">24</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">25</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">26</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">27</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">28</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">29</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">30</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">31</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">32</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">33</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">34</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">35</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">37</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">38</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">39</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">40</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">41</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">42</span> Introduction</a></li>
+<li><a class="active" href="S3.html"><span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">44</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">45</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">46</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">47</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">48</span> History of Charts</a></li>
+<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">49</span> Python: geospatial data visualization project guide</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">50</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">51</span> Playful R Packages for Kids</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="wordclouds-a-video-tutorial-on-how-to-make-wordclouds-from-raw-text.html"><span class="header-section-number">56</span> Wordclouds: a video tutorial on how to make wordclouds from raw text</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">57</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">58</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">59</span> Is the data visualization misleading or not - Survey</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">59</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">60</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">60</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">61</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -120,35 +121,35 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="S3" class="section level1" number="42">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="S3" class="section level1" number="43">
 <h1>
-<span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2<a class="anchor" aria-label="anchor" href="#S3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2<a class="anchor" aria-label="anchor" href="#S3"><i class="fas fa-link"></i></a>
 </h1>
 <p>The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw data and log_transfomred data for GOOG stock price.<br></p>
 <p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Use ggplot2 to create visualization for both raw data and log_transfomred data for GOOG stock price with the line graph.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#line plot for stock price raw data</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">s_price</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">s_price</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">s_price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'GOOG stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-271-1.png" width="80%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-283-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#line plot for log Transformed GOOGstock price </span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_goog</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">ts_goog</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Log_transformed GOOG stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-271-2.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-283-2.png" width="80%" style="display: block; margin: auto;"></div>
 <p>From two plots, we observe that the log_transformed stock price better represents the change in perentage for stock prices. We will use the log_transformed stock data in further visualizations.</p>
 <p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Why don’t we visualized the Google stock price and Amazon stock price on the same graph for comparison?
 Code below create line plots for GOOG and AMZN log_transformed stock prices at same plot by adding two geom_line.</p>
 <p><br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ts_bind</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="va">ts_amzn</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_bind</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">GOOG.Adjusted</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -156,21 +157,21 @@ Code below create line plots for GOOG and AMZN log_transformed stock prices at s
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'GOOG and AMZN log_transformed stock price, 2021-2022'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-272-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-284-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Another way to create ts visualization is to use autoplot function in ggplot2. The function autoplot() in ggplot2 provides a simple and direct plot for a particular object.<br></p>
 <p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Use function autoplot() to visualized the Google and Amazon log_transformed stock price.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span>  <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">' GOOG and AMZN log_transformed stock price in autoplot'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-273-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-285-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></div>
-<div class="next"><a href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></div>
+<div class="prev"><a href="introduction-6.html"><span class="header-section-number">42</span> Introduction</a></div>
+<div class="next"><a href="autocorrelation-plot.html"><span class="header-section-number">44</span> AutoCorrelation plot</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#S3"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#S3"><span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 35 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Yuehan Hu and Wen Chen  35.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  35.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
+<title>Chapter 36 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Yuehan Hu and Wen Chen  36.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  36.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 35 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 36 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Yuehan Hu and Wen Chen  35.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  35.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
+<meta property="og:description" content="Yuehan Hu and Wen Chen  36.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  36.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 35 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Yuehan Hu and Wen Chen  35.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  35.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
+<meta name="twitter:title" content="Chapter 36 Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap) | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Yuehan Hu and Wen Chen  36.1 The Cheatsheet Link: https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf  36.2 Introduction to ggplot2 ggplot2 is a plotting package that creates...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -54,65 +54,66 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
-<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
-<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
-<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
-<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
-<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
-<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
-<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
-<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
-<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
-<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
-<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
-<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
-<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
-<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
-<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
-<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
-<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
-<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
-<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
-<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
-<li><a class="active" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
-<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
-<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
-<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
-<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
-<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
-<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
-<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
-<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
-<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
-<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
-<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
-<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
-<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
-<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
-<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
-<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
-<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
-<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">16</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">17</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">18</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">19</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">20</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">21</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">22</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">23</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">24</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">25</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">26</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">27</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">28</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">29</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">30</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">31</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">32</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">33</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">34</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">35</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="active" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">37</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">38</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">39</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">40</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">41</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">42</span> Introduction</a></li>
+<li><a class="" href="S3.html"><span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">44</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">45</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">46</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">47</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">48</span> History of Charts</a></li>
+<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">49</span> Python: geospatial data visualization project guide</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">50</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">51</span> Playful R Packages for Kids</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="wordclouds-a-video-tutorial-on-how-to-make-wordclouds-from-raw-text.html"><span class="header-section-number">56</span> Wordclouds: a video tutorial on how to make wordclouds from raw text</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">57</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">58</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">59</span> Is the data visualization misleading or not - Survey</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">59</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">60</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">60</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">61</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -120,48 +121,48 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap" class="section level1" number="35">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap" class="section level1" number="36">
 <h1>
-<span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)<a class="anchor" aria-label="anchor" href="#cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)<a class="anchor" aria-label="anchor" href="#cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap"><i class="fas fa-link"></i></a>
 </h1>
 <p>Yuehan Hu and Wen Chen</p>
-<div id="the-cheatsheet-link" class="section level2" number="35.1">
+<div id="the-cheatsheet-link" class="section level2" number="36.1">
 <h2>
-<span class="header-section-number">35.1</span> The Cheatsheet Link:<a class="anchor" aria-label="anchor" href="#the-cheatsheet-link"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.1</span> The Cheatsheet Link:<a class="anchor" aria-label="anchor" href="#the-cheatsheet-link"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf" class="uri">https://github.com/yuehanhu/ggplot2cheatsheet/blob/main/Cheatsheet.pdf</a></p>
 </div>
-<div id="introduction-to-ggplot2" class="section level2" number="35.2">
+<div id="introduction-to-ggplot2" class="section level2" number="36.2">
 <h2>
-<span class="header-section-number">35.2</span> Introduction to ggplot2<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.2</span> Introduction to ggplot2<a class="anchor" aria-label="anchor" href="#introduction-to-ggplot2"><i class="fas fa-link"></i></a>
 </h2>
 <p>ggplot2 is a plotting package that creates complex plots from data based on the grammar of graphics. Moreover, ggplot2 provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties. This package provides a very convenient way for us to create different kinds of distributions.</p>
 </div>
-<div id="summary-to-the-cheatsheet" class="section level2" number="35.3">
+<div id="summary-to-the-cheatsheet" class="section level2" number="36.3">
 <h2>
-<span class="header-section-number">35.3</span> Summary to the Cheatsheet<a class="anchor" aria-label="anchor" href="#summary-to-the-cheatsheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.3</span> Summary to the Cheatsheet<a class="anchor" aria-label="anchor" href="#summary-to-the-cheatsheet"><i class="fas fa-link"></i></a>
 </h2>
 <p>Our cheatsheet includes three parts, the first part includes the basic definition, some essential grammar and the most common visualizations of ggplot2, which provides us the clearly frame to use standard format and easy way to distinguish the delicate difference between these visualizations. The second part includes the brief description, essential grammar, an example, different curve types, color and legend customizations of ggalluvial. Alluvial is very useful to visualize frequency distributions over time or frequency tables involving several categorical variables. The third part includes a short introduction, an example, color and legend customizations of heatmap. Heatmap is good for us to show relationships between two variables, one plotted on each axis.</p>
 </div>
-<div id="the-evaluation-of-the-cheatsheet" class="section level2" number="35.4">
+<div id="the-evaluation-of-the-cheatsheet" class="section level2" number="36.4">
 <h2>
-<span class="header-section-number">35.4</span> The evaluation of the Cheatsheet<a class="anchor" aria-label="anchor" href="#the-evaluation-of-the-cheatsheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">36.4</span> The evaluation of the Cheatsheet<a class="anchor" aria-label="anchor" href="#the-evaluation-of-the-cheatsheet"><i class="fas fa-link"></i></a>
 </h2>
 <p>Although there are many similarities in each part of grammar when creating different visualizations, we marked the difference in grey, which help us to distinguish and remember. This cheatsheet summarize some important kinds of visualizations in ggplot2, which also lead us review the content of ggplot2 in this class generally.</p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></div>
-<div class="next"><a href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></div>
+<div class="prev"><a href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">35</span> Tutorial of making different types of charts interactive</a></div>
+<div class="next"><a href="chord-diagrams-using-circlize.html"><span class="header-section-number">37</span> Chord diagrams using circlize</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
-<li><a class="nav-link" href="#the-cheatsheet-link"><span class="header-section-number">35.1</span> The Cheatsheet Link:</a></li>
-<li><a class="nav-link" href="#introduction-to-ggplot2"><span class="header-section-number">35.2</span> Introduction to ggplot2</a></li>
-<li><a class="nav-link" href="#summary-to-the-cheatsheet"><span class="header-section-number">35.3</span> Summary to the Cheatsheet</a></li>
-<li><a class="nav-link" href="#the-evaluation-of-the-cheatsheet"><span class="header-section-number">35.4</span> The evaluation of the Cheatsheet</a></li>
+<li><a class="nav-link" href="#cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap"><span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="nav-link" href="#the-cheatsheet-link"><span class="header-section-number">36.1</span> The Cheatsheet Link:</a></li>
+<li><a class="nav-link" href="#introduction-to-ggplot2"><span class="header-section-number">36.2</span> Introduction to ggplot2</a></li>
+<li><a class="nav-link" href="#summary-to-the-cheatsheet"><span class="header-section-number">36.3</span> Summary to the Cheatsheet</a></li>
+<li><a class="nav-link" href="#the-evaluation-of-the-cheatsheet"><span class="header-section-number">36.4</span> The evaluation of the Cheatsheet</a></li>
 </ul>
 
       <div class="book-extra">

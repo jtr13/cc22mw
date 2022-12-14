@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 27 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Zhexin Wang  27.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
+<title>Chapter 28 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Zhexin Wang  28.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 27 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 28 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Zhexin Wang  27.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
+<meta property="og:description" content="Zhexin Wang  28.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 27 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Zhexin Wang  27.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
+<meta name="twitter:title" content="Chapter 28 Hypothesis Testing Guide in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Zhexin Wang  28.1 Hypothesis Testing in R Cheatsheet Introduction/Explanation This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -54,65 +54,66 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
-<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
-<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
-<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
-<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
-<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
-<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
-<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
-<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
-<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
-<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
-<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
-<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
-<li><a class="active" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
-<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
-<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
-<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
-<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
-<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
-<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
-<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
-<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
-<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
-<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
-<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
-<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
-<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
-<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
-<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
-<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
-<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
-<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
-<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
-<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
-<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
-<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
-<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
-<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
-<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
-<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">16</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">17</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">18</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">19</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">20</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">21</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">22</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">23</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">24</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">25</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">26</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">27</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="active" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">28</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">29</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">30</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">31</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">32</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">33</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">34</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">35</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">37</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">38</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">39</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">40</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">41</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">42</span> Introduction</a></li>
+<li><a class="" href="S3.html"><span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">44</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">45</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">46</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">47</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">48</span> History of Charts</a></li>
+<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">49</span> Python: geospatial data visualization project guide</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">50</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">51</span> Playful R Packages for Kids</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="wordclouds-a-video-tutorial-on-how-to-make-wordclouds-from-raw-text.html"><span class="header-section-number">56</span> Wordclouds: a video tutorial on how to make wordclouds from raw text</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">57</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">58</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">59</span> Is the data visualization misleading or not - Survey</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">59</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">60</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">60</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">61</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -120,14 +121,14 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="hypothesis-testing-guide-in-r" class="section level1" number="27">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="hypothesis-testing-guide-in-r" class="section level1" number="28">
 <h1>
-<span class="header-section-number">27</span> Hypothesis Testing Guide in R<a class="anchor" aria-label="anchor" href="#hypothesis-testing-guide-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28</span> Hypothesis Testing Guide in R<a class="anchor" aria-label="anchor" href="#hypothesis-testing-guide-in-r"><i class="fas fa-link"></i></a>
 </h1>
 <p>Zhexin Wang</p>
-<div id="hypothesis-testing-in-r-cheatsheet-introductionexplanation" class="section level2" number="27.1">
+<div id="hypothesis-testing-in-r-cheatsheet-introductionexplanation" class="section level2" number="28.1">
 <h2>
-<span class="header-section-number">27.1</span> Hypothesis Testing in R Cheatsheet Introduction/Explanation<a class="anchor" aria-label="anchor" href="#hypothesis-testing-in-r-cheatsheet-introductionexplanation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.1</span> Hypothesis Testing in R Cheatsheet Introduction/Explanation<a class="anchor" aria-label="anchor" href="#hypothesis-testing-in-r-cheatsheet-introductionexplanation"><i class="fas fa-link"></i></a>
 </h2>
 <p>This is a cheatsheet for hypothesis testing in R. However, please note that it only serves as a quick reminder of which test to use and the corresponding code in R, instead of an exhaustive guide on data cleaning and analysis. It is extremely important to check if the data set meet all the assumptions of a test (normality, variance equality, large sample size, etc), even though it’s not listed out in detail here.</p>
 <p>
@@ -135,17 +136,17 @@ The motivation behind this project is the need to grasp the big picture of hypot
 <p>
 I have thoroughly reviewed hypothesis testing by creating this cheatsheet, and learned how to summarize the assumptions of the tests based on the roadmap. Next time, I will include the detailed assumptions of each statistical test instead of just providing the code and the roadmap.</p>
 </div>
-<div id="hypothesis-testing-roadmap" class="section level2" number="27.2">
+<div id="hypothesis-testing-roadmap" class="section level2" number="28.2">
 <h2>
-<span class="header-section-number">27.2</span> Hypothesis Testing Roadmap<a class="anchor" aria-label="anchor" href="#hypothesis-testing-roadmap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.2</span> Hypothesis Testing Roadmap<a class="anchor" aria-label="anchor" href="#hypothesis-testing-roadmap"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure">
 <img src="resources/hypothesis_testing_guide_in_r/hypothesis_testing.png" alt=""><p class="caption">This is a basic hypothesis testing guide for any kind of dataset.</p>
 </div>
 </div>
-<div id="chi-square-test-in-r" class="section level2" number="27.3">
+<div id="chi-square-test-in-r" class="section level2" number="28.3">
 <h2>
-<span class="header-section-number">27.3</span> Chi-Square Test in R<a class="anchor" aria-label="anchor" href="#chi-square-test-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.3</span> Chi-Square Test in R<a class="anchor" aria-label="anchor" href="#chi-square-test-in-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 We typically use chi-square test when the dataset has two categorical variables and we want to test if the two variables are related to each other. For example, this chi_sq_data has two variables: treatment and improvement. The patients are either treated or not treated, and the result is either improved or not improved. We want to test if the improvement is dependent on the treatment that the patient received. Thus we conduct a chi-square test as follows:
@@ -153,7 +154,7 @@ We typically use chi-square test when the dataset has two categorical variables 
 <ol style="list-style-type: decimal">
 <li>Importing the data (categorical variables):</li>
 </ol>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">chi_sq_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://goo.gl/j6lRXD"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">chi_sq_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   id   treatment  improvement
@@ -165,7 +166,7 @@ We typically use chi-square test when the dataset has two categorical variables 
 ## 6  6     treated not-improved</code></pre>
 <p>
 2. Creating a table to check the number of each category:</p>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">chi_sq_data</span><span class="op">$</span><span class="va">treatment</span>, <span class="va">chi_sq_data</span><span class="op">$</span><span class="va">improvement</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##              
 ##               improved not-improved
@@ -173,7 +174,7 @@ We typically use chi-square test when the dataset has two categorical variables 
 ##   treated           35           15</code></pre>
 <p>
 3. Conduct the chi-square test:</p>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">chi_sq_data</span><span class="op">$</span><span class="va">treatment</span>, <span class="va">chi_sq_data</span><span class="op">$</span><span class="va">improvement</span>, correct<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson's Chi-squared test
@@ -183,15 +184,15 @@ We typically use chi-square test when the dataset has two categorical variables 
 <p>In this case, the p-value = 0.01841, smaller than 0.05. Thus we reject the null hypothesis that the two variables are independent. In other words, we reject the statement that the condition improvement of these patients is not related the treatment.
 </p>
 </div>
-<div id="z-test-in-r" class="section level2" number="27.4">
+<div id="z-test-in-r" class="section level2" number="28.4">
 <h2>
-<span class="header-section-number">27.4</span> Z-Test in R<a class="anchor" aria-label="anchor" href="#z-test-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.4</span> Z-Test in R<a class="anchor" aria-label="anchor" href="#z-test-in-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 We use z-test when we want to test whether the means from two samples are the same. Notice that we could only use z-test when population standard deviations (or population parameters) are known, and it’s actually uncommon in real life examples, where data are messy and the populations parameters are hidden.</p>
 <p>
 1. Importing the data: (The data we use here is a toy example) suppose we want to check if the mean score of a biology exam from schoolA and schoolB are the same, so we randomly select 30 students from each school and record the score. We assume that the scores from these two schools are normally distributed each with population standard deviation of 10.</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Scores from schoolA:</span></span>
 <span><span class="va">scoreA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">85</span>,<span class="fl">89</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">92</span>,<span class="fl">94</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">49</span>,<span class="fl">78</span>,<span class="fl">89</span>,<span class="fl">48</span>,<span class="fl">78</span>,<span class="fl">90</span>,<span class="fl">96</span>,<span class="fl">75</span>,<span class="fl">87</span>,<span class="fl">90</span>,<span class="fl">75</span>,<span class="fl">76</span>,<span class="fl">83</span>,<span class="fl">89</span>,<span class="fl">86</span>,<span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">82</span>,<span class="fl">98</span>,<span class="fl">73</span><span class="op">)</span></span>
 <span></span>
@@ -199,7 +200,7 @@ We use z-test when we want to test whether the means from two samples are the sa
 <span><span class="va">scoreB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">90</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">95</span>,<span class="fl">95</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">87</span>,<span class="fl">89</span>,<span class="fl">47</span>,<span class="fl">68</span>,<span class="fl">94</span>,<span class="fl">89</span>,<span class="fl">60</span>,<span class="fl">79</span>,<span class="fl">80</span>,<span class="fl">97</span>,<span class="fl">68</span>,<span class="fl">84</span>,<span class="fl">83</span>,<span class="fl">82</span>,<span class="fl">86</span>,<span class="fl">98</span>,<span class="fl">87</span>,<span class="fl">72</span>,<span class="fl">79</span>,<span class="fl">83</span>,<span class="fl">85</span>,<span class="fl">96</span><span class="op">)</span></span></code></pre></div>
 <p>
 2. Conduct z-test:</p>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/alanarnholt/BSDA">BSDA</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://alanarnholt.github.io/BSDA/reference/z.test.html">z.test</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">scoreA</span>, y<span class="op">=</span><span class="va">scoreB</span>, mu<span class="op">=</span><span class="fl">0</span>, sigma.x<span class="op">=</span><span class="fl">10</span>, sigma.y<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
@@ -216,15 +217,15 @@ We use z-test when we want to test whether the means from two samples are the sa
 <p>In this case, the p-value 0.06985 is greater than 0.05. As a result, we reject the hypothesis that the mean scores of school A and school B are the same.
 </p>
 </div>
-<div id="anova-in-r" class="section level2" number="27.5">
+<div id="anova-in-r" class="section level2" number="28.5">
 <h2>
-<span class="header-section-number">27.5</span> Anova in R<a class="anchor" aria-label="anchor" href="#anova-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.5</span> Anova in R<a class="anchor" aria-label="anchor" href="#anova-in-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Anova is used to determine whether the means of three or more populations are different. In other words, it is used to compare three or more group and check if they are significantly different from one another. The data should be numerical. Here we will only cover the most basic form: the one-way Anova.</p>
 <p>
 1. Importing the data: We will use a built-in R dataset named PlantGrowth. The dataset has two columns: weight and group. There are three groups in general, including one control group and two treatment group. Our goal here is to test whether the population mean of the three groups are the same.</p>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">anova_data</span> <span class="op">&lt;-</span> <span class="va">PlantGrowth</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">anova_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   weight group
@@ -236,7 +237,7 @@ Anova is used to determine whether the means of three or more populations are di
 ## 6   4.61  ctrl</code></pre>
 <p>
 2. Conducting ANOVA: (Please note that even though we don’t include the data cleaning/data visualization process here, a proper data analysis project should address those important steps.)</p>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">res.aov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">group</span>, data <span class="op">=</span> <span class="va">anova_data</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">res.aov</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
@@ -247,15 +248,15 @@ Anova is used to determine whether the means of three or more populations are di
 <p>Here the p-value is smaller than 0.05, indicating that we should reject the null hypothesis that the groups are the same. The drawback here is that we don’t know which pair of groups are different. Thus further analysis such as pairwise t-test or any kind of pairwise comparisons needs to be done in order to analyze the groups in detail.
 </p>
 </div>
-<div id="paired-sample-t-test" class="section level2" number="27.6">
+<div id="paired-sample-t-test" class="section level2" number="28.6">
 <h2>
-<span class="header-section-number">27.6</span> Paired Sample T-test<a class="anchor" aria-label="anchor" href="#paired-sample-t-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.6</span> Paired Sample T-test<a class="anchor" aria-label="anchor" href="#paired-sample-t-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Paired sample t-test is used to compare the means between two groups of samples. The hypothesis is that the mean difference between two sets of observations is 0 (or it also could be the mean difference is smaller than 0, greater than 0.) Note that this is different from z-test because population parameters are not known in this case, which makes it much more frequently used than z-test. The data should follow two assumptions: the data are paired and the sample is large enough (n is greater than 30).</p>
 <p>
 1. Importing the data: Let’s use a toy example here. Assume that some students have received tutoring outside of school. Here are grades before and after the tutoring. We want to know if there’s significant improvement in their grades after receiving the tutoring. Note that this toy example meets the two assumptions, given that the scores are from the same group of students and the sample size is greater than 30.</p>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Students grades before tutoring</span></span>
 <span><span class="va">before</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">80</span>, <span class="fl">75</span>, <span class="fl">90</span>, <span class="fl">68</span>, <span class="fl">79</span>, <span class="fl">49</span>, <span class="fl">86</span>, <span class="fl">58</span>, <span class="fl">79</span>, <span class="fl">76</span>, <span class="fl">54</span>, <span class="fl">89</span>, <span class="fl">50</span>, <span class="fl">68</span>, <span class="fl">59</span>, <span class="fl">80</span>, <span class="fl">75</span>, <span class="fl">90</span>, <span class="fl">68</span>, <span class="fl">79</span>, <span class="fl">49</span>, <span class="fl">86</span>, <span class="fl">58</span>, <span class="fl">79</span>, <span class="fl">76</span>, <span class="fl">54</span>, <span class="fl">89</span>, <span class="fl">50</span>, <span class="fl">68</span>, <span class="fl">59</span><span class="op">)</span></span>
 <span></span>
@@ -276,7 +277,7 @@ Paired sample t-test is used to compare the means between two groups of samples.
 ## 6 before    49</code></pre>
 <p>
 2. Conduct paired sample t-test:</p>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">before</span>, <span class="va">after</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">res</span></span></code></pre></div>
 <pre><code>## 
@@ -293,20 +294,20 @@ Paired sample t-test is used to compare the means between two groups of samples.
 <p>The p-value here is much smaller than 0.05, and thus we reject the null hypothesis. It means that the tutoring does help the students to improve their grade.
 </p>
 </div>
-<div id="independent-samples-t-test" class="section level2" number="27.7">
+<div id="independent-samples-t-test" class="section level2" number="28.7">
 <h2>
-<span class="header-section-number">27.7</span> Independent samples t-test<a class="anchor" aria-label="anchor" href="#independent-samples-t-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.7</span> Independent samples t-test<a class="anchor" aria-label="anchor" href="#independent-samples-t-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 The independent samples t-test is used to compare two sample means in order to determine whether the population means are different. There are a few assumptions here: random sampling, continuous variables, independent samples, normality, variance homogeneity, and no outliers.</p>
 <p>
 1. Importing the data: Let’s use the same toy dataset from z-test, assuming that we don’t have any information on population parameters in this case. In addition, equal variance and normality is assumed.</p>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">scoreA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">85</span>,<span class="fl">89</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">92</span>,<span class="fl">94</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">49</span>,<span class="fl">78</span>,<span class="fl">89</span>,<span class="fl">48</span>,<span class="fl">78</span>,<span class="fl">90</span>,<span class="fl">96</span>,<span class="fl">75</span>,<span class="fl">87</span>,<span class="fl">90</span>,<span class="fl">75</span>,<span class="fl">76</span>,<span class="fl">83</span>,<span class="fl">89</span>,<span class="fl">86</span>,<span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">82</span>,<span class="fl">98</span>,<span class="fl">73</span><span class="op">)</span></span>
 <span><span class="va">scoreB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">90</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">95</span>,<span class="fl">95</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">87</span>,<span class="fl">89</span>,<span class="fl">47</span>,<span class="fl">68</span>,<span class="fl">94</span>,<span class="fl">89</span>,<span class="fl">60</span>,<span class="fl">79</span>,<span class="fl">80</span>,<span class="fl">97</span>,<span class="fl">68</span>,<span class="fl">84</span>,<span class="fl">83</span>,<span class="fl">82</span>,<span class="fl">86</span>,<span class="fl">98</span>,<span class="fl">87</span>,<span class="fl">72</span>,<span class="fl">79</span>,<span class="fl">83</span>,<span class="fl">85</span>,<span class="fl">96</span><span class="op">)</span></span></code></pre></div>
 <p>
 2. Conducting independent samples t-test: (in this case both variables are numeric and equal variance is assumed. Independent samples could also be used when one variable is categorical and has exactly two groups)</p>
-<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span> <span class="op">(</span><span class="va">scoreA</span>, <span class="va">scoreB</span>, var.equal<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
@@ -322,21 +323,21 @@ The independent samples t-test is used to compare two sample means in order to d
 <p>The p-value is much greater than 0.05. Thus we can’t reject the null hypothesis that the true difference in means is equal to 0.
 </p>
 </div>
-<div id="weltch-t-test" class="section level2" number="27.8">
+<div id="weltch-t-test" class="section level2" number="28.8">
 <h2>
-<span class="header-section-number">27.8</span> Weltch t-test<a class="anchor" aria-label="anchor" href="#weltch-t-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.8</span> Weltch t-test<a class="anchor" aria-label="anchor" href="#weltch-t-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Weltch t-test is very similar to independent samples t-test except that equal variance is not assumed.</p>
 <p>
 1. Importing the data: Let’s use the same toy dataset from independent samples t-test, assuming that we don’t have any information on population parameters and variance.</p>
-<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">scoreA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">85</span>,<span class="fl">89</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">92</span>,<span class="fl">94</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">49</span>,<span class="fl">78</span>,<span class="fl">89</span>,<span class="fl">48</span>,<span class="fl">78</span>,<span class="fl">90</span>,<span class="fl">96</span>,<span class="fl">75</span>,<span class="fl">87</span>,<span class="fl">90</span>,<span class="fl">75</span>,<span class="fl">76</span>,<span class="fl">83</span>,<span class="fl">89</span>,<span class="fl">86</span>,<span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">82</span>,<span class="fl">98</span>,<span class="fl">73</span><span class="op">)</span></span>
 <span><span class="va">scoreB</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">90</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">95</span>,<span class="fl">95</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">87</span>,<span class="fl">89</span>,<span class="fl">47</span>,<span class="fl">68</span>,<span class="fl">94</span>,<span class="fl">89</span>,<span class="fl">60</span>,<span class="fl">79</span>,<span class="fl">80</span>,<span class="fl">97</span>,<span class="fl">68</span>,<span class="fl">84</span>,<span class="fl">83</span>,<span class="fl">82</span>,<span class="fl">86</span>,<span class="fl">98</span>,<span class="fl">87</span>,<span class="fl">72</span>,<span class="fl">79</span>,<span class="fl">83</span>,<span class="fl">85</span>,<span class="fl">96</span><span class="op">)</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Conducting Weltch t-test: (note that variance equality is not assumed)</li>
 </ol>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span> <span class="op">(</span><span class="va">scoreA</span>, <span class="va">scoreB</span>, var.equal<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -352,15 +353,15 @@ Weltch t-test is very similar to independent samples t-test except that equal va
 <p>Since p-value is much greater than 0.05, we failed to reject the null hypothesis that the true difference in means is equal to 0.
 </p>
 </div>
-<div id="mann-whitney-u-test" class="section level2" number="27.9">
+<div id="mann-whitney-u-test" class="section level2" number="28.9">
 <h2>
-<span class="header-section-number">27.9</span> Mann Whitney U Test<a class="anchor" aria-label="anchor" href="#mann-whitney-u-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.9</span> Mann Whitney U Test<a class="anchor" aria-label="anchor" href="#mann-whitney-u-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Mann Whitney U Test is used when we want to compare the median between two independent groups. This test is non-parametric, meaning that the outcome is either not normally distributed or very small. If the dataset is tested to be normal, an independent samples t-test should be used instead.</p>
 <p>
 1. Importing the data: Let’s use a similar toy dataset here, assuming that we don’t have any information on population parameters and variance. And the samples are not normally distributed.</p>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#costumer ratings before improvment:</span></span>
 <span><span class="va">ratingA_mann</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">82</span>,<span class="fl">84</span>,<span class="fl">85</span>,<span class="fl">89</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">92</span>,<span class="fl">94</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">49</span>,<span class="fl">78</span>,<span class="fl">89</span>,<span class="fl">48</span><span class="op">)</span></span>
 <span></span>
@@ -368,7 +369,7 @@ Mann Whitney U Test is used when we want to compare the median between two indep
 <span><span class="va">ratingB_mann</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">90</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">91</span>,<span class="fl">95</span>,<span class="fl">95</span>,<span class="fl">99</span>,<span class="fl">99</span>,<span class="fl">87</span>,<span class="fl">89</span>,<span class="fl">47</span>,<span class="fl">68</span>,<span class="fl">94</span>,<span class="fl">89</span><span class="op">)</span></span></code></pre></div>
 <p>
 2. Conducting Mann Whitney U Test:</p>
-<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">ratingA_mann</span>, <span class="va">ratingB_mann</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
@@ -379,20 +380,20 @@ Mann Whitney U Test is used when we want to compare the median between two indep
 <p>Since the p-value is greater than 0.05, we fail to reject the null that the two populations have the same shape.
 </p>
 </div>
-<div id="kolmogorov-smirnov-test" class="section level2" number="27.10">
+<div id="kolmogorov-smirnov-test" class="section level2" number="28.10">
 <h2>
-<span class="header-section-number">27.10</span> Kolmogorov-Smirnov Test<a class="anchor" aria-label="anchor" href="#kolmogorov-smirnov-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.10</span> Kolmogorov-Smirnov Test<a class="anchor" aria-label="anchor" href="#kolmogorov-smirnov-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Kolmogorov-Smirnov Test is used when we want to check if the two datasets come from the same distribution. Note that here we are comparing the entire distribution instead of just the medians.</p>
 <p>
 1. Generating the data:</p>
-<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">rpois</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">30</span>, lambda<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="va">data2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></code></pre></div>
 <p>
 2. Performing Kolmogorov-Smirnov Test</p>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/ks.test.html">ks.test</a></span><span class="op">(</span><span class="va">data1</span>, <span class="va">data2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Exact two-sample Kolmogorov-Smirnov test
@@ -403,15 +404,15 @@ Kolmogorov-Smirnov Test is used when we want to check if the two datasets come f
 <p>The p-value is much smaller than 0.05. Thus we reject the null hypothesis that the two datasets are from the same population.
 </p>
 </div>
-<div id="kruskal-wallis-test" class="section level2" number="27.11">
+<div id="kruskal-wallis-test" class="section level2" number="28.11">
 <h2>
-<span class="header-section-number">27.11</span> Kruskal-Wallis Test<a class="anchor" aria-label="anchor" href="#kruskal-wallis-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.11</span> Kruskal-Wallis Test<a class="anchor" aria-label="anchor" href="#kruskal-wallis-test"><i class="fas fa-link"></i></a>
 </h2>
 <p>
 Kruskal-Wallis Test is used to compare three or more groups when the data is not categorical. It is a non-parametric alternative to one-way ANOVA test.</p>
 <p>
 1. Importing data: here let us use the PlantGrowth dataset, and assume it doesn’t meet the assumption of ANOVA test. There are three groups in this dataset, including one control group and two treatment groups.</p>
-<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kruskal_data</span> <span class="op">&lt;-</span> <span class="va">PlantGrowth</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">kruskal_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   weight group
@@ -423,7 +424,7 @@ Kruskal-Wallis Test is used to compare three or more groups when the data is not
 ## 6   4.61  ctrl</code></pre>
 <p>
 2. Conducting Kruskal-Wallis Test:</p>
-<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html">kruskal.test</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">group</span>, data <span class="op">=</span> <span class="va">kruskal_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
@@ -433,33 +434,33 @@ Kruskal-Wallis Test is used to compare three or more groups when the data is not
 <p>Since p-value is smaller than 0.05, we reject the null hypothesis that the three groups are not significantly different. However, similar to the case in ANOVA test, we still need to conduct further pair-wise analysis in order to check which two groups are different
 </p>
 </div>
-<div id="references-2" class="section level2" number="27.12">
+<div id="references-2" class="section level2" number="28.12">
 <h2>
-<span class="header-section-number">27.12</span> References:<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">28.12</span> References:<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Special thanks to Professor Pascal Wallisch for his amazing DS Intro course. This cheatsheet is inspired by his lectures<br><a href="https://data-flair.training/blogs/chi-square-test-in-r/" class="uri">https://data-flair.training/blogs/chi-square-test-in-r/</a><br><a href="https://www.statology.org/z-test-in-r/" class="uri">https://www.statology.org/z-test-in-r/</a><br><a href="http://www.sthda.com/english/wiki/one-way-anova-test-in-r" class="uri">http://www.sthda.com/english/wiki/one-way-anova-test-in-r</a><br><a href="https://rpubs.com/pg2000in/PairedSampletTest" class="uri">https://rpubs.com/pg2000in/PairedSampletTest</a><br><a href="https://www.statology.org/kolmogorov-smirnov-test-r/" class="uri">https://www.statology.org/kolmogorov-smirnov-test-r/</a><br><a href="http://www.sthda.com/english/wiki/kruskal-wallis-test-in-r" class="uri">http://www.sthda.com/english/wiki/kruskal-wallis-test-in-r</a><br></p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></div>
-<div class="next"><a href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></div>
+<div class="prev"><a href="best-parallel-coordinates-r-package.html"><span class="header-section-number">27</span> Best Parallel Coordinates R Package</a></div>
+<div class="next"><a href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">29</span> Python tutorial: gather data through API and web scraping</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#hypothesis-testing-guide-in-r"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
-<li><a class="nav-link" href="#hypothesis-testing-in-r-cheatsheet-introductionexplanation"><span class="header-section-number">27.1</span> Hypothesis Testing in R Cheatsheet Introduction/Explanation</a></li>
-<li><a class="nav-link" href="#hypothesis-testing-roadmap"><span class="header-section-number">27.2</span> Hypothesis Testing Roadmap</a></li>
-<li><a class="nav-link" href="#chi-square-test-in-r"><span class="header-section-number">27.3</span> Chi-Square Test in R</a></li>
-<li><a class="nav-link" href="#z-test-in-r"><span class="header-section-number">27.4</span> Z-Test in R</a></li>
-<li><a class="nav-link" href="#anova-in-r"><span class="header-section-number">27.5</span> Anova in R</a></li>
-<li><a class="nav-link" href="#paired-sample-t-test"><span class="header-section-number">27.6</span> Paired Sample T-test</a></li>
-<li><a class="nav-link" href="#independent-samples-t-test"><span class="header-section-number">27.7</span> Independent samples t-test</a></li>
-<li><a class="nav-link" href="#weltch-t-test"><span class="header-section-number">27.8</span> Weltch t-test</a></li>
-<li><a class="nav-link" href="#mann-whitney-u-test"><span class="header-section-number">27.9</span> Mann Whitney U Test</a></li>
-<li><a class="nav-link" href="#kolmogorov-smirnov-test"><span class="header-section-number">27.10</span> Kolmogorov-Smirnov Test</a></li>
-<li><a class="nav-link" href="#kruskal-wallis-test"><span class="header-section-number">27.11</span> Kruskal-Wallis Test</a></li>
-<li><a class="nav-link" href="#references-2"><span class="header-section-number">27.12</span> References:</a></li>
+<li><a class="nav-link" href="#hypothesis-testing-guide-in-r"><span class="header-section-number">28</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="nav-link" href="#hypothesis-testing-in-r-cheatsheet-introductionexplanation"><span class="header-section-number">28.1</span> Hypothesis Testing in R Cheatsheet Introduction/Explanation</a></li>
+<li><a class="nav-link" href="#hypothesis-testing-roadmap"><span class="header-section-number">28.2</span> Hypothesis Testing Roadmap</a></li>
+<li><a class="nav-link" href="#chi-square-test-in-r"><span class="header-section-number">28.3</span> Chi-Square Test in R</a></li>
+<li><a class="nav-link" href="#z-test-in-r"><span class="header-section-number">28.4</span> Z-Test in R</a></li>
+<li><a class="nav-link" href="#anova-in-r"><span class="header-section-number">28.5</span> Anova in R</a></li>
+<li><a class="nav-link" href="#paired-sample-t-test"><span class="header-section-number">28.6</span> Paired Sample T-test</a></li>
+<li><a class="nav-link" href="#independent-samples-t-test"><span class="header-section-number">28.7</span> Independent samples t-test</a></li>
+<li><a class="nav-link" href="#weltch-t-test"><span class="header-section-number">28.8</span> Weltch t-test</a></li>
+<li><a class="nav-link" href="#mann-whitney-u-test"><span class="header-section-number">28.9</span> Mann Whitney U Test</a></li>
+<li><a class="nav-link" href="#kolmogorov-smirnov-test"><span class="header-section-number">28.10</span> Kolmogorov-Smirnov Test</a></li>
+<li><a class="nav-link" href="#kruskal-wallis-test"><span class="header-section-number">28.11</span> Kruskal-Wallis Test</a></li>
+<li><a class="nav-link" href="#references-2"><span class="header-section-number">28.12</span> References:</a></li>
 </ul>
 
       <div class="book-extra">

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 52 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
-<meta name="description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  52.1 Introduction &amp;...">
+<title>Chapter 53 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
+<meta name="description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  53.1 Introduction &amp;...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 52 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta property="og:title" content="Chapter 53 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  52.1 Introduction &amp;...">
+<meta property="og:description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  53.1 Introduction &amp;...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 52 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed">
-<meta name="twitter:description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  52.1 Introduction &amp;...">
+<meta name="twitter:title" content="Chapter 53 RStudio Editor Theme Customization Tutorial | Community Contributions for EDAV Fall 2022 Mon/Wed">
+<meta name="twitter:description" content="Xiaoyang Song  body{  margin: auto;  font-size: 12pt;  font-family: 'Avenir', sans-serif;  } .center {  display: block;  margin-left: auto;  margin-right: auto;  width: 50%; }  53.1 Introduction &amp;...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -54,65 +54,66 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
 <li class="book-part">Tutorials</li>
-<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">13</span> Map Plots with Highcharts</a></li>
-<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">14</span> Introduction of machine learning in R</a></li>
-<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">15</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
-<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">16</span> Learning echarts4r with shiny</a></li>
-<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">17</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
-<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">18</span> Introcuction to Dygraph for Financial Analysis</a></li>
-<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">19</span> Two Interesting R packages</a></li>
-<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">20</span> Tutorial for wordcloud2 package</a></li>
-<li><a class="" href="effcient-r.html"><span class="header-section-number">21</span> Effcient R</a></li>
-<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">22</span> Color vision deficiency</a></li>
-<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">23</span> Tutorials for ggfortify and autoplotly</a></li>
-<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">24</span> Becoming a better business analyst</a></li>
-<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">25</span> Cheatsheet of ggstatsplot in R</a></li>
-<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">26</span> Best Parallel Coordinates R Package</a></li>
-<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">27</span> Hypothesis Testing Guide in R</a></li>
-<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">28</span> Python tutorial: gather data through API and web scraping</a></li>
-<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">29</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
-<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">30</span> Interactive plots for different types of graphs in R</a></li>
-<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">31</span> Introduction to Plotly in R</a></li>
-<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">32</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
-<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">33</span> Data Visualization with Seaborn</a></li>
-<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">34</span> Tutorial of making different types of charts interactive</a></li>
-<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">35</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
-<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">36</span> Chord diagrams using circlize</a></li>
-<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">37</span> Video guide to reigniting your creavite spark for visualizations</a></li>
-<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">38</span> Tutorial on Machine Learning in R</a></li>
-<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">39</span> Data importance &amp; visualization</a></li>
-<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">40</span> Time Series Visualization - R tutorial</a></li>
-<li><a class="" href="introduction-6.html"><span class="header-section-number">41</span> Introduction</a></li>
-<li><a class="" href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
-<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">43</span> AutoCorrelation plot</a></li>
-<li><a class="" href="S4.html"><span class="header-section-number">44</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
-<li><a class="" href="S5.html"><span class="header-section-number">45</span> Section 5. Time series visualization with Plotly</a></li>
-<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">46</span> Bubble chart — GPAs of Course at Columbia University</a></li>
-<li><a class="" href="history-of-charts.html"><span class="header-section-number">47</span> History of Charts</a></li>
-<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
-<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
-<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
-<li><a class="active" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
-<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
-<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
+<li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
+<li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
+<li><a class="" href="quantmod-tidyquant-tutorials-and-comparison.html"><span class="header-section-number">16</span> Quantmod &amp; Tidyquant Tutorials and Comparison</a></li>
+<li><a class="" href="learning-echarts4r-with-shiny.html"><span class="header-section-number">17</span> Learning echarts4r with shiny</a></li>
+<li><a class="" href="picturing-inflation-an-exercise-in-web-scraping-plotly-and-timeseries.html"><span class="header-section-number">18</span> Picturing Inflation: An Exercise in Web Scraping, Plotly and Timeseries</a></li>
+<li><a class="" href="introcuction-to-dygraph-for-financial-analysis.html"><span class="header-section-number">19</span> Introcuction to Dygraph for Financial Analysis</a></li>
+<li><a class="" href="two-interesting-r-packages.html"><span class="header-section-number">20</span> Two Interesting R packages</a></li>
+<li><a class="" href="tutorial-for-wordcloud2-package.html"><span class="header-section-number">21</span> Tutorial for wordcloud2 package</a></li>
+<li><a class="" href="effcient-r.html"><span class="header-section-number">22</span> Effcient R</a></li>
+<li><a class="" href="color-vision-deficiency.html"><span class="header-section-number">23</span> Color vision deficiency</a></li>
+<li><a class="" href="tutorials-for-ggfortify-and-autoplotly.html"><span class="header-section-number">24</span> Tutorials for ggfortify and autoplotly</a></li>
+<li><a class="" href="becoming-a-better-business-analyst.html"><span class="header-section-number">25</span> Becoming a better business analyst</a></li>
+<li><a class="" href="cheatsheet-of-ggstatsplot-in-r.html"><span class="header-section-number">26</span> Cheatsheet of ggstatsplot in R</a></li>
+<li><a class="" href="best-parallel-coordinates-r-package.html"><span class="header-section-number">27</span> Best Parallel Coordinates R Package</a></li>
+<li><a class="" href="hypothesis-testing-guide-in-r.html"><span class="header-section-number">28</span> Hypothesis Testing Guide in R</a></li>
+<li><a class="" href="python-tutorial-gather-data-through-api-and-web-scraping.html"><span class="header-section-number">29</span> Python tutorial: gather data through API and web scraping</a></li>
+<li><a class="" href="an-interactive-dashboard-covid-19-visualization-with-shiny-and-plotly.html"><span class="header-section-number">30</span> An Interactive Dashboard: COVID-19 Visualization with Shiny and Plotly</a></li>
+<li><a class="" href="interactive-plots-for-different-types-of-graphs-in-r.html"><span class="header-section-number">31</span> Interactive plots for different types of graphs in R</a></li>
+<li><a class="" href="introduction-to-plotly-in-r.html"><span class="header-section-number">32</span> Introduction to Plotly in R</a></li>
+<li><a class="" href="machine-learning-interview-mindmap-and-commonly-asked-questions.html"><span class="header-section-number">33</span> Machine Learning Interview mindmap and commonly asked questions</a></li>
+<li><a class="" href="data-visualization-with-seaborn.html"><span class="header-section-number">34</span> Data Visualization with Seaborn</a></li>
+<li><a class="" href="tutorial-of-making-different-types-of-charts-interactive.html"><span class="header-section-number">35</span> Tutorial of making different types of charts interactive</a></li>
+<li><a class="" href="cheatsheet-of-ggplot2-ggplot2-alluvial-heatmap.html"><span class="header-section-number">36</span> Cheatsheet of ggplot2 (ggplot2 &amp; alluvial &amp; heatmap)</a></li>
+<li><a class="" href="chord-diagrams-using-circlize.html"><span class="header-section-number">37</span> Chord diagrams using circlize</a></li>
+<li><a class="" href="video-guide-to-reigniting-your-creavite-spark-for-visualizations.html"><span class="header-section-number">38</span> Video guide to reigniting your creavite spark for visualizations</a></li>
+<li><a class="" href="tutorial-on-machine-learning-in-r.html"><span class="header-section-number">39</span> Tutorial on Machine Learning in R</a></li>
+<li><a class="" href="data-importance-visualization.html"><span class="header-section-number">40</span> Data importance &amp; visualization</a></li>
+<li><a class="" href="time-series-visualization---r-tutorial.html"><span class="header-section-number">41</span> Time Series Visualization - R tutorial</a></li>
+<li><a class="" href="introduction-6.html"><span class="header-section-number">42</span> Introduction</a></li>
+<li><a class="" href="S3.html"><span class="header-section-number">43</span> Section 3.Time series visualization with ggplot and ggplot2</a></li>
+<li><a class="" href="autocorrelation-plot.html"><span class="header-section-number">44</span> AutoCorrelation plot</a></li>
+<li><a class="" href="S4.html"><span class="header-section-number">45</span> Section 4. Time series visualization with TSstudio: ts_plot</a></li>
+<li><a class="" href="S5.html"><span class="header-section-number">46</span> Section 5. Time series visualization with Plotly</a></li>
+<li><a class="" href="bubble-chart-gpas-of-course-at-columbia-university.html"><span class="header-section-number">47</span> Bubble chart — GPAs of Course at Columbia University</a></li>
+<li><a class="" href="history-of-charts.html"><span class="header-section-number">48</span> History of Charts</a></li>
+<li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">49</span> Python: geospatial data visualization project guide</a></li>
+<li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">50</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
+<li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">51</span> Playful R Packages for Kids</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
+<li><a class="active" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="wordclouds-a-video-tutorial-on-how-to-make-wordclouds-from-raw-text.html"><span class="header-section-number">56</span> Wordclouds: a video tutorial on how to make wordclouds from raw text</a></li>
+<li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">57</span> EDAV Survey and Analysis</a></li>
+<li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">58</span> Visualizing graphs and networks</a></li>
+<li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">59</span> Is the data visualization misleading or not - Survey</a></li>
 <li class="book-part">Appendices</li>
-<li><a class="" href="github-initial-setup.html"><span class="header-section-number">59</span> Github initial setup</a></li>
-<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">60</span> Tutorial for pull request mergers</a></li>
+<li><a class="" href="github-initial-setup.html"><span class="header-section-number">60</span> Github initial setup</a></li>
+<li><a class="" href="tutorial-for-pull-request-mergers.html"><span class="header-section-number">61</span> Tutorial for pull request mergers</a></li>
 </ul>
 
         <div class="book-extra">
@@ -120,9 +121,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="rstudio-editor-theme-customization-tutorial" class="section level1" number="52">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="rstudio-editor-theme-customization-tutorial" class="section level1" number="53">
 <h1>
-<span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial<a class="anchor" aria-label="anchor" href="#rstudio-editor-theme-customization-tutorial"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial<a class="anchor" aria-label="anchor" href="#rstudio-editor-theme-customization-tutorial"><i class="fas fa-link"></i></a>
 </h1>
 <p>Xiaoyang Song</p>
 <style type="text/css">
@@ -141,21 +142,21 @@
 }
 
 </style>
-<!-- # RStudio Editor Theme Setup Tutorial --><div id="introduction-motivation" class="section level2" number="52.1">
+<!-- # RStudio Editor Theme Setup Tutorial --><div id="introduction-motivation" class="section level2" number="53.1">
 <h2>
-<span class="header-section-number">52.1</span> Introduction &amp; Motivation<a class="anchor" aria-label="anchor" href="#introduction-motivation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.1</span> Introduction &amp; Motivation<a class="anchor" aria-label="anchor" href="#introduction-motivation"><i class="fas fa-link"></i></a>
 </h2>
 <p>It is widely believed that most IDEs (Integrated Development Environments), including Visual Studio Code, R Studio, and PyCharm, boost programmers’ productivity by their versatile functionalities like useful runtime configurations and visualizations. In addition, a good IDE can help programmers accomplish many tasks correctly and efficiently, like automatically syntax and style checking, version control, and code refactoring. However, other than those functionalities, as suggested by these two articles ( <a href="https://www.diva-portal.org/smash/get/diva2:1337805/FULLTEXT01.pdf"><span class="math inline">\([1]\)</span></a> &amp; <a href="https://blog.ndepend.com/6-reasons-visual-studio-theme-affects-productivity/"><span class="math inline">\([2]\)</span></a>), customized editor themes and layouts of IDEs are also important factors which help improve the productivity of most of the programmers. In fact, a well-designed and customized color theme not only enables programmers to code and debug more efficiently, but also keep people concentrating and refreshing through its attractive visual effects. In addition, as mentioned in <a href="https://www.corporatesuites.com/how-colors-affect-office-productivity/">this article</a>, the effectiveness of coloring is very common in our life and this effect has psychological support as well.</p>
 <p>In this tutorial, I will focus on how to customize the editor theme in RStudio by introducing two approaches: using existing themes from <a href="https://github.com/mkearney/rstudiothemes">Github</a> and creating our own by editing <a href="https://rstudio.github.io/rstudio-extensions/rstudio-theme-creation.html"><code>.rstheme</code></a> file. The existing tutorial for RStudio color theme setup only focus on the first approach so I will put more emphasis on the second approach. Specifically, I will walk you through the detailed logic/syntax of modifying a <code>.rstheme</code> (essentially a <code>.css</code>) file and provide some examples/templates for you to use. In addition, I will also introduce the pros and cons for each approach, along with some recommendations and suggestions regarding theme design.</p>
 </div>
-<div id="approach-1-deploying-existing-color-themes" class="section level2" number="52.2">
+<div id="approach-1-deploying-existing-color-themes" class="section level2" number="53.2">
 <h2>
-<span class="header-section-number">52.2</span> Approach 1: Deploying Existing Color Themes<a class="anchor" aria-label="anchor" href="#approach-1-deploying-existing-color-themes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.2</span> Approach 1: Deploying Existing Color Themes<a class="anchor" aria-label="anchor" href="#approach-1-deploying-existing-color-themes"><i class="fas fa-link"></i></a>
 </h2>
 <p>One of the most common way of configuring editor theme, also the most straight-forward way, is to utilize existing themes created from RStudio team and other people. The deployment of these themes are easy and are often enough for some programmers who are not very interested in creating their own themes.</p>
-<div id="rstudio-built-in-themes" class="section level3" number="52.2.1">
+<div id="rstudio-built-in-themes" class="section level3" number="53.2.1">
 <h3>
-<span class="header-section-number">52.2.1</span> RStudio Built-in Themes<a class="anchor" aria-label="anchor" href="#rstudio-built-in-themes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.2.1</span> RStudio Built-in Themes<a class="anchor" aria-label="anchor" href="#rstudio-built-in-themes"><i class="fas fa-link"></i></a>
 </h3>
 <p>To deploy built-in theme on your RStudio: (Example below is on Mac, but it should be similar for Windows/Linux users)</p>
 <ol style="list-style-type: decimal">
@@ -173,31 +174,31 @@ Figure 2. The “Appearance” Panel
 <li>After selection and adjustion, simply click on “Apply” at the bottom right corner and you are all set.</li>
 </ol>
 </div>
-<div id="using-themes-from-rstheme-library" class="section level3" number="52.2.2">
+<div id="using-themes-from-rstheme-library" class="section level3" number="53.2.2">
 <h3>
-<span class="header-section-number">52.2.2</span> Using Themes From “rstheme” Library<a class="anchor" aria-label="anchor" href="#using-themes-from-rstheme-library"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.2.2</span> Using Themes From “rstheme” Library<a class="anchor" aria-label="anchor" href="#using-themes-from-rstheme-library"><i class="fas fa-link"></i></a>
 </h3>
 <p>As you probably noticed, the available themes are very limited in RStudio so it is natural to use themes from existing R libraries. “rstheme” is a well-known R library consisting of well-designed editor themes developed by <a href="https://github.com/gadenbuie">Garrick Aden-Buie</a>. There is a tutorial for this on Garrick’s webpage but I will re-introduce and simplify the steps.</p>
 <ol style="list-style-type: decimal">
 <li>Install the package from Github by typing the following command:</li>
 </ol>
-<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install the package</span></span>
 <span><span class="co"># devtools::install_github("gadenbuie/rsthemes")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gadenbuie/rsthemes">rsthemes</a></span><span class="op">)</span></span></code></pre></div>
 <p>Please make sure you have “devtools” installed. If you have not, installed it first using the following commands:</p>
-<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb376"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install devtools by uncommenting the line below</span></span>
 <span><span class="co"># install.packages("devtools")</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Install all themes to your local RStudio. Note that <a href="https://github.com/chriskempson/base16">Base16</a> is a framework for building themes using a base of 16 colors. Because it is a useful framework as it is introduced, you can also leverage on that to create your own themes; but this is not the focus of this tutorial. If you are interested in that, please check <a href="https://github.com/chriskempson/base16/blob/main/builder.md">here</a> for more details. The “include_base16” argument simply controls whether we want to download Base16-based themes.</li>
 </ol>
-<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb377"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">rsthemes</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rsthemes/man/rsthemes-actions.html">install_rsthemes</a></span><span class="op">(</span>include_base16 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># Can only be used after package is installed</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>After installation, we can browse and try all available themes by typing:</li>
 </ol>
-<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">rsthemes</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rsthemes/man/rsthemes-actions.html">list_rsthemes</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># List the names of all themes</span></span>
 <span><span class="fu">rsthemes</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rsthemes/man/rsthemes-actions.html">try_rsthemes</a></span><span class="op">(</span><span class="st">"dark"</span><span class="op">)</span> <span class="co"># try dark themes; can also be "light" or "base16"</span></span></code></pre></div>
 <p>Then, an interactive session will start and you can try all editor themes on your own. Suppose you also want to explore “dark” themes, your RStudio console should look like this: (Note that your RStudio themes change automatically as you entered an interactive session)</p>
@@ -212,7 +213,7 @@ Figure 3. Interactive Theme Changing Session
 <li>Similar to what we did in 1.1, as we have already downloaded the themes, we can always go to “RStudio -&gt; Preference -&gt; Appearance” to change the themes.</li>
 <li>On the other hand, we can deploy the theme simply by typing the following command in console and specifying the name of the theme we installed.</li>
 </ul>
-<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># eval set to FALSE since there is no active RStudio session</span></span>
 <span><span class="fu">rstudioapi</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/rstudioapi/reference/applyTheme.html">applyTheme</a></span><span class="op">(</span><span class="st">"&lt;theme_name&gt;"</span><span class="op">)</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
@@ -220,20 +221,20 @@ Figure 3. Interactive Theme Changing Session
 </ol>
 </div>
 </div>
-<div id="approach-2-building-own-editor-themes-from-scratch" class="section level2" number="52.3">
+<div id="approach-2-building-own-editor-themes-from-scratch" class="section level2" number="53.3">
 <h2>
-<span class="header-section-number">52.3</span> Approach 2: Building Own Editor Themes From Scratch<a class="anchor" aria-label="anchor" href="#approach-2-building-own-editor-themes-from-scratch"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3</span> Approach 2: Building Own Editor Themes From Scratch<a class="anchor" aria-label="anchor" href="#approach-2-building-own-editor-themes-from-scratch"><i class="fas fa-link"></i></a>
 </h2>
 <p>Even though existing themes from Github packages are good, the editor themes are sometimes too complex for everyone to fully accept. For example, people may only like a portion of the editor styles but when using that, they have bear the things that they don’t really enjoy. How can we solve this problem? Just building your own theme from scratch.</p>
-<div id="what-is-.rstheme-file" class="section level3" number="52.3.1">
+<div id="what-is-.rstheme-file" class="section level3" number="53.3.1">
 <h3>
-<span class="header-section-number">52.3.1</span> What is <code>.rstheme</code> file?<a class="anchor" aria-label="anchor" href="#what-is-.rstheme-file"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.1</span> What is <code>.rstheme</code> file?<a class="anchor" aria-label="anchor" href="#what-is-.rstheme-file"><i class="fas fa-link"></i></a>
 </h3>
 <p>In order to configure customized editor themes, we need to write a <code>.rstheme</code> file or modify the template of it. In short, a <code>.rstheme</code> file is essentially a CSS (<a href="https://www.w3.org/Style/CSS/Overview.en.html">Cascading Style Sheets</a>) and when editing it, we just follow the grammars and styles in CSS. CSS is a very common mechanism and often refered as a stylesheet language used for adding style configurations to Web page. For this tutorial, you do not have to be an expert about that! But please feel free to check <a href="https://www.theserverside.com/definition/cascading-style-sheet-CSS">this blog</a> to get a sense of how CSS works.</p>
 </div>
-<div id="download-.rstheme-file-template-setup" class="section level3" number="52.3.2">
+<div id="download-.rstheme-file-template-setup" class="section level3" number="53.3.2">
 <h3>
-<span class="header-section-number">52.3.2</span> Download <code>.rstheme</code> file template &amp; Setup<a class="anchor" aria-label="anchor" href="#download-.rstheme-file-template-setup"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.2</span> Download <code>.rstheme</code> file template &amp; Setup<a class="anchor" aria-label="anchor" href="#download-.rstheme-file-template-setup"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Download the .rstheme template file from <a href="https://github.com/Xiaoyang-Song/RStudio-Theme-Customization">here</a>. After downloading it, open it using Visual Sudio Code (VS Code) or RStudio. The first one is recommended because it has a bunch of addins that we can utilize to make our life easier.</p></li>
@@ -250,135 +251,135 @@ Figure 3. Interactive Theme Changing Session
 <li>Then, at the first line of the file, replace the place holder strings with your theme name.</li>
 </ol>
 </div>
-<div id="declaration-of-global-variables" class="section level3" number="52.3.3">
+<div id="declaration-of-global-variables" class="section level3" number="53.3.3">
 <h3>
-<span class="header-section-number">52.3.3</span> Declaration of Global Variables<a class="anchor" aria-label="anchor" href="#declaration-of-global-variables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.3</span> Declaration of Global Variables<a class="anchor" aria-label="anchor" href="#declaration-of-global-variables"><i class="fas fa-link"></i></a>
 </h3>
 <p>As in other programming languages, we can declare a set of global variables at the beginning and use them later. In the template file, locate the CSS pseudoclass <code>root</code>; if you do not modify the source file, the code chunk should start at line 3 and its content should be like the figure below. (The understanding of pseudoclass is not important here but please check <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root">this documentation</a> if you are interested in)</p>
 <div class="center" style="text-align: center; width:90%">
 <img style="height: auto; width: 50%;" src="resources/rstudio_editor_theme_setup_imgs/2.3/global.png" alt="2.3/global"><figcaption style="text-align: center;">Figure 5. Global Variable Declaration</figcaption>
 </div>
 <p>Inside the root class, there are many useful global variables that we can define. To define your own color, you can follow any of the four options below (when copying the following code, remember the semicolon). For RGB or hex color representation converter, please check <a href="https://imagecolorpicker.com/color-code/2596be">this website</a>.</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb366-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb366-1" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: #A6E22E</span>; <span class="co">/* hex color representation */</span></span>
-<span id="cb366-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb366-2" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: rgb(x,y,z)</span>; <span class="co">/* normal RGB color */</span></span>
-<span id="cb366-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb366-3" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: rgba(x,y,z,a)</span>; <span class="co">/* add opacity */</span></span>
-<span id="cb366-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb366-4" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: var(&lt;name-of-existing-color&gt;)</span> <span class="co">/* using existing color */</span></span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb380-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb380-1" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: #A6E22E</span>; <span class="co">/* hex color representation */</span></span>
+<span id="cb380-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb380-2" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: rgb(x,y,z)</span>; <span class="co">/* normal RGB color */</span></span>
+<span id="cb380-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb380-3" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: rgba(x,y,z,a)</span>; <span class="co">/* add opacity */</span></span>
+<span id="cb380-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb380-4" aria-hidden="true" tabindex="-1"></a>--&lt;your-color-name<span class="op">&gt;</span><span class="in">: var(&lt;name-of-existing-color&gt;)</span> <span class="co">/* using existing color */</span></span></code></pre></div>
 <p>This template file has already declared many useful gloabl variables for you with informative names. I suggest taking advantages of them first and adding your own when necessary. For example, <code>--numeric-constant: #008bff;</code> specifies that every numeric constant should be blue. We will be using these useful global variables for most of the configurations.</p>
 </div>
-<div id="basic-logic-syntax" class="section level3" number="52.3.4">
+<div id="basic-logic-syntax" class="section level3" number="53.3.4">
 <h3>
-<span class="header-section-number">52.3.4</span> Basic Logic &amp; Syntax<a class="anchor" aria-label="anchor" href="#basic-logic-syntax"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.4</span> Basic Logic &amp; Syntax<a class="anchor" aria-label="anchor" href="#basic-logic-syntax"><i class="fas fa-link"></i></a>
 </h3>
 <p>After configuring global variables, we can start use them to setup colors for different parts of RStudio and different chunks of codes. For example, we may want the keywords (e.g. <code>if</code>, <code>else</code>, <code>for</code>) to have different colors than strings. This can significantly help with debugging. The syntax of setting up color for a specific part is the following. (Note that in the language of CSS, such configuration can include many properties other than color, and the whole structure below is often called the <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics">“ruleset”</a>)</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb367-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.</span>&lt;Identifier<span class="op">&gt;</span> {</span>
-<span id="cb367-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: &lt;YOUR_COLOR&gt;<span class="op">;</span></span>
-<span id="cb367-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* There are tons of properties that can be modified here, e.g. */</span></span>
-<span id="cb367-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: &lt;YOUR_BG_COLOR&gt;<span class="op">;</span></span>
-<span id="cb367-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span>: &lt;YOUR_WIDTH&gt;<span class="op">;</span></span>
-<span id="cb367-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: &lt;YOUR_FONT_WEIGHT&gt;<span class="op">;</span></span>
-<span id="cb367-7"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* ... */</span></span>
-<span id="cb367-8"><a href="rstudio-editor-theme-customization-tutorial.html#cb367-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div id="identifier-i.e.-css-selector" class="section level4" number="52.3.4.1">
+<div class="sourceCode" id="cb381"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb381-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.</span>&lt;Identifier<span class="op">&gt;</span> {</span>
+<span id="cb381-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: &lt;YOUR_COLOR&gt;<span class="op">;</span></span>
+<span id="cb381-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* There are tons of properties that can be modified here, e.g. */</span></span>
+<span id="cb381-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: &lt;YOUR_BG_COLOR&gt;<span class="op">;</span></span>
+<span id="cb381-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span>: &lt;YOUR_WIDTH&gt;<span class="op">;</span></span>
+<span id="cb381-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: &lt;YOUR_FONT_WEIGHT&gt;<span class="op">;</span></span>
+<span id="cb381-7"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* ... */</span></span>
+<span id="cb381-8"><a href="rstudio-editor-theme-customization-tutorial.html#cb381-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="identifier-i.e.-css-selector" class="section level4" number="53.3.4.1">
 <h4>
-<span class="header-section-number">52.3.4.1</span> Identifier (i.e. CSS Selector)<a class="anchor" aria-label="anchor" href="#identifier-i.e.-css-selector"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.4.1</span> Identifier (i.e. CSS Selector)<a class="anchor" aria-label="anchor" href="#identifier-i.e.-css-selector"><i class="fas fa-link"></i></a>
 </h4>
 <p>RStudio has different identifiers (also called selector in the language of CSS) for different code chunks and parts in the IDE. To configure the color for them, we need to first identify their “Identifier” by checking <a href="https://rstudio.github.io/rstudio-extensions/rstudio-theme-creation.html">this table</a> from RStudio Official Documentation. Note that if you want multiple parts to have the same configuration, you can put multiple identifiers together, separated by comma.</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb368-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb368-1" aria-hidden="true" tabindex="-1"></a><span class="op">.&lt;</span>Identifier_1<span class="op">&gt;,</span> <span class="op">.&lt;</span>Identifier_2<span class="op">&gt;,</span> <span class="op">...{</span></span>
-<span id="cb368-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION GOES HERE */</span></span>
-<span id="cb368-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb368-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb382-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb382-1" aria-hidden="true" tabindex="-1"></a><span class="op">.&lt;</span>Identifier_1<span class="op">&gt;,</span> <span class="op">.&lt;</span>Identifier_2<span class="op">&gt;,</span> <span class="op">...{</span></span>
+<span id="cb382-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION GOES HERE */</span></span>
+<span id="cb382-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb382-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
-<div id="css-property" class="section level4" number="52.3.4.2">
+<div id="css-property" class="section level4" number="53.3.4.2">
 <h4>
-<span class="header-section-number">52.3.4.2</span> CSS Property<a class="anchor" aria-label="anchor" href="#css-property"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.4.2</span> CSS Property<a class="anchor" aria-label="anchor" href="#css-property"><i class="fas fa-link"></i></a>
 </h4>
 <p>There are many properties other than color that can also be modified in the ruleset. Please refer to this document for all possible <a href="https://jenkov.com/tutorials/css/css-properties-css-rules.html#:~:text=A%20CSS%20rule%20is%20a,target%20with%20the%20CSS%20rule.">CSS properties</a> that you can configure. The general syntax is provided below:</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb369-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb369-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.</span>&lt;Identifier<span class="op">&gt;</span> {</span>
-<span id="cb369-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb369-2" aria-hidden="true" tabindex="-1"></a>  &lt;Property_1<span class="op">&gt;</span><span class="in">: &lt;Property</span>_1_Value<span class="op">&gt;</span>;</span>
-<span id="cb369-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb369-3" aria-hidden="true" tabindex="-1"></a>  &lt;Property_2<span class="op">&gt;</span><span class="in">: &lt;Property</span>_2_Value<span class="op">&gt;</span>;</span>
-<span id="cb369-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb369-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* ... */</span></span>
-<span id="cb369-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb369-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb383-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb383-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.</span>&lt;Identifier<span class="op">&gt;</span> {</span>
+<span id="cb383-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb383-2" aria-hidden="true" tabindex="-1"></a>  &lt;Property_1<span class="op">&gt;</span><span class="in">: &lt;Property</span>_1_Value<span class="op">&gt;</span>;</span>
+<span id="cb383-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb383-3" aria-hidden="true" tabindex="-1"></a>  &lt;Property_2<span class="op">&gt;</span><span class="in">: &lt;Property</span>_2_Value<span class="op">&gt;</span>;</span>
+<span id="cb383-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb383-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* ... */</span></span>
+<span id="cb383-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb383-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>In this tutorial, we will mainly focus on the property <code>color</code>, but other properties like <code>background-color</code> and <code>margin</code> can be important when we want to adjust the overall editor styles, while property like <code>font-weight</code> and <code>font-family</code> can be useful if we want to display error message with emphasis.</p>
 </div>
 </div>
-<div id="some-useful-examples" class="section level3" number="52.3.5">
+<div id="some-useful-examples" class="section level3" number="53.3.5">
 <h3>
-<span class="header-section-number">52.3.5</span> Some Useful Examples<a class="anchor" aria-label="anchor" href="#some-useful-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.5</span> Some Useful Examples<a class="anchor" aria-label="anchor" href="#some-useful-examples"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now, with the knowledge of how it works, I will walk you through some example configurations and provide some suggestions of setting up themes.</p>
-<div id="example-1-change-cursor-color" class="section level4" number="52.3.5.1">
+<div id="example-1-change-cursor-color" class="section level4" number="53.3.5.1">
 <h4>
-<span class="header-section-number">52.3.5.1</span> Example 1: Change Cursor Color<a class="anchor" aria-label="anchor" href="#example-1-change-cursor-color"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.5.1</span> Example 1: Change Cursor Color<a class="anchor" aria-label="anchor" href="#example-1-change-cursor-color"><i class="fas fa-link"></i></a>
 </h4>
 <p>You can setup the color of your cursor simply using the following ruleset; the width can also be adjusted according to your preferences. Note that the specification of <code>&lt;YOUR_COLOR&gt;</code> can use any of the four methods mentioned in section 2.3.</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb370-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb370-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_cursor</span> {</span>
-<span id="cb370-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-color</span>: &lt;YOUR_COLOR&gt;<span class="op">;</span></span>
-<span id="cb370-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb370-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span>: <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb370-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb370-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb384-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_cursor</span> {</span>
+<span id="cb384-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-color</span>: &lt;YOUR_COLOR&gt;<span class="op">;</span></span>
+<span id="cb384-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb384-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span>: <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb384-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb384-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="example-2-highlight-selection" class="section level4" number="52.3.5.2">
+<div id="example-2-highlight-selection" class="section level4" number="53.3.5.2">
 <h4>
-<span class="header-section-number">52.3.5.2</span> Example 2: Highlight Selection<a class="anchor" aria-label="anchor" href="#example-2-highlight-selection"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.5.2</span> Example 2: Highlight Selection<a class="anchor" aria-label="anchor" href="#example-2-highlight-selection"><i class="fas fa-link"></i></a>
 </h4>
 <p>When selecting portion of code in RStudio, you often want it to be highlighted. This can be achieved by modifying ruleset <code>.ace_selection</code> like the following. Simply changing the <code>background_color</code> property to be whatever color you want it to be.</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb371-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_selection</span> {</span>
-<span id="cb371-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: &lt;YOUR_BG_COLOR&gt;<span class="op">;</span></span>
-<span id="cb371-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb371-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb385-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_selection</span> {</span>
+<span id="cb385-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: &lt;YOUR_BG_COLOR&gt;<span class="op">;</span></span>
+<span id="cb385-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb385-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="conclusion-1" class="section level4" number="52.3.5.3">
+<div id="conclusion-1" class="section level4" number="53.3.5.3">
 <h4>
-<span class="header-section-number">52.3.5.3</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.5.3</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>The two aformentioned examples are just illustrations of how we can modify the ruleset. The configuration for other parts should not be significantly different from these two examples. The template that I provided to you contain nearly everything with default color values. What you need to do is just figure out what each part is referring to by reading RStudio documentation and modify the color property.</p>
 </div>
 </div>
-<div id="dealing-with-hierarchy" class="section level3" number="52.3.6">
+<div id="dealing-with-hierarchy" class="section level3" number="53.3.6">
 <h3>
-<span class="header-section-number">52.3.6</span> Dealing With Hierarchy<a class="anchor" aria-label="anchor" href="#dealing-with-hierarchy"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.6</span> Dealing With Hierarchy<a class="anchor" aria-label="anchor" href="#dealing-with-hierarchy"><i class="fas fa-link"></i></a>
 </h3>
 <p>As you probably noticed in the template or in the table from RStudio documentation, there exists hierarchies in the identifiers (selectors). For example, <code>.ace_numeric</code> and <code>.ace_language</code> are the children of <code>.ace_constant</code>, so modifying the ruleset for <code>.ace_constant</code> will automatically override the ruleset for <code>.ace_language</code>. Similar things happens for <code>.ace_operator</code> and <code>.ace_keyword</code> where the latter is of higher level than the first selector.</p>
-<div id="explicitly-define-rulesets" class="section level4" number="52.3.6.1">
+<div id="explicitly-define-rulesets" class="section level4" number="53.3.6.1">
 <h4>
-<span class="header-section-number">52.3.6.1</span> Explicitly Define Rulesets<a class="anchor" aria-label="anchor" href="#explicitly-define-rulesets"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.6.1</span> Explicitly Define Rulesets<a class="anchor" aria-label="anchor" href="#explicitly-define-rulesets"><i class="fas fa-link"></i></a>
 </h4>
 <p>One way to deal with the hierarchical structure in CSS selectors is to explicitly define ruleset for each selector in the hierarchy. For example, taking the aforementioned <code>.ace_constant</code> for example, in order to avoid conflicts, we can simply do the following so that <code>language constants</code> and <code>numeric constants</code> have different colors. However, when doing this, be sure not to specify <code>.ace_constant</code> as it will override all of them implicitly.</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb372-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Example */</span></span>
-<span id="cb372-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_constant.ace_language</span>{</span>
-<span id="cb372-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--language-constant</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb372-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb372-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_constant.ace_numeric</span>{</span>
-<span id="cb372-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--numeric-constant</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb372-7"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb372-8"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-8" aria-hidden="true" tabindex="-1"></a><span class="co">/* Define ruleset for other selectors under .ace_constant below */</span></span>
-<span id="cb372-9"><a href="rstudio-editor-theme-customization-tutorial.html#cb372-9" aria-hidden="true" tabindex="-1"></a><span class="co">/* ... */</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb386-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Example */</span></span>
+<span id="cb386-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_constant.ace_language</span>{</span>
+<span id="cb386-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--language-constant</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb386-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb386-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_constant.ace_numeric</span>{</span>
+<span id="cb386-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--numeric-constant</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb386-7"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb386-8"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-8" aria-hidden="true" tabindex="-1"></a><span class="co">/* Define ruleset for other selectors under .ace_constant below */</span></span>
+<span id="cb386-9"><a href="rstudio-editor-theme-customization-tutorial.html#cb386-9" aria-hidden="true" tabindex="-1"></a><span class="co">/* ... */</span></span></code></pre></div>
 <p>However, if we want everything under <code>.ace_constant</code> to have the same style (i.e. ruleset), we can just do it in one-shot:</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb373-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>ace_constant <span class="op">{</span></span>
-<span id="cb373-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb373-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/*YOUR CONFIGURATION GOES HERE*/</span></span>
-<span id="cb373-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb373-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb387-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb387-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>ace_constant <span class="op">{</span></span>
+<span id="cb387-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb387-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/*YOUR CONFIGURATION GOES HERE*/</span></span>
+<span id="cb387-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb387-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
-<div id="using-the-not-keyword" class="section level4" number="52.3.6.2">
+<div id="using-the-not-keyword" class="section level4" number="53.3.6.2">
 <h4>
-<span class="header-section-number">52.3.6.2</span> Using the <code>not</code> Keyword<a class="anchor" aria-label="anchor" href="#using-the-not-keyword"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.6.2</span> Using the <code>not</code> Keyword<a class="anchor" aria-label="anchor" href="#using-the-not-keyword"><i class="fas fa-link"></i></a>
 </h4>
 <p>We can leverage on the previous methods to solve any potential problems about CSS selector hierarchies. However, if you want to declare ruleset for every selector in a hierarchy, it requires the exposure and knowledge to all possible children selectors, which is time-consuming and not effective. In most of the case, we only want to modify part of the selectors under a hierarchy. For instance, for <code>.ace_keyword</code>, we sometimes want all keywords to have the same styles but the operator (<code>.ace_operator</code>) to have its own style.</p>
 <p>In this example, if we use method in 2.6.1, we need knowledge of every single selector under <code>.ace_keyword</code> and specify styles for all of them manually. This is terrible. One another method we can use is take advantage of the <code>not</code> keyword. The following code illustrates how it works.</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb374-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_keyword</span><span class="in">:not(</span><span class="fu">.ace_operator</span><span class="in">)</span>{</span>
-<span id="cb374-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION FOR ALL .ace_keyword OTHER THAN .ace_keyword.ace_operator */</span></span>
-<span id="cb374-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb374-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_operator</span>{</span>
-<span id="cb374-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION GOES HERE */</span></span>
-<span id="cb374-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb374-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb388-1"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_keyword</span><span class="in">:not(</span><span class="fu">.ace_operator</span><span class="in">)</span>{</span>
+<span id="cb388-2"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION FOR ALL .ace_keyword OTHER THAN .ace_keyword.ace_operator */</span></span>
+<span id="cb388-3"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb388-4"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.ace_operator</span>{</span>
+<span id="cb388-5"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* YOUR CONFIGURATION GOES HERE */</span></span>
+<span id="cb388-6"><a href="rstudio-editor-theme-customization-tutorial.html#cb388-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>You first configure styles for <code>.ace_keyword</code> without <code>.ace_operator</code> and then you create a new ruleset for <code>.ace_operator</code>. This method is recommended in practice because it is more elegant and efficient.</p>
 </div>
-<div id="miscellaneous" class="section level4" number="52.3.6.3">
+<div id="miscellaneous" class="section level4" number="53.3.6.3">
 <h4>
-<span class="header-section-number">52.3.6.3</span> Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.6.3</span> Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous"><i class="fas fa-link"></i></a>
 </h4>
 <p>Note that in this section, I referred the problem that changing styles of certain selector will override the styles of other selector as hierarchical conflicts and made analogies including parents and children. However, the terminology here is not accurate enough. A more accurate description is the following: the “scope” of some selector may be contained in the “scope” of other selectors so overriding issue will happen. To make it concrete, the scope for <code>.ace_constant</code> is all constants including boolean, numeric, and language constants. However, the scope for <code>.ace_numeric</code> is just numeric constant, which is contained by the scope of <code>.ace_constant</code>. Therefore, conflicts (overriding) will happen if we do not handle them correctly. However, I hope the illustration using parents and children make sense to you.</p>
 </div>
 </div>
-<div id="use-the-template" class="section level3" number="52.3.7">
+<div id="use-the-template" class="section level3" number="53.3.7">
 <h3>
-<span class="header-section-number">52.3.7</span> Use the Template<a class="anchor" aria-label="anchor" href="#use-the-template"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.7</span> Use the Template<a class="anchor" aria-label="anchor" href="#use-the-template"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now you should be able to write a <code>.rstheme</code> (essentially <code>.css</code>) file yourself from scratch to configure styles for your RStudio IDE. However, that is a great pain so I provided you a template which contains nearly all possible selectors that you may want to modify. In the template, you can find the place to configure styles for the following main components in your IDE:</p>
 <ol style="list-style-type: decimal">
@@ -390,9 +391,9 @@ Figure 3. Interactive Theme Changing Session
 </ol>
 <p>There are plenty of components other than those five common ones which you can play with. However, changing styles of them require more sophisticated understanding of CSS and may not be very useful for overall theme setting. Furthermore, I would like to quote one valuable advice from the RStudio official documentation: “In addition to these rule sets, you will also find a number of rule sets related to the Terminal pane, with selectors that include .terminal or selectors that begin with .xterm. It is possible to change these values as well, but it may be advisable to keep a back up copy of your original theme in case you don’t like any of the changes.”</p>
 </div>
-<div id="deploy-your-themes-to-rstudio" class="section level3" number="52.3.8">
+<div id="deploy-your-themes-to-rstudio" class="section level3" number="53.3.8">
 <h3>
-<span class="header-section-number">52.3.8</span> Deploy Your Themes to RStudio<a class="anchor" aria-label="anchor" href="#deploy-your-themes-to-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.8</span> Deploy Your Themes to RStudio<a class="anchor" aria-label="anchor" href="#deploy-your-themes-to-rstudio"><i class="fas fa-link"></i></a>
 </h3>
 <p>After we finished editing the <code>.css</code> file and configured all styles that you liked, we can simply convert the file back to <code>.rstheme</code> by simply changing the file extension to <code>.rstheme</code>. Now your customized theme is available and we need to add it to RStudio.</p>
 <ol style="list-style-type: decimal">
@@ -407,9 +408,9 @@ Figure 3. Interactive Theme Changing Session
 <li>Click “Remove” and you are all set.</li>
 </ol>
 </div>
-<div id="things-to-be-avoided-design-tips" class="section level3" number="52.3.9">
+<div id="things-to-be-avoided-design-tips" class="section level3" number="53.3.9">
 <h3>
-<span class="header-section-number">52.3.9</span> Things to be Avoided &amp; Design Tips<a class="anchor" aria-label="anchor" href="#things-to-be-avoided-design-tips"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.3.9</span> Things to be Avoided &amp; Design Tips<a class="anchor" aria-label="anchor" href="#things-to-be-avoided-design-tips"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now, you are equipped with toolboxes to design your personalized theme. Designing a light mode theme is straightforward but as shown by many research and survey, the development of dark mode theme can be tricky and there are lots of things to be avoided. I would like to share some articles which introduced some common tips when designing dark mode themes.</p>
 <ol style="list-style-type: decimal">
@@ -421,23 +422,23 @@ Figure 3. Interactive Theme Changing Session
 </ol>
 </div>
 </div>
-<div id="other-approaches" class="section level2" number="52.4">
+<div id="other-approaches" class="section level2" number="53.4">
 <h2>
-<span class="header-section-number">52.4</span> Other Approaches<a class="anchor" aria-label="anchor" href="#other-approaches"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.4</span> Other Approaches<a class="anchor" aria-label="anchor" href="#other-approaches"><i class="fas fa-link"></i></a>
 </h2>
 <p>There are definitely more than two approaches to configure styles for IDEs like RStudio. I would like to briefly introduce one more common method: creating a <code>.tmTheme</code> file first and then modifying the <code>.rstheme</code> file that RStudio generated based on it. In general, <code>.tmTheme</code> file is a <a href="https://en.wikipedia.org/wiki/XML">XML</a>-based theme configuration file. Here is a very useful <a href="https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai"><code>.tmTheme</code> Development Web App</a> that can be used to develop your own <code>.tmTheme</code>.</p>
 <p>However, I would NOT recommend using this approach as <code>.tmTheme</code> is a general theme setting approach while <code>.rstheme</code> that we mainly covered in this tutorial is the one designed for RStudio only. The automatic conversion mentioned in the preceding paragraph may have many warnings and unexpected errors. Therefore, using <code>.tmTheme</code> may result in many unexpected behavior if you do not handle the gap and its compatibility with RStudio carefully. Furthermore, if you want to do more advanced configuration like what we did for <code>.rstheme</code> file, those online editor may not be enough and you also have to dive into the source code and modify it, and it is harder to debug too.</p>
 </div>
-<div id="miscellaneous-1" class="section level2" number="52.5">
+<div id="miscellaneous-1" class="section level2" number="53.5">
 <h2>
-<span class="header-section-number">52.5</span> Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.5</span> Miscellaneous<a class="anchor" aria-label="anchor" href="#miscellaneous-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>I have been interested in color theme setup for IDEs starting from my junior year and previously I designed several editor theme myself for VS Code and Pycharm based on my own preferences. However, this is my first time working on RStudio editor theme customization. For this project, I reviewed many documentations including RStudio official documentation regarding <code>.rstheme</code> file and illustrated it using my own understanding. I think that my previous experience really helps me a lot when writing this tutorial.</p>
 <p>In addition, I also reviewed and learned some core contents in CSS again in order to illustrate the relevant concepts correctly and clearly. As for evaluation of this project, I feel like this tutorial should be helpful for many people but people without experience in CSS may take more time to follow. For tutorial, there is always better to add more examples and illustration so I will keep revising this tutorial in the future and publish it after further polishing.</p>
 </div>
-<div id="references-4" class="section level2" number="52.6">
+<div id="references-4" class="section level2" number="53.6">
 <h2>
-<span class="header-section-number">52.6</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">53.6</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li><a href="https://www.diva-portal.org/smash/get/diva2:1337805/FULLTEXT01.pdf" class="uri">https://www.diva-portal.org/smash/get/diva2:1337805/FULLTEXT01.pdf</a></li>
@@ -466,35 +467,35 @@ Figure 3. Interactive Theme Changing Session
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></div>
-<div class="next"><a href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></div>
+<div class="prev"><a href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></div>
+<div class="next"><a href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rstudio-editor-theme-customization-tutorial"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
-<li><a class="nav-link" href="#introduction-motivation"><span class="header-section-number">52.1</span> Introduction &amp; Motivation</a></li>
+<li><a class="nav-link" href="#rstudio-editor-theme-customization-tutorial"><span class="header-section-number">53</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="nav-link" href="#introduction-motivation"><span class="header-section-number">53.1</span> Introduction &amp; Motivation</a></li>
 <li>
-<a class="nav-link" href="#approach-1-deploying-existing-color-themes"><span class="header-section-number">52.2</span> Approach 1: Deploying Existing Color Themes</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rstudio-built-in-themes"><span class="header-section-number">52.2.1</span> RStudio Built-in Themes</a></li>
-<li><a class="nav-link" href="#using-themes-from-rstheme-library"><span class="header-section-number">52.2.2</span> Using Themes From “rstheme” Library</a></li>
+<a class="nav-link" href="#approach-1-deploying-existing-color-themes"><span class="header-section-number">53.2</span> Approach 1: Deploying Existing Color Themes</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rstudio-built-in-themes"><span class="header-section-number">53.2.1</span> RStudio Built-in Themes</a></li>
+<li><a class="nav-link" href="#using-themes-from-rstheme-library"><span class="header-section-number">53.2.2</span> Using Themes From “rstheme” Library</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#approach-2-building-own-editor-themes-from-scratch"><span class="header-section-number">52.3</span> Approach 2: Building Own Editor Themes From Scratch</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#what-is-.rstheme-file"><span class="header-section-number">52.3.1</span> What is .rstheme file?</a></li>
-<li><a class="nav-link" href="#download-.rstheme-file-template-setup"><span class="header-section-number">52.3.2</span> Download .rstheme file template &amp; Setup</a></li>
-<li><a class="nav-link" href="#declaration-of-global-variables"><span class="header-section-number">52.3.3</span> Declaration of Global Variables</a></li>
-<li><a class="nav-link" href="#basic-logic-syntax"><span class="header-section-number">52.3.4</span> Basic Logic &amp; Syntax</a></li>
-<li><a class="nav-link" href="#some-useful-examples"><span class="header-section-number">52.3.5</span> Some Useful Examples</a></li>
-<li><a class="nav-link" href="#dealing-with-hierarchy"><span class="header-section-number">52.3.6</span> Dealing With Hierarchy</a></li>
-<li><a class="nav-link" href="#use-the-template"><span class="header-section-number">52.3.7</span> Use the Template</a></li>
-<li><a class="nav-link" href="#deploy-your-themes-to-rstudio"><span class="header-section-number">52.3.8</span> Deploy Your Themes to RStudio</a></li>
-<li><a class="nav-link" href="#things-to-be-avoided-design-tips"><span class="header-section-number">52.3.9</span> Things to be Avoided &amp; Design Tips</a></li>
+<a class="nav-link" href="#approach-2-building-own-editor-themes-from-scratch"><span class="header-section-number">53.3</span> Approach 2: Building Own Editor Themes From Scratch</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-.rstheme-file"><span class="header-section-number">53.3.1</span> What is .rstheme file?</a></li>
+<li><a class="nav-link" href="#download-.rstheme-file-template-setup"><span class="header-section-number">53.3.2</span> Download .rstheme file template &amp; Setup</a></li>
+<li><a class="nav-link" href="#declaration-of-global-variables"><span class="header-section-number">53.3.3</span> Declaration of Global Variables</a></li>
+<li><a class="nav-link" href="#basic-logic-syntax"><span class="header-section-number">53.3.4</span> Basic Logic &amp; Syntax</a></li>
+<li><a class="nav-link" href="#some-useful-examples"><span class="header-section-number">53.3.5</span> Some Useful Examples</a></li>
+<li><a class="nav-link" href="#dealing-with-hierarchy"><span class="header-section-number">53.3.6</span> Dealing With Hierarchy</a></li>
+<li><a class="nav-link" href="#use-the-template"><span class="header-section-number">53.3.7</span> Use the Template</a></li>
+<li><a class="nav-link" href="#deploy-your-themes-to-rstudio"><span class="header-section-number">53.3.8</span> Deploy Your Themes to RStudio</a></li>
+<li><a class="nav-link" href="#things-to-be-avoided-design-tips"><span class="header-section-number">53.3.9</span> Things to be Avoided &amp; Design Tips</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#other-approaches"><span class="header-section-number">52.4</span> Other Approaches</a></li>
-<li><a class="nav-link" href="#miscellaneous-1"><span class="header-section-number">52.5</span> Miscellaneous</a></li>
-<li><a class="nav-link" href="#references-4"><span class="header-section-number">52.6</span> References</a></li>
+<li><a class="nav-link" href="#other-approaches"><span class="header-section-number">53.4</span> Other Approaches</a></li>
+<li><a class="nav-link" href="#miscellaneous-1"><span class="header-section-number">53.5</span> Miscellaneous</a></li>
+<li><a class="nav-link" href="#references-4"><span class="header-section-number">53.6</span> References</a></li>
 </ul>
 
       <div class="book-extra">
