@@ -16,7 +16,6 @@ rmd_files: [
   'sample_project.Rmd',
   
   # Part: Cheatsheets
-  'cheatsheet_patchwork.Rmd',
   'ggmap_cheatsheet.Rmd',
   'googleVis.Rmd',
   'tidytext_cheatsheet.Rmd',
@@ -25,6 +24,7 @@ rmd_files: [
   'plotly_cheatsheet.Rmd',
   'data_explorer_cheatsheet.Rmd',
   'ggplot2_matplotlib_cheatsheet.Rmd',
+  'cheatsheet_patchwork.Rmd',
 
   
   # Part: Tutorials
