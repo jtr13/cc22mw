@@ -104,4 +104,5 @@ Remotes:
     mattflor/chorddiag,
     daheelee/timelineS,
     rstudio/tensorflow,
-    gadenbuie/rsthemes
+    gadenbuie/rsthemes,
+    lchiffon/wordcloud2
