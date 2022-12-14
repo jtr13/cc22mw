@@ -1,0 +1,13 @@
+# ggvis cheat sheet
+
+P. Spencer Davis
+
+For my community contribution, I made a cheatsheet for ggvis. I did this because ggvis did not yet have a proper cheat sheet. While ggvis is no longer being developed, it has an advantage in the interactivity of the graphs that can be made with the package. The process of creating this cheatsheet was difficult, but I managed to figure out the most efficient way to create the cheatsheet in time, and feel that, if done again, I could do so faster and better.
+
+The following link leads to a pdf of the cheat sheet: https://github.com/psd2126/myrepo/blob/main/P_Spencer_Davis_ggvis_cheatsheet_final.pdf
+
+![ggvis cheat sheet](resources/ggvis_cheatsheet_image/ggvis_cheatsheet.pdf)
+
+sources: 
+https://ggvis.rstudio.com/layers.html
+https://github.com/rstudio/cheatsheets/blob/main/.github/CONTRIBUTING.md
