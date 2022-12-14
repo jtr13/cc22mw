@@ -24,6 +24,7 @@ rmd_files: [
   'plotly_cheatsheet.Rmd',
   'data_explorer_cheatsheet.Rmd',
   'ggplot2_matplotlib_cheatsheet.Rmd',
+  'cheatsheet_patchwork.Rmd',
   
   # Part: Tutorials
   'mapcharts.Rmd',
@@ -68,7 +69,8 @@ rmd_files: [
   #'ggplot_stat_and_theme.Rmd',
   #'file_ingestions.Rmd',
   'vis_in_python_vs_r.Rmd',
-  'cheatsheet_patchwork.Rmd',
+  'wordclouds_video_tutorial.Rmd',
+
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
