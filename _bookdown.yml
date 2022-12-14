@@ -60,7 +60,7 @@ rmd_files: [
   #'r_neural_network.Rmd',
   'bioconductor.Rmd',
   'playful_r_packages.rmd',
-  'geocomputationwithr.Rmd',
+  #'geocomputationwithr.Rmd',
   'ggvis_cheatsheet.Rmd',
   'cheatsheet_patchwork.Rmd',
   #'plotly_python_surface.Rmd',
