@@ -62,13 +62,13 @@ rmd_files: [
   'playful_r_packages.rmd',
   #'geocomputationwithr.Rmd',
   'ggvis_cheatsheet.Rmd',
-  'cheatsheet_patchwork.Rmd',
   #'plotly_python_surface.Rmd',
   'rstudio_editor_theme_setup_tutorial.Rmd',
   'gradient_descent.Rmd',
   #'ggplot_stat_and_theme.Rmd',
   #'file_ingestions.Rmd',
   'vis_in_python_vs_r.Rmd',
+  'cheatsheet_patchwork.Rmd',
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
