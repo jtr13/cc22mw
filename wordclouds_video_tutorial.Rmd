@@ -5,7 +5,7 @@ Jianxun Guo and Longyuan Gao
 ```{r}
 library(stringi) #install.packages(stringi)
 library(dplyr)
-library(devtools)
+#library(devtools)
 #install_github("lchiffon/wordcloud2")
 library(wordcloud2) #Must be installed from source
 ```
