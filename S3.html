@@ -54,16 +54,16 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">13</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
@@ -128,7 +128,7 @@
 <p>The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw data and log_transfomred data for GOOG stock price.<br></p>
 <p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Use ggplot2 to create visualization for both raw data and log_transfomred data for GOOG stock price with the line graph.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#line plot for stock price raw data</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">s_price</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">s_price</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">s_price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -136,7 +136,7 @@ Use ggplot2 to create visualization for both raw data and log_transfomred data f
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date</a></span><span class="op">(</span>date_labels <span class="op">=</span> <span class="st">'%y-%m'</span>, date_breaks <span class="op">=</span> <span class="st">'3 months'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-283-1.png" width="80%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#line plot for log Transformed GOOGstock price </span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_goog</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">ts_goog</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -149,7 +149,7 @@ Use ggplot2 to create visualization for both raw data and log_transfomred data f
 Why don’t we visualized the Google stock price and Amazon stock price on the same graph for comparison?
 Code below create line plots for GOOG and AMZN log_transformed stock prices at same plot by adding two geom_line.</p>
 <p><br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ts_bind</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">ts_goog</span>, <span class="va">ts_amzn</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ts_bind</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/index.html">index</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">GOOG.Adjusted</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">'#4E84C4'</span>, size<span class="op">=</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -161,7 +161,7 @@ Code below create line plots for GOOG and AMZN log_transformed stock prices at s
 <p>Another way to create ts visualization is to use autoplot function in ggplot2. The function autoplot() in ggplot2 provides a simple and direct plot for a particular object.<br></p>
 <p><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Use function autoplot() to visualized the Google and Amazon log_transformed stock price.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">ts_bind</span><span class="op">)</span>  <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">' GOOG and AMZN log_transformed stock price in autoplot'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">'Date'</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">'Price'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-285-1.png" width="80%" style="display: block; margin: auto;"></div>

@@ -17,7 +17,6 @@ what-if-i-catch-mistakes-before-my-pull-request-is-merged
 what-if-i-catch-mistakes-after-my-pull-request-is-merged
 other-questions
 sample-project
-cheatsheet-for-patchwork
 geographic-visualization-by-ggmap
 motivation-for-this-project
 my-own-evaluationroom-for-improvement
@@ -43,6 +42,7 @@ motivation-for-the-contribution
 evaluation-of-dataexplorer-and-learnings
 sources
 data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet
+cheatsheet-for-patchwork
 map-plots-with-highcharts
 collect-data
 download-the-map-data-and-filter

@@ -54,16 +54,16 @@
 <li><a class="" href="community-contribution.html"><span class="header-section-number">2</span> Community Contribution</a></li>
 <li><a class="" href="github-submission-instructions.html"><span class="header-section-number">3</span> GitHub submission instructions</a></li>
 <li><a class="" href="sample-project.html"><span class="header-section-number">4</span> Sample project</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">5</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Cheatsheets</li>
-<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">6</span> Geographic visualization by ggmap</a></li>
-<li><a class="" href="googlevis.html"><span class="header-section-number">7</span> googleVis</a></li>
-<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">8</span> Text data visualization by tidytext</a></li>
-<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">9</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
-<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">10</span> Cheatsheet for data science</a></li>
-<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">11</span> Cheatsheet for Plotly</a></li>
-<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">12</span> DataExplorer Cheatsheet, EDA made easier</a></li>
-<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">13</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="geographic-visualization-by-ggmap.html"><span class="header-section-number">5</span> Geographic visualization by ggmap</a></li>
+<li><a class="" href="googlevis.html"><span class="header-section-number">6</span> googleVis</a></li>
+<li><a class="" href="text-data-visualization-by-tidytext.html"><span class="header-section-number">7</span> Text data visualization by tidytext</a></li>
+<li><a class="" href="cheatsheet-of-ggally-including-ggcoef_model-and-ggpairs.html"><span class="header-section-number">8</span> Cheatsheet of GGally (including ggcoef_model and ggpairs)</a></li>
+<li><a class="" href="cheatsheet-for-data-science.html"><span class="header-section-number">9</span> Cheatsheet for data science</a></li>
+<li><a class="" href="cheatsheet-for-plotly.html"><span class="header-section-number">10</span> Cheatsheet for Plotly</a></li>
+<li><a class="" href="dataexplorer-cheatsheet-eda-made-easier.html"><span class="header-section-number">11</span> DataExplorer Cheatsheet, EDA made easier</a></li>
+<li><a class="" href="data-visualization-with-ggplot2-r-and-matplotlib-python-cheat-sheet.html"><span class="header-section-number">12</span> Data Visualization with GGPlot2 (R) and MatPlotLib (Python) Cheat Sheet</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">13</span> Cheatsheet for ‘patchwork’</a></li>
 <li class="book-part">Tutorials</li>
 <li><a class="" href="map-plots-with-highcharts.html"><span class="header-section-number">14</span> Map Plots with Highcharts</a></li>
 <li><a class="" href="introduction-of-machine-learning-in-r.html"><span class="header-section-number">15</span> Introduction of machine learning in R</a></li>
@@ -128,11 +128,11 @@
 <p>The auto-correlation plot is used to determine whether a time series is dependent on its past. In ggplot, ggAcf function plots the auto-correlation function for a univariate time series. It is used to analyze the raw data to determine if the data can fit into a time-series model.</p>
 <p><br><font size="5"><span style="color: Orange;">Practical Example: </span></font><br>
 Use auto-correlation plot to visualized the Google and Amazon log_transformed stock price.<br><font size="5"><span style="color: blue;">Coding Time: </span></font></p>
-<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggAcf</span><span class="op">(</span><span class="va">ts_goog</span>, lag.max <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Auto-correlation plot for log_transformed GOOG stock price'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-286-1.png" width="80%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggAcf</span><span class="op">(</span><span class="va">ts_amzn</span>, lag.max <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Auto-correlation plot for log_transformed AMZN stock price'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-286-2.png" width="80%" style="display: block; margin: auto;"></div>
