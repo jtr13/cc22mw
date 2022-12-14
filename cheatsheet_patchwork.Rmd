@@ -6,6 +6,7 @@ Link to presentation and resources :- <https://docs.google.com/presentation/d/1n
 
 
 Import the dataset
+
 ```{r}
 data("iris")
 head(iris)
@@ -24,6 +25,7 @@ library("ggplot2")
 Let's plot a few graphs using 'ggplot2'
 
 Scatterplot 
+
 ```{r}
 ggp1 <- ggplot(iris,               
                aes(x = Sepal.Length,
@@ -34,6 +36,7 @@ ggp1
 ```
 
 Barchart
+
 ```{r}
 ggp2 <- ggplot(iris,               
                aes(x = Species,
@@ -44,6 +47,7 @@ ggp2
 ```
 
 Boxplot
+
 ```{r}
 ggp3 <- ggplot(iris,              
                aes(x = Species,
@@ -54,6 +58,7 @@ ggp3
 ```
 
 Composition plot using plot_arithmetic
+
 ```{r}
 ggp1 + ggp2 + ggp3 + plot_layout(ncol = 1)
 
@@ -64,6 +69,7 @@ ggp_sbs
 ```
 
 area()
+
 ```{r}
 layout <- c(
   area(1, 1, 1),
@@ -76,13 +82,14 @@ ggp1 + ggp2 + ggp3 +plot_layout(design = layout)
 ```
 
 guide_area()
+
 ```{r}
 ggp1 + ggp2 + ggp3 +  
   plot_layout(guides = 'collect', ncol = 2)
-
 ```
 
-inset_element
+inset_element()
+
 ```{r}
 ggp1 +          
   inset_element(ggp2, 0.01, 0.01, 0.7, 0.5) +
@@ -90,6 +97,7 @@ ggp1 +
 ```
 
 plot_annotation
+
 ```{r}
 ggp1 / (ggp2 | ggp3) +
   plot_annotation(tag_levels = 'A')
