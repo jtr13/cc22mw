@@ -101,7 +101,8 @@ You can easily find the name of current theme at the bottom and add that to your
 - Similar to what we did in 1.1, as we have already downloaded the themes, we can always go to "RStudio -> Preference -> Appearance" to change the themes.
 - On the other hand, we can deploy the theme simply by typing the following command in console and specifying the name of the theme we installed.
 
-```{r}
+```{r, eval=FALSE}
+# eval set to FALSE since there is no active RStudio session
 rstudioapi::applyTheme("<theme_name>")
 ```
 
