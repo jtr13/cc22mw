@@ -24,6 +24,7 @@ rmd_files: [
   'plotly_cheatsheet.Rmd',
   'data_explorer_cheatsheet.Rmd',
   'ggplot2_matplotlib_cheatsheet.Rmd',
+  'cheatsheet_patchwork.Rmd',
   
   # Part: Tutorials
   'mapcharts.Rmd',
@@ -60,9 +61,8 @@ rmd_files: [
   #'r_neural_network.Rmd',
   'bioconductor.Rmd',
   'playful_r_packages.rmd',
-  'geocomputationwithr.Rmd',
+  #'geocomputationwithr.Rmd',
   'ggvis_cheatsheet.Rmd',
-  'cheatsheet_patchwork.Rmd',
   #'plotly_python_surface.Rmd',
   'rstudio_editor_theme_setup_tutorial.Rmd',
   'gradient_descent.Rmd',
@@ -70,6 +70,7 @@ rmd_files: [
   #'file_ingestions.Rmd',
   'vis_in_python_vs_r.Rmd',
   'wordclouds_video_tutorial.Rmd',
+
   
   # Part: Workshops
   'edavsurveyandanalysis.Rmd',
