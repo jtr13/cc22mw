@@ -4,6 +4,8 @@ Maria Pratyusha
 
 Link to presentation and resources :- <https://docs.google.com/presentation/d/1nKju2-jcMC8Ep7tjBPAkacSX181DVra8hawrTlqaF7Q/edit?usp=sharing>
 
+*Note: although this code works fine locally, it is causing issues when rendered through GitHub Actions and therefore the chunks that involve `patchwork` will not be evaluated.*
+
 
 Import the dataset
 
@@ -70,27 +72,27 @@ ggp_sbs
 
 area()
 
-```{r}
+```{r, eval = FALSE}
 layout <- c(
-  area(1, 1, 1),
+  area(1, 1),
   area(1, 3, 3),
   area(3, 1, 3, 2)
 )
 plot(layout)
 
-ggp1 + ggp2 + ggp3 +plot_layout(design = layout)
+ggp1 + ggp2 + ggp3 + plot_layout(design = layout)
 ```
 
 guide_area()
 
-```{r}
+```{r, eval = FALSE}
 ggp1 + ggp2 + ggp3 +  
   plot_layout(guides = 'collect', ncol = 2)
 ```
 
 inset_element()
 
-```{r}
+```{r, eval = FALSE}
 ggp1 +          
   inset_element(ggp2, 0.01, 0.01, 0.7, 0.5) +
   inset_element(ggp3, 0.4, 0.6, 0.99, 0.99)
@@ -98,7 +100,7 @@ ggp1 +
 
 plot_annotation
 
-```{r}
+```{r, eval = FALSE}
 ggp1 / (ggp2 | ggp3) +
   plot_annotation(tag_levels = 'A')
 
