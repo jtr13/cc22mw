@@ -10,7 +10,7 @@ Suggests:
     autoplotly,
     bench,
     bestparcoords,
-    bookdown (== 0.30),
+    bookdown,
     BSDA,
     bslib,
     carData,
