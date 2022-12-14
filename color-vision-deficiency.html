@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 22 Color vision deficiency | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="Margaret Reed and Yaxin Hu library(tidyverse) library(ggokabeito) Color vision deficiency is typically referred to as color blindness and can be defined as the inability to distinguish certain...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 22 Color vision deficiency | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Margaret Reed and Yaxin Hu library(tidyverse) library(ggokabeito) Color vision deficiency is typically referred to as color blindness and can be defined as the inability to distinguish certain...">
@@ -102,11 +102,11 @@
 <li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
 <li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
 <li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
 <li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
 <li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
@@ -184,7 +184,7 @@ Another problem might occur is that color blind people may not be able to recogn
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Petal.Width</span>, color <span class="op">=</span> <span class="va">Species</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="color_deficiency_files/figure-html/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-165-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Here is how this might plot look like with the above conditions:</p>
 <p><img src="resources/color_deficiency_images/original-1.png" width="290"><img src="resources/color_deficiency_images/original-2.png" width="290"><img src="resources/color_deficiency_images/original-3.png" width="290"><img src="resources/color_deficiency_images/original-4.png" width="290"><img src="resources/color_deficiency_images/original-5.png" width="290"><img src="resources/color_deficiency_images/original-6.png" width="290"><img src="resources/color_deficiency_images/original-7.png" width="290"><img src="resources/color_deficiency_images/original-8.png" width="290"></p>
 <p><strong>Ways to improve without changing color:</strong></p>
@@ -196,7 +196,7 @@ Another problem might occur is that color blind people may not be able to recogn
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="color_deficiency_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-166-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Double Encoding:</p>
 <div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -205,7 +205,7 @@ Another problem might occur is that color blind people may not be able to recogn
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="color_deficiency_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-167-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p><strong>A Better Palette:</strong></p>
 <p>I really like the Okabe-Ito pallete designed by Masataka Okabe and Kei Ito</p>
 <p>(learn more read <a href="https://jfly.uni-koeln.de/color/">here</a>: )</p>
@@ -220,7 +220,7 @@ Another problem might occur is that color blind people may not be able to recogn
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://malcolmbarrett.github.io/ggokabeito/reference/scale_okabe_ito.html">scale_color_okabe_ito</a></span><span class="op">(</span>order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">7</span>,<span class="fl">9</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="color_deficiency_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-168-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p><img src="resources/color_deficiency_images/new-1.png" width="290"><img src="resources/color_deficiency_images/new-2.png" width="290"><img src="resources/color_deficiency_images/new-3.png" width="290"><img src="resources/color_deficiency_images/new-4.png" width="290"><img src="resources/color_deficiency_images/new-5.png" width="290"><img src="resources/color_deficiency_images/new-6.png" width="290"><img src="resources/color_deficiency_images/new-7.png" width="290"><img src="resources/color_deficiency_images/new-8.png" width="290"></p>
 </div>
 </div>

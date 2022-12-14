@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 43 AutoCorrelation plot | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="The auto-correlation plot is used to determine whether a time series is dependent on its past. In ggplot, ggAcf function plots the auto-correlation function for a univariate time series. It is...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 43 AutoCorrelation plot | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="The auto-correlation plot is used to determine whether a time series is dependent on its past. In ggplot, ggAcf function plots the auto-correlation function for a univariate time series. It is...">
@@ -102,11 +102,11 @@
 <li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
 <li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
 <li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
 <li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
 <li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
@@ -130,11 +130,11 @@ Use auto-correlation plot to visualized the Google and Amazon log_transformed st
 <div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggAcf</span><span class="op">(</span><span class="va">ts_goog</span>, lag.max <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Auto-correlation plot for log_transformed GOOG stock price'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-274-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggAcf</span><span class="op">(</span><span class="va">ts_amzn</span>, lag.max <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">'Auto-correlation plot for log_transformed AMZN stock price'</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="time_series_visualization_r_tutorial_files/figure-html/unnamed-chunk-6-2.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-274-2.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="S3.html"><span class="header-section-number">42</span> Section 3.Time series visualization with ggplot and ggplot2</a></div>

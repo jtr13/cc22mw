@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 14 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 14 Introduction of machine learning in R | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Feifan Li library(caret) library(mlbench) library(naivebayes) library(rpart) library(randomForest) library(ggplot2) library(lattice) library(recipes) library(dplyr)...">
@@ -102,11 +102,11 @@
 <li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
 <li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
 <li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
 <li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
 <li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
@@ -214,12 +214,12 @@
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">train_set</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>, y<span class="op">=</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Distribution of datapoint before scailing"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-21-1.png" width="80%" style="display: block; margin: auto;"></div>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">train_scaled</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>, y<span class="op">=</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Distribution of datapoint after scailing"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-22-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
 <div id="missing-value" class="section level3" number="14.3.4">
 <h3>
@@ -245,14 +245,14 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span><span class="co">#print resutls after PCA</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">pc</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Standard deviations (1, .., p=4):
-## [1] 1.7124083 0.9514184 0.3739844 0.1503213
+## [1] 1.7088167 0.9491452 0.3979546 0.1438783
 ## 
 ## Rotation (n x k) = (4 x 4):
-##                     PC1         PC2        PC3        PC4
-## Sepal.Length  0.5208675 -0.38281416  0.7071359  0.2865470
-## Sepal.Width  -0.2760727 -0.92100071 -0.2438821 -0.1267401
-## Petal.Length  0.5788389 -0.03163091 -0.1167073 -0.8064270
-## Petal.Width   0.5634062 -0.06488831 -0.6533450  0.5015011</code></pre>
+##                     PC1        PC2        PC3        PC4
+## Sepal.Length  0.5209649 0.36812705 -0.7288037  0.2488437
+## Sepal.Width  -0.2739010 0.92583989  0.2305247 -0.1210663
+## Petal.Length  0.5799713 0.02824575  0.1560116 -0.7990593
+## Petal.Width   0.5632114 0.08065448  0.6255908  0.5337827</code></pre>
 </div>
 <div id="feature-selection" class="section level3" number="14.3.6">
 <h3>
@@ -298,14 +298,14 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"gray"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span>,<span class="va">p3</span>,<span class="va">p4</span>,nrow<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-25-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>After showing the distribution, we can visualize the number of each kind in the dataset. From the pie chart below, we can see that three classes have equal proportions: each of them occupy 1/3 of the total data points.</p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Species</span>,fill<span class="op">=</span><span class="va">Species</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>stat<span class="op">=</span><span class="st">"count"</span>,width<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span><span class="st">"x"</span>,start<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Proportion of three classes"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-26-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Lastly, we can explore the colinearity between features. From the scatter plot below, we can see that there exist a strong positive relationship between Petal length and Petal width.</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">g1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">train_set</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Sepal.Length</span>,y<span class="op">=</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
@@ -333,7 +333,7 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">g1</span>,<span class="va">g2</span>,<span class="va">g3</span>,<span class="va">g4</span>,<span class="va">g5</span>,<span class="va">g6</span>,nrow<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-27-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
 <div id="training-model" class="section level2" number="14.5">
 <h2>
@@ -364,7 +364,7 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">KNN</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-12-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-29-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p><strong>Advantage:</strong><br>
 1. very easy to implement, nearly no training process<br>
 2. can deal with non-linear problems<br>
@@ -388,7 +388,7 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">RF</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-30-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p><strong>Advantage:</strong><br>
 1. higher accuracy than single decision tree<br>
 2. can deal with both classification problems and regression problems<br>
@@ -411,7 +411,7 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>             trControl<span class="op">=</span><span class="va">r_cv</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">SVM</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-31-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>At here, besides radial basis kernel function, there are actually many other kernel function. For example, linear kernel function can useful for linear-separable problems. And polynominal kernel function can project datapoints into higher dimensional space, making it easier to classify. In reality, we need to try different kernel functions to see which one works better.</p>
 <p><strong>Advantage:</strong><br>
 1. Very effective for data with high dimensions<br>
@@ -437,7 +437,7 @@ One easy way to fill in the missing value is using mean. For example, if one col
 <span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">GBM</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="machine_learning_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-32-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p><strong>Advantage:</strong><br>
 1. results are highly accurate<br>
 2. no need for data scailing and preprocessing. It can handle both numerical and categorical features<br>
@@ -475,9 +475,9 @@ One easy way to fill in the missing value is using mean. For example, if one col
 ## Summary of sample sizes: 108, 108, 108, 108, 108, 108, ... 
 ## Resampling results across tuning parameters:
 ## 
-##   usekernel  Accuracy   Kappa
-##   FALSE      0.9566667  0.935
-##    TRUE      0.9633333  0.945
+##   usekernel  Accuracy   Kappa 
+##   FALSE      0.9483333  0.9225
+##    TRUE      0.9566667  0.9350
 ## 
 ## Tuning parameter 'laplace' was held constant at a value of 0
 ## Tuning
@@ -511,19 +511,19 @@ One easy way to fill in the missing value is using mean. For example, if one col
 ## 
 ## Accuracy 
 ##                  Min.   1st Qu. Median      Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.8333333 0.9166667      1 0.9633333       1    1    0
-## GBM         0.8333333 0.9166667      1 0.9666667       1    1    0
-## KNN         0.9166667 0.9166667      1 0.9700000       1    1    0
-## SVM         0.7500000 0.9166667      1 0.9550000       1    1    0
-## RF          0.8333333 0.9166667      1 0.9650000       1    1    0
+## Naive_bayes 0.7500000 0.9166667      1 0.9566667       1    1    0
+## GBM         0.7500000 0.9166667      1 0.9550000       1    1    0
+## KNN         0.8333333 1.0000000      1 0.9750000       1    1    0
+## SVM         0.7500000 0.9166667      1 0.9500000       1    1    0
+## RF          0.8333333 0.9166667      1 0.9583333       1    1    0
 ## 
 ## Kappa 
 ##              Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
-## Naive_bayes 0.750   0.875      1 0.9450       1    1    0
-## GBM         0.750   0.875      1 0.9500       1    1    0
-## KNN         0.875   0.875      1 0.9550       1    1    0
-## SVM         0.625   0.875      1 0.9325       1    1    0
-## RF          0.750   0.875      1 0.9475       1    1    0</code></pre>
+## Naive_bayes 0.625   0.875      1 0.9350       1    1    0
+## GBM         0.625   0.875      1 0.9325       1    1    0
+## KNN         0.750   1.000      1 0.9625       1    1    0
+## SVM         0.625   0.875      1 0.9250       1    1    0
+## RF          0.750   0.875      1 0.9375       1    1    0</code></pre>
 <p>From the statistic above, we can see that KNN has the best performance for our dataset.</p>
 </div>
 </div>
@@ -558,31 +558,31 @@ For classification problems, confusion matrix can be regarded as an intuitive wa
 ##             Reference
 ## Prediction   setosa versicolor virginica
 ##   setosa         10          0         0
-##   versicolor      0          9         1
-##   virginica       0          1         9
+##   versicolor      0          9         0
+##   virginica       0          1        10
 ## 
 ## Overall Statistics
 ##                                           
-##                Accuracy : 0.9333          
-##                  95% CI : (0.7793, 0.9918)
+##                Accuracy : 0.9667          
+##                  95% CI : (0.8278, 0.9992)
 ##     No Information Rate : 0.3333          
-##     P-Value [Acc &gt; NIR] : 8.747e-12       
+##     P-Value [Acc &gt; NIR] : 2.963e-13       
 ##                                           
-##                   Kappa : 0.9             
+##                   Kappa : 0.95            
 ##                                           
 ##  Mcnemar's Test P-Value : NA              
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: setosa Class: versicolor Class: virginica
-## Sensitivity                 1.0000            0.9000           0.9000
-## Specificity                 1.0000            0.9500           0.9500
-## Pos Pred Value              1.0000            0.9000           0.9000
-## Neg Pred Value              1.0000            0.9500           0.9500
+## Sensitivity                 1.0000            0.9000           1.0000
+## Specificity                 1.0000            1.0000           0.9500
+## Pos Pred Value              1.0000            1.0000           0.9091
+## Neg Pred Value              1.0000            0.9524           1.0000
 ## Prevalence                  0.3333            0.3333           0.3333
-## Detection Rate              0.3333            0.3000           0.3000
-## Detection Prevalence        0.3333            0.3333           0.3333
-## Balanced Accuracy           1.0000            0.9250           0.9250</code></pre>
+## Detection Rate              0.3333            0.3000           0.3333
+## Detection Prevalence        0.3333            0.3000           0.3667
+## Balanced Accuracy           1.0000            0.9500           0.9750</code></pre>
 <p><strong>ROC curve</strong><br>
 Another nice metric that we often use is ROC curve. This graph is drawn on the basis of True positive rate (TPR) and False positive rate (FPR). And the area under this curve is called Area Under Curve (AUC). If the area is equal to 1, that means the machine learning model predicts perfectly on every datapoint. If the area is 0.5, then the model behaves like a fair coin. And if it is 0, that means the model makes false predictions every time.</p>
 <div class="figure">

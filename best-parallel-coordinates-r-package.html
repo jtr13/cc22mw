@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 26 Best Parallel Coordinates R Package | Community Contributions for EDAV Fall 2022 Mon/Wed</title>
 <meta name="description" content="Shubham Kaushal and Daniel Young  26.1 Introduction GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 26 Best Parallel Coordinates R Package | Community Contributions for EDAV Fall 2022 Mon/Wed">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Shubham Kaushal and Daniel Young  26.1 Introduction GGally has a ggparcoord function but the user is in charge of what order the features go in along the x axis. There are some built-in functions...">
@@ -102,11 +102,11 @@
 <li><a class="" href="python-geospatial-data-visualization-project-guide.html"><span class="header-section-number">48</span> Python: geospatial data visualization project guide</a></li>
 <li><a class="" href="cheetsheet-of-rna-seq-workflow-in-bioconductor.html"><span class="header-section-number">49</span> Cheetsheet of RNA-seq workflow in bioconductor</a></li>
 <li><a class="" href="playful-r-packages-for-kids.html"><span class="header-section-number">50</span> Playful R Packages for Kids</a></li>
-<li><a class="" href="lightning-talk-on-geocomputation-with-r.html"><span class="header-section-number">51</span> Lightning Talk on GeoComputation with R</a></li>
-<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">52</span> ggvis cheat sheet</a></li>
-<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">53</span> Cheatsheet for ‘patchwork’</a></li>
-<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">54</span> Gradient Descent Algorithm in R</a></li>
-<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">55</span> Visualization in Python vs R</a></li>
+<li><a class="" href="ggvis-cheat-sheet.html"><span class="header-section-number">51</span> ggvis cheat sheet</a></li>
+<li><a class="" href="rstudio-editor-theme-customization-tutorial.html"><span class="header-section-number">52</span> RStudio Editor Theme Customization Tutorial</a></li>
+<li><a class="" href="gradient-descent-algorithm-in-r.html"><span class="header-section-number">53</span> Gradient Descent Algorithm in R</a></li>
+<li><a class="" href="visualization-in-python-vs-r.html"><span class="header-section-number">54</span> Visualization in Python vs R</a></li>
+<li><a class="" href="cheatsheet-for-patchwork.html"><span class="header-section-number">55</span> Cheatsheet for ‘patchwork’</a></li>
 <li><a class="" href="edav-survey-and-analysis.html"><span class="header-section-number">56</span> EDAV Survey and Analysis</a></li>
 <li><a class="" href="visualizing-graphs-and-networks.html"><span class="header-section-number">57</span> Visualizing graphs and networks</a></li>
 <li><a class="" href="is-the-data-visualization-misleading-or-not---survey.html"><span class="header-section-number">58</span> Is the data visualization misleading or not - Survey</a></li>
@@ -168,7 +168,7 @@
 <p>The default ordering shown here isn’t the best, it just leaves the columns in order regardless of their correlation.</p>
 <div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, splineFactor<span class="op">=</span><span class="fl">10</span>, alphaLines<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-189-1.png" width="80%" style="display: block; margin: auto;"></div>
 </div>
 <div id="bestparcoords" class="section level3" number="26.2.4">
 <h3>
@@ -177,7 +177,7 @@
 <p>Here we show the bestparcoords graph which is a better than the default version because it accentuates the alternating trends between pairs of features which shows the underlying pattern in the data much better.</p>
 <div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cols</span> <span class="op">&lt;-</span> <span class="fu">bestparcoords</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bestparcoords/man/bestparcoord.html">bestparcoord</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-190-1.png" width="80%" style="display: block; margin: auto;"></div>
 <p>Best parcoords also outputs the features in the order it found, which we can use for other purposes. For example, if we want to display the plot with a different spline factor.</p>
 <div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span></span></code></pre></div>
@@ -188,7 +188,7 @@
 <pre><code>##  [1]  2  3  6  1  4  8  7  9 10  5</code></pre>
 <div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">GGally</span><span class="fu">::</span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggparcoord.html">ggparcoord</a></span><span class="op">(</span><span class="va">mtcars</span>, columns<span class="op">=</span><span class="va">indices</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="bestparcoords_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="cc22mw_files/figure-html/unnamed-chunk-192-1.png" width="80%" style="display: block; margin: auto;"></div>
 
 </div>
 </div>
