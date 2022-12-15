@@ -2,7 +2,7 @@
 
 Shuyu He, Zhongyuan Ye
 
-# Introduction
+## Introduction
 R studio contains lots of powerful packages to solve real-world data visualization problems. In this tutorial, we will be focusing on how to combine the data visualization library we learned in class(like "ggplot2", "tidyverse", "ploty", et al) with some new packages (like "quantmod", "TSstudio", and fpp2) to solve the Time series visualization problem.\
 
 Before going into how to do a time series analysis with R, let's think about a basic question: What is time series analysis? Why should anyone learn it?\
@@ -24,7 +24,7 @@ The tutorial will contains 5 Sections: \
 
 Each section contains a description of the function used in that section and a practical example. The practical example we use in our tutorial is the Time series visualization of Google and Amazon Stock from 2021-07-01 to 2021-08-31.
 
-## Section 1: Environment Setup {#S1}
+## Environment Setup {#S1}
 
 First and foremost, we need to set up our R environment before doing anything else.
 The package we will use in this tutorial are: "quantmod", "TSstudio", "xts", "ggplot2", "gridExtra", "fpp2", "tidyverse", "plotly" \
@@ -47,7 +47,7 @@ library(plotly)
 
 
 
-## Section 2: Raw Data Processing {#S2}
+## Raw Data Processing {#S2}
 Before any visualization, it's always important to extract and process the raw data.
 This part will have 2 subopic: \
 2.1:Stock Data Extraction with quantmod \
@@ -102,7 +102,7 @@ ts_amzn <- diff(log(s_price_amzn),1)
 head(ts_amzn)
 ```
 
-# Section 3.Time series visualization with ggplot and ggplot2 {#S3}
+## Time series visualization with ggplot and ggplot2 {#S3}
 
 The first method to visualize stock price is to use line graphs in ggplot. The function geom_line creates lines connecting observations ordered by x value. We create visualization for both raw data and log_transfomred data for GOOG stock price. 
 \
@@ -158,7 +158,7 @@ autoplot(ts_bind)  +
     ggtitle(' GOOG and AMZN log_transformed stock price in autoplot') + xlab('Date') + ylab('Price')
 ```
 
-# AutoCorrelation plot
+### AutoCorrelation plot
 The auto-correlation plot  is used to determine whether a time series is dependent on its past. In ggplot, ggAcf function plots the auto-correlation function for a univariate time series. It is used to analyze the raw data to determine if the data can fit into a time-series model.
 
 
@@ -174,7 +174,7 @@ ggAcf(ts_amzn, lag.max = 20) +
     ggtitle('Auto-correlation plot for log_transformed AMZN stock price')
 ```
 
-# Section 4. Time series visualization with TSstudio: ts_plot {#S4}
+## Time series visualization with TSstudio: ts_plot {#S4}
 There are several big problems when visualization with the ggplot2 library: what if the viewer wants the precise stock value of a certain day? What if the viewer wants to see the exact date of one peak value? That is why we introduced the "ts_plot" library and "ploty" library to you.\
 
 TSstudio package provides a set of tools to describe, visualize, and predict time series data. ts_plot function is used to produce interactive visualization for time series objects. \
@@ -202,7 +202,7 @@ ts_plot(s_price_amzn,
         line.mode =  "lines+markers")
 ```
 
-# Section 5. Time series visualization with Plotly {#S5}
+## Time series visualization with Plotly {#S5}
 Plotly creates high-quality, interactive, web-based data visualization in R. Plotly uses the pipe operator %>% instead of plus sign. 
 \
 <font size="5"><span style="color: Orange;">Practical Example: </span></font> \
