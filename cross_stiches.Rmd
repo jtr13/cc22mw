@@ -6,7 +6,262 @@ Ruijie Zhang
 Firstly, we will need 4 functions in the function.R file. (There are actually 5 functions in the R file, but change_resolution is used in make_pattern.) 
 ```{r}
 set.seed(1005705300)
-source("functions.R")## load all the functions in the R file.
+library(imager) 
+library(tidyverse) 
+library(tidymodels) 
+library(sp) 
+library(scales)
+library(cowplot)
+
+
+## dmc is installed by the following code. Delete the # sign.
+#devtools::install_github("sharlagelfand/dmc")
+
+
+################################ change resolution ################################
+
+change_resolution <- function(image_df, x_size)
+{
+  ## change_resolution(image_df, x_size) subsamples an image to produce
+  ## a lower resolution image. Any non-coordinate columns in the data
+  ## frame are summarized with their most common value in the larger
+  ## grid cell.
+  ##
+  ## Input:
+  ## - image_df: A data frame in wide format. The x-coordinate column MUST
+  ##             be named 'x' and the y-coordinate column MUST be named 'y'.
+  ##             Further columns have no naming restrictions.
+  ## - x_size:   The number of cells in the x-direction. The number of cells
+  ##             in the vertical direction will be computed to maintain the 
+  ##             perspective. There is no guarantee that the exact number
+  ##             of cells in the x-direction is x_size
+  ##
+  ## Output:
+  ## - A data frame with the same column names as image_df, but with fewer 
+  ##   entries that corresponds to the reduced resolution image.
+  ##
+  ## Example:
+  ##   library(imager)
+  ##   library(dplyr)
+  ##   fpath <- system.file('extdata/Leonardo_Birds.jpg',package='imager') 
+  ##   im <- load.image(fpath)
+  ##   im_dat<- as.data.frame(im,wide = "c") %>% rename(R = c.1, G = c.2, B = c.3) %>%
+  ##            select(x,y,R,G,B)
+  ##   agg_image <- change_resolution(im_dat, 50)
+  
+  if(!require(sp)) {
+    stop("The sp packages must be installed. Run install.packages(\"sp\") and then try again.")
+  }
+  if(!require(dplyr)) {
+    stop("The dplyr packages must be installed. Run install.packages(\"dplyr\") and then try again.")
+  }
+  
+  sp_dat <- image_df 
+  gridded(sp_dat) = ~x+y
+  
+  persp = (gridparameters(sp_dat)$cells.dim[2]/gridparameters(sp_dat)$cells.dim[1])
+  y_size = floor(x_size*persp)
+  orig_x_size = gridparameters(sp_dat)$cells.dim[1]
+  orig_y_size = gridparameters(sp_dat)$cells.dim[2]
+  
+  x_res = ceiling(orig_x_size/x_size)
+  y_res = ceiling(orig_y_size/y_size)
+  
+  gt = GridTopology(c(0.5,0.5), c(x_res, y_res),
+                    c(floor(orig_x_size/x_res), floor(orig_y_size/y_res)))
+  SG = SpatialGrid(gt)
+  agg = aggregate(sp_dat, SG, function(x) names(which.max(table(x)))[1] )
+  agg@grid@cellsize <- c(1,1)
+  df <- agg %>% as.data.frame %>% rename(x = s1, y = s2)  %>% select(colnames(image_df))
+  
+  return(df)
+  
+}
+
+################################ process_image ################################
+process_image <- function(image_file_name,k_list){
+  ## process_image(image_file_name,k_list) apply a several k-means clustering.
+  ## to the image_file. 
+  ##
+  ## Input:
+  ## - image_file_name: A PNG or JPEG image.
+  ## - k-list: A vector that represents the number of cluster centers.
+  ##
+  ## Output:
+  ## - A list of k-means clustering information and the clusters, 
+  ##   their associated RGB values and their nearest DMC thread color.
+  ##
+  ## - Example:
+  ## clusters <- process_image(my_image, c(2:10))
+im <- imager::load.image(image_file)
+tidy_dat <- as.data.frame(im, wide = "c") %>% rename(R = c.1, G = c.2, B = c.3)
+dat <- select(tidy_dat,c(-x,-y))
+
+kclusts <-
+  tibble(k = k_list) %>%
+  mutate(
+    kclust = map(k, ~kmeans(x = dat , centers = .x, nstart=4)),
+    glanced = map(kclust, glance),
+  )
+
+clusterings <-
+  kclusts %>%
+  unnest(cols = c(glanced)) %>%
+  mutate(centers=map(kclust,tidy), 
+         tidy_dat=map(kclust, ~augment(.x,tidy_dat) %>%
+                                                   rename(cluster=.cluster)))
+
+ for (k in k_list){
+   center <- clusterings[clusterings$k==k,]$centers[[1]]
+   center <- center %>%
+     mutate(col=rgb(R,G,B)) %>%
+     mutate(dmc=map(col, ~dmc(.x)))
+   clusterings[clusterings$k==k,]$centers[[1]] <- center
+   }
+return(clusterings)
+}
+
+################################ scree plot ################################
+scree_plot <- function(cluster_info){
+  ## scree_plot produces and plots a scree plot.
+  ##
+  ## Input:
+  ## - cluster_info: A data frame that contains a several cluster information. 
+  ##
+  ## Output:
+  ## - Returns a scree plot which the y-axis is total within clusters SS and x-axis
+  ##   is the number of clusters.
+  ##
+  ## - Example:
+  ## scree-plot(clusterings)
+p1 <- ggplot(cluster_info, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point()
+  
+## ratio
+nclust = length(cluster_info$k)
+ratio = rep(NA, nclust-1)
+for (kk in 2:nclust) {
+ratio[kk-1] = cluster_info$tot.withinss[kk]/cluster_info$tot.withinss[kk-1]
+  }
+plot_data <- data.frame(k = cluster_info$k[2:nclust],ratio)
+p2 <- ggplot(plot_data, aes(x=k, y = ratio)) + geom_line()
+plot_grid(p1,p2)
+}
+
+################################ colour strip ################################
+colour_strips <- function(cluster_info){
+  ## colour_strip Produces colour strips with the DMC colour 
+  ## closest to the cluster center colour.
+  ##
+  ## Input:
+  ## - cluster_info: A data frame that contains a several cluster information. 
+  ##
+  ## Output:
+  ## - colour strips with the DMC colour closest to the cluster center colour.
+  ##
+  ## - Example:
+  ## colour_strips(cluster_info)
+square <- function(x, label_size) { 
+  ggplot()  + 
+    coord_fixed(xlim=c(0,1), ylim = c(0,1)) + theme_void() + 
+    theme(plot.background = element_rect(fill = x)) + 
+    geom_text(aes(0.5,0.5),label = x , size = label_size)
+}
+strips <- list()
+colour_ <- vector()
+for( i in 1:nrow(cluster_info)){
+  for(x in 1:cluster_info$k[i]){
+    colour_[x] <- cluster_info$centers[[i]]$dmc[[x]]$hex
+  }
+  t <- tibble(colours = colour_,
+              squares = purrr::map(colours, ~ square(.x, 2.5)))
+  n_col = length(t$colours)
+  rect_dat <- tibble(x1 = c(0:(n_col-1)), x2 = c(1:n_col), y1 = rep(0,n_col),
+                     y2 =rep(1,n_col), colour = t$colours)
+  strip <- rect_dat %>% ggplot() + coord_fixed() + 
+    geom_rect(aes(xmin=x1, xmax=x2, ymin=y1, ymax=y2, fill=colour), color="black") +
+    geom_text(aes(x=x1+(x2-x1)/2, y=y1+(y2-y1)/2, label=colour), size=2.5) + 
+    scale_fill_manual(values = rect_dat$colour)+ theme_void() + theme(legend.position = "none") 
+  strips[[i]] <- strip
+  }
+plot_grid(plotlist = strips,
+          labels=paste0("k=",c(cluster_info$k)),ncol=1)
+}
+################################  plot pattern ################################
+make_pattern <- function(cluster_info,k,x_size,black_white=FALSE,background_color=NULL){
+  ## plot_pattern plots the pattern of the given number of cluster center.
+  ## 
+  ##
+  ## Input:
+  ## - cluster_info: A data frame that contains a several cluster information. 
+  ## - k: A numeric that restores the chosen cluster size.
+  ## - x_size: A numeric that restores total number of possible stitches in the horizontal direction
+  ## - black_white: (logical) Print the pattern in black and white (TRUE) or colour (FALSE)
+  ##                The default is FALSE
+  ## - background_colour: The colour of the background, which should not be stitched in the
+  ##                      pattern. (Default is to not have a colour)
+  ## Output:
+  ## - Returns a cross-stitch pattern.
+  ##
+  ## - Example:
+  ## make_pattern(cluster_info=clusters, k= 8,x_size=50 ,black_white = FALSE, background_color= NULL)
+image_df <- cluster_info[cluster_info$k==k,]$tidy_dat[[1]]
+lowres_df <- change_resolution(image_df,x_size)
+cluster_dmc <- cluster_info[cluster_info$k==k,]$centers[[1]]
+
+
+cluster_dmc$dmc_colour <- NA
+for(i in 1:k){
+  cluster_dmc$dmc_colour[i] <- cluster_dmc$dmc[[i]]$dmc
+}
+
+lowres_df$dmc_colour <- NA
+lowres_df$name <- NA
+for (i in 1:nrow(lowres_df)){
+  lowres_df[i,]$dmc_colour <- cluster_dmc[cluster_dmc$cluster==lowres_df[i,]$cluster,]$dmc_colour
+  lowres_df[i,]$name <- cluster_dmc[cluster_dmc$cluster==lowres_df[i,]$cluster,]$dmc[[1]]$hex
+}
+dmc_frame <- tibble()
+for(i in 1:k){
+  dmc_frame <- rbind(dmc_frame,c(cluster_dmc$dmc[[i]]$dmc,cluster_dmc$dmc[[i]]$name,cluster_dmc$dmc[[i]]$hex))
+}
+names(dmc_frame)[1]="dmc_colour"
+names(dmc_frame)[2]="name"
+names(dmc_frame)[3]="col"
+
+new_name <- vector()
+for (i in 1:nrow(dmc_frame)){
+  new_name[i] <- paste(dmc_frame$name[i],"(",dmc_frame$dmc_colour[i],")")
+}
+dmc_frame <- dmc_frame %>% mutate(new_name=new_name)
+
+lowres_df[lowres_df$name==background_color,7] <- "B5200"
+dmc_frame[dmc_frame$col==background_color,1] <- "B5200"
+
+if(!black_white){
+  plot <- lowres_df %>% ggplot(aes(x, y)) + geom_point(aes(col = factor(dmc_colour), 
+                                                   shape = factor(dmc_colour))) +coord_fixed()+
+    scale_colour_manual(name="1",values=dmc_frame%>%select(dmc_colour,col)%>%deframe,label=dmc_frame%>%select(dmc_colour,new_name)%>%deframe)+
+    scale_shape_manual(name="1",values=c(0:10),labels=dmc_frame%>%select(dmc_colour,new_name)%>%deframe)+
+    scale_y_reverse()+theme_linedraw()+
+    theme(legend.title = element_blank(),
+          axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          legend.position = "left")
+     }
+else{
+  plot<- lowres_df %>% ggplot(aes(x, y)) + geom_point(aes(shape = factor(dmc_colour))) +coord_fixed()+
+    scale_colour_manual(name="1",values=dmc_frame%>%select(dmc_colour,col)%>%deframe,label=dmc_frame%>%select(dmc_colour,new_name)%>%deframe)+
+    scale_shape_manual(name="1",values=c(0:10),labels=dmc_frame%>%select(dmc_colour,new_name)%>%deframe)+
+    scale_y_reverse() + theme_linedraw()+
+    theme(legend.title = element_blank(),
+          axis.title.x=element_blank(),
+          axis.title.y=element_blank(),
+          legend.position = "left")}
+  plot
+
+}
 ```
 
 ## Load Images
