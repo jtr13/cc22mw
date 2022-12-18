@@ -1,0 +1,43 @@
+# Cross-stiches
+
+Ruijie Zhang
+
+## Load Functions
+Firstly, we will need 4 functions in the function.R file. (There are actually 5 functions in the R file, but change_resolution is used in make_pattern.) 
+```{r}
+set.seed(1005705300)
+source("functions.R")## load all the functions in the R file.
+```
+
+## Load Images
+You can replace "pikachu.jpeg" by your selected picture. The variable 'im' is an object of class 'cimg'.
+```{r}
+image_file <- "pikachu.jpg"
+im <- imager::load.image(image_file)##load the given image to im
+plot(im)
+```
+
+## Clustering
+  We cluster the pixels by its RGB values. The first argument is the image file that needs to be clustered. The second argument is the number of clusters. The output is a data frame of each k and its cluster information. And the nearest DMC thread colour to the original RGB colour is in the data frame as well.
+```{r, warning=FALSE, message=FALSE}
+set.seed(1005705300)
+clusters <- process_image(image_file,2:10) ## Apply clustering to the image with k from 2 to 10
+```
+
+## Plot Clusters
+  The function scree_plot produces the following scree plots by providing the cluster data frame. In the first graph, it is a tot.withnss vs k plot. We will choose k when the curve gets flat. The second graph is the ratio of k and (k-1) that helps us make the choice.  
+  The function colour_strips gives the colour strips of each clusters. The shown colours are the colours of cluster centers.
+```{r}
+scree_plot(clusters)
+colour_strips(clusters)
+```  
+  
+Here, k= 8 might be a good choice.
+
+## Plot the Pattern
+At last, we produces the cross-stitches pattern.  
+In the make_pattern function, the first argument is the cluster data frame. The second argument is the number of colour we want to have in the pattern. The third argument is the pattern size. The fourth argument is a logic_test. TRUE means black-and-white pattern. FALSE means colorful pattern.The fifth argument is a color name. The selected colour will be replaced by white.  
+In this example, although we choose k=8, but we only have 7 colours (including pure white) because of change_resolution in make_pattern.We will not choose background color since it is white. And we want a colorful pattern.
+```{r warning=FALSE, message=FALSE}
+make_pattern(clusters, 8 ,50,FALSE,NULL)
+```
